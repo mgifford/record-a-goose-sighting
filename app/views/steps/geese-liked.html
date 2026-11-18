@@ -10,7 +10,7 @@
       Do you like geese?
     </h1>
 
-    <form class="form" action="/steps/goose-type" method="post">
+    <form class="form" action="{{ siteUrl('steps/goose-type/') }}" method="get">
 
       {{ govukRadios({
         classes: "govuk-radios--inline",

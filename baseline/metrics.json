@@ -1,0 +1,2753 @@
+{
+  "capturedAt": "2026-11-18T23:10:24.262Z",
+  "urlBase": "http://127.0.0.1:3999/",
+  "pages": [
+    {
+      "slug": "index",
+      "url": "http://127.0.0.1:3999/",
+      "measure": {
+        "title": "Instructions - Record a goose sighting",
+        "lang": "en",
+        "headings": [
+          {
+            "level": 1,
+            "text": "'Record a goose sighting' accessibility exercise instructions",
+            "class": "govuk-heading-xl"
+          }
+        ],
+        "landmarks": [
+          {
+            "tag": "main",
+            "role": "main",
+            "label": null,
+            "labelledby": null
+          },
+          {
+            "tag": "a",
+            "role": "button",
+            "label": null,
+            "labelledby": null
+          }
+        ],
+        "links": [
+          {
+            "text": "Skip to main content",
+            "href": "#main-content",
+            "target": null,
+            "rel": null,
+            "class": "govuk-skip-link",
+            "role": null
+          },
+          {
+            "text": "WAVE accessibility plugin",
+            "href": "https://wave.webaim.org/extension/",
+            "target": null,
+            "rel": null,
+            "class": "",
+            "role": null
+          },
+          {
+            "text": "what to look for and how to record your findings.",
+            "href": "/steps/worksheet",
+            "target": null,
+            "rel": null,
+            "class": "govuk-link",
+            "role": null
+          },
+          {
+            "text": "Continue",
+            "href": "/steps/start",
+            "target": null,
+            "rel": null,
+            "class": "govuk-button govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8",
+            "role": "button"
+          },
+          {
+            "text": "'Training people to do accessibility reviews'.",
+            "href": "https://accessibility.blog.gov.uk/2020/01/14/training-people-to-do-accessibility-reviews/",
+            "target": null,
+            "rel": null,
+            "class": "",
+            "role": null
+          },
+          {
+            "text": "view the answers page",
+            "href": "/steps/answers",
+            "target": null,
+            "rel": null,
+            "class": "",
+            "role": null
+          }
+        ],
+        "forms": [],
+        "images": [],
+        "tabindex": [],
+        "headingsHtml": 1,
+        "styles": {
+          "body": {
+            "color": "rgb(0, 0, 0)",
+            "backgroundColor": "rgb(255, 255, 255)",
+            "outlineStyle": "none",
+            "outlineWidth": "3px",
+            "outlineColor": "rgb(0, 0, 0)",
+            "boxShadow": "none",
+            "textAlign": "start",
+            "order": "0",
+            "fontFamily": "Times",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "textDecorationLine": "none"
+          },
+          "h1": {
+            "color": "rgb(11, 12, 12)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "outlineStyle": "none",
+            "outlineWidth": "3px",
+            "outlineColor": "rgb(11, 12, 12)",
+            "boxShadow": "none",
+            "textAlign": "start",
+            "order": "0",
+            "fontFamily": "HelveticaNeue, \"Helvetica Neue\", Arial, Helvetica, sans-serif",
+            "fontSize": "48px",
+            "fontWeight": "700",
+            "textDecorationLine": "none"
+          },
+          "h2": null,
+          "h3": null,
+          ".govuk-hint": null,
+          ".goose-liked-hint": null,
+          ".govuk-button": {
+            "color": "rgb(255, 255, 255)",
+            "backgroundColor": "rgb(0, 112, 60)",
+            "outlineStyle": "none",
+            "outlineWidth": "3px",
+            "outlineColor": "rgb(255, 255, 255)",
+            "boxShadow": "rgb(0, 45, 24) 0px 2px 0px 0px",
+            "textAlign": "center",
+            "order": "0",
+            "fontFamily": "HelveticaNeue, \"Helvetica Neue\", Arial, Helvetica, sans-serif",
+            "fontSize": "24px",
+            "fontWeight": "700",
+            "textDecorationLine": "none"
+          },
+          ".govuk-link": {
+            "color": "rgb(29, 112, 184)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "outlineStyle": "none",
+            "outlineWidth": "3px",
+            "outlineColor": "rgb(29, 112, 184)",
+            "boxShadow": "none",
+            "textAlign": "start",
+            "order": "0",
+            "fontFamily": "HelveticaNeue, \"Helvetica Neue\", Arial, Helvetica, sans-serif",
+            "fontSize": "19px",
+            "fontWeight": "400",
+            "textDecorationLine": "underline"
+          },
+          ".govuk-panel__title": null,
+          ".justified-text": null,
+          ".custom-list": null,
+          ".custom-list li": null,
+          ".govuk-visually-hidden": null,
+          ".govuk-summary-list__key": null,
+          ".govuk-summary-list__value": null,
+          ".govuk-input": null,
+          ".govuk-label": null,
+          ".govuk-fieldset__legend": null,
+          ".app-banner--warning": null,
+          ".govuk-date-input__input": null,
+          ".govuk-radios__input": null,
+          ".govuk-radios__label": null
+        },
+        "relatedList": [],
+        "focusStyle": {
+          "a": {
+            "outlineStyle": "solid",
+            "outlineWidth": "3px",
+            "outlineColor": "rgb(255, 221, 0)",
+            "backgroundColor": "rgb(255, 221, 0)",
+            "boxShadow": "none",
+            "textDecorationLine": "none",
+            "matchesFocusSelector": true
+          },
+          "a.link": null,
+          "a.govuk-link": {
+            "outlineStyle": "solid",
+            "outlineWidth": "3px",
+            "outlineColor": "rgba(0, 0, 0, 0)",
+            "backgroundColor": "rgb(255, 221, 0)",
+            "boxShadow": "rgb(255, 221, 0) 0px -2px 0px 0px, rgb(11, 12, 12) 0px 4px 0px 0px",
+            "textDecorationLine": "none",
+            "matchesFocusSelector": true
+          },
+          "button": null,
+          "input": null
+        },
+        "bodyText": "Skip to main content 'Record a goose sighting' accessibility exercise instructions 'Record a goose sighting' is a made-u"
+      },
+      "focus": [
+        {
+          "tag": "a",
+          "id": null,
+          "class": "govuk-skip-link",
+          "text": "Skip to main content",
+          "name": null,
+          "type": null,
+          "href": "#main-content"
+        },
+        {
+          "tag": "a",
+          "id": null,
+          "class": "",
+          "text": "WAVE accessibility plugin",
+          "name": null,
+          "type": null,
+          "href": "https://wave.webaim.org/extension/"
+        },
+        {
+          "tag": "a",
+          "id": null,
+          "class": "govuk-link",
+          "text": "what to look for and how to record your findings.",
+          "name": null,
+          "type": null,
+          "href": "/steps/worksheet"
+        },
+        {
+          "tag": "a",
+          "id": null,
+          "class": "govuk-button govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8",
+          "text": "Continue",
+          "name": null,
+          "type": null,
+          "href": "/steps/start"
+        },
+        {
+          "tag": "a",
+          "id": null,
+          "class": "",
+          "text": "'Training people to do accessibility reviews'.",
+          "name": null,
+          "type": null,
+          "href": "https://accessibility.blog.gov.uk/2020/01/14/training-people-to-do-accessibility-reviews/"
+        },
+        {
+          "tag": "a",
+          "id": null,
+          "class": "",
+          "text": "view the answers page",
+          "name": null,
+          "type": null,
+          "href": "/steps/answers"
+        },
+        {
+          "tag": "body"
+        }
+      ],
+      "axe": {
+        "violations": [],
+        "incomplete": [],
+        "passes": 25
+      },
+      "failedRequests": [],
+      "consoleErrors": []
+    },
+    {
+      "slug": "steps-start",
+      "url": "http://127.0.0.1:3999/steps/start",
+      "measure": {
+        "title": "Start page - Record a goose sighting",
+        "lang": "en",
+        "headings": [
+          {
+            "level": 1,
+            "text": "Record a goose sighting",
+            "class": "govuk-heading-xl"
+          },
+          {
+            "level": 1,
+            "text": "Information about Geese",
+            "class": "govuk-heading-m"
+          }
+        ],
+        "landmarks": [
+          {
+            "tag": "main",
+            "role": "main",
+            "label": null,
+            "labelledby": null
+          },
+          {
+            "tag": "a",
+            "role": "button",
+            "label": null,
+            "labelledby": null
+          },
+          {
+            "tag": "aside",
+            "role": "complementary",
+            "label": null,
+            "labelledby": null
+          },
+          {
+            "tag": "nav",
+            "role": "navigation",
+            "label": null,
+            "labelledby": "subsection-title"
+          }
+        ],
+        "links": [
+          {
+            "text": "Skip to main content",
+            "href": "#main-content",
+            "target": null,
+            "rel": null,
+            "class": "govuk-skip-link",
+            "role": null
+          },
+          {
+            "text": "Home",
+            "href": "https://www.gov.uk",
+            "target": null,
+            "rel": null,
+            "class": "govuk-breadcrumbs__link",
+            "role": null
+          },
+          {
+            "text": "Environment and Countryside",
+            "href": "https://www.gov.uk/browse/environment-countryside",
+            "target": null,
+            "rel": null,
+            "class": "govuk-breadcrumbs__link",
+            "role": null
+          },
+          {
+            "text": "Wildlife and Biodiversity",
+            "href": "https://www.gov.uk/browse/environment-countryside/wildlife-biodiversity",
+            "target": null,
+            "rel": null,
+            "class": "govuk-breadcrumbs__link",
+            "role": null
+          },
+          {
+            "text": "Start now",
+            "href": "/steps/geese-liked",
+            "target": null,
+            "rel": null,
+            "class": "govuk-button govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8",
+            "role": "button"
+          },
+          {
+            "text": "Read about geese on Wikipedia",
+            "href": "https://en.wikipedia.org/wiki/Goose",
+            "target": null,
+            "rel": null,
+            "class": "link",
+            "role": null
+          },
+          {
+            "text": "More",
+            "href": "https://www.wildlondon.org.uk/",
+            "target": null,
+            "rel": null,
+            "class": "govuk-!-font-weight-bold link",
+            "role": null
+          },
+          {
+            "text": "Visit the RSPB website",
+            "href": "https://www.rspb.org.uk/",
+            "target": "_blank",
+            "rel": null,
+            "class": "link",
+            "role": null
+          }
+        ],
+        "forms": [],
+        "images": [],
+        "tabindex": [],
+        "headingsHtml": 2,
+        "styles": {
+          "body": {
+            "color": "rgb(0, 0, 0)",
+            "backgroundColor": "rgb(255, 255, 255)",
+            "outlineStyle": "none",
+            "outlineWidth": "3px",
+            "outlineColor": "rgb(0, 0, 0)",
+            "boxShadow": "none",
+            "textAlign": "start",
+            "order": "0",
+            "fontFamily": "Times",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "textDecorationLine": "none"
+          },
+          "h1": {
+            "color": "rgb(11, 12, 12)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "outlineStyle": "none",
+            "outlineWidth": "3px",
+            "outlineColor": "rgb(11, 12, 12)",
+            "boxShadow": "none",
+            "textAlign": "start",
+            "order": "0",
+            "fontFamily": "HelveticaNeue, \"Helvetica Neue\", Arial, Helvetica, sans-serif",
+            "fontSize": "48px",
+            "fontWeight": "700",
+            "textDecorationLine": "none"
+          },
+          "h2": null,
+          "h3": null,
+          ".govuk-hint": null,
+          ".goose-liked-hint": null,
+          ".govuk-button": {
+            "color": "rgb(255, 255, 255)",
+            "backgroundColor": "rgb(0, 112, 60)",
+            "outlineStyle": "none",
+            "outlineWidth": "3px",
+            "outlineColor": "rgb(255, 255, 255)",
+            "boxShadow": "rgb(0, 45, 24) 0px 2px 0px 0px",
+            "textAlign": "center",
+            "order": "0",
+            "fontFamily": "HelveticaNeue, \"Helvetica Neue\", Arial, Helvetica, sans-serif",
+            "fontSize": "24px",
+            "fontWeight": "700",
+            "textDecorationLine": "none"
+          },
+          ".govuk-link": null,
+          ".govuk-panel__title": null,
+          ".justified-text": null,
+          ".custom-list": {
+            "color": "rgb(11, 12, 12)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "outlineStyle": "none",
+            "outlineWidth": "3px",
+            "outlineColor": "rgb(11, 12, 12)",
+            "boxShadow": "none",
+            "textAlign": "start",
+            "order": "0",
+            "fontFamily": "HelveticaNeue, \"Helvetica Neue\", Arial, Helvetica, sans-serif",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "textDecorationLine": "none"
+          },
+          ".custom-list li": {
+            "color": "rgb(11, 12, 12)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "outlineStyle": "none",
+            "outlineWidth": "3px",
+            "outlineColor": "rgb(11, 12, 12)",
+            "boxShadow": "none",
+            "textAlign": "start",
+            "order": "1",
+            "fontFamily": "HelveticaNeue, \"Helvetica Neue\", Arial, Helvetica, sans-serif",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "textDecorationLine": "none"
+          },
+          ".govuk-visually-hidden": null,
+          ".govuk-summary-list__key": null,
+          ".govuk-summary-list__value": null,
+          ".govuk-input": null,
+          ".govuk-label": null,
+          ".govuk-fieldset__legend": null,
+          ".app-banner--warning": {
+            "color": "rgb(0, 0, 0)",
+            "backgroundColor": "rgb(255, 158, 68)",
+            "outlineStyle": "none",
+            "outlineWidth": "3px",
+            "outlineColor": "rgb(0, 0, 0)",
+            "boxShadow": "none",
+            "textAlign": "start",
+            "order": "0",
+            "fontFamily": "Times",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "textDecorationLine": "none"
+          },
+          ".govuk-date-input__input": null,
+          ".govuk-radios__input": null,
+          ".govuk-radios__label": null
+        },
+        "relatedList": [
+          {
+            "class": "custom-list--one",
+            "order": "1",
+            "text": "Read about geese on Wikipedia",
+            "href": "https://en.wikipedia.org/wiki/Goose"
+          },
+          {
+            "class": "custom-list--three",
+            "order": "3",
+            "text": "More",
+            "href": "https://www.wildlondon.org.uk/"
+          },
+          {
+            "class": "custom-list--two",
+            "order": "2",
+            "text": "Visit the RSPB website",
+            "href": "https://www.rspb.org.uk/"
+          }
+        ],
+        "focusStyle": {
+          "a": {
+            "outlineStyle": "solid",
+            "outlineWidth": "3px",
+            "outlineColor": "rgb(255, 221, 0)",
+            "backgroundColor": "rgb(255, 221, 0)",
+            "boxShadow": "none",
+            "textDecorationLine": "none",
+            "matchesFocusSelector": true
+          },
+          "a.link": {
+            "outlineStyle": "none",
+            "outlineWidth": "3px",
+            "outlineColor": "rgb(11, 12, 12)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "boxShadow": "none",
+            "textDecorationLine": "none",
+            "matchesFocusSelector": true
+          },
+          "a.govuk-link": null,
+          "button": null,
+          "input": null
+        },
+        "bodyText": "Skip to main content This is not a real government service, and is for training purposes only. You'll have to create you"
+      },
+      "focus": [
+        {
+          "tag": "a",
+          "id": null,
+          "class": "govuk-skip-link",
+          "text": "Skip to main content",
+          "name": null,
+          "type": null,
+          "href": "#main-content"
+        },
+        {
+          "tag": "a",
+          "id": null,
+          "class": "govuk-breadcrumbs__link",
+          "text": "Home",
+          "name": null,
+          "type": null,
+          "href": "https://www.gov.uk"
+        },
+        {
+          "tag": "a",
+          "id": null,
+          "class": "govuk-breadcrumbs__link",
+          "text": "Environment and Countryside",
+          "name": null,
+          "type": null,
+          "href": "https://www.gov.uk/browse/environment-countryside"
+        },
+        {
+          "tag": "a",
+          "id": null,
+          "class": "govuk-breadcrumbs__link",
+          "text": "Wildlife and Biodiversity",
+          "name": null,
+          "type": null,
+          "href": "https://www.gov.uk/browse/environment-countryside/wildlife-biodiversity"
+        },
+        {
+          "tag": "a",
+          "id": null,
+          "class": "govuk-button govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8",
+          "text": "Start now",
+          "name": null,
+          "type": null,
+          "href": "/steps/geese-liked"
+        },
+        {
+          "tag": "a",
+          "id": null,
+          "class": "link",
+          "text": "Read about geese on Wikipedia",
+          "name": null,
+          "type": null,
+          "href": "https://en.wikipedia.org/wiki/Goose"
+        },
+        {
+          "tag": "a",
+          "id": null,
+          "class": "govuk-!-font-weight-bold link",
+          "text": "More",
+          "name": null,
+          "type": null,
+          "href": "https://www.wildlondon.org.uk/"
+        },
+        {
+          "tag": "a",
+          "id": null,
+          "class": "link",
+          "text": "Visit the RSPB website",
+          "name": null,
+          "type": null,
+          "href": "https://www.rspb.org.uk/"
+        },
+        {
+          "tag": "body"
+        }
+      ],
+      "axe": {
+        "violations": [
+          {
+            "id": "region",
+            "impact": "moderate",
+            "help": "All page content should be contained by landmarks",
+            "nodes": 2,
+            "targets": [
+              ".app-banner",
+              ".govuk-breadcrumbs"
+            ]
+          }
+        ],
+        "incomplete": [],
+        "passes": 30
+      },
+      "failedRequests": [],
+      "consoleErrors": []
+    },
+    {
+      "slug": "steps-geese-liked",
+      "url": "http://127.0.0.1:3999/steps/geese-liked",
+      "measure": {
+        "title": "",
+        "lang": "en",
+        "headings": [
+          {
+            "level": 1,
+            "text": "Do you like geese?",
+            "class": "govuk-heading-xl"
+          }
+        ],
+        "landmarks": [
+          {
+            "tag": "main",
+            "role": "main",
+            "label": null,
+            "labelledby": null
+          }
+        ],
+        "links": [
+          {
+            "text": "Skip to main content",
+            "href": "#main-content",
+            "target": null,
+            "rel": null,
+            "class": "govuk-skip-link",
+            "role": null
+          }
+        ],
+        "forms": [
+          {
+            "action": "/steps/goose-type",
+            "method": "post",
+            "fields": [
+              {
+                "tag": "input",
+                "id": "geese-liked",
+                "class": "govuk-radios__input",
+                "type": "radio",
+                "name": "geese-liked",
+                "text": "",
+                "href": null,
+                "target": null,
+                "tabindex": null,
+                "rect": {
+                  "x": 158,
+                  "y": 178,
+                  "w": 44,
+                  "h": 44
+                }
+              },
+              {
+                "tag": "input",
+                "id": "geese-liked-2",
+                "class": "govuk-radios__input",
+                "type": "radio",
+                "name": "geese-liked",
+                "text": "",
+                "href": null,
+                "target": null,
+                "tabindex": null,
+                "rect": {
+                  "x": 278,
+                  "y": 178,
+                  "w": 44,
+                  "h": 44
+                }
+              },
+              {
+                "tag": "button",
+                "id": null,
+                "class": "govuk-button",
+                "type": null,
+                "name": null,
+                "text": "Continue",
+                "href": null,
+                "target": null,
+                "tabindex": "-1",
+                "rect": {
+                  "x": 160,
+                  "y": 260,
+                  "w": 101,
+                  "h": 38
+                }
+              }
+            ],
+            "fieldsets": [
+              {
+                "legend": null
+              }
+            ]
+          }
+        ],
+        "images": [],
+        "tabindex": [
+          {
+            "tag": "button",
+            "id": null,
+            "class": "govuk-button",
+            "type": null,
+            "name": null,
+            "text": "Continue",
+            "href": null,
+            "target": null,
+            "tabindex": "-1",
+            "rect": {
+              "x": 160,
+              "y": 260,
+              "w": 101,
+              "h": 38
+            }
+          }
+        ],
+        "headingsHtml": 1,
+        "styles": {
+          "body": {
+            "color": "rgb(0, 0, 0)",
+            "backgroundColor": "rgb(255, 255, 255)",
+            "outlineStyle": "none",
+            "outlineWidth": "3px",
+            "outlineColor": "rgb(0, 0, 0)",
+            "boxShadow": "none",
+            "textAlign": "start",
+            "order": "0",
+            "fontFamily": "Times",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "textDecorationLine": "none"
+          },
+          "h1": {
+            "color": "rgb(11, 12, 12)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "outlineStyle": "none",
+            "outlineWidth": "3px",
+            "outlineColor": "rgb(11, 12, 12)",
+            "boxShadow": "none",
+            "textAlign": "start",
+            "order": "0",
+            "fontFamily": "HelveticaNeue, \"Helvetica Neue\", Arial, Helvetica, sans-serif",
+            "fontSize": "48px",
+            "fontWeight": "700",
+            "textDecorationLine": "none"
+          },
+          "h2": null,
+          "h3": null,
+          ".govuk-hint": {
+            "color": "rgb(157, 157, 161)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "outlineStyle": "none",
+            "outlineWidth": "3px",
+            "outlineColor": "rgb(157, 157, 161)",
+            "boxShadow": "none",
+            "textAlign": "start",
+            "order": "0",
+            "fontFamily": "HelveticaNeue, \"Helvetica Neue\", Arial, Helvetica, sans-serif",
+            "fontSize": "19px",
+            "fontWeight": "400",
+            "textDecorationLine": "none"
+          },
+          ".goose-liked-hint": {
+            "color": "rgb(157, 157, 161)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "outlineStyle": "none",
+            "outlineWidth": "3px",
+            "outlineColor": "rgb(157, 157, 161)",
+            "boxShadow": "none",
+            "textAlign": "start",
+            "order": "0",
+            "fontFamily": "HelveticaNeue, \"Helvetica Neue\", Arial, Helvetica, sans-serif",
+            "fontSize": "19px",
+            "fontWeight": "400",
+            "textDecorationLine": "none"
+          },
+          ".govuk-button": {
+            "color": "rgb(255, 255, 255)",
+            "backgroundColor": "rgb(0, 112, 60)",
+            "outlineStyle": "none",
+            "outlineWidth": "3px",
+            "outlineColor": "rgb(255, 255, 255)",
+            "boxShadow": "rgb(0, 45, 24) 0px 2px 0px 0px",
+            "textAlign": "center",
+            "order": "0",
+            "fontFamily": "HelveticaNeue, \"Helvetica Neue\", Arial, Helvetica, sans-serif",
+            "fontSize": "19px",
+            "fontWeight": "400",
+            "textDecorationLine": "none"
+          },
+          ".govuk-link": null,
+          ".govuk-panel__title": null,
+          ".justified-text": null,
+          ".custom-list": null,
+          ".custom-list li": null,
+          ".govuk-visually-hidden": null,
+          ".govuk-summary-list__key": null,
+          ".govuk-summary-list__value": null,
+          ".govuk-input": null,
+          ".govuk-label": {
+            "color": "rgb(11, 12, 12)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "outlineStyle": "none",
+            "outlineWidth": "3px",
+            "outlineColor": "rgb(11, 12, 12)",
+            "boxShadow": "none",
+            "textAlign": "start",
+            "order": "0",
+            "fontFamily": "HelveticaNeue, \"Helvetica Neue\", Arial, Helvetica, sans-serif",
+            "fontSize": "19px",
+            "fontWeight": "400",
+            "textDecorationLine": "none"
+          },
+          ".govuk-fieldset__legend": null,
+          ".app-banner--warning": null,
+          ".govuk-date-input__input": null,
+          ".govuk-radios__input": {
+            "color": "rgb(0, 0, 0)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "outlineStyle": "none",
+            "outlineWidth": "3px",
+            "outlineColor": "rgb(0, 0, 0)",
+            "boxShadow": "none",
+            "textAlign": "start",
+            "order": "0",
+            "fontFamily": "Arial",
+            "fontSize": "13.3333px",
+            "fontWeight": "400",
+            "textDecorationLine": "none"
+          },
+          ".govuk-radios__label": {
+            "color": "rgb(11, 12, 12)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "outlineStyle": "none",
+            "outlineWidth": "3px",
+            "outlineColor": "rgb(11, 12, 12)",
+            "boxShadow": "none",
+            "textAlign": "start",
+            "order": "0",
+            "fontFamily": "HelveticaNeue, \"Helvetica Neue\", Arial, Helvetica, sans-serif",
+            "fontSize": "19px",
+            "fontWeight": "400",
+            "textDecorationLine": "none"
+          }
+        },
+        "relatedList": [],
+        "focusStyle": {
+          "a": {
+            "outlineStyle": "solid",
+            "outlineWidth": "3px",
+            "outlineColor": "rgb(255, 221, 0)",
+            "backgroundColor": "rgb(255, 221, 0)",
+            "boxShadow": "none",
+            "textDecorationLine": "none",
+            "matchesFocusSelector": true
+          },
+          "a.link": null,
+          "a.govuk-link": null,
+          "button": {
+            "outlineStyle": "solid",
+            "outlineWidth": "3px",
+            "outlineColor": "rgba(0, 0, 0, 0)",
+            "backgroundColor": "rgb(255, 221, 0)",
+            "boxShadow": "rgb(11, 12, 12) 0px 2px 0px 0px",
+            "textDecorationLine": "none",
+            "matchesFocusSelector": true
+          },
+          "input": {
+            "outlineStyle": "auto",
+            "outlineWidth": "1px",
+            "outlineColor": "rgb(0, 95, 204)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "boxShadow": "none",
+            "textDecorationLine": "none",
+            "matchesFocusSelector": true
+          }
+        },
+        "bodyText": "Skip to main content Do you like geese? Select yes if you like geese Yes No Continue"
+      },
+      "focus": [
+        {
+          "tag": "a",
+          "id": null,
+          "class": "govuk-skip-link",
+          "text": "Skip to main content",
+          "name": null,
+          "type": null,
+          "href": "#main-content"
+        },
+        {
+          "tag": "input",
+          "id": "geese-liked",
+          "class": "govuk-radios__input",
+          "text": "",
+          "name": "geese-liked",
+          "type": "radio",
+          "href": null
+        },
+        {
+          "tag": "body"
+        }
+      ],
+      "axe": {
+        "violations": [
+          {
+            "id": "color-contrast",
+            "impact": "serious",
+            "help": "Elements must meet minimum color contrast ratio thresholds",
+            "nodes": 1,
+            "targets": [
+              "#geese-liked-hint"
+            ]
+          },
+          {
+            "id": "document-title",
+            "impact": "serious",
+            "help": "Documents must have <title> element to aid in navigation",
+            "nodes": 1,
+            "targets": [
+              "html"
+            ]
+          }
+        ],
+        "incomplete": [],
+        "passes": 32
+      },
+      "failedRequests": [],
+      "consoleErrors": []
+    },
+    {
+      "slug": "steps-goose-type",
+      "url": "http://127.0.0.1:3999/steps/goose-type",
+      "measure": {
+        "title": "Boop - Record a goose sighting",
+        "lang": "en",
+        "headings": [
+          {
+            "level": 1,
+            "text": "What type of goose did you see?",
+            "class": "govuk-heading-xl"
+          }
+        ],
+        "landmarks": [
+          {
+            "tag": "main",
+            "role": "main",
+            "label": null,
+            "labelledby": null
+          }
+        ],
+        "links": [
+          {
+            "text": "Skip to main content",
+            "href": "#main-content",
+            "target": null,
+            "rel": null,
+            "class": "govuk-skip-link",
+            "role": null
+          }
+        ],
+        "forms": [
+          {
+            "action": "/steps/date-saw-goose",
+            "method": "post",
+            "fields": [
+              {
+                "tag": "input",
+                "id": "goose-type",
+                "class": "govuk-input",
+                "type": "text",
+                "name": "goose-type",
+                "text": "",
+                "href": null,
+                "target": null,
+                "tabindex": null,
+                "rect": {
+                  "x": 160,
+                  "y": 220,
+                  "w": 630,
+                  "h": 40
+                }
+              },
+              {
+                "tag": "button",
+                "id": null,
+                "class": "govuk-button",
+                "type": null,
+                "name": null,
+                "text": "Continue",
+                "href": null,
+                "target": null,
+                "tabindex": null,
+                "rect": {
+                  "x": 160,
+                  "y": 290,
+                  "w": 101,
+                  "h": 38
+                }
+              }
+            ],
+            "fieldsets": []
+          }
+        ],
+        "images": [],
+        "tabindex": [
+          {
+            "tag": "p",
+            "id": null,
+            "class": "govuk-visually-hidden",
+            "type": null,
+            "name": null,
+            "text": "Ghost goose",
+            "href": null,
+            "target": null,
+            "tabindex": "0",
+            "rect": {
+              "x": 160,
+              "y": 190,
+              "w": 1,
+              "h": 1
+            }
+          }
+        ],
+        "headingsHtml": 1,
+        "styles": {
+          "body": {
+            "color": "rgb(0, 0, 0)",
+            "backgroundColor": "rgb(255, 255, 255)",
+            "outlineStyle": "none",
+            "outlineWidth": "3px",
+            "outlineColor": "rgb(0, 0, 0)",
+            "boxShadow": "none",
+            "textAlign": "start",
+            "order": "0",
+            "fontFamily": "Times",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "textDecorationLine": "none"
+          },
+          "h1": {
+            "color": "rgb(11, 12, 12)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "outlineStyle": "none",
+            "outlineWidth": "3px",
+            "outlineColor": "rgb(11, 12, 12)",
+            "boxShadow": "none",
+            "textAlign": "start",
+            "order": "0",
+            "fontFamily": "HelveticaNeue, \"Helvetica Neue\", Arial, Helvetica, sans-serif",
+            "fontSize": "48px",
+            "fontWeight": "700",
+            "textDecorationLine": "none"
+          },
+          "h2": null,
+          "h3": null,
+          ".govuk-hint": null,
+          ".goose-liked-hint": null,
+          ".govuk-button": {
+            "color": "rgb(255, 255, 255)",
+            "backgroundColor": "rgb(0, 112, 60)",
+            "outlineStyle": "none",
+            "outlineWidth": "3px",
+            "outlineColor": "rgb(255, 255, 255)",
+            "boxShadow": "rgb(0, 45, 24) 0px 2px 0px 0px",
+            "textAlign": "center",
+            "order": "0",
+            "fontFamily": "HelveticaNeue, \"Helvetica Neue\", Arial, Helvetica, sans-serif",
+            "fontSize": "19px",
+            "fontWeight": "400",
+            "textDecorationLine": "none"
+          },
+          ".govuk-link": null,
+          ".govuk-panel__title": null,
+          ".justified-text": null,
+          ".custom-list": null,
+          ".custom-list li": null,
+          ".govuk-visually-hidden": {
+            "color": "rgb(11, 12, 12)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "outlineStyle": "none",
+            "outlineWidth": "3px",
+            "outlineColor": "rgb(11, 12, 12)",
+            "boxShadow": "none",
+            "textAlign": "start",
+            "order": "0",
+            "fontFamily": "HelveticaNeue, \"Helvetica Neue\", Arial, Helvetica, sans-serif",
+            "fontSize": "19px",
+            "fontWeight": "400",
+            "textDecorationLine": "none"
+          },
+          ".govuk-summary-list__key": null,
+          ".govuk-summary-list__value": null,
+          ".govuk-input": {
+            "color": "rgb(0, 0, 0)",
+            "backgroundColor": "rgb(255, 255, 255)",
+            "outlineStyle": "none",
+            "outlineWidth": "3px",
+            "outlineColor": "rgb(0, 0, 0)",
+            "boxShadow": "none",
+            "textAlign": "start",
+            "order": "0",
+            "fontFamily": "HelveticaNeue, \"Helvetica Neue\", Arial, Helvetica, sans-serif",
+            "fontSize": "19px",
+            "fontWeight": "400",
+            "textDecorationLine": "none"
+          },
+          ".govuk-label": {
+            "color": "rgb(11, 12, 12)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "outlineStyle": "none",
+            "outlineWidth": "3px",
+            "outlineColor": "rgb(11, 12, 12)",
+            "boxShadow": "none",
+            "textAlign": "start",
+            "order": "0",
+            "fontFamily": "HelveticaNeue, \"Helvetica Neue\", Arial, Helvetica, sans-serif",
+            "fontSize": "19px",
+            "fontWeight": "400",
+            "textDecorationLine": "none"
+          },
+          ".govuk-fieldset__legend": null,
+          ".app-banner--warning": null,
+          ".govuk-date-input__input": null,
+          ".govuk-radios__input": null,
+          ".govuk-radios__label": null
+        },
+        "relatedList": [],
+        "focusStyle": {
+          "a": {
+            "outlineStyle": "solid",
+            "outlineWidth": "3px",
+            "outlineColor": "rgb(255, 221, 0)",
+            "backgroundColor": "rgb(255, 221, 0)",
+            "boxShadow": "none",
+            "textDecorationLine": "none",
+            "matchesFocusSelector": true
+          },
+          "a.link": null,
+          "a.govuk-link": null,
+          "button": {
+            "outlineStyle": "solid",
+            "outlineWidth": "3px",
+            "outlineColor": "rgba(0, 0, 0, 0)",
+            "backgroundColor": "rgb(255, 221, 0)",
+            "boxShadow": "rgb(11, 12, 12) 0px 2px 0px 0px",
+            "textDecorationLine": "none",
+            "matchesFocusSelector": true
+          },
+          "input": {
+            "outlineStyle": "solid",
+            "outlineWidth": "3px",
+            "outlineColor": "rgb(255, 221, 0)",
+            "backgroundColor": "rgb(255, 255, 255)",
+            "boxShadow": "rgb(0, 0, 0) 0px 0px 0px 2px inset",
+            "textDecorationLine": "none",
+            "matchesFocusSelector": true
+          }
+        },
+        "bodyText": "Skip to main content What type of goose did you see? Ghost goose Tell us what type of goose it was Continue"
+      },
+      "focus": [
+        {
+          "tag": "a",
+          "id": null,
+          "class": "govuk-skip-link",
+          "text": "Skip to main content",
+          "name": null,
+          "type": null,
+          "href": "#main-content"
+        },
+        {
+          "tag": "p",
+          "id": null,
+          "class": "govuk-visually-hidden",
+          "text": "Ghost goose",
+          "name": null,
+          "type": null,
+          "href": null
+        },
+        {
+          "tag": "input",
+          "id": "goose-type",
+          "class": "govuk-input",
+          "text": "",
+          "name": "goose-type",
+          "type": "text",
+          "href": null
+        },
+        {
+          "tag": "button",
+          "id": null,
+          "class": "govuk-button",
+          "text": "Continue",
+          "name": null,
+          "type": null,
+          "href": null
+        },
+        {
+          "tag": "body"
+        }
+      ],
+      "axe": {
+        "violations": [],
+        "incomplete": [],
+        "passes": 28
+      },
+      "failedRequests": [],
+      "consoleErrors": []
+    },
+    {
+      "slug": "steps-date-saw-goose",
+      "url": "http://127.0.0.1:3999/steps/date-saw-goose",
+      "measure": {
+        "title": "When did you see the goose - Record a goose sighting",
+        "lang": "en",
+        "headings": [
+          {
+            "level": 1,
+            "text": "When did you see the goose?",
+            "class": "govuk-fieldset__heading"
+          }
+        ],
+        "landmarks": [
+          {
+            "tag": "main",
+            "role": "main",
+            "label": null,
+            "labelledby": null
+          },
+          {
+            "tag": "fieldset",
+            "role": "group",
+            "label": null,
+            "labelledby": null
+          }
+        ],
+        "links": [
+          {
+            "text": "Skip to main content",
+            "href": "#main-content",
+            "target": null,
+            "rel": null,
+            "class": "govuk-skip-link",
+            "role": null
+          }
+        ],
+        "forms": [
+          {
+            "action": "/steps/check-your-answers",
+            "method": "post",
+            "fields": [
+              {
+                "tag": "input",
+                "id": "date-saw-goose-day",
+                "class": "govuk-input govuk-date-input__input govuk-input--width-2",
+                "type": "text",
+                "name": "date-saw-goose-day",
+                "text": "",
+                "href": null,
+                "target": null,
+                "tabindex": null,
+                "rect": {
+                  "x": 160,
+                  "y": 220,
+                  "w": 53,
+                  "h": 40
+                }
+              },
+              {
+                "tag": "input",
+                "id": "date-saw-goose-month",
+                "class": "govuk-input govuk-date-input__input govuk-input--width-2",
+                "type": "text",
+                "name": "date-saw-goose-month",
+                "text": "",
+                "href": null,
+                "target": null,
+                "tabindex": null,
+                "rect": {
+                  "x": 233,
+                  "y": 220,
+                  "w": 53,
+                  "h": 40
+                }
+              },
+              {
+                "tag": "input",
+                "id": "date-saw-goose-year",
+                "class": "govuk-input govuk-date-input__input govuk-input--width-4",
+                "type": "text",
+                "name": "date-saw-goose-year",
+                "text": "",
+                "href": null,
+                "target": null,
+                "tabindex": null,
+                "rect": {
+                  "x": 308,
+                  "y": 220,
+                  "w": 88,
+                  "h": 40
+                }
+              },
+              {
+                "tag": "button",
+                "id": null,
+                "class": "govuk-button",
+                "type": null,
+                "name": null,
+                "text": "Continue",
+                "href": null,
+                "target": null,
+                "tabindex": null,
+                "rect": {
+                  "x": 160,
+                  "y": 290,
+                  "w": 101,
+                  "h": 38
+                }
+              }
+            ],
+            "fieldsets": [
+              {
+                "legend": "When did you see the goose?"
+              }
+            ]
+          }
+        ],
+        "images": [],
+        "tabindex": [],
+        "headingsHtml": 1,
+        "styles": {
+          "body": {
+            "color": "rgb(0, 0, 0)",
+            "backgroundColor": "rgb(255, 255, 255)",
+            "outlineStyle": "none",
+            "outlineWidth": "3px",
+            "outlineColor": "rgb(0, 0, 0)",
+            "boxShadow": "none",
+            "textAlign": "start",
+            "order": "0",
+            "fontFamily": "Times",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "textDecorationLine": "none"
+          },
+          "h1": {
+            "color": "rgb(11, 12, 12)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "outlineStyle": "none",
+            "outlineWidth": "3px",
+            "outlineColor": "rgb(11, 12, 12)",
+            "boxShadow": "none",
+            "textAlign": "start",
+            "order": "0",
+            "fontFamily": "HelveticaNeue, \"Helvetica Neue\", Arial, Helvetica, sans-serif",
+            "fontSize": "48px",
+            "fontWeight": "700",
+            "textDecorationLine": "none"
+          },
+          "h2": null,
+          "h3": null,
+          ".govuk-hint": {
+            "color": "rgb(80, 90, 95)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "outlineStyle": "none",
+            "outlineWidth": "3px",
+            "outlineColor": "rgb(80, 90, 95)",
+            "boxShadow": "none",
+            "textAlign": "start",
+            "order": "0",
+            "fontFamily": "HelveticaNeue, \"Helvetica Neue\", Arial, Helvetica, sans-serif",
+            "fontSize": "19px",
+            "fontWeight": "400",
+            "textDecorationLine": "none"
+          },
+          ".goose-liked-hint": null,
+          ".govuk-button": {
+            "color": "rgb(255, 255, 255)",
+            "backgroundColor": "rgb(0, 112, 60)",
+            "outlineStyle": "none",
+            "outlineWidth": "3px",
+            "outlineColor": "rgb(255, 255, 255)",
+            "boxShadow": "rgb(0, 45, 24) 0px 2px 0px 0px",
+            "textAlign": "center",
+            "order": "0",
+            "fontFamily": "HelveticaNeue, \"Helvetica Neue\", Arial, Helvetica, sans-serif",
+            "fontSize": "19px",
+            "fontWeight": "400",
+            "textDecorationLine": "none"
+          },
+          ".govuk-link": null,
+          ".govuk-panel__title": null,
+          ".justified-text": null,
+          ".custom-list": null,
+          ".custom-list li": null,
+          ".govuk-visually-hidden": null,
+          ".govuk-summary-list__key": null,
+          ".govuk-summary-list__value": null,
+          ".govuk-input": {
+            "color": "rgb(0, 0, 0)",
+            "backgroundColor": "rgb(255, 255, 255)",
+            "outlineStyle": "none",
+            "outlineWidth": "3px",
+            "outlineColor": "rgb(0, 0, 0)",
+            "boxShadow": "none",
+            "textAlign": "start",
+            "order": "0",
+            "fontFamily": "HelveticaNeue, \"Helvetica Neue\", Arial, Helvetica, sans-serif",
+            "fontSize": "19px",
+            "fontWeight": "400",
+            "textDecorationLine": "none"
+          },
+          ".govuk-label": {
+            "color": "rgb(11, 12, 12)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "outlineStyle": "none",
+            "outlineWidth": "3px",
+            "outlineColor": "rgb(11, 12, 12)",
+            "boxShadow": "none",
+            "textAlign": "start",
+            "order": "0",
+            "fontFamily": "HelveticaNeue, \"Helvetica Neue\", Arial, Helvetica, sans-serif",
+            "fontSize": "19px",
+            "fontWeight": "400",
+            "textDecorationLine": "none"
+          },
+          ".govuk-fieldset__legend": {
+            "color": "rgb(11, 12, 12)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "outlineStyle": "none",
+            "outlineWidth": "3px",
+            "outlineColor": "rgb(11, 12, 12)",
+            "boxShadow": "none",
+            "textAlign": "start",
+            "order": "0",
+            "fontFamily": "HelveticaNeue, \"Helvetica Neue\", Arial, Helvetica, sans-serif",
+            "fontSize": "48px",
+            "fontWeight": "700",
+            "textDecorationLine": "none"
+          },
+          ".app-banner--warning": null,
+          ".govuk-date-input__input": {
+            "color": "rgb(0, 0, 0)",
+            "backgroundColor": "rgb(255, 255, 255)",
+            "outlineStyle": "none",
+            "outlineWidth": "3px",
+            "outlineColor": "rgb(0, 0, 0)",
+            "boxShadow": "none",
+            "textAlign": "start",
+            "order": "0",
+            "fontFamily": "HelveticaNeue, \"Helvetica Neue\", Arial, Helvetica, sans-serif",
+            "fontSize": "19px",
+            "fontWeight": "400",
+            "textDecorationLine": "none"
+          },
+          ".govuk-radios__input": null,
+          ".govuk-radios__label": null
+        },
+        "relatedList": [],
+        "focusStyle": {
+          "a": {
+            "outlineStyle": "solid",
+            "outlineWidth": "3px",
+            "outlineColor": "rgb(255, 221, 0)",
+            "backgroundColor": "rgb(255, 221, 0)",
+            "boxShadow": "none",
+            "textDecorationLine": "none",
+            "matchesFocusSelector": true
+          },
+          "a.link": null,
+          "a.govuk-link": null,
+          "button": {
+            "outlineStyle": "solid",
+            "outlineWidth": "3px",
+            "outlineColor": "rgba(0, 0, 0, 0)",
+            "backgroundColor": "rgb(255, 221, 0)",
+            "boxShadow": "rgb(11, 12, 12) 0px 2px 0px 0px",
+            "textDecorationLine": "none",
+            "matchesFocusSelector": true
+          },
+          "input": {
+            "outlineStyle": "solid",
+            "outlineWidth": "3px",
+            "outlineColor": "rgb(255, 221, 0)",
+            "backgroundColor": "rgb(255, 255, 255)",
+            "boxShadow": "rgb(0, 0, 0) 0px 0px 0px 2px inset",
+            "textDecorationLine": "none",
+            "matchesFocusSelector": true
+          }
+        },
+        "bodyText": "Skip to main content When did you see the goose? For example, 16 4 2017 Day Month Year Continue"
+      },
+      "focus": [
+        {
+          "tag": "a",
+          "id": null,
+          "class": "govuk-skip-link",
+          "text": "Skip to main content",
+          "name": null,
+          "type": null,
+          "href": "#main-content"
+        },
+        {
+          "tag": "input",
+          "id": "date-saw-goose-day",
+          "class": "govuk-input govuk-date-input__input govuk-input--width-2",
+          "text": "",
+          "name": "date-saw-goose-day",
+          "type": "text",
+          "href": null
+        },
+        {
+          "tag": "input",
+          "id": "date-saw-goose-month",
+          "class": "govuk-input govuk-date-input__input govuk-input--width-2",
+          "text": "",
+          "name": "date-saw-goose-month",
+          "type": "text",
+          "href": null
+        },
+        {
+          "tag": "input",
+          "id": "date-saw-goose-year",
+          "class": "govuk-input govuk-date-input__input govuk-input--width-4",
+          "text": "",
+          "name": "date-saw-goose-year",
+          "type": "text",
+          "href": null
+        },
+        {
+          "tag": "button",
+          "id": null,
+          "class": "govuk-button",
+          "text": "Continue",
+          "name": null,
+          "type": null,
+          "href": null
+        },
+        {
+          "tag": "body"
+        }
+      ],
+      "axe": {
+        "violations": [],
+        "incomplete": [],
+        "passes": 32
+      },
+      "failedRequests": [],
+      "consoleErrors": []
+    },
+    {
+      "slug": "steps-check-your-answers",
+      "url": "http://127.0.0.1:3999/steps/check-your-answers",
+      "measure": {
+        "title": "Check your answers - Record a goose sighting",
+        "lang": "en",
+        "headings": [
+          {
+            "level": 1,
+            "text": "Check your answers before sending your application",
+            "class": "govuk-heading-xl"
+          },
+          {
+            "level": 3,
+            "text": "Goose details",
+            "class": "govuk-heading-m"
+          },
+          {
+            "level": 2,
+            "text": "Now send your application",
+            "class": "govuk-heading-m"
+          }
+        ],
+        "landmarks": [
+          {
+            "tag": "main",
+            "role": "main",
+            "label": null,
+            "labelledby": null
+          }
+        ],
+        "links": [
+          {
+            "text": "Skip to main content",
+            "href": "#main-content",
+            "target": null,
+            "rel": null,
+            "class": "govuk-skip-link",
+            "role": null
+          },
+          {
+            "text": "Change biscuits",
+            "href": "/steps/geese-liked",
+            "target": null,
+            "rel": null,
+            "class": "govuk-link",
+            "role": null
+          },
+          {
+            "text": "Change cake",
+            "href": "/steps/goose-type",
+            "target": null,
+            "rel": null,
+            "class": "govuk-link",
+            "role": null
+          },
+          {
+            "text": "Change the date you saw the goose",
+            "href": "/steps/date-saw-goose",
+            "target": null,
+            "rel": null,
+            "class": "govuk-link",
+            "role": null
+          }
+        ],
+        "forms": [
+          {
+            "action": "/steps/end",
+            "method": "post",
+            "fields": [
+              {
+                "tag": "button",
+                "id": null,
+                "class": "govuk-button",
+                "type": null,
+                "name": null,
+                "text": "Continue",
+                "href": null,
+                "target": null,
+                "tabindex": null,
+                "rect": {
+                  "x": 160,
+                  "y": 669,
+                  "w": 101,
+                  "h": 38
+                }
+              }
+            ],
+            "fieldsets": []
+          }
+        ],
+        "images": [],
+        "tabindex": [],
+        "headingsHtml": 3,
+        "styles": {
+          "body": {
+            "color": "rgb(0, 0, 0)",
+            "backgroundColor": "rgb(255, 255, 255)",
+            "outlineStyle": "none",
+            "outlineWidth": "3px",
+            "outlineColor": "rgb(0, 0, 0)",
+            "boxShadow": "none",
+            "textAlign": "start",
+            "order": "0",
+            "fontFamily": "Times",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "textDecorationLine": "none"
+          },
+          "h1": {
+            "color": "rgb(11, 12, 12)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "outlineStyle": "none",
+            "outlineWidth": "3px",
+            "outlineColor": "rgb(11, 12, 12)",
+            "boxShadow": "none",
+            "textAlign": "start",
+            "order": "0",
+            "fontFamily": "HelveticaNeue, \"Helvetica Neue\", Arial, Helvetica, sans-serif",
+            "fontSize": "48px",
+            "fontWeight": "700",
+            "textDecorationLine": "none"
+          },
+          "h2": {
+            "color": "rgb(11, 12, 12)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "outlineStyle": "none",
+            "outlineWidth": "3px",
+            "outlineColor": "rgb(11, 12, 12)",
+            "boxShadow": "none",
+            "textAlign": "start",
+            "order": "0",
+            "fontFamily": "HelveticaNeue, \"Helvetica Neue\", Arial, Helvetica, sans-serif",
+            "fontSize": "24px",
+            "fontWeight": "700",
+            "textDecorationLine": "none"
+          },
+          "h3": {
+            "color": "rgb(11, 12, 12)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "outlineStyle": "none",
+            "outlineWidth": "3px",
+            "outlineColor": "rgb(11, 12, 12)",
+            "boxShadow": "none",
+            "textAlign": "start",
+            "order": "0",
+            "fontFamily": "HelveticaNeue, \"Helvetica Neue\", Arial, Helvetica, sans-serif",
+            "fontSize": "24px",
+            "fontWeight": "700",
+            "textDecorationLine": "none"
+          },
+          ".govuk-hint": null,
+          ".goose-liked-hint": null,
+          ".govuk-button": {
+            "color": "rgb(255, 255, 255)",
+            "backgroundColor": "rgb(0, 112, 60)",
+            "outlineStyle": "none",
+            "outlineWidth": "3px",
+            "outlineColor": "rgb(255, 255, 255)",
+            "boxShadow": "rgb(0, 45, 24) 0px 2px 0px 0px",
+            "textAlign": "center",
+            "order": "0",
+            "fontFamily": "HelveticaNeue, \"Helvetica Neue\", Arial, Helvetica, sans-serif",
+            "fontSize": "19px",
+            "fontWeight": "400",
+            "textDecorationLine": "none"
+          },
+          ".govuk-link": {
+            "color": "rgb(29, 112, 184)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "outlineStyle": "none",
+            "outlineWidth": "3px",
+            "outlineColor": "rgb(29, 112, 184)",
+            "boxShadow": "none",
+            "textAlign": "right",
+            "order": "0",
+            "fontFamily": "HelveticaNeue, \"Helvetica Neue\", Arial, Helvetica, sans-serif",
+            "fontSize": "19px",
+            "fontWeight": "400",
+            "textDecorationLine": "underline"
+          },
+          ".govuk-panel__title": null,
+          ".justified-text": null,
+          ".custom-list": null,
+          ".custom-list li": null,
+          ".govuk-visually-hidden": {
+            "color": "rgb(29, 112, 184)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "outlineStyle": "none",
+            "outlineWidth": "3px",
+            "outlineColor": "rgb(29, 112, 184)",
+            "boxShadow": "none",
+            "textAlign": "right",
+            "order": "0",
+            "fontFamily": "HelveticaNeue, \"Helvetica Neue\", Arial, Helvetica, sans-serif",
+            "fontSize": "19px",
+            "fontWeight": "400",
+            "textDecorationLine": "none"
+          },
+          ".govuk-summary-list__key": {
+            "color": "rgb(11, 12, 12)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "outlineStyle": "none",
+            "outlineWidth": "3px",
+            "outlineColor": "rgb(11, 12, 12)",
+            "boxShadow": "none",
+            "textAlign": "start",
+            "order": "0",
+            "fontFamily": "HelveticaNeue, \"Helvetica Neue\", Arial, Helvetica, sans-serif",
+            "fontSize": "19px",
+            "fontWeight": "700",
+            "textDecorationLine": "none"
+          },
+          ".govuk-summary-list__value": {
+            "color": "rgb(11, 12, 12)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "outlineStyle": "none",
+            "outlineWidth": "3px",
+            "outlineColor": "rgb(11, 12, 12)",
+            "boxShadow": "none",
+            "textAlign": "start",
+            "order": "0",
+            "fontFamily": "HelveticaNeue, \"Helvetica Neue\", Arial, Helvetica, sans-serif",
+            "fontSize": "19px",
+            "fontWeight": "400",
+            "textDecorationLine": "none"
+          },
+          ".govuk-input": null,
+          ".govuk-label": null,
+          ".govuk-fieldset__legend": null,
+          ".app-banner--warning": null,
+          ".govuk-date-input__input": null,
+          ".govuk-radios__input": null,
+          ".govuk-radios__label": null
+        },
+        "relatedList": [],
+        "focusStyle": {
+          "a": {
+            "outlineStyle": "solid",
+            "outlineWidth": "3px",
+            "outlineColor": "rgb(255, 221, 0)",
+            "backgroundColor": "rgb(255, 221, 0)",
+            "boxShadow": "none",
+            "textDecorationLine": "none",
+            "matchesFocusSelector": true
+          },
+          "a.link": null,
+          "a.govuk-link": {
+            "outlineStyle": "solid",
+            "outlineWidth": "3px",
+            "outlineColor": "rgba(0, 0, 0, 0)",
+            "backgroundColor": "rgb(255, 221, 0)",
+            "boxShadow": "rgb(255, 221, 0) 0px -2px 0px 0px, rgb(11, 12, 12) 0px 4px 0px 0px",
+            "textDecorationLine": "none",
+            "matchesFocusSelector": true
+          },
+          "button": {
+            "outlineStyle": "solid",
+            "outlineWidth": "3px",
+            "outlineColor": "rgba(0, 0, 0, 0)",
+            "backgroundColor": "rgb(255, 221, 0)",
+            "boxShadow": "rgb(11, 12, 12) 0px 2px 0px 0px",
+            "textDecorationLine": "none",
+            "matchesFocusSelector": true
+          },
+          "input": null
+        },
+        "bodyText": "Skip to main content Check your answers before sending your application Goose details You like geese Change biscuits Typ"
+      },
+      "focus": [
+        {
+          "tag": "a",
+          "id": null,
+          "class": "govuk-skip-link",
+          "text": "Skip to main content",
+          "name": null,
+          "type": null,
+          "href": "#main-content"
+        },
+        {
+          "tag": "a",
+          "id": null,
+          "class": "govuk-link",
+          "text": "Change biscuits",
+          "name": null,
+          "type": null,
+          "href": "/steps/geese-liked"
+        },
+        {
+          "tag": "a",
+          "id": null,
+          "class": "govuk-link",
+          "text": "Change cake",
+          "name": null,
+          "type": null,
+          "href": "/steps/goose-type"
+        },
+        {
+          "tag": "a",
+          "id": null,
+          "class": "govuk-link",
+          "text": "Change the date you saw the goose",
+          "name": null,
+          "type": null,
+          "href": "/steps/date-saw-goose"
+        },
+        {
+          "tag": "summary",
+          "id": null,
+          "class": "govuk-details__summary",
+          "text": "What happens with my data?",
+          "name": null,
+          "type": null,
+          "href": null
+        },
+        {
+          "tag": "button",
+          "id": null,
+          "class": "govuk-button",
+          "text": "Continue",
+          "name": null,
+          "type": null,
+          "href": null
+        },
+        {
+          "tag": "body"
+        }
+      ],
+      "axe": {
+        "violations": [
+          {
+            "id": "heading-order",
+            "impact": "moderate",
+            "help": "Heading levels should only increase by one",
+            "nodes": 1,
+            "targets": [
+              "h3"
+            ]
+          }
+        ],
+        "incomplete": [],
+        "passes": 26
+      },
+      "failedRequests": [],
+      "consoleErrors": []
+    },
+    {
+      "slug": "steps-end",
+      "url": "http://127.0.0.1:3999/steps/end",
+      "measure": {
+        "title": "Goose recorded - Record a goose sighting",
+        "lang": "en",
+        "headings": [
+          {
+            "level": 1,
+            "text": "GOOSE RECORDED",
+            "class": "govuk-panel__title"
+          },
+          {
+            "level": 2,
+            "text": "Finished the accessibility exercise?",
+            "class": "govuk-heading-m"
+          }
+        ],
+        "landmarks": [
+          {
+            "tag": "main",
+            "role": "main",
+            "label": null,
+            "labelledby": null
+          }
+        ],
+        "links": [
+          {
+            "text": "Skip to main content",
+            "href": "#main-content",
+            "target": null,
+            "rel": null,
+            "class": "govuk-skip-link",
+            "role": null
+          },
+          {
+            "text": "take a look at the answers",
+            "href": "/steps/answers",
+            "target": null,
+            "rel": null,
+            "class": "",
+            "role": null
+          },
+          {
+            "text": "record another goose sighting",
+            "href": "/",
+            "target": null,
+            "rel": null,
+            "class": "",
+            "role": null
+          }
+        ],
+        "forms": [],
+        "images": [
+          {
+            "src": "https://media.giphy.com/media/S4P8Z5fiLRpOU/giphy.gif",
+            "hasAlt": false,
+            "alt": null,
+            "width": null,
+            "height": null
+          }
+        ],
+        "tabindex": [],
+        "headingsHtml": 2,
+        "styles": {
+          "body": {
+            "color": "rgb(0, 0, 0)",
+            "backgroundColor": "rgb(255, 255, 255)",
+            "outlineStyle": "none",
+            "outlineWidth": "3px",
+            "outlineColor": "rgb(0, 0, 0)",
+            "boxShadow": "none",
+            "textAlign": "start",
+            "order": "0",
+            "fontFamily": "Times",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "textDecorationLine": "none"
+          },
+          "h1": {
+            "color": "rgb(255, 255, 255)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "outlineStyle": "none",
+            "outlineWidth": "3px",
+            "outlineColor": "rgb(255, 255, 255)",
+            "boxShadow": "none",
+            "textAlign": "center",
+            "order": "0",
+            "fontFamily": "HelveticaNeue, \"Helvetica Neue\", Arial, Helvetica, sans-serif",
+            "fontSize": "48px",
+            "fontWeight": "700",
+            "textDecorationLine": "none"
+          },
+          "h2": {
+            "color": "rgb(11, 12, 12)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "outlineStyle": "none",
+            "outlineWidth": "3px",
+            "outlineColor": "rgb(11, 12, 12)",
+            "boxShadow": "none",
+            "textAlign": "start",
+            "order": "0",
+            "fontFamily": "HelveticaNeue, \"Helvetica Neue\", Arial, Helvetica, sans-serif",
+            "fontSize": "24px",
+            "fontWeight": "700",
+            "textDecorationLine": "none"
+          },
+          "h3": null,
+          ".govuk-hint": null,
+          ".goose-liked-hint": null,
+          ".govuk-button": null,
+          ".govuk-link": null,
+          ".govuk-panel__title": {
+            "color": "rgb(255, 255, 255)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "outlineStyle": "none",
+            "outlineWidth": "3px",
+            "outlineColor": "rgb(255, 255, 255)",
+            "boxShadow": "none",
+            "textAlign": "center",
+            "order": "0",
+            "fontFamily": "HelveticaNeue, \"Helvetica Neue\", Arial, Helvetica, sans-serif",
+            "fontSize": "48px",
+            "fontWeight": "700",
+            "textDecorationLine": "none"
+          },
+          ".justified-text": {
+            "color": "rgb(11, 12, 12)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "outlineStyle": "none",
+            "outlineWidth": "3px",
+            "outlineColor": "rgb(11, 12, 12)",
+            "boxShadow": "none",
+            "textAlign": "justify",
+            "order": "0",
+            "fontFamily": "HelveticaNeue, \"Helvetica Neue\", Arial, Helvetica, sans-serif",
+            "fontSize": "19px",
+            "fontWeight": "400",
+            "textDecorationLine": "none"
+          },
+          ".custom-list": null,
+          ".custom-list li": null,
+          ".govuk-visually-hidden": null,
+          ".govuk-summary-list__key": null,
+          ".govuk-summary-list__value": null,
+          ".govuk-input": null,
+          ".govuk-label": null,
+          ".govuk-fieldset__legend": null,
+          ".app-banner--warning": null,
+          ".govuk-date-input__input": null,
+          ".govuk-radios__input": null,
+          ".govuk-radios__label": null
+        },
+        "relatedList": [],
+        "focusStyle": {
+          "a": {
+            "outlineStyle": "solid",
+            "outlineWidth": "3px",
+            "outlineColor": "rgb(255, 221, 0)",
+            "backgroundColor": "rgb(255, 221, 0)",
+            "boxShadow": "none",
+            "textDecorationLine": "none",
+            "matchesFocusSelector": true
+          },
+          "a.link": null,
+          "a.govuk-link": null,
+          "button": null,
+          "input": null
+        },
+        "bodyText": "Skip to main content GOOSE RECORDED Your reference number HDJ2123F We have received your goose-related information. Fini"
+      },
+      "focus": [
+        {
+          "tag": "a",
+          "id": null,
+          "class": "govuk-skip-link",
+          "text": "Skip to main content",
+          "name": null,
+          "type": null,
+          "href": "#main-content"
+        },
+        {
+          "tag": "a",
+          "id": null,
+          "class": "",
+          "text": "take a look at the answers",
+          "name": null,
+          "type": null,
+          "href": "/steps/answers"
+        },
+        {
+          "tag": "a",
+          "id": null,
+          "class": "",
+          "text": "record another goose sighting",
+          "name": null,
+          "type": null,
+          "href": "/"
+        },
+        {
+          "tag": "body"
+        }
+      ],
+      "axe": {
+        "violations": [
+          {
+            "id": "image-alt",
+            "impact": "critical",
+            "help": "Images must have alternative text",
+            "nodes": 1,
+            "targets": [
+              "img"
+            ]
+          }
+        ],
+        "incomplete": [],
+        "passes": 24
+      },
+      "failedRequests": [],
+      "consoleErrors": []
+    },
+    {
+      "slug": "steps-worksheet",
+      "url": "http://127.0.0.1:3999/steps/worksheet",
+      "measure": {
+        "title": "Worksheet - Record a goose sighting",
+        "lang": "en",
+        "headings": [
+          {
+            "level": 1,
+            "text": "Worksheet for 'Recording a goose sighting' accessibility exercise",
+            "class": "govuk-heading-xl"
+          },
+          {
+            "level": 2,
+            "text": "Testing checklist",
+            "class": "govuk-heading-m"
+          },
+          {
+            "level": 2,
+            "text": "Pages to test",
+            "class": "govuk-heading-m"
+          },
+          {
+            "level": 3,
+            "text": "Start page",
+            "class": "govuk-heading-m"
+          },
+          {
+            "level": 3,
+            "text": "Do you like geese page",
+            "class": "govuk-heading-m"
+          },
+          {
+            "level": 3,
+            "text": "What type of goose did you see",
+            "class": "govuk-heading-m"
+          },
+          {
+            "level": 3,
+            "text": "When did you see the goose",
+            "class": "govuk-heading-m"
+          },
+          {
+            "level": 3,
+            "text": "Check your answers",
+            "class": "govuk-heading-m"
+          },
+          {
+            "level": 3,
+            "text": "End page",
+            "class": "govuk-heading-m"
+          }
+        ],
+        "landmarks": [
+          {
+            "tag": "main",
+            "role": "main",
+            "label": null,
+            "labelledby": null
+          }
+        ],
+        "links": [
+          {
+            "text": "Skip to main content",
+            "href": "#main-content",
+            "target": null,
+            "rel": null,
+            "class": "govuk-skip-link",
+            "role": null
+          },
+          {
+            "text": "Back",
+            "href": "/",
+            "target": null,
+            "rel": null,
+            "class": "govuk-back-link",
+            "role": null
+          },
+          {
+            "text": "pressing the tab key",
+            "href": "https://www.nngroup.com/articles/keyboard-accessibility/",
+            "target": null,
+            "rel": null,
+            "class": "govuk-link",
+            "role": null
+          },
+          {
+            "text": "WAVE",
+            "href": "https://wave.webaim.org/",
+            "target": null,
+            "rel": null,
+            "class": "govuk-link",
+            "role": null
+          },
+          {
+            "text": "how to do a basic accessibility check",
+            "href": "https://www.gov.uk/government/publications/doing-a-basic-accessibility-check-if-you-cant-do-a-detailed-one/doing-a-basic-accessibility-check-if-you-cant-do-a-detailed-one",
+            "target": null,
+            "rel": null,
+            "class": "govuk-link",
+            "role": null
+          },
+          {
+            "text": "you might need to enable tabbing",
+            "href": "https://www.scottohara.me/blog/2014/10/03/link-tabbing-firefox-osx.html",
+            "target": null,
+            "rel": null,
+            "class": "govuk-link",
+            "role": null
+          }
+        ],
+        "forms": [],
+        "images": [],
+        "tabindex": [],
+        "headingsHtml": 9,
+        "styles": {
+          "body": {
+            "color": "rgb(0, 0, 0)",
+            "backgroundColor": "rgb(255, 255, 255)",
+            "outlineStyle": "none",
+            "outlineWidth": "3px",
+            "outlineColor": "rgb(0, 0, 0)",
+            "boxShadow": "none",
+            "textAlign": "start",
+            "order": "0",
+            "fontFamily": "Times",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "textDecorationLine": "none"
+          },
+          "h1": {
+            "color": "rgb(11, 12, 12)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "outlineStyle": "none",
+            "outlineWidth": "3px",
+            "outlineColor": "rgb(11, 12, 12)",
+            "boxShadow": "none",
+            "textAlign": "start",
+            "order": "0",
+            "fontFamily": "HelveticaNeue, \"Helvetica Neue\", Arial, Helvetica, sans-serif",
+            "fontSize": "48px",
+            "fontWeight": "700",
+            "textDecorationLine": "none"
+          },
+          "h2": {
+            "color": "rgb(11, 12, 12)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "outlineStyle": "none",
+            "outlineWidth": "3px",
+            "outlineColor": "rgb(11, 12, 12)",
+            "boxShadow": "none",
+            "textAlign": "start",
+            "order": "0",
+            "fontFamily": "HelveticaNeue, \"Helvetica Neue\", Arial, Helvetica, sans-serif",
+            "fontSize": "24px",
+            "fontWeight": "700",
+            "textDecorationLine": "none"
+          },
+          "h3": {
+            "color": "rgb(11, 12, 12)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "outlineStyle": "none",
+            "outlineWidth": "3px",
+            "outlineColor": "rgb(11, 12, 12)",
+            "boxShadow": "none",
+            "textAlign": "start",
+            "order": "0",
+            "fontFamily": "HelveticaNeue, \"Helvetica Neue\", Arial, Helvetica, sans-serif",
+            "fontSize": "24px",
+            "fontWeight": "700",
+            "textDecorationLine": "none"
+          },
+          ".govuk-hint": null,
+          ".goose-liked-hint": null,
+          ".govuk-button": null,
+          ".govuk-link": {
+            "color": "rgb(29, 112, 184)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "outlineStyle": "none",
+            "outlineWidth": "3px",
+            "outlineColor": "rgb(29, 112, 184)",
+            "boxShadow": "none",
+            "textAlign": "start",
+            "order": "0",
+            "fontFamily": "HelveticaNeue, \"Helvetica Neue\", Arial, Helvetica, sans-serif",
+            "fontSize": "19px",
+            "fontWeight": "400",
+            "textDecorationLine": "underline"
+          },
+          ".govuk-panel__title": null,
+          ".justified-text": null,
+          ".custom-list": null,
+          ".custom-list li": null,
+          ".govuk-visually-hidden": null,
+          ".govuk-summary-list__key": null,
+          ".govuk-summary-list__value": null,
+          ".govuk-input": null,
+          ".govuk-label": null,
+          ".govuk-fieldset__legend": null,
+          ".app-banner--warning": null,
+          ".govuk-date-input__input": null,
+          ".govuk-radios__input": null,
+          ".govuk-radios__label": null
+        },
+        "relatedList": [],
+        "focusStyle": {
+          "a": {
+            "outlineStyle": "solid",
+            "outlineWidth": "3px",
+            "outlineColor": "rgb(255, 221, 0)",
+            "backgroundColor": "rgb(255, 221, 0)",
+            "boxShadow": "none",
+            "textDecorationLine": "none",
+            "matchesFocusSelector": true
+          },
+          "a.link": null,
+          "a.govuk-link": {
+            "outlineStyle": "solid",
+            "outlineWidth": "3px",
+            "outlineColor": "rgba(0, 0, 0, 0)",
+            "backgroundColor": "rgb(255, 221, 0)",
+            "boxShadow": "rgb(255, 221, 0) 0px -2px 0px 0px, rgb(11, 12, 12) 0px 4px 0px 0px",
+            "textDecorationLine": "none",
+            "matchesFocusSelector": true
+          },
+          "button": null,
+          "input": null
+        },
+        "bodyText": "Skip to main content Back Worksheet for 'Recording a goose sighting' accessibility exercise You can use this as a worksh"
+      },
+      "focus": [
+        {
+          "tag": "a",
+          "id": null,
+          "class": "govuk-skip-link",
+          "text": "Skip to main content",
+          "name": null,
+          "type": null,
+          "href": "#main-content"
+        },
+        {
+          "tag": "a",
+          "id": null,
+          "class": "govuk-back-link",
+          "text": "Back",
+          "name": null,
+          "type": null,
+          "href": "/"
+        },
+        {
+          "tag": "a",
+          "id": null,
+          "class": "govuk-link",
+          "text": "pressing the tab key",
+          "name": null,
+          "type": null,
+          "href": "https://www.nngroup.com/articles/keyboard-accessibility/"
+        },
+        {
+          "tag": "a",
+          "id": null,
+          "class": "govuk-link",
+          "text": "WAVE",
+          "name": null,
+          "type": null,
+          "href": "https://wave.webaim.org/"
+        },
+        {
+          "tag": "a",
+          "id": null,
+          "class": "govuk-link",
+          "text": "how to do a basic accessibility check",
+          "name": null,
+          "type": null,
+          "href": "https://www.gov.uk/government/publications/doing-a-basic-accessibility-check-if-you-cant-do-a-detailed-one/doing-a-basic-accessibility-check-if-you-cant-do-a-detailed-one"
+        },
+        {
+          "tag": "a",
+          "id": null,
+          "class": "govuk-link",
+          "text": "you might need to enable tabbing",
+          "name": null,
+          "type": null,
+          "href": "https://www.scottohara.me/blog/2014/10/03/link-tabbing-firefox-osx.html"
+        },
+        {
+          "tag": "body"
+        }
+      ],
+      "axe": {
+        "violations": [],
+        "incomplete": [],
+        "passes": 24
+      },
+      "failedRequests": [],
+      "consoleErrors": []
+    },
+    {
+      "slug": "steps-answers",
+      "url": "http://127.0.0.1:3999/steps/answers",
+      "measure": {
+        "title": "Answers - Record a goose sighting",
+        "lang": "en",
+        "headings": [
+          {
+            "level": 1,
+            "text": "Accessibility issues in 'Record a goose sighting'",
+            "class": "govuk-heading-xl"
+          },
+          {
+            "level": 2,
+            "text": "Pages",
+            "class": "govuk-heading-m"
+          },
+          {
+            "level": 3,
+            "text": "Start page",
+            "class": "govuk-heading-s"
+          },
+          {
+            "level": 3,
+            "text": "Do you like geese page",
+            "class": "govuk-heading-s"
+          },
+          {
+            "level": 3,
+            "text": "What type of goose did you see",
+            "class": "govuk-heading-s"
+          },
+          {
+            "level": 3,
+            "text": "When did you see the goose",
+            "class": "govuk-heading-s"
+          },
+          {
+            "level": 3,
+            "text": "Check your answers",
+            "class": "govuk-heading-s"
+          },
+          {
+            "level": 3,
+            "text": "End page",
+            "class": "govuk-heading-s"
+          },
+          {
+            "level": 2,
+            "text": "Want to learn more about Accessibility?",
+            "class": "govuk-heading-m"
+          }
+        ],
+        "landmarks": [
+          {
+            "tag": "main",
+            "role": "main",
+            "label": null,
+            "labelledby": null
+          }
+        ],
+        "links": [
+          {
+            "text": "Skip to main content",
+            "href": "#main-content",
+            "target": null,
+            "rel": null,
+            "class": "govuk-skip-link",
+            "role": null
+          },
+          {
+            "text": "Back",
+            "href": "/steps/end",
+            "target": null,
+            "rel": null,
+            "class": "govuk-back-link",
+            "role": null
+          },
+          {
+            "text": "GOV.UK resources about accessibility",
+            "href": "https://www.gov.uk/service-manual/helping-people-to-use-your-service/making-your-service-accessible-an-introduction#further-reading",
+            "target": null,
+            "rel": null,
+            "class": "",
+            "role": null
+          },
+          {
+            "text": "Udacity course on Accessibility",
+            "href": "https://www.udacity.com/course/web-accessibility--ud891",
+            "target": null,
+            "rel": null,
+            "class": "",
+            "role": null
+          },
+          {
+            "text": "A11y weekly",
+            "href": "https://a11yweekly.com/",
+            "target": null,
+            "rel": null,
+            "class": "",
+            "role": null
+          },
+          {
+            "text": "GDS WCAG 2.1 Primer",
+            "href": "https://alphagov.github.io/wcag-primer/",
+            "target": null,
+            "rel": null,
+            "class": "",
+            "role": null
+          },
+          {
+            "text": "GDS guidance how to conduct a basic accessibility audit",
+            "href": "https://www.gov.uk/government/publications/doing-a-basic-accessibility-check-if-you-cant-do-a-detailed-one/doing-a-basic-accessibility-check-if-you-cant-do-a-detailed-one",
+            "target": null,
+            "rel": null,
+            "class": "",
+            "role": null
+          },
+          {
+            "text": "Submit an issue",
+            "href": "https://github.com/ministryofjustice/recording-a-goose-sighting/issues",
+            "target": null,
+            "rel": null,
+            "class": "",
+            "role": null
+          },
+          {
+            "text": "create a PR",
+            "href": "https://github.com/ministryofjustice/recording-a-goose-sighting/pulls",
+            "target": null,
+            "rel": null,
+            "class": "",
+            "role": null
+          }
+        ],
+        "forms": [],
+        "images": [],
+        "tabindex": [],
+        "headingsHtml": 9,
+        "styles": {
+          "body": {
+            "color": "rgb(0, 0, 0)",
+            "backgroundColor": "rgb(255, 255, 255)",
+            "outlineStyle": "none",
+            "outlineWidth": "3px",
+            "outlineColor": "rgb(0, 0, 0)",
+            "boxShadow": "none",
+            "textAlign": "start",
+            "order": "0",
+            "fontFamily": "Times",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "textDecorationLine": "none"
+          },
+          "h1": {
+            "color": "rgb(11, 12, 12)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "outlineStyle": "none",
+            "outlineWidth": "3px",
+            "outlineColor": "rgb(11, 12, 12)",
+            "boxShadow": "none",
+            "textAlign": "start",
+            "order": "0",
+            "fontFamily": "HelveticaNeue, \"Helvetica Neue\", Arial, Helvetica, sans-serif",
+            "fontSize": "48px",
+            "fontWeight": "700",
+            "textDecorationLine": "none"
+          },
+          "h2": {
+            "color": "rgb(11, 12, 12)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "outlineStyle": "none",
+            "outlineWidth": "3px",
+            "outlineColor": "rgb(11, 12, 12)",
+            "boxShadow": "none",
+            "textAlign": "start",
+            "order": "0",
+            "fontFamily": "HelveticaNeue, \"Helvetica Neue\", Arial, Helvetica, sans-serif",
+            "fontSize": "24px",
+            "fontWeight": "700",
+            "textDecorationLine": "none"
+          },
+          "h3": {
+            "color": "rgb(11, 12, 12)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "outlineStyle": "none",
+            "outlineWidth": "3px",
+            "outlineColor": "rgb(11, 12, 12)",
+            "boxShadow": "none",
+            "textAlign": "start",
+            "order": "0",
+            "fontFamily": "HelveticaNeue, \"Helvetica Neue\", Arial, Helvetica, sans-serif",
+            "fontSize": "19px",
+            "fontWeight": "700",
+            "textDecorationLine": "none"
+          },
+          ".govuk-hint": null,
+          ".goose-liked-hint": null,
+          ".govuk-button": null,
+          ".govuk-link": null,
+          ".govuk-panel__title": null,
+          ".justified-text": null,
+          ".custom-list": null,
+          ".custom-list li": null,
+          ".govuk-visually-hidden": null,
+          ".govuk-summary-list__key": null,
+          ".govuk-summary-list__value": null,
+          ".govuk-input": null,
+          ".govuk-label": null,
+          ".govuk-fieldset__legend": null,
+          ".app-banner--warning": null,
+          ".govuk-date-input__input": null,
+          ".govuk-radios__input": null,
+          ".govuk-radios__label": null
+        },
+        "relatedList": [],
+        "focusStyle": {
+          "a": {
+            "outlineStyle": "solid",
+            "outlineWidth": "3px",
+            "outlineColor": "rgb(255, 221, 0)",
+            "backgroundColor": "rgb(255, 221, 0)",
+            "boxShadow": "none",
+            "textDecorationLine": "none",
+            "matchesFocusSelector": true
+          },
+          "a.link": null,
+          "a.govuk-link": null,
+          "button": null,
+          "input": null
+        },
+        "bodyText": "Skip to main content Back Accessibility issues in 'Record a goose sighting' Here is the answer sheet for the 'Record a g"
+      },
+      "focus": [
+        {
+          "tag": "a",
+          "id": null,
+          "class": "govuk-skip-link",
+          "text": "Skip to main content",
+          "name": null,
+          "type": null,
+          "href": "#main-content"
+        },
+        {
+          "tag": "a",
+          "id": null,
+          "class": "govuk-back-link",
+          "text": "Back",
+          "name": null,
+          "type": null,
+          "href": "/steps/end"
+        },
+        {
+          "tag": "a",
+          "id": null,
+          "class": "",
+          "text": "GOV.UK resources about accessibility",
+          "name": null,
+          "type": null,
+          "href": "https://www.gov.uk/service-manual/helping-people-to-use-your-service/making-your-service-accessible-an-introduction#further-reading"
+        },
+        {
+          "tag": "a",
+          "id": null,
+          "class": "",
+          "text": "Udacity course on Accessibility",
+          "name": null,
+          "type": null,
+          "href": "https://www.udacity.com/course/web-accessibility--ud891"
+        },
+        {
+          "tag": "a",
+          "id": null,
+          "class": "",
+          "text": "A11y weekly",
+          "name": null,
+          "type": null,
+          "href": "https://a11yweekly.com/"
+        },
+        {
+          "tag": "a",
+          "id": null,
+          "class": "",
+          "text": "GDS WCAG 2.1 Primer",
+          "name": null,
+          "type": null,
+          "href": "https://alphagov.github.io/wcag-primer/"
+        },
+        {
+          "tag": "a",
+          "id": null,
+          "class": "",
+          "text": "GDS guidance how to conduct a basic accessibility audit",
+          "name": null,
+          "type": null,
+          "href": "https://www.gov.uk/government/publications/doing-a-basic-accessibility-check-if-you-cant-do-a-detailed-one/doing-a-basic-accessibility-check-if-you-cant-do-a-detailed-one"
+        },
+        {
+          "tag": "a",
+          "id": null,
+          "class": "",
+          "text": "Submit an issue",
+          "name": null,
+          "type": null,
+          "href": "https://github.com/ministryofjustice/recording-a-goose-sighting/issues"
+        },
+        {
+          "tag": "a",
+          "id": null,
+          "class": "",
+          "text": "create a PR",
+          "name": null,
+          "type": null,
+          "href": "https://github.com/ministryofjustice/recording-a-goose-sighting/pulls"
+        },
+        {
+          "tag": "body"
+        }
+      ],
+      "axe": {
+        "violations": [],
+        "incomplete": [],
+        "passes": 26
+      },
+      "failedRequests": [],
+      "consoleErrors": []
+    }
+  ]
+}

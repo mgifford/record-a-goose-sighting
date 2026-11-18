@@ -1,10 +1,9 @@
-/* global $ */
+/* global GOVUKFrontend */
 
-// Warn about using the kit in production
-if (window.console && window.console.info) {
-  window.console.info('GOV.UK Prototype Kit - do not use for production')
-}
-
-$(document).ready(function () {
-  window.GOVUKFrontend.initAll()
+// Initialise the GOV.UK Frontend components used by the exercise
+// (currently the Details component on the check-your-answers page).
+document.addEventListener('DOMContentLoaded', function () {
+  if (typeof GOVUKFrontend !== 'undefined' && typeof GOVUKFrontend.initAll === 'function') {
+    GOVUKFrontend.initAll()
+  }
 })

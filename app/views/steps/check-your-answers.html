@@ -19,10 +19,10 @@ Check your answers - Record a goose sighting
           You like geese
         </dt>
         <dd class="govuk-summary-list__value">
-          {{ data['geese-liked'] }}
+          <span data-answer="geese-liked"></span>
         </dd>
         <dd class="govuk-summary-list__actions">
-          <a href="/steps/geese-liked" class="govuk-link">
+          <a href="{{ siteUrl('steps/geese-liked/') }}" class="govuk-link">
             Change
             <span class="govuk-visually-hidden"> biscuits</span>
           </a>
@@ -33,10 +33,10 @@ Check your answers - Record a goose sighting
           Type of goose that you saw
         </dt>
         <dd class="govuk-summary-list__value">
-          {{ data['goose-type'] }}
+          <span data-answer="goose-type"></span>
         </dd>
         <dd class="govuk-summary-list__actions">
-          <a href="/steps/goose-type" class="govuk-link">
+          <a href="{{ siteUrl('steps/goose-type/') }}" class="govuk-link">
             Change
             <span class="govuk-visually-hidden"> cake</span>
           </a>
@@ -47,10 +47,10 @@ Check your answers - Record a goose sighting
           Date you saw the goose
         </dt>
         <dd class="govuk-summary-list__value">
-          {{ data['date-saw-goose-day'] }} / {{ data['date-saw-goose-month'] }} / {{ data['date-saw-goose-year'] }}
+          <span data-answer-date></span>
         </dd>
         <dd class="govuk-summary-list__actions">
-          <a href="/steps/date-saw-goose" class="govuk-link">
+          <a href="{{ siteUrl('steps/date-saw-goose/') }}" class="govuk-link">
             Change
             <span class="govuk-visually-hidden"> the date you saw the goose</span>
           </a>
@@ -71,7 +71,7 @@ Check your answers - Record a goose sighting
         text: "Nothing - this doesn't actually do or collect anything. You'll have to store your own goose records unfortunately."
       }) }}
     
-    <form class="form" action="/steps/end" method="post">
+    <form class="form" action="{{ siteUrl('steps/end/') }}" method="get">
     
       <button class="govuk-button">Continue</button>
     

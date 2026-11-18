@@ -2,22 +2,18 @@
 
 {% block headIcons %}
   <link rel="shortcut icon" href="{{ asset_path }}images/favicon.ico?0.18.3" type="image/x-icon" />
-  <link rel="mask-icon" href="{{ asset_path }}images/gov.uk_logotype_crown.svg?0.18.3" color="#0b0c0c">
+  <link rel="mask-icon" href="{{ asset_path }}images/govuk-mask-icon.svg?0.18.3" color="#0b0c0c">
   <link rel="apple-touch-icon-precomposed" sizes="180x180" href="{{ asset_path }}images/apple-touch-icon.png?0.18.3">
 
 {% endblock %}
 
 {% block head %}
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-S0FNENEJGR"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-S0FNENEJGR');
-  </script>
-  <link href="/public/stylesheets/unbranded.css" media="all" rel="stylesheet" type="text/css">
+  {# The legacy Express app sent X-Robots-Tag: noindex. GitHub Pages cannot set
+     response headers, so the intent is preserved with page metadata instead.
+     It is advisory only; it is not an access control. #}
+  <meta name="robots" content="noindex">
+  <meta name="goose-base" content="{{ baseUrl }}">
+  <link href="{{ siteUrl('public/stylesheets/unbranded.css') }}" media="all" rel="stylesheet" type="text/css">
 {% endblock %}
 
 {% block header %}{% endblock %}

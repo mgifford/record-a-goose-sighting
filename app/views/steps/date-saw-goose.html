@@ -9,7 +9,7 @@ When did you see the goose - Record a goose sighting
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     
-    <form class="form" action="/steps/check-your-answers" method="post">
+    <form class="form" action="{{ siteUrl('steps/check-your-answers/') }}" method="get">
     
       {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
 
