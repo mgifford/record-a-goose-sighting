@@ -16,6 +16,7 @@ const entries = [
   'lab/aria/role-invalid/index.html',
   'lab/names/button-named/index.html',
   'lab/names/button-unnamed/index.html',
+  'lab/interpretation/index.html',
   'hedgehog/index.html',
   'wombat/index.html',
   'paca/index.html'
