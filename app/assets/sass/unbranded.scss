@@ -59,3 +59,24 @@ dt {
 dd {
   margin-bottom: 1.5rem;
 }
+.app-lab-nav {
+  border: 2px solid #0b0c0c;
+  background: #f3f2f1;
+  padding: 1rem;
+  margin-bottom: 2rem;
+}
+
+.app-lab-nav__lead {
+  margin-bottom: 0.75rem;
+}
+
+.app-lab-nav__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  margin-bottom: 0;
+}
+
+.app-lab-nav__list li {
+  margin-bottom: 0;
+}
