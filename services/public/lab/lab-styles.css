@@ -229,3 +229,33 @@ main > iframe,
   min-width: 3rem;
   min-height: 2.75rem;
 }
+
+.error-summary {
+  border: 3px solid #d4351c;
+  padding: 1rem;
+  margin: 1rem 0 2rem;
+}
+
+.error-summary h2 {
+  margin-top: 0;
+}
+
+.error-summary ul {
+  margin-bottom: 0;
+}
+
+.form-group--error {
+  border-left: 4px solid #d4351c;
+  padding-left: 1rem;
+}
+
+.error-message {
+  color: #d4351c;
+  font-weight: 600;
+  margin: 0.5rem 0;
+}
+
+.step-progress {
+  color: #3f4245;
+  font-size: 0.9375rem;
+}
