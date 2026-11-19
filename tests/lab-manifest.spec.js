@@ -48,10 +48,17 @@ test.describe('fixture manifest validation', () => {
 })
 
 test.describe('review evidence requirements', () => {
-  const tempPath = path.join(ROOT, 'services/lab/reviews/records/__test-reviewed.json')
+  let tempPath
+
+  test.beforeEach(() => {
+    tempPath = path.join(
+      ROOT,
+      `services/lab/reviews/records/__test-${Date.now()}-${Math.floor(Math.random() * 10000)}.json`
+    )
+  })
 
   test.afterEach(() => {
-    if (fs.existsSync(tempPath)) fs.unlinkSync(tempPath)
+    if (tempPath && fs.existsSync(tempPath)) fs.unlinkSync(tempPath)
   })
 
   test('rejects a reviewed record without methods or evidence', () => {
@@ -59,7 +66,7 @@ test.describe('review evidence requirements', () => {
     const entry = copy.cases[0]
 
     entry.review = 'reviewed'
-    entry.reviewRecord = 'lab/reviews/records/__test-reviewed.json'
+    entry.reviewRecord = `lab/reviews/records/${path.basename(tempPath)}`
 
     fs.writeFileSync(tempPath, JSON.stringify({
       schemaVersion: 'fixture-review/1',
@@ -83,7 +90,7 @@ test.describe('review evidence requirements', () => {
     const copy = structuredClone(manifest)
     const entry = copy.cases[0]
 
-    entry.reviewRecord = 'lab/reviews/records/__test-reviewed.json'
+    entry.reviewRecord = `lab/reviews/records/${path.basename(tempPath)}`
 
     fs.writeFileSync(tempPath, JSON.stringify({
       schemaVersion: 'fixture-review/1',
