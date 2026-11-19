@@ -68,6 +68,15 @@ conformance claim, it does not rank tools, and its fixture outcomes are
 unreviewed hypotheses. The surrounding interface is intended to be accessible;
 only the declared fixture targets contain deliberate defects.
 
+## Running a workshop
+
+Facilitators and maintainers should start with the [documentation index](docs/README.md):
+
+- [Facilitator guide](docs/FACILITATOR-GUIDE.md) — formats, timing, debrief prompts and common traps
+- [Manual test scripts](docs/MANUAL-TEST-SCRIPTS.md) — keyboard, screen reader, zoom, forced colours, motion and content review
+- [Detection matrix](docs/DETECTION-MATRIX.md) — which of the 18 issues automation misses, and why
+- [Exercise inventory](docs/original-goose-issues.json) — where every issue lives and how it is guarded
+
 ## Running the site locally
 
 Requirements: Node.js 22 LTS and npm.
