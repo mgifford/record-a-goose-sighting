@@ -178,6 +178,16 @@ function update (field, value) {
   }
 }
 
+function compareHref (target) {
+  const url = new URL(`../${target}/`, window.location.href)
+  if (target === 'paca') {
+    url.searchParams.set('role', 'valid')
+    url.searchParams.set('shadow', 'open')
+  }
+  if (step.value !== 'start') url.searchParams.set('step', step.value)
+  return `${url.pathname}${url.search}`
+}
+
 function reset () {
   try {
     window.sessionStorage.removeItem(STORAGE_KEY)
@@ -193,6 +203,14 @@ function reset () {
   <p class="step-progress">Step {{ stepNumber }} of 6 · Vue</p>
   <h1 id="page-heading" ref="heading" tabindex="-1">{{ stepHeading }}</h1>
   <p class="visually-hidden" role="status" aria-live="polite">{{ status }}</p>
+
+  <nav class="compare-frameworks" aria-label="Compare this step">
+    <p><strong>Compare this step:</strong>
+      <a :href="compareHref('hedgehog')">React</a> ·
+      <a :href="compareHref('wombat')" aria-current="page">Vue</a> ·
+      <a :href="compareHref('paca')">Web Components</a>
+    </p>
+  </nav>
 
   <div v-if="errorList.length > 0" class="error-summary" role="alert" tabindex="-1" ref="errorSummary">
     <h2>There is a problem</h2>

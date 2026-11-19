@@ -182,6 +182,7 @@ class PacaSighting extends HTMLElement {
 
   connectedCallback () {
     this.pageHeading = this.closest('main')?.querySelector('h1') || null
+    this.compareNav = document.querySelector('#compare-frameworks')
     this.render()
   }
 
@@ -440,6 +441,7 @@ class PacaSighting extends HTMLElement {
     this.summaryCells.type.textContent = this.answers.type || 'Not provided'
     this.summaryCells.date.textContent = formatDate(this.answers)
 
+    this.renderCompareNav()
     this.renderErrors()
 
     if (Object.keys(this.errors).length > 0) {
@@ -447,6 +449,31 @@ class PacaSighting extends HTMLElement {
     } else {
       this.pageHeading?.focus()
     }
+  }
+
+  renderCompareNav () {
+    if (!this.compareNav) return
+
+    const link = (target, label) => {
+      if (target === 'paca') {
+        const self = new URL(stepHref(this.step), window.location.href)
+        return element('a', { href: `${self.pathname}${self.search}`, 'aria-current': 'page' }, label)
+      }
+      const url = new URL(`../${target}/`, window.location.href)
+      if (this.step !== 'start') url.searchParams.set('step', this.step)
+      return element('a', { href: `${url.pathname}${url.search}` }, label)
+    }
+
+    const paragraph = element('p')
+    paragraph.append(
+      element('strong', {}, 'Compare this step: '),
+      link('hedgehog', 'React'),
+      document.createTextNode(' · '),
+      link('wombat', 'Vue'),
+      document.createTextNode(' · '),
+      link('paca', 'Web Components')
+    )
+    this.compareNav.replaceChildren(paragraph)
   }
 
   renderErrors () {

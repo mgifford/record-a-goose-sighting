@@ -12,6 +12,7 @@
 | [EVIDENCE-LOG-TEMPLATE.md](EVIDENCE-LOG-TEMPLATE.md) | Recording observations consistently |
 | [CONTRIBUTING-EXERCISE.md](CONTRIBUTING-EXERCISE.md) | Preserving the exercise when changing or adding issues |
 | [FIXTURE-CONTRACT.md](FIXTURE-CONTRACT.md) | Fixture identity, correlation experiments, provenance, reviews and the Open Scans boundary |
+| [ACT-MANIFEST-GUIDE.md](ACT-MANIFEST-GUIDE.md) | When and how to add a case to the ACT fixture manifest |
 | [COVERAGE-MATRIX.md](COVERAGE-MATRIX.md) | Current rule, outcome, technology and context coverage, and the ACT outcome categories |
 | [FRAMEWORK-PARITY.md](FRAMEWORK-PARITY.md) | The process contract the React, Vue and Web Components journeys follow |
 | [services/lab/reviews/README.md](../services/lab/reviews/README.md) | Review status, evidence requirements and governance |

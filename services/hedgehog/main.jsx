@@ -177,6 +177,16 @@ function App () {
     }
   }
 
+  function compareHref (target) {
+    const url = new URL(`../${target}/`, window.location.href)
+  if (target === 'paca') {
+    url.searchParams.set('role', 'valid')
+    url.searchParams.set('shadow', 'open')
+  }
+    if (step !== 'start') url.searchParams.set('step', step)
+    return `${url.pathname}${url.search}`
+  }
+
   function reset () {
     try {
       window.sessionStorage.removeItem(STORAGE_KEY)
@@ -195,6 +205,14 @@ function App () {
       <p className="step-progress">Step {stepNumber} of {STEPS.length} · React</p>
       <h1 id="page-heading" ref={headingRef} tabIndex={-1}>{HEADINGS[step]}</h1>
       <p className="visually-hidden" role="status" aria-live="polite">{status}</p>
+
+      <nav className="compare-frameworks" aria-label="Compare this step">
+        <p><strong>Compare this step:</strong>{' '}
+          <a href={compareHref('hedgehog')} aria-current="page">React</a>{' · '}
+          <a href={compareHref('wombat')}>Vue</a>{' · '}
+          <a href={compareHref('paca')}>Web Components</a>
+        </p>
+      </nav>
 
       {errorList.length > 0 && (
         <div className="error-summary" role="alert" tabIndex={-1} ref={errorRef}>
