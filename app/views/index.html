@@ -6,6 +6,16 @@
   {% endblock %}
 
 {% block content %}
+  <nav class="app-lab-nav" aria-label="Accessibility laboratory services">
+    <p class="govuk-body-s app-lab-nav__lead">This exercise is part of an accessibility laboratory. The same reporting journey is rebuilt in different rendering models so the failures can be compared and tested.</p>
+    <ul class="govuk-list app-lab-nav__list">
+      <li><a class="govuk-link" href="{{ siteUrl('lab/catalogue/') }}">Laboratory catalogue</a></li>
+      <li><a class="govuk-link" href="{{ siteUrl('hedgehog/') }}">Report a hedgehog (React)</a></li>
+      <li><a class="govuk-link" href="{{ siteUrl('wombat/') }}">Report a wombat (Vue)</a></li>
+      <li><a class="govuk-link" href="{{ siteUrl('paca/') }}">Report a paca (Web Components)</a></li>
+    </ul>
+  </nav>
+
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
