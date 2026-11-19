@@ -24,7 +24,8 @@
       "provenance": {
         "sourceFile": "services/lab/aria/role-valid/index.html"
       },
-      "notes": "Valid role token. Does not establish button keyboard operability."
+      "notes": "Valid role token. Does not establish button keyboard operability.",
+      "reviewRecord": "lab/reviews/records/html-valid-role.json"
     },
     {
       "id": "html-invalid-role",
@@ -48,7 +49,8 @@
       "provenance": {
         "sourceFile": "services/lab/aria/role-invalid/index.html"
       },
-      "notes": "Invalid role token; browsers ignore it and fall back to the implicit role."
+      "notes": "Invalid role token; browsers ignore it and fall back to the implicit role.",
+      "reviewRecord": "lab/reviews/records/html-invalid-role.json"
     },
     {
       "id": "html-button-named",
@@ -72,7 +74,8 @@
       "provenance": {
         "sourceFile": "services/lab/names/button-named/index.html"
       },
-      "notes": "Accessible name supplied by aria-label on an otherwise empty button."
+      "notes": "Accessible name supplied by aria-label on an otherwise empty button.",
+      "reviewRecord": "lab/reviews/records/html-button-named.json"
     },
     {
       "id": "html-button-unnamed",
@@ -96,7 +99,8 @@
       "provenance": {
         "sourceFile": "services/lab/names/button-unnamed/index.html"
       },
-      "notes": "Empty button with no content or attribute that can provide a name."
+      "notes": "Empty button with no content or attribute that can provide a name.",
+      "reviewRecord": "lab/reviews/records/html-button-unnamed.json"
     },
     {
       "id": "react-button-initial",
@@ -120,7 +124,8 @@
       "provenance": {
         "sourceFile": "services/hedgehog/main.jsx"
       },
-      "notes": "Wait for the React state marker before evaluating."
+      "notes": "Wait for the React state marker before evaluating.",
+      "reviewRecord": "lab/reviews/records/react-button-initial.json"
     },
     {
       "id": "react-button-updated",
@@ -144,7 +149,8 @@
       "provenance": {
         "sourceFile": "services/hedgehog/main.jsx"
       },
-      "notes": "Wait for the React state marker before evaluating."
+      "notes": "Wait for the React state marker before evaluating.",
+      "reviewRecord": "lab/reviews/records/react-button-updated.json"
     },
     {
       "id": "vue-button-initial",
@@ -168,7 +174,8 @@
       "provenance": {
         "sourceFile": "services/wombat/App.vue"
       },
-      "notes": "Wait for the Vue state marker before evaluating."
+      "notes": "Wait for the Vue state marker before evaluating.",
+      "reviewRecord": "lab/reviews/records/vue-button-initial.json"
     },
     {
       "id": "vue-button-updated",
@@ -192,7 +199,8 @@
       "provenance": {
         "sourceFile": "services/wombat/App.vue"
       },
-      "notes": "Wait for the Vue state marker before evaluating."
+      "notes": "Wait for the Vue state marker before evaluating.",
+      "reviewRecord": "lab/reviews/records/vue-button-updated.json"
     },
     {
       "id": "paca-valid-open",
@@ -217,7 +225,8 @@
       "provenance": {
         "sourceFile": "services/paca/main.js"
       },
-      "notes": "Open shadow root; engine support for shadow DOM must be reported explicitly."
+      "notes": "Open shadow root; engine support for shadow DOM must be reported explicitly.",
+      "reviewRecord": "lab/reviews/records/paca-valid-open.json"
     },
     {
       "id": "paca-invalid-open",
@@ -242,7 +251,8 @@
       "provenance": {
         "sourceFile": "services/paca/main.js"
       },
-      "notes": "Invalid role inside an open shadow root."
+      "notes": "Invalid role inside an open shadow root.",
+      "reviewRecord": "lab/reviews/records/paca-invalid-open.json"
     },
     {
       "id": "paca-invalid-closed",
@@ -268,7 +278,8 @@
       "provenance": {
         "sourceFile": "services/paca/main.js"
       },
-      "notes": "Exploratory. A closed shadow root is not automatically a WCAG failure, and engine visibility is unsupported here. No ACT outcome may be recorded."
+      "notes": "Exploratory. A closed shadow root is not automatically a WCAG failure, and engine visibility is unsupported here. No ACT outcome may be recorded.",
+      "reviewRecord": "lab/reviews/records/paca-invalid-closed.json"
     },
     {
       "id": "correlation-two-images-a",
@@ -295,7 +306,8 @@
       "provenance": {
         "sourceFile": "services/lab/correlation/two-images/index.html"
       },
-      "notes": "First of two distinct images sharing the fixture-image class. Missing alt is deliberate."
+      "notes": "First of two distinct images sharing the fixture-image class. Missing alt is deliberate.",
+      "reviewRecord": "lab/reviews/records/correlation-two-images-a.json"
     },
     {
       "id": "correlation-two-images-b",
@@ -322,7 +334,8 @@
       "provenance": {
         "sourceFile": "services/lab/correlation/two-images/index.html"
       },
-      "notes": "Second of two distinct images sharing the fixture-image class. Missing alt is deliberate."
+      "notes": "Second of two distinct images sharing the fixture-image class. Missing alt is deliberate.",
+      "reviewRecord": "lab/reviews/records/correlation-two-images-b.json"
     },
     {
       "id": "correlation-two-images-control",
@@ -349,7 +362,8 @@
       "provenance": {
         "sourceFile": "services/lab/correlation/two-images/index.html"
       },
-      "notes": "Passing control with a meaningful text alternative."
+      "notes": "Passing control with a meaningful text alternative.",
+      "reviewRecord": "lab/reviews/records/correlation-two-images-control.json"
     },
     {
       "id": "correlation-single-image",
@@ -376,7 +390,8 @@
       "provenance": {
         "sourceFile": "services/lab/correlation/single-image/index.html"
       },
-      "notes": "Simplest shared-target case: one image, one rule failure."
+      "notes": "Simplest shared-target case: one image, one rule failure.",
+      "reviewRecord": "lab/reviews/records/correlation-single-image.json"
     },
     {
       "id": "correlation-multi-rule-button-name",
@@ -403,7 +418,8 @@
       "provenance": {
         "sourceFile": "services/lab/correlation/multiple-rules-one-target/index.html"
       },
-      "notes": "Same element as correlation-multi-rule-role-value, different ACT rule."
+      "notes": "Same element as correlation-multi-rule-role-value, different ACT rule.",
+      "reviewRecord": "lab/reviews/records/correlation-multi-rule-button-name.json"
     },
     {
       "id": "correlation-multi-rule-role-value",
@@ -430,7 +446,8 @@
       "provenance": {
         "sourceFile": "services/lab/correlation/multiple-rules-one-target/index.html"
       },
-      "notes": "Same element as correlation-multi-rule-button-name, different ACT rule."
+      "notes": "Same element as correlation-multi-rule-button-name, different ACT rule.",
+      "reviewRecord": "lab/reviews/records/correlation-multi-rule-role-value.json"
     },
     {
       "id": "correlation-repeated-unnamed-a",
@@ -457,7 +474,8 @@
       "provenance": {
         "sourceFile": "services/lab/correlation/repeated-controls/index.html"
       },
-      "notes": "First unnamed button. Distinct target on the repeated-controls scenario."
+      "notes": "First unnamed button. Distinct target on the repeated-controls scenario.",
+      "reviewRecord": "lab/reviews/records/correlation-repeated-unnamed-a.json"
     },
     {
       "id": "correlation-repeated-unnamed-b",
@@ -484,7 +502,8 @@
       "provenance": {
         "sourceFile": "services/lab/correlation/repeated-controls/index.html"
       },
-      "notes": "Second unnamed button. Distinct target on the repeated-controls scenario."
+      "notes": "Second unnamed button. Distinct target on the repeated-controls scenario.",
+      "reviewRecord": "lab/reviews/records/correlation-repeated-unnamed-b.json"
     },
     {
       "id": "correlation-repeated-unnamed-c",
@@ -511,7 +530,8 @@
       "provenance": {
         "sourceFile": "services/lab/correlation/repeated-controls/index.html"
       },
-      "notes": "Third unnamed button. Distinct target on the repeated-controls scenario."
+      "notes": "Third unnamed button. Distinct target on the repeated-controls scenario.",
+      "reviewRecord": "lab/reviews/records/correlation-repeated-unnamed-c.json"
     },
     {
       "id": "correlation-repeated-named-a",
@@ -538,7 +558,8 @@
       "provenance": {
         "sourceFile": "services/lab/correlation/repeated-controls/index.html"
       },
-      "notes": "Correctly named button, passing control. Distinct target on the repeated-controls scenario."
+      "notes": "Correctly named button, passing control. Distinct target on the repeated-controls scenario.",
+      "reviewRecord": "lab/reviews/records/correlation-repeated-named-a.json"
     },
     {
       "id": "correlation-repeated-named-b",
@@ -565,7 +586,8 @@
       "provenance": {
         "sourceFile": "services/lab/correlation/repeated-controls/index.html"
       },
-      "notes": "Correctly named button, passing control. Distinct target on the repeated-controls scenario."
+      "notes": "Correctly named button, passing control. Distinct target on the repeated-controls scenario.",
+      "reviewRecord": "lab/reviews/records/correlation-repeated-named-b.json"
     }
   ]
 }

@@ -46,3 +46,60 @@ test.describe('fixture manifest validation', () => {
     )
   })
 })
+
+test.describe('review evidence requirements', () => {
+  const tempPath = path.join(ROOT, 'services/lab/reviews/records/__test-reviewed.json')
+
+  test.afterEach(() => {
+    if (fs.existsSync(tempPath)) fs.unlinkSync(tempPath)
+  })
+
+  test('rejects a reviewed record without methods or evidence', () => {
+    const copy = structuredClone(manifest)
+    const entry = copy.cases[0]
+
+    entry.review = 'reviewed'
+    entry.reviewRecord = 'lab/reviews/records/__test-reviewed.json'
+
+    fs.writeFileSync(tempPath, JSON.stringify({
+      schemaVersion: 'fixture-review/1',
+      fixtureId: entry.id,
+      scenarioId: entry.scenarioId ?? null,
+      status: 'reviewed',
+      expectedOutcome: entry.expected,
+      reviewedAt: '2026-11-19T00:00:00.000Z',
+      reviewer: 'test-reviewer',
+      methods: [],
+      evidence: [],
+      limitations: []
+    }, null, 2))
+
+    const errors = validateManifest(copy, ROOT)
+    expect(errors).toContainEqual(expect.stringContaining('needs at least one method'))
+    expect(errors).toContainEqual(expect.stringContaining('needs at least one evidence reference'))
+  })
+
+  test('rejects a record whose fixtureId does not match', () => {
+    const copy = structuredClone(manifest)
+    const entry = copy.cases[0]
+
+    entry.reviewRecord = 'lab/reviews/records/__test-reviewed.json'
+
+    fs.writeFileSync(tempPath, JSON.stringify({
+      schemaVersion: 'fixture-review/1',
+      fixtureId: 'different-fixture',
+      scenarioId: entry.scenarioId ?? null,
+      status: 'unreviewed',
+      expectedOutcome: entry.expected,
+      reviewedAt: null,
+      reviewer: null,
+      methods: [],
+      evidence: [],
+      limitations: []
+    }, null, 2))
+
+    expect(validateManifest(copy, ROOT)).toContainEqual(
+      expect.stringContaining('review fixtureId does not match')
+    )
+  })
+})

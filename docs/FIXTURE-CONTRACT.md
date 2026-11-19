@@ -64,6 +64,39 @@ differ only by `id` and accessible name.
 The fixtures do **not** predict how many findings an engine will produce. They
 declare the targets and outcomes that a scanner must resolve.
 
+## Provenance
+
+The build adds deterministic per-case provenance to the published manifest:
+
+- `contentHash` — source HTML;
+- `renderedHtmlHash` — published page HTML;
+- `assets` — SHA-256 for each directly referenced local script, stylesheet and image;
+- `contentFingerprint` — SHA-256 of the rendered HTML hash plus the sorted asset hashes.
+
+The repository commit, manifest checksum, Node and Vite versions and the
+upstream ACT snapshot checksum are published separately at
+`/lab/provenance.json`. Build metadata is not mixed into the content
+fingerprint, and no timestamps are hashed.
+
+A fingerprint changes when a fixture's rendered HTML or a directly referenced
+asset changes. It does **not** yet follow transitive dependencies (for example
+an image referenced from CSS). That limitation is documented rather than
+guessed at.
+
+## Reviews
+
+Every fixture has a record under `services/lab/reviews/records/`. The build
+publishes the records, a schema and an index at `/lab/reviews/`.
+
+- `unreviewed` records must not name a reviewer or a review date.
+- `reviewed` records require a reviewer, an ISO date, at least one method and at
+  least one evidence reference.
+- `disputed` records require a rationale and are kept visible.
+
+The rules are enforced by `scripts/lab-manifest.mjs`; a reviewed status cannot
+be created by adding a field alone. See
+[`services/lab/reviews/README.md`](../services/lab/reviews/README.md).
+
 ## Validation
 
 `npm run build` runs `scripts/lab-manifest.mjs`, which checks:
@@ -109,7 +142,8 @@ unavoidable. In that case:
   Playwright tests do.
 - Closed-shadow expectations remain separate from engine capability claims.
   Open Scans decides whether an engine can inspect a closed root.
-- Content hashes currently cover the source HTML only. A shared CSS or bundled
-  asset change does not yet change the fixture fingerprint; that is PR 3 work.
+- Content fingerprints cover the rendered HTML and directly referenced assets,
+  not transitive CSS dependencies or the full framework bundle graph.
+- No fixture has been independently reviewed; every record is `unreviewed`.
 - These fixtures are same-origin, static GitHub Pages resources. No server,
   database or scanner dependency is introduced.

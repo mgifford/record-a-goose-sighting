@@ -1,0 +1,15 @@
+{
+  "schemaVersion": "fixture-review/1",
+  "fixtureId": "correlation-two-images-control",
+  "scenarioId": "two-distinct-images",
+  "status": "unreviewed",
+  "expectedOutcome": "passed",
+  "reviewedAt": null,
+  "reviewer": null,
+  "methods": [],
+  "evidence": [],
+  "limitations": [
+    "The intended DOM condition is verified by the repository Playwright tests.",
+    "An independent ACT outcome review has not been recorded."
+  ]
+}
