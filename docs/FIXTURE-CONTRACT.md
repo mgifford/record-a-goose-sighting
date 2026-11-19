@@ -18,6 +18,11 @@ for anyone authoring fixtures.
 - Playwright suites verify the Goose defects, the laboratory services, the
   manifest and the interpretation page.
 
+## Adding cases
+
+See [ACT-MANIFEST-GUIDE.md](ACT-MANIFEST-GUIDE.md) for the difference between a
+journey state and an ACT case, a minimal case, and the review checklist.
+
 ## Boundary with Open Scans
 
 | Record a Goose owns | Open Scans owns |
