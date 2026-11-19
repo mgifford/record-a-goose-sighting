@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Two rules on one target</title>
+  <link rel="stylesheet" href="/lab/lab-styles.css">
+</head>
+<body>
+  <header>
+    <nav aria-label="Site">
+      <a href="../../../">Record a goose sighting</a>
+      <a href="../../">Laboratory</a>
+    </nav>
+  </header>
+  <main>
+    <h1>Two rules on one target</h1>
+    <p class="notice">This is a deliberate correlation fixture. One button has two independent problems: no accessible name and an invalid explicit role. The surrounding page is intended to be usable.</p>
+    <p class="meta">Scenario <code>single-target-two-rules</code>. Rules <a href="https://www.w3.org/WAI/standards-guidelines/act/rules/97a4e1/">97a4e1: Button has non-empty accessible name</a> and <a href="https://www.w3.org/WAI/standards-guidelines/act/rules/674b10/">674b10: Role attribute has valid value</a> (both approved). Expected outcomes are unreviewed hypotheses. <a href="../../fixtures.json">Manifest entries</a>.</p>
+
+    <section class="fixture" aria-labelledby="fixture-heading" data-test-ready="true">
+      <h2 id="fixture-heading">The failing button</h2>
+      <button type="button" id="target" class="fixture-control" role="goose"></button>
+    </section>
+
+    <p>The invalid role is ignored by browsers, so the element keeps its implicit button role. That is why the button-name rule still applies to the same element.</p>
+
+    <h2>Other correlation fixtures</h2>
+    <ul>
+      <li><a href="../two-images/">Two distinct image failures</a></li>
+      <li><a href="../single-image/">One image, one failure</a></li>
+      <li><a href="../repeated-controls/">Repeated controls</a></li>
+    </ul>
+    <p><a href="../../">Back to the laboratory</a>.</p>
+  </main>
+  <footer>
+    <p>Part of the animal-reporting laboratory. MIT licensed.</p>
+  </footer>
+</body>
+</html>

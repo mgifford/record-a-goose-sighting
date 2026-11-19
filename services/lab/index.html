@@ -35,6 +35,15 @@
       <li><a href="../paca/?role=invalid&amp;shadow=closed">Closed shadow root, exploratory</a> — no ACT outcome; engine visibility is unsupported.</li>
     </ul>
 
+    <h2 id="correlation">Correlation experiments</h2>
+    <p>Deliberate fixtures for testing target identity, duplicate detection and multiple rules on one element. These are not isolated single-target ACT cases.</p>
+    <ul>
+      <li><a href="correlation/two-images/">Two distinct image failures</a> — two failing images with the same class and a passing control; three declared targets.</li>
+      <li><a href="correlation/single-image/">One image, one failure</a> — the simplest shared-target case, linked to the original confirmation page example.</li>
+      <li><a href="correlation/multiple-rules-one-target/">Two rules on one target</a> — one button, two independent ACT rule failures.</li>
+      <li><a href="correlation/repeated-controls/">Repeated controls</a> — three equivalent failures and two passing controls, each a separate target.</li>
+    </ul>
+
     <h2>Interpreting results</h2>
     <p>Examples where a tool flags something that is not a WCAG failure, and examples that pass a tool but fail review.</p>
     <ul>

@@ -49,6 +49,12 @@ answer key, the stated total and the detection split. If approved:
 
 ## How to add a laboratory fixture
 
+See [FIXTURE-CONTRACT.md](FIXTURE-CONTRACT.md) for identity fields, the
+correlation scenarios and the compatibility rules. Every new case needs a
+distinct `id`, a declared target, an independently verified DOM condition and a
+Playwright assertion.
+
+
 The animal laboratory is separate from the Goose exercise. Fixtures and their
 contract are described in the Open Scans
 [ACT laboratory documentation](https://github.com/mgifford/open-scans/blob/main/act-lab/README.md).
