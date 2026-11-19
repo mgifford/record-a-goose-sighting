@@ -136,6 +136,25 @@ export function validateManifest (manifest, root = ROOT) {
     if (entry.target?.targetId !== undefined && !/^[a-z0-9-]+$/.test(entry.target.targetId)) {
       errors.push(`${where}: invalid target.targetId`)
     }
+    if (entry.stateId !== undefined && !/^[a-z0-9-]+$/.test(entry.stateId)) {
+      errors.push(`${where}: invalid stateId`)
+    }
+    if (entry.target?.hostPath !== undefined) {
+      if (!Array.isArray(entry.target.hostPath) || entry.target.hostPath.length === 0 ||
+          entry.target.hostPath.some((selector) => typeof selector !== 'string' || selector.length === 0)) {
+        errors.push(`${where}: hostPath must be a non-empty array of selectors`)
+      }
+    }
+    if (entry.interaction !== undefined) {
+      if (!entry.interaction || typeof entry.interaction !== 'object') {
+        errors.push(`${where}: interaction must be an object`)
+      } else {
+        if (!['click', 'submit', 'focus', 'press'].includes(entry.interaction.action)) {
+          errors.push(`${where}: unsupported interaction action`)
+        }
+        if (!entry.interaction.selector) errors.push(`${where}: interaction needs a selector`)
+      }
+    }
 
     if (!OUTCOMES.has(entry.expected) && entry.expected !== null) {
       errors.push(`${where}: expected must be passed, failed, inapplicable or null`)
@@ -164,8 +183,8 @@ export function validateManifest (manifest, root = ROOT) {
     if (entry.target?.scope === 'light-dom' || entry.target?.scope === 'open-shadow') {
       if (!entry.target.selector) errors.push(`${where}: missing target selector`)
     }
-    if (entry.target?.scope !== 'light-dom' && !entry.target.host) {
-      errors.push(`${where}: shadow-root targets need a host selector`)
+    if (entry.target?.scope !== 'light-dom' && !entry.target.host && !entry.target.hostPath) {
+      errors.push(`${where}: shadow-root targets need a host selector or hostPath`)
     }
     if (entry.target?.scope === 'closed-shadow' && entry.target.selector !== null) {
       errors.push(`${where}: closed shadow targets cannot have an internal selector`)
@@ -181,6 +200,23 @@ export function validateManifest (manifest, root = ROOT) {
       const pathname = entry.urlPath.split('?')[0]
       const file = path.join(root, 'services', pathname, 'index.html')
       if (!fs.existsSync(file)) errors.push(`${where}: missing entry ${path.relative(root, file)}`)
+
+      if (entry.target?.frame !== undefined) {
+        if (!Array.isArray(entry.target.frame) || entry.target.frame.length === 0 ||
+            entry.target.frame.some((frame) => typeof frame !== 'string' || frame.startsWith('/') || frame.includes('..'))) {
+          errors.push(`${where}: frame must be a non-empty array of relative frame paths`)
+        } else {
+          let directory = path.dirname(file)
+          for (const frame of entry.target.frame) {
+            const frameFile = path.join(directory, frame)
+            if (!fs.existsSync(frameFile)) {
+              errors.push(`${where}: frame file does not exist: ${path.relative(root, frameFile)}`)
+              break
+            }
+            directory = path.dirname(frameFile)
+          }
+        }
+      }
     }
 
     if (entry.target?.targetId && typeof entry.urlPath === 'string') {
@@ -232,21 +268,40 @@ function pageProvenance (entry, cache) {
     throw new Error(`Rendered fixture page is missing: ${path.relative(ROOT, pageFile)}`)
   }
 
-  const cacheKey = pageFile
+  const framePaths = entry.target?.frame || []
+  const cacheKey = `${pageFile}|${framePaths.join('|')}`
   if (cache.has(cacheKey)) return cache.get(cacheKey)
 
-  const html = fs.readFileSync(pageFile)
-  const renderedHtmlHash = sha256Buffer(html)
-  const htmlText = html.toString('utf8')
+  const htmlFiles = [{ file: pageFile, isFrame: false }]
+  let directory = path.dirname(pageFile)
+  for (const frame of framePaths) {
+    const frameFile = path.join(directory, frame)
+    if (!fs.existsSync(frameFile)) {
+      throw new Error(`Rendered frame is missing: ${path.relative(ROOT, frameFile)}`)
+    }
+    htmlFiles.push({ file: frameFile, isFrame: true })
+    directory = path.dirname(frameFile)
+  }
+
+  const pageHtml = fs.readFileSync(pageFile)
+  const renderedHtmlHash = sha256Buffer(pageHtml)
   const assets = new Map()
 
-  for (const match of htmlText.matchAll(/<(?:script|img|link)\b[^>]*?\b(?:src|href)="([^"]+)"/gi)) {
-    const asset = localAssetPath(match[1])
-    if (!asset || assets.has(asset.relative)) continue
-    assets.set(asset.relative, {
-      path: asset.relative,
-      sha256: sha256File(asset.file)
-    })
+  for (const { file, isFrame } of htmlFiles) {
+    if (isFrame) {
+      const relative = path.relative(DIST, file).split(path.sep).join('/')
+      assets.set(relative, { path: relative, sha256: sha256File(file) })
+    }
+
+    const htmlText = fs.readFileSync(file, 'utf8')
+    for (const match of htmlText.matchAll(/<(?:script|img|link)\b[^>]*?\b(?:src|href)="([^"]+)"/gi)) {
+      const asset = localAssetPath(match[1])
+      if (!asset || assets.has(asset.relative)) continue
+      assets.set(asset.relative, {
+        path: asset.relative,
+        sha256: sha256File(asset.file)
+      })
+    }
   }
 
   const sortedAssets = [...assets.values()].sort((first, second) => first.path.localeCompare(second.path))

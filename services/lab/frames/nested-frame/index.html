@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nested frame target</title>
+  <link rel="stylesheet" href="/lab/lab-styles.css">
+</head>
+<body>
+  <header><nav aria-label="Site"><a href="../../../">Record a goose sighting</a><a href="../../">Laboratory</a></nav></header>
+  <main data-test-ready="true">
+    <h1>Nested frame target</h1>
+    <p class="notice">This is a deliberate frame fixture. The unnamed button is inside a frame inside another frame.</p>
+    <p class="meta">Scenario <code>nested-frame</code>. Rule 97a4e1. Expected outcome: failed, unreviewed. <a href="../../fixtures.json">Manifest entry</a>.</p>
+    <iframe title="Outer frame containing a nested frame" src="./outer.html" width="640" height="320"></iframe>
+    <p><a href="../../">Back to the laboratory</a>.</p>
+  </main>
+  <footer><p>Part of the animal-reporting laboratory. MIT licensed.</p></footer>
+</body>
+</html>

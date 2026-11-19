@@ -64,6 +64,8 @@ Conformance Testing (ACT) rules:
 | [/lab/](https://mgifford.github.io/record-a-goose-sighting/lab/) | Static HTML | The catalogue, isolated ACT fixtures and the fixture manifest |
 | [/lab/interpretation/](https://mgifford.github.io/record-a-goose-sighting/lab/interpretation/) | Static HTML | Tool findings that need human interpretation: best practice versus failure, incomplete results, and tool passes that fail review |
 | [/lab/correlation/](https://mgifford.github.io/record-a-goose-sighting/lab/correlation/two-images/) | Static HTML | Correlation experiments: multiple targets, one target with two rules, and repeated equivalent controls |
+| [/lab/frames/](https://mgifford.github.io/record-a-goose-sighting/lab/frames/two-frames/) | Static HTML | Same-origin iframe targets, including nested frames and two frames with the same selector |
+| [Dynamic states](https://mgifford.github.io/record-a-goose-sighting/lab/#dynamic) | React/Vue/Web Components | Async names, node replacement, nested shadow roots and a disclosure interaction |
 
 The laboratory is a teaching and research surface. It is not a WCAG
 conformance claim, it does not rank tools, and its fixture outcomes are
