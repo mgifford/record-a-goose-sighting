@@ -28,7 +28,7 @@ Do not present it as 19 without explaining that the list enumerates 18.
 | Time | Activity | Notes |
 | ---: | :--- | :--- |
 | 0–5 | Frame the exercise | It is fictional; defects are intentional; no blame |
-| 5–10 | Tools and constraints | Keyboard, browser, WAVE; ask people to try keyboard-only first |
+| 5–10 | Tools and constraints | Keyboard, browser, Accessibility Insights; ask people to try keyboard-only first |
 | 10–30 | Review in pairs | One drives, one records; swap after 10 minutes |
 | 30–50 | Debrief by page | Use the prompts below; collect findings before revealing answers |
 | 50–58 | Automation gap | Show [/blind-spots/](https://mgifford.github.io/record-a-goose-sighting/blind-spots/) and the 4/14 split |
@@ -41,7 +41,8 @@ Do not let the group open the answers during the review. The worksheet is at
 
 - Open the service at <https://mgifford.github.io/record-a-goose-sighting/> in
   a current browser.
-- Have WAVE (extension or <https://wave.webaim.org/>) available, but do not
+- Have Accessibility Insights for Web installed
+  (<https://accessibilityinsights.io/docs/web/overview/>), but do not
   require it.
 - If screen reader testing is part of the session, test the route with the
   screen reader and browser pair you will demonstrate. Announcements vary.

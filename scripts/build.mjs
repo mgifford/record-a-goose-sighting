@@ -61,7 +61,8 @@ const PAGES = [
   'steps/check-your-answers',
   'steps/end',
   'steps/worksheet',
-  'steps/answers'
+  'steps/answers',
+  'steps/keyboard-practice'
 ]
 
 /**

@@ -21,7 +21,7 @@ The same site also hosts three sibling fictional services and an isolated
 You are asked to review a made-up service for recording goose sightings. The
 service uses GOV.UK Design System components, but they have been misused in a
 number of places. Your task is to find as many of the accessibility problems as
-you can in about 20 minutes, using the keyboard, WAVE and the browser
+you can in about 20 minutes, using the keyboard, Accessibility Insights and the browser
 developer tools.
 
 The journey has six pages:

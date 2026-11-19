@@ -208,7 +208,7 @@
           "detected": true,
           "tools": [
             "axe: document-title",
-            "WAVE"
+            "Accessibility Insights Fast Pass (axe-core)"
           ],
           "note": "A missing title is a standard automated check."
         },
@@ -312,7 +312,7 @@
           "detected": true,
           "tools": [
             "axe: color-contrast",
-            "WAVE"
+            "Accessibility Insights Fast Pass (axe-core)"
           ],
           "note": "Contrast is measurable when colours are resolvable."
         },
@@ -484,7 +484,7 @@
           "tools": [
             "axe: heading-order"
           ],
-          "note": "Skipped heading levels are checked by axe and WAVE."
+          "note": "Skipped heading levels are checked by axe-based tools such as Accessibility Insights Fast Pass."
         },
         "manual": {
           "methods": [
@@ -584,7 +584,7 @@
           "detected": true,
           "tools": [
             "axe: image-alt",
-            "WAVE"
+            "Accessibility Insights Fast Pass (axe-core)"
           ],
           "note": "A missing alt attribute is a standard automated failure."
         },

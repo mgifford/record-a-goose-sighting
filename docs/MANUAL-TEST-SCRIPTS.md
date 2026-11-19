@@ -9,7 +9,9 @@ The scripts are prompts, not a checklist to complete mechanically. Record what
 you observed, not only pass/fail.
 
 For the isolated laboratory fixtures, frames, dynamic states and interpretation
-cases, use [MANUAL-LAB-SCRIPTS.md](MANUAL-LAB-SCRIPTS.md).
+cases, use [MANUAL-LAB-SCRIPTS.md](MANUAL-LAB-SCRIPTS.md). For focus failures
+that a Fast Pass does not report, use
+[KEYBOARD-PRACTICE.md](KEYBOARD-PRACTICE.md).
 
 ## 1. Keyboard only
 
@@ -131,7 +133,7 @@ reading, not properties a scanner can measure.
 
 ## 7. Automation triage
 
-Run axe, WAVE or Lighthouse. Then:
+Run Accessibility Insights Fast Pass, then switch on Tab stops. Then:
 
 1. For every automated finding, check whether it is in the
    [detection matrix](https://mgifford.github.io/record-a-goose-sighting/blind-spots/).

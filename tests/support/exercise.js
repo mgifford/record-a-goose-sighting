@@ -19,6 +19,7 @@ export const ROUTES = [
   { path: 'steps/end/', name: 'end' },
   { path: 'steps/worksheet/', name: 'worksheet' },
   { path: 'steps/answers/', name: 'answers' },
+  { path: 'steps/keyboard-practice/', name: 'keyboard-practice' },
   { path: 'blind-spots/', name: 'blind-spots' }
 ]
 

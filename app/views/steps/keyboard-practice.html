@@ -1,0 +1,43 @@
+{% extends "layout_unbranded.html" %}
+
+{% block pageTitle %}
+Keyboard focus practice - Record a goose sighting
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <a class="govuk-back-link" href="{{ siteUrl('steps/worksheet/') }}">Back to the worksheet</a>
+
+    <h1 class="govuk-heading-xl">Keyboard focus practice</h1>
+
+    <p>These controls deliberately contain focus problems that do not appear in an Accessibility Insights Fast Pass. They are extra practice, not one of the six exercise pages and not part of the 18-item answer key.</p>
+
+    <p>Install <a class="govuk-link" href="https://accessibilityinsights.io/docs/web/overview/">Accessibility Insights for Web</a>, open <strong>Tab stops</strong>, then tab through this page. Record what you see and what you hear.</p>
+
+    <section aria-labelledby="practice-no-focus-heading">
+      <h2 class="govuk-heading-m" id="practice-no-focus-heading">A link with no visible focus</h2>
+      <p><a id="practice-no-focus" class="practice-no-focus" href="#practice-no-focus-heading">Focus me with the keyboard</a></p>
+    </section>
+
+    <section aria-labelledby="practice-low-contrast-heading">
+      <h2 class="govuk-heading-m" id="practice-low-contrast-heading">A button with a low-contrast focus indicator</h2>
+      <p><button id="practice-low-contrast" class="practice-low-contrast" type="button">Focus me with the keyboard</button></p>
+    </section>
+
+    <p class="govuk-body-s">These examples require keyboard or manual inspection. Automated Fast Pass checks do not test focus visibility, focus contrast or whether a focused element is covered.</p>
+
+    <section aria-labelledby="practice-obscured-heading">
+      <h2 class="govuk-heading-m" id="practice-obscured-heading">A link covered by a fixed banner</h2>
+      <p>The fixed banner at the bottom of the viewport covers this link when it receives focus.</p>
+      <div class="practice-spacer" aria-hidden="true"></div>
+      <p><a id="practice-obscured-target" class="practice-obscured-target" href="#practice-obscured-heading">Focus me with the keyboard</a></p>
+    </section>
+
+    <div class="practice-banner" id="practice-banner">
+      Training banner: this fixed element can cover the focused link.
+    </div>
+
+  </div>
+</div>
+{% endblock %}
