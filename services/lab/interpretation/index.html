@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Interpreting tool results</title>
+  <link rel="stylesheet" href="/lab/lab-styles.css">
+  <style>
+    .interpretation-no-focus:focus {
+      outline: none;
+      background: transparent;
+      box-shadow: none;
+      text-decoration: none;
+    }
+    .interpretation-contrast {
+      background-image: linear-gradient(90deg, #ffffff, #f2f2f2);
+      color: #0b0c0c;
+      padding: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav aria-label="Site">
+      <a href="../../">Record a goose sighting</a>
+      <a href="../">Laboratory</a>
+    </nav>
+  </header>
+  <main>
+    <h1>Interpreting tool results</h1>
+    <p class="notice">These are deliberate examples. Some trigger a tool rule without being a WCAG failure; others pass a tool but need human review. The surrounding laboratory interface is intended to be usable.</p>
+
+    <section class="interpretation-case">
+      <h2>1. A best-practice finding, not a WCAG failure</h2>
+      <div class="fixture">
+        <h3>Section heading</h3>
+        <h5>Subheading that skips a level</h5>
+      </div>
+      <table class="summary">
+        <caption class="visually-hidden">Tool output and review conclusion</caption>
+        <tbody>
+          <tr><th scope="row">Tool output</th><td>axe reports <code>heading-order</code> as a best-practice rule.</td></tr>
+          <tr><th scope="row">Review conclusion</th><td>Not a WCAG 2.1 AA failure, but the structure is harder to skim. Fix it.</td></tr>
+          <tr><th scope="row">Why</th><td>Heading order is useful for navigation, but WCAG does not require a specific level sequence.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="interpretation-case">
+      <h2>2. A finding the tool cannot decide</h2>
+      <div class="fixture interpretation-contrast">
+        <p>Dark text on a light gradient. The measured colours pass 4.5:1, but the background is an image so automation cannot be certain.</p>
+      </div>
+      <table class="summary">
+        <caption class="visually-hidden">Tool output and review conclusion</caption>
+        <tbody>
+          <tr><th scope="row">Tool output</th><td>axe returns <code>color-contrast</code> as <em>incomplete</em>, not a violation.</td></tr>
+          <tr><th scope="row">Review conclusion</th><td>Measure the actual rendered colours. Do not report an incomplete check as a failure or a pass.</td></tr>
+          <tr><th scope="row">Why</th><td>The tool cannot resolve a background image; a person can.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="interpretation-case">
+      <h2>3. A tool pass that is correct: decorative image</h2>
+      <div class="fixture">
+        <img src="/lab/goose-mark.svg" alt="" width="64" height="64">
+      </div>
+      <table class="summary">
+        <caption class="visually-hidden">Tool output and review conclusion</caption>
+        <tbody>
+          <tr><th scope="row">Tool output</th><td>No <code>image-alt</code> finding.</td></tr>
+          <tr><th scope="row">Review conclusion</th><td>Correct. The image is decorative and the empty alternative is intentional.</td></tr>
+          <tr><th scope="row">Why</th><td>A decorative image does not need a text alternative.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="interpretation-case">
+      <h2>4. A tool pass that fails review: unhelpful alternative</h2>
+      <div class="fixture">
+        <img src="/lab/goose-mark.svg" alt="goose-mark.svg" width="64" height="64">
+      </div>
+      <table class="summary">
+        <caption class="visually-hidden">Tool output and review conclusion</caption>
+        <tbody>
+          <tr><th scope="row">Tool output</th><td>No <code>image-alt</code> finding: an alternative is present.</td></tr>
+          <tr><th scope="row">Review conclusion</th><td>1.1.1 failure. The file name does not convey the image's meaning.</td></tr>
+          <tr><th scope="row">Why</th><td>Tools can check that an alternative exists, not that it is useful.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="interpretation-case" id="case-focus">
+      <h2>5. A tool pass that fails review: invisible focus</h2>
+      <div class="fixture">
+        <a class="interpretation-no-focus" href="#case-focus">A link whose focus indicator has been removed</a>
+      </div>
+      <table class="summary">
+        <caption class="visually-hidden">Tool output and review conclusion</caption>
+        <tbody>
+          <tr><th scope="row">Tool output</th><td>No automated finding for focus visibility.</td></tr>
+          <tr><th scope="row">Review conclusion</th><td>2.4.7 failure. Keyboard users cannot tell where focus is.</td></tr>
+          <tr><th scope="row">Why</th><td>Focus visibility is a rendering outcome, not a rule most scanners test.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="interpretation-case">
+      <h2>6. A tool pass that needs review: hidden instruction</h2>
+      <div class="fixture">
+        <label for="hidden-hint-input">Search the site</label>
+        <p id="hidden-hint" hidden>Use at least three characters.</p>
+        <input id="hidden-hint-input" name="hidden-hint-input" aria-describedby="hidden-hint">
+      </div>
+      <table class="summary">
+        <caption class="visually-hidden">Tool output and review conclusion</caption>
+        <tbody>
+          <tr><th scope="row">Tool output</th><td>No automated finding: the input has a label and a description.</td></tr>
+          <tr><th scope="row">Review conclusion</th><td>Manual concern. Sighted users never see the instruction; a screen reader user may only hear it.</td></tr>
+          <tr><th scope="row">Why</th><td>The description is present in the accessibility tree but hidden visually.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <p class="meta">Assessment reflects axe-core 4.14 at the time of writing. Tool output changes; the review conclusion does not.</p>
+  </main>
+  <footer>
+    <p>Part of the animal-reporting laboratory. <a href="../">Back to the laboratory</a>.</p>
+  </footer>
+</body>
+</html>
