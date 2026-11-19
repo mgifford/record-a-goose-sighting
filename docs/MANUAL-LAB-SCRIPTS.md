@@ -109,7 +109,39 @@ An ACT pass is not a WCAG pass. A missing automated finding is not a pass.
 
 **Expected:** the unnamed button exists only after the disclosure opens.
 
-## 7. Interpretation page
+## 7. Link and form-field names
+
+**Pages:** `/lab/names/link-unnamed/`, `/lab/names/link-named/`, `/lab/names/field-unnamed/`, `/lab/names/field-named/`.
+
+**Setup:** screen reader and accessibility inspector.
+
+1. Open the links list on each link page. Record what is announced for the link.
+2. Open the form-controls list on each field page. Record the announced label.
+3. Compare the failing and passing pages.
+4. Record the rule: `c487ae` for links, `e086e5` for form fields.
+
+**Expected:** the unnamed link and field fail their rule; the labelled controls pass.
+
+## 8. Inapplicable cases
+
+**Pages:** `/lab/applicability/no-buttons/` and `/lab/applicability/no-images/`.
+
+1. Confirm that the page contains no `<button>` or `<img>` element, as applicable.
+2. Record the scope: the document, with no eligible target.
+3. Do not record “not run” or “passed” as the outcome. The ACT outcome is `inapplicable`.
+
+## 9. Preference scenarios
+
+**Pages:** `/lab/preferences/reduced-motion/`, `/lab/preferences/forced-colors/`, `/lab/preferences/text-spacing/`.
+
+**Setup:** operating-system reduced motion and high-contrast settings; 320 px viewport.
+
+1. Reduced motion: enable the preference and compare the two shapes. One stops, one keeps spinning. Pausing or stopping is a separate question.
+2. Forced colours: focus both links. Record which focus cue remains and which disappears.
+3. Text spacing: at 320 px, apply the increased spacing values and check for clipping or horizontal scrolling.
+4. Record the browser, OS, palette and zoom. Do not generalise one palette result to every engine.
+
+## 10. Interpretation page
 
 **Page:** `/lab/interpretation/`.
 

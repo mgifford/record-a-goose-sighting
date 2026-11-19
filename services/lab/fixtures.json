@@ -906,6 +906,182 @@
       },
       "reviewRecord": "lab/reviews/records/interaction-reveal-target.json",
       "title": "Disclosure reveals an unnamed button"
+    },
+    {
+      "id": "applicability-no-buttons",
+      "title": "No buttons: rule 97a4e1 inapplicable",
+      "service": "lab",
+      "framework": "html",
+      "category": "applicability",
+      "scenarioId": "applicability-no-buttons",
+      "stateId": "default",
+      "urlPath": "lab/applicability/no-buttons/",
+      "act": {
+        "ruleId": "97a4e1",
+        "ruleName": "Button has non-empty accessible name",
+        "ruleStatus": "approved",
+        "ruleRevision": "2023-08-31",
+        "ruleUrl": "https://www.w3.org/WAI/standards-guidelines/act/rules/97a4e1/"
+      },
+      "expected": "inapplicable",
+      "review": "unreviewed",
+      "target": {
+        "scope": "document"
+      },
+      "readySelector": "[data-test-ready='true']",
+      "provenance": {
+        "sourceFile": "services/lab/applicability/no-buttons/index.html"
+      },
+      "notes": "The page contains no button elements, so the rule has no applicable targets.",
+      "reviewRecord": "lab/reviews/records/applicability-no-buttons.json"
+    },
+    {
+      "id": "applicability-no-images",
+      "title": "No images: rule 23a2a8 inapplicable",
+      "service": "lab",
+      "framework": "html",
+      "category": "applicability",
+      "scenarioId": "applicability-no-images",
+      "stateId": "default",
+      "urlPath": "lab/applicability/no-images/",
+      "act": {
+        "ruleId": "23a2a8",
+        "ruleName": "Image has non-empty accessible name",
+        "ruleStatus": "approved",
+        "ruleRevision": "2023-08-31",
+        "ruleUrl": "https://www.w3.org/WAI/standards-guidelines/act/rules/23a2a8/"
+      },
+      "expected": "inapplicable",
+      "review": "unreviewed",
+      "target": {
+        "scope": "document"
+      },
+      "readySelector": "[data-test-ready='true']",
+      "provenance": {
+        "sourceFile": "services/lab/applicability/no-images/index.html"
+      },
+      "notes": "The page contains no image elements, so the rule has no applicable targets.",
+      "reviewRecord": "lab/reviews/records/applicability-no-images.json"
+    },
+    {
+      "id": "link-named",
+      "title": "Link with an accessible name",
+      "service": "lab",
+      "framework": "html",
+      "category": "isolated-act",
+      "scenarioId": "link-name",
+      "stateId": "default",
+      "urlPath": "lab/names/link-named/",
+      "act": {
+        "ruleId": "c487ae",
+        "ruleName": "Link has non-empty accessible name",
+        "ruleStatus": "approved",
+        "ruleRevision": "2023-08-31",
+        "ruleUrl": "https://www.w3.org/WAI/standards-guidelines/act/rules/c487ae/"
+      },
+      "expected": "passed",
+      "review": "unreviewed",
+      "target": {
+        "scope": "light-dom",
+        "selector": "#target",
+        "targetId": "target"
+      },
+      "readySelector": "[data-test-ready='true']",
+      "provenance": {
+        "sourceFile": "services/lab/names/link-named/index.html"
+      },
+      "notes": "Visible link text supplies the name.",
+      "reviewRecord": "lab/reviews/records/link-named.json"
+    },
+    {
+      "id": "link-unnamed",
+      "title": "Link without an accessible name",
+      "service": "lab",
+      "framework": "html",
+      "category": "isolated-act",
+      "scenarioId": "link-name",
+      "stateId": "default",
+      "urlPath": "lab/names/link-unnamed/",
+      "act": {
+        "ruleId": "c487ae",
+        "ruleName": "Link has non-empty accessible name",
+        "ruleStatus": "approved",
+        "ruleRevision": "2023-08-31",
+        "ruleUrl": "https://www.w3.org/WAI/standards-guidelines/act/rules/c487ae/"
+      },
+      "expected": "failed",
+      "review": "unreviewed",
+      "target": {
+        "scope": "light-dom",
+        "selector": "#target",
+        "targetId": "target"
+      },
+      "readySelector": "[data-test-ready='true']",
+      "provenance": {
+        "sourceFile": "services/lab/names/link-unnamed/index.html"
+      },
+      "notes": "The link has no text and no other accessible name.",
+      "reviewRecord": "lab/reviews/records/link-unnamed.json"
+    },
+    {
+      "id": "field-named",
+      "title": "Form field with an accessible name",
+      "service": "lab",
+      "framework": "html",
+      "category": "isolated-act",
+      "scenarioId": "field-name",
+      "stateId": "default",
+      "urlPath": "lab/names/field-named/",
+      "act": {
+        "ruleId": "e086e5",
+        "ruleName": "Form field has non-empty accessible name",
+        "ruleStatus": "approved",
+        "ruleRevision": "2023-08-31",
+        "ruleUrl": "https://www.w3.org/WAI/standards-guidelines/act/rules/e086e5/"
+      },
+      "expected": "passed",
+      "review": "unreviewed",
+      "target": {
+        "scope": "light-dom",
+        "selector": "#target",
+        "targetId": "target"
+      },
+      "readySelector": "[data-test-ready='true']",
+      "provenance": {
+        "sourceFile": "services/lab/names/field-named/index.html"
+      },
+      "notes": "A visible label supplies the name.",
+      "reviewRecord": "lab/reviews/records/field-named.json"
+    },
+    {
+      "id": "field-unnamed",
+      "title": "Form field without an accessible name",
+      "service": "lab",
+      "framework": "html",
+      "category": "isolated-act",
+      "scenarioId": "field-name",
+      "stateId": "default",
+      "urlPath": "lab/names/field-unnamed/",
+      "act": {
+        "ruleId": "e086e5",
+        "ruleName": "Form field has non-empty accessible name",
+        "ruleStatus": "approved",
+        "ruleRevision": "2023-08-31",
+        "ruleUrl": "https://www.w3.org/WAI/standards-guidelines/act/rules/e086e5/"
+      },
+      "expected": "failed",
+      "review": "unreviewed",
+      "target": {
+        "scope": "light-dom",
+        "selector": "#target",
+        "targetId": "target"
+      },
+      "readySelector": "[data-test-ready='true']",
+      "provenance": {
+        "sourceFile": "services/lab/names/field-unnamed/index.html"
+      },
+      "notes": "The input has no label, aria-label or aria-labelledby.",
+      "reviewRecord": "lab/reviews/records/field-unnamed.json"
     }
   ]
 }

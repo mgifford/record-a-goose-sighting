@@ -34,6 +34,7 @@ function escapeHtml (value) {
 
 const CATEGORY_ORDER = [
   'isolated-act',
+  'applicability',
   'target-correlation',
   'shared-target',
   'multi-rule-target',
@@ -46,6 +47,7 @@ const CATEGORY_ORDER = [
 
 const CATEGORY_LABELS = {
   'isolated-act': 'Isolated ACT fixtures',
+  applicability: 'Applicability',
   'target-correlation': 'Target correlation',
   'shared-target': 'Shared target',
   'multi-rule-target': 'Multiple rules, one target',
@@ -59,7 +61,8 @@ const CATEGORY_LABELS = {
 const CONTEXT_LABELS = {
   'light-dom': 'Light DOM',
   'open-shadow': 'Open shadow root',
-  'closed-shadow': 'Closed shadow root'
+  'closed-shadow': 'Closed shadow root',
+  document: 'Document'
 }
 
 const manifest = JSON.parse(fs.readFileSync(MANIFEST, 'utf8'))
@@ -77,6 +80,7 @@ function contextOf (entry) {
 }
 
 function contextLabel (entry) {
+  if (entry.target?.scope === 'document') return 'Document (no applicable targets)'
   if (entry.target?.frame?.length) {
     return `Iframe: ${entry.target.frame.join(' > ')}`
   }
@@ -219,7 +223,7 @@ function card (item) {
     <dt>Framework</dt><dd>${escapeHtml(item.framework)}</dd>
     <dt>Category</dt><dd>${escapeHtml(CATEGORY_LABELS[item.category] || item.category)}</dd>
     <dt>Context</dt><dd>${escapeHtml(item.contextLabel)}</dd>
-    <dt>Target</dt><dd><code>${escapeHtml(item.target.selector ?? item.target.host ?? 'closed shadow root')}</code>${item.target.targetId ? ` (${escapeHtml(item.target.targetId)})` : ''}</dd>
+    <dt>Target</dt><dd>${item.target.scope === 'document' ? 'Document scope — no applicable targets' : `<code>${escapeHtml(item.target.selector ?? item.target.host ?? 'closed shadow root')}</code>${item.target.targetId ? ` (${escapeHtml(item.target.targetId)})` : ''}`}</dd>
     <dt>Interaction</dt><dd>${escapeHtml(interaction)}</dd>
     <dt>State</dt><dd>${escapeHtml(item.stateId || 'default')}</dd>
     <dt>Source</dt><dd><a href="${escapeHtml(item.source)}">Fixture source</a> · <a href="${escapeHtml(item.url)}">Open fixture</a></dd>
