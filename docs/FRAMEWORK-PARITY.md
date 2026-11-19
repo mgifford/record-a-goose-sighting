@@ -114,6 +114,6 @@ Parity tests will run the same scripted journey against each framework:
 |---|---|
 | React (Hedgehog) | Reference implementation |
 | Vue (Wombat) | Ported to the same contract |
-| Web Components (Paca) | Next port |
+| Web Components (Paca) | Ported to the same contract |
 
-The React implementation is the reference; Web Components still follow it.
+All three implementations now follow the same contract. React remains the reference.
