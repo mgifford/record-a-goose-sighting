@@ -285,18 +285,29 @@ test.describe('report a paca (Web Components)', () => {
     expect(await page.locator('#test-target').count()).toBe(0)
   })
 
-  test('completes the review and confirmation journey in the open shadow root', async ({ page }) => {
+  test('validates, reviews and completes the journey in the open shadow root', async ({ page }) => {
     await page.goto('paca/?role=valid&shadow=open')
+    await page.getByRole('button', { name: 'Start now' }).click()
+    await expect(page.locator('main h1')).toBeFocused()
+    await expect(page.locator('main h1')).toHaveText('Do you like pacas?')
 
-    await page.locator('#place').fill('Beside the path')
-    await page.locator('#date').fill('2026-11-18')
-    await page.getByRole('button', { name: 'Review the sighting' }).click()
+    await page.getByRole('button', { name: 'Continue' }).click()
+    await expect(page.locator('.error-summary')).toBeFocused()
+    await expect(page.locator('.error-summary')).toContainText('Select yes or no')
 
-    await expect(page.locator('#review-heading')).toBeFocused()
-    await expect(page.locator('.summary')).toContainText('Beside the path')
+    await page.locator('#liked-yes').check()
+    await page.getByRole('button', { name: 'Continue' }).click()
+    await page.locator('#type').fill('Mountain paca')
+    await page.getByRole('button', { name: 'Continue' }).click()
+    await page.locator('#date-day').fill('18')
+    await page.locator('#date-month').fill('11')
+    await page.locator('#date-year').fill('2026')
+    await page.getByRole('button', { name: 'Continue' }).click()
 
-    await page.getByRole('button', { name: 'Confirm sighting' }).click()
-    await expect(page.locator('#done-heading')).toBeFocused()
+    await expect(page.locator('.summary')).toContainText('Mountain paca')
+    await page.getByRole('button', { name: 'Send the sighting' }).click()
+    await expect(page.locator('main h1')).toBeFocused()
+    await expect(page.locator('main h1')).toHaveText('Sighting recorded')
   })
 })
 
