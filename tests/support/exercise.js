@@ -65,11 +65,16 @@ export async function completeJourney (page, answers = {}) {
 /**
  * Records the sequential keyboard focus order for the current page.
  */
-export async function focusOrder (page, limit = 25) {
+export async function focusOrder (page, limit = 25, browserName = 'chromium') {
   const order = []
 
+  // WebKit (like Safari on macOS) only tabs to links with the "Press Tab to
+  // highlight each item on a webpage" preference enabled. Playwright's WebKit
+  // mirrors that default, so use Option+Tab there.
+  const key = browserName === 'webkit' ? 'Alt+Tab' : 'Tab'
+
   for (let index = 0; index < limit; index += 1) {
-    await page.keyboard.press('Tab')
+    await page.keyboard.press(key)
 
     const stop = await page.evaluate(() => {
       const element = document.activeElement

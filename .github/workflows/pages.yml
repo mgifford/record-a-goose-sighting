@@ -39,11 +39,13 @@ jobs:
         env:
           SITE_BASE: /record-a-goose-sighting/
 
-      - name: Install Playwright browser
-        run: npx playwright install --with-deps chromium
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps chromium firefox webkit
 
       - name: Run tests
         run: npm test
+        env:
+          BROWSERS: all
 
       - name: Configure Pages
         if: github.event_name != 'pull_request'

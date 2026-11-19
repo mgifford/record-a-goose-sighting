@@ -255,7 +255,7 @@ function validateExerciseMarkup () {
     {
       page: 'steps/end',
       name: 'animated GIF without alt text',
-      test: (html) => /<img src="https:\/\/media\.giphy\.com[^"]*"\s*\/?>/.test(html)
+      test: (html) => /<img src="[^"]*goose-celebration\.gif"\s*\/?>/.test(html)
     },
     {
       page: 'steps/check-your-answers',

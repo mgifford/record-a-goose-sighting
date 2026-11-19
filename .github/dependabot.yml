@@ -1,0 +1,25 @@
+version: 2
+
+updates:
+  - package-ecosystem: npm
+    directory: "/"
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 5
+    groups:
+      development-dependencies:
+        dependency-type: development
+        update-types:
+          - minor
+          - patch
+    ignore:
+      # A GOV.UK Frontend major upgrade changes the rendered markup and
+      # appearance that the exercise depends on. It is handled as a separate
+      # project: see docs/govuk-frontend-upgrade.md.
+      - dependency-name: "govuk-frontend"
+
+  - package-ecosystem: github-actions
+    directory: "/"
+    schedule:
+      interval: monthly
+    open-pull-requests-limit: 5

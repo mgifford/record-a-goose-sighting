@@ -15,6 +15,7 @@ const ASSETS = [
   'public/javascripts/goose-session.js',
   'public/images/favicon.ico',
   'public/images/apple-touch-icon.png',
+  'public/images/goose-celebration.gif',
   'public/fonts/bold-b542beb274-v2.woff2'
 ]
 
@@ -59,6 +60,20 @@ test.describe('static build', () => {
       expect(html, `${route.path} must not load analytics`).not.toContain('googletagmanager')
       expect(html, `${route.path} must not load jQuery`).not.toContain('jquery')
       expect(html, `${route.path} must not use the auto-store middleware`).not.toContain('auto-store-data')
+    }
+  })
+
+  test('all images are served from this site', async ({ request }) => {
+    for (const route of ROUTES) {
+      const html = await (await request.get(route.path)).text()
+      const sources = [...html.matchAll(/<img[^>]+src="([^"]+)"/g)].map((match) => match[1])
+
+      for (const source of sources) {
+        expect(source.startsWith(BASE_PATH), `${route.path} hotlinks ${source}`).toBe(true)
+
+        const response = await request.get(source.slice(BASE_PATH.length))
+        expect(response.status(), source).toBe(200)
+      }
     }
   })
 

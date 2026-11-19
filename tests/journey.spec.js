@@ -16,7 +16,7 @@ test.describe('exercise journey', () => {
     await page.waitForURL(/steps\/end\//)
 
     await expect(page.getByRole('heading', { name: 'GOOSE RECORDED' })).toBeVisible()
-    await expect(page.locator('img[src*="giphy.com"]')).toBeVisible()
+    await expect(page.locator('img[src*="goose-celebration.gif"]')).toBeVisible()
   })
 
   test('retains answers when the summary page is refreshed', async ({ page }) => {
@@ -204,7 +204,7 @@ test.describe('exercise journey', () => {
             expect(route.path, 'unexpected horizontal overflow').toBe('steps/end/')
             expect(
               overflow.offenders.every(
-                (element) => element.tag === 'IMG' && element.src.includes('media.giphy.com')
+                (element) => element.tag === 'IMG' && element.src.includes('goose-celebration.gif')
               ),
               `${route.path} overflows because of ${JSON.stringify(overflow.offenders)}`
             ).toBe(true)

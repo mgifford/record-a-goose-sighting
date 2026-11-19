@@ -127,10 +127,10 @@ test.describe('start page defects', () => {
     expect(style.boxShadow).toBe('none')
   })
 
-  test('keeps keyboard order following the DOM, not the visual order', async ({ page }) => {
+  test('keeps keyboard order following the DOM, not the visual order', async ({ page, browserName }) => {
     await page.goto(PAGES['steps-start'])
 
-    const order = (await focusOrder(page, 7)).map((stop) => stop.text)
+    const order = (await focusOrder(page, 7, browserName)).map((stop) => stop.text)
 
     expect(order).toEqual([
       'Skip to main content',
@@ -164,13 +164,13 @@ test.describe('do you like geese? defects', () => {
     await expect(headingInFieldset).toHaveCount(0)
   })
 
-  test('keeps the Continue button out of sequential keyboard focus', async ({ page }) => {
+  test('keeps the Continue button out of sequential keyboard focus', async ({ page, browserName }) => {
     await page.goto(PAGES['steps-geese-liked'])
 
     const button = page.locator('button.govuk-button')
     await expect(button).toHaveAttribute('tabindex', '-1')
 
-    const stops = await focusOrder(page, 6)
+    const stops = await focusOrder(page, 6, browserName)
     expect(stops.some((stop) => stop.text === 'Continue')).toBe(false)
   })
 
@@ -193,7 +193,7 @@ test.describe('goose type defects', () => {
     expect(await page.title()).toBe('Boop - Record a goose sighting')
   })
 
-  test('keeps the focusable, visually hidden ghost goose', async ({ page }) => {
+  test('keeps the focusable, visually hidden ghost goose', async ({ page, browserName }) => {
     await page.goto(PAGES['steps-goose-type'])
 
     const ghost = page.getByText('Ghost goose', { exact: true })
@@ -203,7 +203,7 @@ test.describe('goose type defects', () => {
     expect(box.width).toBeLessThanOrEqual(1)
     expect(box.height).toBeLessThanOrEqual(1)
 
-    const stops = (await focusOrder(page, 3)).map((stop) => stop.text)
+    const stops = (await focusOrder(page, 3, browserName)).map((stop) => stop.text)
     expect(stops[0]).toBe('Skip to main content')
     expect(stops[1]).toBe('Ghost goose')
   })
@@ -285,7 +285,7 @@ test.describe('confirmation page defects', () => {
   test('keeps the animated GIF without alternative text', async ({ page }) => {
     await page.goto(PAGES['steps-end'])
 
-    const image = page.locator('img[src*="giphy.com"]')
+    const image = page.locator('img[src*="goose-celebration.gif"]')
     await expect(image).toHaveCount(1)
 
     const hasAlt = await image.evaluate((element) => element.hasAttribute('alt'))
@@ -297,8 +297,8 @@ test.describe('confirmation page defects', () => {
 
     expect(await page.getByRole('button', { name: /pause|stop|hide/i }).count()).toBe(0)
 
-    const image = page.locator('img[src*="giphy.com"]')
-    await expect(image).toHaveAttribute('src', /giphy\.gif$/)
+    const image = page.locator('img[src*="goose-celebration.gif"]')
+    await expect(image).toHaveAttribute('src', /goose-celebration\.gif$/)
     await expect(image).not.toHaveAttribute('controls', /.*/)
   })
 })
@@ -309,7 +309,7 @@ test.describe('answer sheet integrity', () => {
 
     // The published count and the number of described issues are recorded as
     // they were found. Correcting either is a separate content decision.
-    await expect(page.locator('p').first()).toContainText('There are 19 issues in total')
+    await expect(page.locator('p').first()).toContainText('There are 19 issues in total (likely 18)')
     await expect(page.locator('dt')).toHaveCount(18)
   })
 

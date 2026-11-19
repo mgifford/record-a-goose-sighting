@@ -92,7 +92,7 @@ teaching material:
 
 ## Migration parity result
 
-After the migration the same capture was run against the static build
+At migration time the same capture was run against the static build
 (`SITE_BASE=/record-a-goose-sighting/`), and `tests/tools/compare.mjs` reported:
 
 ```text
@@ -102,6 +102,23 @@ After the migration the same capture was run against the static build
 All 18 screenshots (nine pages × two viewports) were byte-identical. The only
 observed difference was the removal of Google Analytics beacons, which is an
 explicit goal of the migration.
+
+## Deliberate changes after the migration
+
+Two follow-up changes intentionally diverge from this snapshot. They were made
+after the parity run, and they do not change any of the 18 described defects:
+
+1. **Answers page wording.** "There are 19 issues in total" became "There are
+   19 issues in total (likely 18)" so learners are not misled by the stale
+   count.
+2. **Confirmation-page GIF.** The image hotlinked from giphy.com was replaced
+   with a locally generated animation at the same 352 × 264 size
+   (`scripts/art/make-goose-gif.py`), removing the third-party request and
+   image licensing ambiguity. It is still an animated GIF with no `alt`
+   attribute and no way to pause it.
+
+Do not regenerate this baseline to match later changes: it is the record of the
+Express application as it existed before the migration.
 
 ## Recapturing the original baseline
 

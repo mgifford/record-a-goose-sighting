@@ -36,11 +36,15 @@ describing the planted problems.
 
 ### 18 issues are described, but the answers page says 19
 
-The answers page says "There are 19 issues in total" and then describes **18**
-issues. This discrepancy is preserved deliberately: it is a content defect in
-the original exercise, not a migration defect. See
-[baseline/README.md](baseline/README.md) for the git history behind it and a
-recommendation.
+The answers page originally said "There are 19 issues in total" and then
+described **18** issues. The sentence now reads "There are 19 issues in total
+(likely 18)" so that learners are not misled by a stale count.
+
+The discrepancy is a content defect in the original exercise, not a migration
+defect. Commit `66a64cb` removed a nineteenth answer when the underlying problem
+was "fixed", but the total was never updated. See
+[baseline/README.md](baseline/README.md) for the history and the remaining
+recommendation to settle on a single number.
 
 ## Running the site locally
 
@@ -96,6 +100,9 @@ npx playwright install
 BROWSERS=all npx playwright test
 ```
 
+GitHub Actions runs the suite in Chromium, Firefox and WebKit on every push and
+pull request.
+
 ### Baseline tooling
 
 `baseline/` contains a captured snapshot of the original Express application:
@@ -131,6 +138,30 @@ the repository is renamed:
 
 - `SITE_BASE: /record-a-goose-sighting/` in `.github/workflows/pages.yml`
 - `BASE_PATH` in `playwright.config.js`
+
+### Repository protections
+
+Dependency updates are handled by Dependabot
+([`.github/dependabot.yml`](.github/dependabot.yml)). `govuk-frontend` is
+excluded from automated updates: changing its major version is a separate
+project (see [docs/govuk-frontend-upgrade.md](docs/govuk-frontend-upgrade.md)).
+
+Branch protection is a repository setting rather than a file. To require the
+test job on pull requests while keeping direct pushes to `master` working:
+
+```bash
+gh api -X PUT repos/mgifford/record-a-goose-sighting/branches/master/protection \
+  --input - <<'JSON'
+{
+  "required_status_checks": { "strict": false, "contexts": ["Build and test"] },
+  "enforce_admins": false,
+  "required_pull_request_reviews": null,
+  "restrictions": null,
+  "allow_force_pushes": false,
+  "allow_deletions": false
+}
+JSON
+```
 
 ## Architecture
 
@@ -184,9 +215,13 @@ dist/                     generated output (not committed)
 The original application loaded jQuery 1.11.3 and a Prototype Kit
 `auto-store-data` script that posted every form to the server. Neither is
 needed: GOV.UK Frontend 3 is dependency-free, and `goose-session.js` replaces
-the session middleware. Removing them changes no rendered output — the
-migration's screenshot comparison is pixel-identical to the original at both
-desktop and mobile widths.
+the session middleware. Removing them changed no rendered output: at migration
+time the screenshot comparison was pixel-identical to the original at both
+desktop and mobile widths (see [baseline/](baseline/)).
+
+Two deliberate follow-up changes now diverge from that snapshot: the answers
+page annotates the stale count, and the confirmation page uses a locally
+generated GIF instead of one hotlinked from giphy.com.
 
 ## Intentional accessibility problems
 
@@ -233,9 +268,11 @@ visual checks, which is part of the lesson.
   They are never sent to a server and disappear when the tab is closed.
 - Google Analytics has been removed. The original application loaded GA4
   (`G-S0FNENEJGR`) on every page; the static site loads no analytics.
-- The confirmation page displays a GIF hosted by `media.giphy.com`. That is a
-  third-party network request, and it is retained because removing the animated
-  image would remove one of the exercise's accessibility problems.
+- Every asset is served from this site, including the confirmation-page GIF.
+  The GIF is generated for this repository by
+  `scripts/art/make-goose-gif.py`, so there is no third-party image request and
+  no image licensing ambiguity. The GIF is animated and has no alternative text
+  because that is part of the exercise.
 - Pages carry `<meta name="robots" content="noindex">` and `robots.txt` contains
   `Disallow: /`. These reproduce the original `X-Robots-Tag: noindex` *intent*
   as best GitHub Pages allows. They are advisory; they are not access control.
