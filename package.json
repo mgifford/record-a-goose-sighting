@@ -10,7 +10,7 @@
   "scripts": {
     "build": "npm run build:goose && npm run build:lab",
     "build:goose": "node scripts/build.mjs",
-    "build:lab": "vite build --config vite.config.mjs && node scripts/lab-manifest.mjs && node scripts/act-upstream.mjs && node scripts/merge-lab.mjs",
+    "build:lab": "vite build --config vite.config.mjs && node scripts/lab-manifest.mjs && node scripts/lab-catalogue.mjs && node scripts/act-upstream.mjs && node scripts/merge-lab.mjs",
     "build:root": "SITE_BASE=/ npm run build",
     "preview": "node scripts/serve.mjs",
     "test": "npm run build && playwright test",

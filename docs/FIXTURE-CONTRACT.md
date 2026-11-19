@@ -111,6 +111,24 @@ The rules are enforced by `scripts/lab-manifest.mjs`; a reviewed status cannot
 be created by adding a field alone. See
 [`services/lab/reviews/README.md`](../services/lab/reviews/README.md).
 
+## Catalogue and indexes
+
+`/lab/catalogue/` is generated from the published manifest at build time. It is
+usable without JavaScript: fixtures are grouped by category, with links, rule,
+outcome, review status, context, target, source and evidence. The filter form
+is a progressive enhancement and does not replace the static groups.
+
+The build also publishes:
+
+- `/lab/catalogue.json` — cases and scenario groups;
+- `/lab/scenarios.json` — scenario-to-case mapping;
+- `/lab/coverage.json` — counts by rule, outcome, framework, category, context,
+  interaction and review status.
+
+All four are generated from the same manifest and review index. There is no
+second hand-maintained fixture list. `coverage.json` explicitly states that
+ACT rule coverage is not WCAG coverage.
+
 ## Validation
 
 `npm run build` runs `scripts/lab-manifest.mjs`, which checks:
