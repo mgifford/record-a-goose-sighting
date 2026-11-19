@@ -35,6 +35,22 @@ Use the status recorded in
 Do not label every finding a WCAG failure. If you are unsure, say so and keep
 the observation.
 
+## Laboratory fixtures
+
+For a fixture from `/lab/`, add these columns or fields:
+
+| Fixture ID | Scenario | State | Classification | Target | Method | Expected observation | Actual observation | Evidence |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| `correlation-single-image` | `single-image` | default | ACT failed | `#missing-alt` | Screen reader | The image has no announced name | Replace with what you observed | Link to a log, screenshot or recording |
+
+Use the classification labels from
+[MANUAL-LAB-SCRIPTS.md](MANUAL-LAB-SCRIPTS.md): ACT outcome, verified WCAG
+failure, best practice, usability, context-dependent, or needs more testing.
+Record an ACT outcome separately from a WCAG verdict.
+
+The machine-readable record format is
+[`services/lab/reviews/schema.json`](../services/lab/reviews/schema.json).
+
 ## Reporting
 
 - Lead with the barrier and its impact, then the criterion.

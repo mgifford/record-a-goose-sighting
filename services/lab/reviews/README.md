@@ -38,6 +38,11 @@ Changing an expected outcome changes the meaning of any earlier comparison that
 used the old outcome. Retain the old value in the record's rationale or in a
 linked changelog rather than silently rewriting history.
 
+## Recording evidence
+
+See [MANUAL-EVIDENCE.md](MANUAL-EVIDENCE.md) for the fields, acceptable
+evidence, and the checklist before a record can be marked `reviewed`.
+
 ## Machine-readable index
 
 The build publishes:

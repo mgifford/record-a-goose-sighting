@@ -57,3 +57,31 @@ finding is not a pass.
 If a tool starts or stops detecting an issue, change the matrix deliberately
 and record why; do not let a tool update silently change what the exercise
 claims.
+
+## What the laboratory adds
+
+The matrix above covers the original journey. The laboratory adds isolated
+cases where the question is not only "did a tool find it?" but "what kind of
+claim can this evidence support?".
+
+| Case family | Example | What manual testing adds |
+|---|---|---|
+| Correlation | two images with the same class, one target with two rules | whether the targets are genuinely distinct and whether each rule question applies |
+| Frames | same `#target` in two frames | whether the frame context changes what a user hears or can reach |
+| Dynamic | React/Vue async name, replaced node | whether the name is available when the user needs it, not only after settling |
+| Shadow DOM | nested open shadow roots | what the accessibility tree exposes across shadow boundaries |
+| Interaction | disclosure reveals an unnamed control | whether the target exists, is reachable and is named after the action |
+| Interpretation | link text, wrong alternative, CSS order, status message | whether the result is a WCAG failure, best practice, usability concern or context-dependent |
+
+### Classification, not just pass/fail
+
+- **ACT outcome** — the declared target's result for one ACT rule.
+- **WCAG failure** — a person confirmed a criterion failure with evidence.
+- **Best practice** — useful improvement, not a failure by itself.
+- **Usability concern** — affects the experience but may not fail a specific criterion.
+- **Context-dependent / disputed** — the conclusion depends on context or reviewers disagree.
+- **Needs more testing** — the evidence cannot settle it.
+
+A clean automated scan does not establish WCAG conformance. A missing finding
+does not establish a pass. Record the method and the observation in
+[`services/lab/reviews/`](../services/lab/reviews/README.md).

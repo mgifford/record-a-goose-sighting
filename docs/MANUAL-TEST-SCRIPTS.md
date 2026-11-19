@@ -8,6 +8,9 @@ technique exposes. Issue IDs refer to
 The scripts are prompts, not a checklist to complete mechanically. Record what
 you observed, not only pass/fail.
 
+For the isolated laboratory fixtures, frames, dynamic states and interpretation
+cases, use [MANUAL-LAB-SCRIPTS.md](MANUAL-LAB-SCRIPTS.md).
+
 ## 1. Keyboard only
 
 **Setup:** hide or unplug the mouse; use Tab, Shift+Tab, Enter, Space and arrow
