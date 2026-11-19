@@ -87,7 +87,9 @@ subpath. This includes the laboratory at `/lab/`, and the three services at
 
 The build runs in two stages: `npm run build:goose` renders the exercise, then
 `npm run build:lab` builds the laboratory and merges it. To run one stage on its
-own, use those scripts; `npm run build` runs both.
+own, use those scripts; `npm run build` runs both. The W3C test-case snapshot is
+never downloaded during a build — use `npm run act:import` deliberately when
+updating it, and `npm run act:check` to validate without publishing.
 
 To preview at the domain root instead (useful when comparing with the original
 application):
@@ -119,6 +121,7 @@ Playwright suite:
 | `tests/accessibility-regression.spec.js` | Every intentional accessibility problem, plus axe results compared with the original application's baseline |
 | `tests/static-build.spec.js` | All nine Goose URLs, assets, internal links, absence of server runtime or analytics, dependency limits |
 | `tests/services.spec.js` | The catalogue, isolated ACT fixtures, the three framework services, the manifest, and preservation of the Goose output |
+| `tests/data-integrity.spec.js` | W3C ACT snapshot provenance and checksums, and the original Goose preservation inventory |
 
 To run the suite in all three Playwright engines:
 
@@ -207,6 +210,7 @@ app/
     steps/*.html          the six exercise pages, worksheet and answers
 services/
   lab/                    ACT catalogue, four isolated fixtures, manifest source
+  lab/upstream/           pinned W3C ACT test-case metadata and provenance
   hedgehog/               React reporting service
   wombat/                 Vue reporting service
   paca/                   Web Components reporting service
@@ -214,6 +218,7 @@ services/
 scripts/
   build.mjs               Nunjucks rendering, Sass compilation, asset copying
   lab-manifest.mjs        validates the ACT manifest, adds source hashes, publishes it
+  act-upstream.mjs        imports/validates the pinned W3C test-case snapshot
   merge-lab.mjs           guarded merge; verifies Goose files are byte-identical
   serve.mjs               static preview server for the Pages subpath
 tests/
@@ -258,6 +263,21 @@ dist-lab/                 intermediate laboratory build (not committed)
   the manifest at `/lab/fixtures.json`. All expected outcomes remain marked
   `unreviewed`; the closed-shadow case deliberately has no ACT outcome because
   an engine cannot inspect it, and a missing finding is never treated as a pass.
+- **W3C data:** `services/lab/upstream/` holds a pinned snapshot of the official
+  ACT test-case dataset (1,211 cases at import time) with its source URL,
+  retrieval date, SHA-256, rule/test-case identifiers, expected outcomes and
+  approval flags. It is downloaded only by the explicit `npm run act:import`
+  command and validated on every build; normal builds never fetch it. The
+  snapshot is published at `/lab/upstream/` with its provenance metadata and is
+  used under the [W3C Document License](https://www.w3.org/copyright/document-license-2023/).
+  Note that the upstream `approved` flag and `rulePage` can disagree for some
+  cases; rule status is never derived from `rulePage` here.
+- **Preservation inventory:** [`docs/original-goose-issues.json`](docs/original-goose-issues.json)
+  lists the 18 described Goose issues with routes, WCAG status, evidence type and
+  the regression test that guards each one. It is intentionally separate from
+  the ACT fixtures because most of those problems have no approved ACT rule. The
+  narrative, provenance and 19-versus-18 explanation are in
+  [`docs/original-goose-baseline.md`](docs/original-goose-baseline.md).
 
 ### Why no jQuery or Prototype Kit runtime
 

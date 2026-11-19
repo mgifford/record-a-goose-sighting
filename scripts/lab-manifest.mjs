@@ -50,15 +50,16 @@ export function validateManifest (manifest, root = ROOT) {
     if (!REVIEW_STATES.has(entry.review)) errors.push(`${where}: invalid review status`)
 
     const act = entry.act || {}
-    if (!/^[a-f0-9]{6}$/.test(act.ruleId || '')) errors.push(`${where}: invalid ACT rule ID`)
+    if (!/^[a-z0-9]{6}$/.test(act.ruleId || '')) errors.push(`${where}: invalid ACT rule ID`)
     if (!RULE_STATUSES.has(act.ruleStatus)) errors.push(`${where}: invalid ACT rule status`)
     if (!act.ruleRevision || !/^\d{4}-\d{2}-\d{2}$/.test(act.ruleRevision)) {
       errors.push(`${where}: missing or invalid rule revision date`)
     }
 
-    const canonicalRule = new RegExp(`^https://www\\.w3\\.org/WAI/standards-guidelines/act/rules/${act.ruleId}/$`)
-    if (!canonicalRule.test(act.ruleUrl || '')) {
-      errors.push(`${where}: ruleUrl must be the canonical W3C rule URL`)
+    const ruleRoot = `https://www.w3.org/WAI/standards-guidelines/act/rules/${act.ruleId}/`
+    const expectedRuleUrl = act.ruleStatus === 'proposed' ? `${ruleRoot}proposed/` : ruleRoot
+    if (act.ruleUrl !== expectedRuleUrl) {
+      errors.push(`${where}: ruleUrl must match the ${act.ruleStatus} rule URL`)
     }
 
     if (!SCOPES.has(entry.target?.scope)) errors.push(`${where}: invalid target scope`)

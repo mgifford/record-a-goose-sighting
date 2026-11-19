@@ -1,0 +1,51 @@
+{
+  "schemaVersion": "act-upstream-metadata/1",
+  "source": {
+    "url": "https://www.w3.org/WAI/content-assets/wcag-act-rules/testcases.json",
+    "retrievedAt": "2026-11-19T02:03:55.931Z",
+    "http": {
+      "etag": "W/\"6afb8d8a-13bbe6\"",
+      "lastModified": "Mon, 16 Nov 2026 23:11:06 GMT",
+      "contentType": "application/json; charset=utf-8"
+    }
+  },
+  "checksum": {
+    "downloadedBytes": 1293286,
+    "downloadedSha256": "49051da603afa6d28b94ef3e758146dafcbe72bade7202a24636bab3ea4c0036",
+    "snapshotSha256": "b843aa4d85b6bbe50c20a2afd284d522d258ac48132ca704086783449a30049a"
+  },
+  "license": {
+    "name": "W3C Document License",
+    "url": "https://www.w3.org/copyright/document-license-2023/",
+    "copyright": "Copyright © 2026 World Wide Web Consortium (W3C)"
+  },
+  "counts": {
+    "testcases": 1211,
+    "approved": 558,
+    "notApproved": 0,
+    "approvalMissing": 653,
+    "rules": 87,
+    "byExpected": {
+      "passed": 472,
+      "failed": 393,
+      "inapplicable": 346
+    }
+  },
+  "fields": [
+    "ruleId",
+    "ruleName",
+    "testcaseId",
+    "expected",
+    "approved",
+    "url",
+    "rulePage",
+    "relativePath"
+  ],
+  "notes": [
+    "Test-case metadata is reproduced from the W3C ACT Rules test-case dataset for reproducible comparisons.",
+    "The upstream approved flag and rulePage can disagree: some approved cases still point at a proposed rule page. Rule status is not derived from rulePage here.",
+    "The test-case HTML is not mirrored; only identifiers, expected outcomes, approval flags and source URLs are retained.",
+    "This snapshot is not an official W3C publication and must not be presented as one.",
+    "W3C test cases are published under the W3C Document License; the copyright notice and source URL are retained."
+  ]
+}

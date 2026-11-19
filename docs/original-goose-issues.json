@@ -1,0 +1,271 @@
+{
+  "schemaVersion": "goose-preservation/1",
+  "description": "Machine-readable inventory of the deliberate accessibility problems in the original Record a goose sighting exercise. It is deliberately separate from the ACT fixture manifest: most of these problems do not map to an approved ACT rule.",
+  "source": {
+    "repository": "https://github.com/mgifford/record-a-goose-sighting",
+    "commit": "3f23c97",
+    "capturedAt": "2026-11-18",
+    "baseline": "baseline/metrics.json",
+    "screenshots": "baseline/screenshots",
+    "regressionSuite": "tests/accessibility-regression.spec.js"
+  },
+  "counts": {
+    "documentedTotal": 19,
+    "enumerated": 18,
+    "note": "The answer key says 19 issues but enumerates 18. Commit 66a64cb removed the role=button answer when that attribute was added, without updating the total. The live page now reads '19 issues in total (likely 18)'. This inventory records the 18 described items and does not invent a nineteenth."
+  },
+  "issues": [
+    {
+      "id": "start-two-h1",
+      "answerKeyNumber": 1,
+      "page": "steps/start",
+      "route": "steps/start/",
+      "title": "Two first-level headings",
+      "category": "structure",
+      "wcag": { "criteria": ["1.3.1"], "status": "best-practice" },
+      "evidence": {
+        "type": "dom",
+        "assertion": "The page contains two h1 elements; the second is the related-links heading.",
+        "test": "tests/accessibility-regression.spec.js: keeps two first-level headings"
+      }
+    },
+    {
+      "id": "start-dom-visual-order",
+      "answerKeyNumber": 2,
+      "page": "steps/start",
+      "route": "steps/start/",
+      "title": "Related links appear in a different order to the DOM",
+      "category": "focus-order",
+      "wcag": { "criteria": ["2.4.3"], "status": "manual-concern" },
+      "evidence": {
+        "type": "computed-style+keyboard",
+        "assertion": "CSS order values are 1, 3, 2 while the DOM and Tab order are Wikipedia, More, RSPB.",
+        "test": "tests/accessibility-regression.spec.js: keeps the related links in a different visual order to the DOM"
+      }
+    },
+    {
+      "id": "start-new-tab",
+      "answerKeyNumber": 3,
+      "page": "steps/start",
+      "route": "steps/start/",
+      "title": "External link opens a new tab without warning",
+      "category": "navigation",
+      "wcag": { "criteria": ["3.2.5"], "status": "best-practice" },
+      "evidence": {
+        "type": "dom",
+        "assertion": "The RSPB link has target=_blank and its accessible name gives no advance warning.",
+        "test": "tests/accessibility-regression.spec.js: keeps an external link that opens a new tab without warning"
+      }
+    },
+    {
+      "id": "start-ambiguous-link",
+      "answerKeyNumber": 4,
+      "page": "steps/start",
+      "route": "steps/start/",
+      "title": "Ambiguous 'More' link text",
+      "category": "content",
+      "wcag": { "criteria": ["2.4.4"], "status": "best-practice" },
+      "evidence": {
+        "type": "dom",
+        "assertion": "The link's accessible name is exactly 'More' and only makes sense from the surrounding section.",
+        "test": "tests/accessibility-regression.spec.js: keeps the ambiguous \"More\" link text"
+      }
+    },
+    {
+      "id": "start-focus-style",
+      "answerKeyNumber": 5,
+      "page": "steps/start",
+      "route": "steps/start/",
+      "title": "Related links lose their focus indicator",
+      "category": "focus-visible",
+      "wcag": { "criteria": ["2.4.7"], "status": "failure" },
+      "evidence": {
+        "type": "computed-style",
+        "assertion": "Focused a.link elements have outline:none and a transparent background.",
+        "test": "tests/accessibility-regression.spec.js: keeps the invisible focus indicator on the related links"
+      }
+    },
+    {
+      "id": "geese-empty-title",
+      "answerKeyNumber": 6,
+      "page": "steps/geese-liked",
+      "route": "steps/geese-liked/",
+      "title": "Missing page title",
+      "category": "page-title",
+      "wcag": { "criteria": ["2.4.2"], "status": "failure" },
+      "evidence": {
+        "type": "dom",
+        "assertion": "document.title is empty.",
+        "test": "tests/accessibility-regression.spec.js: keeps the empty page title"
+      }
+    },
+    {
+      "id": "geese-missing-legend",
+      "answerKeyNumber": 7,
+      "page": "steps/geese-liked",
+      "route": "steps/geese-liked/",
+      "title": "Radio group has no legend",
+      "category": "forms",
+      "wcag": { "criteria": ["1.3.1", "4.1.2"], "status": "failure" },
+      "evidence": {
+        "type": "dom",
+        "assertion": "The fieldset contains no legend and the question sits outside it.",
+        "test": "tests/accessibility-regression.spec.js: keeps the empty radio group legend"
+      }
+    },
+    {
+      "id": "geese-tabindex",
+      "answerKeyNumber": 8,
+      "page": "steps/geese-liked",
+      "route": "steps/geese-liked/",
+      "title": "Continue button removed from sequential focus",
+      "category": "keyboard",
+      "wcag": { "criteria": ["2.1.1"], "status": "failure" },
+      "evidence": {
+        "type": "dom+keyboard",
+        "assertion": "The submit button has tabindex=-1 and is never reached by Tab.",
+        "test": "tests/accessibility-regression.spec.js: keeps the Continue button out of sequential keyboard focus"
+      }
+    },
+    {
+      "id": "geese-low-contrast",
+      "answerKeyNumber": 9,
+      "page": "steps/geese-liked",
+      "route": "steps/geese-liked/",
+      "title": "Low-contrast hint text",
+      "category": "colour",
+      "wcag": { "criteria": ["1.4.3"], "status": "failure" },
+      "evidence": {
+        "type": "computed-style",
+        "assertion": "Hint colour is rgb(157, 157, 161) on white; contrast is below 4.5:1.",
+        "test": "tests/accessibility-regression.spec.js: keeps the low-contrast hint text"
+      }
+    },
+    {
+      "id": "goose-type-boop-title",
+      "answerKeyNumber": 10,
+      "page": "steps/goose-type",
+      "route": "steps/goose-type/",
+      "title": "Page title is 'Boop - Record a goose sighting'",
+      "category": "page-title",
+      "wcag": { "criteria": ["2.4.2"], "status": "failure" },
+      "evidence": {
+        "type": "dom",
+        "assertion": "The title contains 'Boop' and does not describe the page question.",
+        "test": "tests/accessibility-regression.spec.js: keeps the \"Boop\" page title"
+      }
+    },
+    {
+      "id": "goose-type-ghost-goose",
+      "answerKeyNumber": 11,
+      "page": "steps/goose-type",
+      "route": "steps/goose-type/",
+      "title": "Visually hidden, keyboard-focusable 'Ghost goose'",
+      "category": "focus-visible",
+      "wcag": { "criteria": ["2.4.7"], "status": "failure" },
+      "evidence": {
+        "type": "keyboard",
+        "assertion": "The visually hidden paragraph has tabindex=0 and is the second Tab stop.",
+        "test": "tests/accessibility-regression.spec.js: keeps the focusable, visually hidden ghost goose"
+      }
+    },
+    {
+      "id": "goose-type-placeholder",
+      "answerKeyNumber": 12,
+      "page": "steps/goose-type",
+      "route": "steps/goose-type/",
+      "title": "Formatting hint only available as placeholder text",
+      "category": "forms",
+      "wcag": { "criteria": ["3.3.2"], "status": "best-practice" },
+      "evidence": {
+        "type": "dom",
+        "assertion": "The input has a placeholder and no persistent hint or aria-describedby.",
+        "test": "tests/accessibility-regression.spec.js: keeps the placeholder as the only formatting instruction"
+      }
+    },
+    {
+      "id": "check-hidden-change-text",
+      "answerKeyNumber": 13,
+      "page": "steps/check-your-answers",
+      "route": "steps/check-your-answers/",
+      "title": "Change links use incorrect visually hidden text",
+      "category": "content",
+      "wcag": { "criteria": ["2.4.4"], "status": "best-practice" },
+      "evidence": {
+        "type": "dom",
+        "assertion": "Visually hidden text reads 'biscuits' and 'cake' instead of the field being changed.",
+        "test": "tests/accessibility-regression.spec.js: keeps the incorrect visually hidden Change-link text"
+      }
+    },
+    {
+      "id": "check-heading-order",
+      "answerKeyNumber": 14,
+      "page": "steps/check-your-answers",
+      "route": "steps/check-your-answers/",
+      "title": "Heading level jumps from h1 to h3",
+      "category": "structure",
+      "wcag": { "criteria": ["1.3.1"], "status": "failure" },
+      "evidence": {
+        "type": "dom",
+        "assertion": "The first two heading levels are 1 then 3.",
+        "test": "tests/accessibility-regression.spec.js: keeps the incorrect heading hierarchy"
+      }
+    },
+    {
+      "id": "end-uppercase-heading",
+      "answerKeyNumber": 15,
+      "page": "steps/end",
+      "route": "steps/end/",
+      "title": "All-caps confirmation heading",
+      "category": "content",
+      "wcag": { "criteria": [], "status": "best-practice" },
+      "evidence": {
+        "type": "dom",
+        "assertion": "The confirmation heading is literally 'GOOSE RECORDED'.",
+        "test": "tests/accessibility-regression.spec.js: keeps the uppercase confirmation heading"
+      }
+    },
+    {
+      "id": "end-justified-text",
+      "answerKeyNumber": 16,
+      "page": "steps/end",
+      "route": "steps/end/",
+      "title": "Justified paragraph",
+      "category": "typography",
+      "wcag": { "criteria": ["1.4.8"], "status": "best-practice" },
+      "evidence": {
+        "type": "computed-style",
+        "assertion": "The paragraph computes to text-align: justify.",
+        "test": "tests/accessibility-regression.spec.js: keeps the justified text"
+      }
+    },
+    {
+      "id": "end-gif-alt",
+      "answerKeyNumber": 17,
+      "page": "steps/end",
+      "route": "steps/end/",
+      "title": "Animated GIF has no alternative text",
+      "category": "images",
+      "wcag": { "criteria": ["1.1.1"], "status": "failure" },
+      "evidence": {
+        "type": "dom+axe",
+        "assertion": "The confirmation image has no alt attribute and axe reports image-alt.",
+        "test": "tests/accessibility-regression.spec.js: keeps the animated GIF without alternative text"
+      }
+    },
+    {
+      "id": "end-animation-control",
+      "answerKeyNumber": 18,
+      "page": "steps/end",
+      "route": "steps/end/",
+      "title": "Animation cannot be paused or stopped",
+      "category": "motion",
+      "wcag": { "criteria": ["2.2.2"], "status": "failure" },
+      "evidence": {
+        "type": "manual",
+        "assertion": "The looping GIF has no pause, stop or hide control.",
+        "test": "tests/accessibility-regression.spec.js: keeps the animation uncontrollable"
+      }
+    }
+  ]
+}
