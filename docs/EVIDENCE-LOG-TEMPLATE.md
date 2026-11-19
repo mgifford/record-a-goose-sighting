@@ -13,7 +13,7 @@ observation. Keep the observation factual and reproducible.
 
 Use one of:
 
-- `Automated` — axe, WAVE, Lighthouse or another scanner
+- `Automated` — Accessibility Insights Fast Pass, axe, Lighthouse or another scanner
 - `Keyboard`
 - `Screen reader` — name the screen reader and browser
 - `Zoom` / `Reflow`

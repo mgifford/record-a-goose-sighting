@@ -8,6 +8,7 @@
 | [FACILITATOR-GUIDE.md](FACILITATOR-GUIDE.md) | Running the exercise as a workshop, debrief prompts and common traps |
 | [MANUAL-TEST-SCRIPTS.md](MANUAL-TEST-SCRIPTS.md) | Keyboard, screen reader, zoom, forced-colours, motion and content scripts |
 | [MANUAL-LAB-SCRIPTS.md](MANUAL-LAB-SCRIPTS.md) | Reproduction scripts for correlation, frames, dynamic, shadow, interaction and interpretation fixtures |
+| [KEYBOARD-PRACTICE.md](KEYBOARD-PRACTICE.md) | Optional keyboard-only practice for focus failures a Fast Pass does not report |
 | [EVIDENCE-LOG-TEMPLATE.md](EVIDENCE-LOG-TEMPLATE.md) | Recording observations consistently |
 | [CONTRIBUTING-EXERCISE.md](CONTRIBUTING-EXERCISE.md) | Preserving the exercise when changing or adding issues |
 | [FIXTURE-CONTRACT.md](FIXTURE-CONTRACT.md) | Fixture identity, correlation experiments, provenance, reviews and the Open Scans boundary |

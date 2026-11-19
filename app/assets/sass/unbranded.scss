@@ -80,3 +80,37 @@ dd {
 .app-lab-nav__list li {
   margin-bottom: 0;
 }
+
+.practice-no-focus:focus {
+  outline: none;
+  background: transparent;
+  box-shadow: none;
+  text-decoration: none;
+}
+
+.practice-low-contrast:focus {
+  outline: 2px solid #f3f2f1;
+  outline-offset: 0;
+}
+
+.practice-spacer {
+  min-height: 70vh;
+}
+
+.practice-banner {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+  min-height: 8rem;
+  padding: 1rem;
+  background: #0b0c0c;
+  color: #ffffff;
+}
+
+.practice-obscured-target {
+  display: inline-block;
+  padding: 0.5rem;
+  border: 2px solid #0b0c0c;
+}

@@ -7,7 +7,7 @@ tools detect it, which manual techniques expose it, and why automation misses it
 ## Why it exists
 
 The exercise is intended to teach review, not tool operation. Most of its
-defects are invisible to axe-core and WAVE:
+defects are invisible to the Accessibility Insights Fast Pass and other axe-based scanners:
 
 - automated checks are good at missing names, empty titles, contrast and simple
   structure;
@@ -43,8 +43,8 @@ the row count, the automated/manual split and the accessible table markup.
 | Automated | 4 | missing title, low contrast, skipped heading level, missing image alternative |
 | Manual only | 14 | focus visibility, keyboard reachability, link purpose, new tab, placeholder-only hint, animation control |
 
-Automated coverage was assessed against axe-core 4.14 and WAVE's published
-checks. It is a snapshot, not a permanent property: rules change, and a missing
+Automated coverage was assessed against the axe-core 4.14 checks used by
+Accessibility Insights for Web Fast Pass. It is a snapshot, not a permanent property: rules change, and a missing
 finding is not a pass.
 
 ## Maintaining it
