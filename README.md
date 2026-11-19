@@ -13,6 +13,9 @@ journey and planted accessibility problems — is unchanged.
 
 **Hosted exercise:** <https://mgifford.github.io/record-a-goose-sighting/>
 
+The same site also hosts three sibling fictional services and an isolated
+[ACT laboratory](https://mgifford.github.io/record-a-goose-sighting/lab/).
+
 ## What the exercise is
 
 You are asked to review a made-up service for recording goose sightings. The
@@ -46,6 +49,24 @@ was "fixed", but the total was never updated. See
 [baseline/README.md](baseline/README.md) for the history and the remaining
 recommendation to settle on a single number.
 
+### The animal-reporting laboratory
+
+The site now includes a small collection of sibling services that report
+different fictional animals, plus isolated cases for W3C Accessibility
+Conformance Testing (ACT) rules:
+
+| URL | Built with | Purpose |
+|---|---|---|
+| [/hedgehog/](https://mgifford.github.io/record-a-goose-sighting/hedgehog/) | React | A dynamically supplied button name, in initial and updated states |
+| [/wombat/](https://mgifford.github.io/record-a-goose-sighting/wombat/) | Vue | A reactive button name and a live status message |
+| [/paca/](https://mgifford.github.io/record-a-goose-sighting/paca/) | Web Components | An ARIA role inside an open or closed shadow root |
+| [/lab/](https://mgifford.github.io/record-a-goose-sighting/lab/) | Static HTML | The catalogue, isolated ACT fixtures and the fixture manifest |
+
+The laboratory is a teaching and research surface. It is not a WCAG
+conformance claim, it does not rank tools, and its fixture outcomes are
+unreviewed hypotheses. The surrounding interface is intended to be accessible;
+only the declared fixture targets contain deliberate defects.
+
 ## Running the site locally
 
 Requirements: Node.js 22 LTS and npm.
@@ -61,7 +82,12 @@ npm run preview
 
 `npm run preview` serves the generated site at
 <http://127.0.0.1:4173/record-a-goose-sighting/>, matching the GitHub Pages
-subpath.
+subpath. This includes the laboratory at `/lab/`, and the three services at
+`/hedgehog/`, `/wombat/` and `/paca/`.
+
+The build runs in two stages: `npm run build:goose` renders the exercise, then
+`npm run build:lab` builds the laboratory and merges it. To run one stage on its
+own, use those scripts; `npm run build` runs both.
 
 To preview at the domain root instead (useful when comparing with the original
 application):
@@ -91,7 +117,8 @@ Playwright suite:
 |---|---|
 | `tests/journey.spec.js` | The six page journey, persistence, editing, refresh, back/forward, HTML injection, storage failure, no-JavaScript fallback, reflow at 320px/375px/640px |
 | `tests/accessibility-regression.spec.js` | Every intentional accessibility problem, plus axe results compared with the original application's baseline |
-| `tests/static-build.spec.js` | All nine URLs, assets, internal links, absence of server runtime or analytics, dependency limits |
+| `tests/static-build.spec.js` | All nine Goose URLs, assets, internal links, absence of server runtime or analytics, dependency limits |
+| `tests/services.spec.js` | The catalogue, isolated ACT fixtures, the three framework services, the manifest, and preservation of the Goose output |
 
 To run the suite in all three Playwright engines:
 
@@ -178,15 +205,25 @@ app/
     includes/scripts.html script order
     index.html            instructions
     steps/*.html          the six exercise pages, worksheet and answers
+services/
+  lab/                    ACT catalogue, four isolated fixtures, manifest source
+  hedgehog/               React reporting service
+  wombat/                 Vue reporting service
+  paca/                   Web Components reporting service
+  public/lab/             shared laboratory styles
 scripts/
   build.mjs               Nunjucks rendering, Sass compilation, asset copying
+  lab-manifest.mjs        validates the ACT manifest, adds source hashes, publishes it
+  merge-lab.mjs           guarded merge; verifies Goose files are byte-identical
   serve.mjs               static preview server for the Pages subpath
 tests/
   *.spec.js               Playwright suites
   baseline/axe.json       recorded axe findings from the original application
   tools/                  capture and comparison utilities
+vite.config.mjs           laboratory build (React, Vue, Web Components, fixtures)
 baseline/                 snapshot of the original Express application
 dist/                     generated output (not committed)
+dist-lab/                 intermediate laboratory build (not committed)
 ```
 
 - **Templates:** the existing Nunjucks templates are rendered at build time. No
@@ -209,6 +246,18 @@ dist/                     generated output (not committed)
   navigation without JavaScript. When JavaScript is available, submission is
   intercepted, the answers are saved, and the browser navigates to a clean URL —
   answers do not appear in the query string.
+- **Laboratory build:** Vite compiles the React, Vue and Web Components services
+  and the static ACT fixtures into `dist-lab/`, then
+  `scripts/merge-lab.mjs` copies only the laboratory directories into `dist/`.
+  The merge refuses to run without the Goose output, refuses to copy a root
+  index, and fails if any pre-existing file changed. Framework code is bundled
+  locally; no CDN is used at runtime.
+- **ACT fixtures:** `services/lab/fixtures.json` is the source of truth for 11
+  cases, each mapped to an approved W3C ACT rule (674b10 or 97a4e1). The build
+  validates the schema, records a SHA-256 of each fixture source and publishes
+  the manifest at `/lab/fixtures.json`. All expected outcomes remain marked
+  `unreviewed`; the closed-shadow case deliberately has no ACT outcome because
+  an engine cannot inspect it, and a missing finding is never treated as a pass.
 
 ### Why no jQuery or Prototype Kit runtime
 
@@ -268,6 +317,8 @@ visual checks, which is part of the lesson.
   They are never sent to a server and disappear when the tab is closed.
 - Google Analytics has been removed. The original application loaded GA4
   (`G-S0FNENEJGR`) on every page; the static site loads no analytics.
+- The laboratory services keep form values in component state only and do not
+  transmit them. The Goose journey keeps its answers in `sessionStorage`.
 - Every asset is served from this site, including the confirmation-page GIF.
   The GIF is generated for this repository by
   `scripts/art/make-goose-gif.py`, so there is no third-party image request and

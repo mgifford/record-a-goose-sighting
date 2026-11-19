@@ -1,0 +1,216 @@
+{
+  "schemaVersion": "act-lab-fixture/2",
+  "description": "Candidate ACT experiments for the animal-reporting laboratory. Expected outcomes are hypotheses until independently reviewed. Official W3C test cases are not imported here.",
+  "cases": [
+    {
+      "id": "html-valid-role",
+      "service": "lab",
+      "framework": "html",
+      "urlPath": "lab/aria/role-valid/",
+      "act": {
+        "ruleId": "674b10",
+        "ruleName": "Role attribute has valid value",
+        "ruleStatus": "approved",
+        "ruleRevision": "2023-12-20",
+        "ruleUrl": "https://www.w3.org/WAI/standards-guidelines/act/rules/674b10/"
+      },
+      "expected": "passed",
+      "review": "unreviewed",
+      "target": { "scope": "light-dom", "selector": "#test-target" },
+      "readySelector": "[data-test-ready='true']",
+      "provenance": { "sourceFile": "services/lab/aria/role-valid/index.html" },
+      "notes": "Valid role token. Does not establish button keyboard operability."
+    },
+    {
+      "id": "html-invalid-role",
+      "service": "lab",
+      "framework": "html",
+      "urlPath": "lab/aria/role-invalid/",
+      "act": {
+        "ruleId": "674b10",
+        "ruleName": "Role attribute has valid value",
+        "ruleStatus": "approved",
+        "ruleRevision": "2023-12-20",
+        "ruleUrl": "https://www.w3.org/WAI/standards-guidelines/act/rules/674b10/"
+      },
+      "expected": "failed",
+      "review": "unreviewed",
+      "target": { "scope": "light-dom", "selector": "#test-target" },
+      "readySelector": "[data-test-ready='true']",
+      "provenance": { "sourceFile": "services/lab/aria/role-invalid/index.html" },
+      "notes": "Invalid role token; browsers ignore it and fall back to the implicit role."
+    },
+    {
+      "id": "html-button-named",
+      "service": "lab",
+      "framework": "html",
+      "urlPath": "lab/names/button-named/",
+      "act": {
+        "ruleId": "97a4e1",
+        "ruleName": "Button has non-empty accessible name",
+        "ruleStatus": "approved",
+        "ruleRevision": "2023-08-31",
+        "ruleUrl": "https://www.w3.org/WAI/standards-guidelines/act/rules/97a4e1/"
+      },
+      "expected": "passed",
+      "review": "unreviewed",
+      "target": { "scope": "light-dom", "selector": "#test-target" },
+      "readySelector": "[data-test-ready='true']",
+      "provenance": { "sourceFile": "services/lab/names/button-named/index.html" },
+      "notes": "Accessible name supplied by aria-label on an otherwise empty button."
+    },
+    {
+      "id": "html-button-unnamed",
+      "service": "lab",
+      "framework": "html",
+      "urlPath": "lab/names/button-unnamed/",
+      "act": {
+        "ruleId": "97a4e1",
+        "ruleName": "Button has non-empty accessible name",
+        "ruleStatus": "approved",
+        "ruleRevision": "2023-08-31",
+        "ruleUrl": "https://www.w3.org/WAI/standards-guidelines/act/rules/97a4e1/"
+      },
+      "expected": "failed",
+      "review": "unreviewed",
+      "target": { "scope": "light-dom", "selector": "#test-target" },
+      "readySelector": "[data-test-ready='true']",
+      "provenance": { "sourceFile": "services/lab/names/button-unnamed/index.html" },
+      "notes": "Empty button with no content or attribute that can provide a name."
+    },
+    {
+      "id": "react-button-initial",
+      "service": "hedgehog",
+      "framework": "react",
+      "urlPath": "hedgehog/?state=initial",
+      "act": {
+        "ruleId": "97a4e1",
+        "ruleName": "Button has non-empty accessible name",
+        "ruleStatus": "approved",
+        "ruleRevision": "2023-08-31",
+        "ruleUrl": "https://www.w3.org/WAI/standards-guidelines/act/rules/97a4e1/"
+      },
+      "expected": "failed",
+      "review": "unreviewed",
+      "target": { "scope": "light-dom", "selector": "#test-target" },
+      "readySelector": "[data-test-ready='true'][data-lab-state='initial']",
+      "provenance": { "sourceFile": "services/hedgehog/main.jsx" },
+      "notes": "Wait for the React state marker before evaluating."
+    },
+    {
+      "id": "react-button-updated",
+      "service": "hedgehog",
+      "framework": "react",
+      "urlPath": "hedgehog/?state=updated",
+      "act": {
+        "ruleId": "97a4e1",
+        "ruleName": "Button has non-empty accessible name",
+        "ruleStatus": "approved",
+        "ruleRevision": "2023-08-31",
+        "ruleUrl": "https://www.w3.org/WAI/standards-guidelines/act/rules/97a4e1/"
+      },
+      "expected": "passed",
+      "review": "unreviewed",
+      "target": { "scope": "light-dom", "selector": "#test-target" },
+      "readySelector": "[data-test-ready='true'][data-lab-state='updated']",
+      "provenance": { "sourceFile": "services/hedgehog/main.jsx" },
+      "notes": "Wait for the React state marker before evaluating."
+    },
+    {
+      "id": "vue-button-initial",
+      "service": "wombat",
+      "framework": "vue",
+      "urlPath": "wombat/?state=initial",
+      "act": {
+        "ruleId": "97a4e1",
+        "ruleName": "Button has non-empty accessible name",
+        "ruleStatus": "approved",
+        "ruleRevision": "2023-08-31",
+        "ruleUrl": "https://www.w3.org/WAI/standards-guidelines/act/rules/97a4e1/"
+      },
+      "expected": "failed",
+      "review": "unreviewed",
+      "target": { "scope": "light-dom", "selector": "#test-target" },
+      "readySelector": "[data-test-ready='true'][data-lab-state='initial']",
+      "provenance": { "sourceFile": "services/wombat/App.vue" },
+      "notes": "Wait for the Vue state marker before evaluating."
+    },
+    {
+      "id": "vue-button-updated",
+      "service": "wombat",
+      "framework": "vue",
+      "urlPath": "wombat/?state=updated",
+      "act": {
+        "ruleId": "97a4e1",
+        "ruleName": "Button has non-empty accessible name",
+        "ruleStatus": "approved",
+        "ruleRevision": "2023-08-31",
+        "ruleUrl": "https://www.w3.org/WAI/standards-guidelines/act/rules/97a4e1/"
+      },
+      "expected": "passed",
+      "review": "unreviewed",
+      "target": { "scope": "light-dom", "selector": "#test-target" },
+      "readySelector": "[data-test-ready='true'][data-lab-state='updated']",
+      "provenance": { "sourceFile": "services/wombat/App.vue" },
+      "notes": "Wait for the Vue state marker before evaluating."
+    },
+    {
+      "id": "paca-valid-open",
+      "service": "paca",
+      "framework": "web-components",
+      "urlPath": "paca/?role=valid&shadow=open",
+      "act": {
+        "ruleId": "674b10",
+        "ruleName": "Role attribute has valid value",
+        "ruleStatus": "approved",
+        "ruleRevision": "2023-12-20",
+        "ruleUrl": "https://www.w3.org/WAI/standards-guidelines/act/rules/674b10/"
+      },
+      "expected": "passed",
+      "review": "unreviewed",
+      "target": { "scope": "open-shadow", "host": "#test-host", "selector": "#test-target" },
+      "readySelector": "#test-host[data-test-ready='true']",
+      "provenance": { "sourceFile": "services/paca/main.js" },
+      "notes": "Open shadow root; engine support for shadow DOM must be reported explicitly."
+    },
+    {
+      "id": "paca-invalid-open",
+      "service": "paca",
+      "framework": "web-components",
+      "urlPath": "paca/?role=invalid&shadow=open",
+      "act": {
+        "ruleId": "674b10",
+        "ruleName": "Role attribute has valid value",
+        "ruleStatus": "approved",
+        "ruleRevision": "2023-12-20",
+        "ruleUrl": "https://www.w3.org/WAI/standards-guidelines/act/rules/674b10/"
+      },
+      "expected": "failed",
+      "review": "unreviewed",
+      "target": { "scope": "open-shadow", "host": "#test-host", "selector": "#test-target" },
+      "readySelector": "#test-host[data-test-ready='true']",
+      "provenance": { "sourceFile": "services/paca/main.js" },
+      "notes": "Invalid role inside an open shadow root."
+    },
+    {
+      "id": "paca-invalid-closed",
+      "service": "paca",
+      "framework": "web-components",
+      "urlPath": "paca/?role=invalid&shadow=closed",
+      "act": {
+        "ruleId": "674b10",
+        "ruleName": "Role attribute has valid value",
+        "ruleStatus": "approved",
+        "ruleRevision": "2023-12-20",
+        "ruleUrl": "https://www.w3.org/WAI/standards-guidelines/act/rules/674b10/"
+      },
+      "expected": null,
+      "execution": "unsupported",
+      "review": "unreviewed",
+      "target": { "scope": "closed-shadow", "host": "#test-host", "selector": null },
+      "readySelector": "#test-host[data-test-ready='true']",
+      "provenance": { "sourceFile": "services/paca/main.js" },
+      "notes": "Exploratory. A closed shadow root is not automatically a WCAG failure, and engine visibility is unsupported here. No ACT outcome may be recorded."
+    }
+  ]
+}
