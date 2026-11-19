@@ -4,6 +4,7 @@ import { computed, nextTick, onMounted, ref, watch, version as vueVersion } from
 const queryState = new URLSearchParams(window.location.search).get('state')
 const appVersion = typeof __APP_VERSION__ === 'string' ? __APP_VERSION__ : 'dev'
 const named = ref(queryState === 'updated')
+const phase = ref(queryState === 'async' ? 'async-pending' : 'ready')
 const step = ref('form')
 const place = ref('')
 const date = ref('')
@@ -17,10 +18,22 @@ const label = computed(() => (named.value ? 'Review wombat sighting' : ''))
 function markReady () {
   const app = document.getElementById('app')
   app.dataset.testReady = 'true'
-  app.dataset.labState = named.value ? 'updated' : 'initial'
+  app.dataset.labState = queryState === 'async'
+    ? phase.value
+    : named.value ? 'updated' : 'initial'
 }
 
-onMounted(markReady)
+onMounted(() => {
+  if (queryState === 'async') {
+    queueMicrotask(() => {
+      named.value = true
+      phase.value = 'async-ready'
+      markReady()
+    })
+  } else {
+    markReady()
+  }
+})
 watch(named, markReady)
 
 watch(step, async (value) => {
@@ -58,7 +71,7 @@ function reset () {
         {{ named ? 'Remove the example accessible name' : 'Add the example accessible name' }}
       </button>
     </p>
-    <p class="meta">Stable states: <code>?state=initial</code> and <code>?state=updated</code>.</p>
+    <p class="meta">Stable states: <code>?state=initial</code>, <code>?state=updated</code> and <code>?state=async</code>.</p>
   </section>
 
   <form v-if="step === 'form'" @submit.prevent="step = 'review'">

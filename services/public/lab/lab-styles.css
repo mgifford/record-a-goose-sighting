@@ -212,3 +212,14 @@ footer {
     transition-duration: 0.01ms !important;
   }
 }
+
+.frame-row {
+  display: grid;
+  gap: 1rem;
+}
+
+main > iframe,
+.frame-row iframe {
+  max-width: 100%;
+  border: 2px solid #0b0c0c;
+}

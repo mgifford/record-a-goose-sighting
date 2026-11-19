@@ -588,6 +588,293 @@
       },
       "notes": "Correctly named button, passing control. Distinct target on the repeated-controls scenario.",
       "reviewRecord": "lab/reviews/records/correlation-repeated-named-b.json"
+    },
+    {
+      "id": "frame-single-target",
+      "service": "lab",
+      "framework": "html",
+      "category": "iframe",
+      "scenarioId": "single-frame",
+      "stateId": "default",
+      "urlPath": "lab/frames/single-frame/",
+      "act": {
+        "ruleId": "97a4e1",
+        "ruleName": "Button has non-empty accessible name",
+        "ruleStatus": "approved",
+        "ruleRevision": "2023-08-31",
+        "ruleUrl": "https://www.w3.org/WAI/standards-guidelines/act/rules/97a4e1/"
+      },
+      "expected": "failed",
+      "review": "unreviewed",
+      "target": {
+        "scope": "light-dom",
+        "selector": "#target",
+        "targetId": "target",
+        "frame": [
+          "frame.html"
+        ]
+      },
+      "readySelector": "[data-test-ready='true']",
+      "provenance": {
+        "sourceFile": "services/lab/frames/single-frame/index.html"
+      },
+      "notes": "One unnamed button in one same-origin iframe.",
+      "reviewRecord": "lab/reviews/records/frame-single-target.json"
+    },
+    {
+      "id": "frame-nested-target",
+      "service": "lab",
+      "framework": "html",
+      "category": "iframe",
+      "scenarioId": "nested-frame",
+      "stateId": "default",
+      "urlPath": "lab/frames/nested-frame/",
+      "act": {
+        "ruleId": "97a4e1",
+        "ruleName": "Button has non-empty accessible name",
+        "ruleStatus": "approved",
+        "ruleRevision": "2023-08-31",
+        "ruleUrl": "https://www.w3.org/WAI/standards-guidelines/act/rules/97a4e1/"
+      },
+      "expected": "failed",
+      "review": "unreviewed",
+      "target": {
+        "scope": "light-dom",
+        "selector": "#target",
+        "targetId": "target",
+        "frame": [
+          "outer.html",
+          "inner.html"
+        ]
+      },
+      "readySelector": "[data-test-ready='true']",
+      "provenance": {
+        "sourceFile": "services/lab/frames/nested-frame/index.html"
+      },
+      "notes": "One unnamed button two browsing contexts deep.",
+      "reviewRecord": "lab/reviews/records/frame-nested-target.json"
+    },
+    {
+      "id": "frame-two-first",
+      "service": "lab",
+      "framework": "html",
+      "category": "iframe",
+      "scenarioId": "two-frames",
+      "stateId": "default",
+      "urlPath": "lab/frames/two-frames/",
+      "act": {
+        "ruleId": "97a4e1",
+        "ruleName": "Button has non-empty accessible name",
+        "ruleStatus": "approved",
+        "ruleRevision": "2023-08-31",
+        "ruleUrl": "https://www.w3.org/WAI/standards-guidelines/act/rules/97a4e1/"
+      },
+      "expected": "failed",
+      "review": "unreviewed",
+      "target": {
+        "scope": "light-dom",
+        "selector": "#target",
+        "targetId": "first-target",
+        "frame": [
+          "first.html"
+        ]
+      },
+      "readySelector": "[data-test-ready='true']",
+      "provenance": {
+        "sourceFile": "services/lab/frames/two-frames/index.html"
+      },
+      "notes": "First of two frames. Same selector as the second target, different browsing context.",
+      "reviewRecord": "lab/reviews/records/frame-two-first.json"
+    },
+    {
+      "id": "frame-two-second",
+      "service": "lab",
+      "framework": "html",
+      "category": "iframe",
+      "scenarioId": "two-frames",
+      "stateId": "default",
+      "urlPath": "lab/frames/two-frames/",
+      "act": {
+        "ruleId": "97a4e1",
+        "ruleName": "Button has non-empty accessible name",
+        "ruleStatus": "approved",
+        "ruleRevision": "2023-08-31",
+        "ruleUrl": "https://www.w3.org/WAI/standards-guidelines/act/rules/97a4e1/"
+      },
+      "expected": "failed",
+      "review": "unreviewed",
+      "target": {
+        "scope": "light-dom",
+        "selector": "#target",
+        "targetId": "second-target",
+        "frame": [
+          "second.html"
+        ]
+      },
+      "readySelector": "[data-test-ready='true']",
+      "provenance": {
+        "sourceFile": "services/lab/frames/two-frames/index.html"
+      },
+      "notes": "Second of two frames. Same selector as the first target, different browsing context.",
+      "reviewRecord": "lab/reviews/records/frame-two-second.json"
+    },
+    {
+      "id": "react-button-async",
+      "service": "lab",
+      "framework": "html",
+      "category": "dynamic-state",
+      "scenarioId": "react-async",
+      "stateId": "async",
+      "urlPath": "hedgehog/?state=async",
+      "act": {
+        "ruleId": "97a4e1",
+        "ruleName": "Button has non-empty accessible name",
+        "ruleStatus": "approved",
+        "ruleRevision": "2023-08-31",
+        "ruleUrl": "https://www.w3.org/WAI/standards-guidelines/act/rules/97a4e1/"
+      },
+      "expected": "passed",
+      "review": "unreviewed",
+      "target": {
+        "scope": "light-dom",
+        "selector": "#test-target",
+        "targetId": "test-target"
+      },
+      "readySelector": "[data-lab-state=\"async-ready\"]",
+      "provenance": {
+        "sourceFile": "services/hedgehog/main.jsx"
+      },
+      "notes": "Accessible name supplied after mount by a deterministic microtask.",
+      "reviewRecord": "lab/reviews/records/react-button-async.json"
+    },
+    {
+      "id": "react-button-replaced",
+      "service": "lab",
+      "framework": "html",
+      "category": "dynamic-state",
+      "scenarioId": "react-replaced",
+      "stateId": "replaced",
+      "urlPath": "hedgehog/?state=replaced",
+      "act": {
+        "ruleId": "97a4e1",
+        "ruleName": "Button has non-empty accessible name",
+        "ruleStatus": "approved",
+        "ruleRevision": "2023-08-31",
+        "ruleUrl": "https://www.w3.org/WAI/standards-guidelines/act/rules/97a4e1/"
+      },
+      "expected": "passed",
+      "review": "unreviewed",
+      "target": {
+        "scope": "light-dom",
+        "selector": "#test-target",
+        "targetId": "test-target"
+      },
+      "readySelector": "[data-lab-state=\"replaced\"]",
+      "provenance": {
+        "sourceFile": "services/hedgehog/main.jsx"
+      },
+      "notes": "The original DOM node is replaced and the replacement has an accessible name.",
+      "interaction": {
+        "action": "click",
+        "selector": "#replace-target"
+      },
+      "nodePreserved": false,
+      "reviewRecord": "lab/reviews/records/react-button-replaced.json"
+    },
+    {
+      "id": "vue-button-async",
+      "service": "lab",
+      "framework": "html",
+      "category": "dynamic-state",
+      "scenarioId": "vue-async",
+      "stateId": "async",
+      "urlPath": "wombat/?state=async",
+      "act": {
+        "ruleId": "97a4e1",
+        "ruleName": "Button has non-empty accessible name",
+        "ruleStatus": "approved",
+        "ruleRevision": "2023-08-31",
+        "ruleUrl": "https://www.w3.org/WAI/standards-guidelines/act/rules/97a4e1/"
+      },
+      "expected": "passed",
+      "review": "unreviewed",
+      "target": {
+        "scope": "light-dom",
+        "selector": "#test-target",
+        "targetId": "test-target"
+      },
+      "readySelector": "[data-lab-state=\"async-ready\"]",
+      "provenance": {
+        "sourceFile": "services/wombat/App.vue"
+      },
+      "notes": "Vue supplies the accessible name after mount.",
+      "reviewRecord": "lab/reviews/records/vue-button-async.json"
+    },
+    {
+      "id": "paca-valid-nested",
+      "service": "lab",
+      "framework": "html",
+      "category": "shadow-dom",
+      "scenarioId": "paca-nested-open",
+      "stateId": "nested",
+      "urlPath": "paca/?role=valid&shadow=nested",
+      "act": {
+        "ruleId": "674b10",
+        "ruleName": "Role attribute has valid value",
+        "ruleStatus": "approved",
+        "ruleRevision": "2023-12-20",
+        "ruleUrl": "https://www.w3.org/WAI/standards-guidelines/act/rules/674b10/"
+      },
+      "expected": "passed",
+      "review": "unreviewed",
+      "target": {
+        "scope": "open-shadow",
+        "selector": "#test-target",
+        "targetId": "test-target",
+        "hostPath": [
+          "paca-sighting",
+          "#nested-host"
+        ]
+      },
+      "readySelector": "paca-sighting[data-test-ready=\"true\"]",
+      "provenance": {
+        "sourceFile": "services/paca/main.js"
+      },
+      "notes": "Target is inside a shadow root nested in another open shadow root.",
+      "reviewRecord": "lab/reviews/records/paca-valid-nested.json"
+    },
+    {
+      "id": "interaction-reveal-target",
+      "service": "lab",
+      "framework": "html",
+      "category": "interaction",
+      "scenarioId": "reveal-target",
+      "stateId": "revealed",
+      "urlPath": "lab/interaction/reveal-target/",
+      "act": {
+        "ruleId": "97a4e1",
+        "ruleName": "Button has non-empty accessible name",
+        "ruleStatus": "approved",
+        "ruleRevision": "2023-08-31",
+        "ruleUrl": "https://www.w3.org/WAI/standards-guidelines/act/rules/97a4e1/"
+      },
+      "expected": "failed",
+      "review": "unreviewed",
+      "target": {
+        "scope": "light-dom",
+        "selector": "#target",
+        "targetId": "target"
+      },
+      "readySelector": "[data-reveal-state=\"revealed\"]",
+      "provenance": {
+        "sourceFile": "services/lab/interaction/reveal-target/index.html"
+      },
+      "notes": "The target does not exist until the disclosure is opened.",
+      "interaction": {
+        "action": "click",
+        "selector": "#reveal"
+      },
+      "reviewRecord": "lab/reviews/records/interaction-reveal-target.json"
     }
   ]
 }

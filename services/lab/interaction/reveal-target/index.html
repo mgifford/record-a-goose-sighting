@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reveal an unnamed control</title>
+  <link rel="stylesheet" href="/lab/lab-styles.css">
+</head>
+<body>
+  <header><nav aria-label="Site"><a href="../../../">Record a goose sighting</a><a href="../../">Laboratory</a></nav></header>
+  <main data-test-ready="true">
+    <h1>Reveal an unnamed control</h1>
+    <p class="notice">This is a deliberate interaction fixture. The failing button does not exist in the accessibility tree until the disclosure is opened.</p>
+    <p class="meta">Scenario <code>reveal-target</code>. Rule 97a4e1. Expected outcome after the interaction: failed, unreviewed. <a href="../../fixtures.json">Manifest entry</a>.</p>
+
+    <section class="fixture" aria-labelledby="fixture-heading">
+      <h2 id="fixture-heading">The disclosure</h2>
+      <button type="button" id="reveal" aria-expanded="false" aria-controls="panel">Show the example target</button>
+      <div id="panel" hidden data-reveal-state="hidden">
+        <button type="button" id="target" class="fixture-control"></button>
+      </div>
+    </section>
+
+    <script type="module">
+      const reveal = document.getElementById('reveal')
+      const panel = document.getElementById('panel')
+
+      reveal.addEventListener('click', () => {
+        const open = reveal.getAttribute('aria-expanded') === 'true'
+        reveal.setAttribute('aria-expanded', String(!open))
+        reveal.textContent = open ? 'Show the example target' : 'Hide the example target'
+        panel.hidden = open
+        panel.dataset.revealState = open ? 'hidden' : 'revealed'
+      })
+    </script>
+
+    <p><a href="../../">Back to the laboratory</a>.</p>
+  </main>
+  <footer><p>Part of the animal-reporting laboratory. MIT licensed.</p></footer>
+</body>
+</html>

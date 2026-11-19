@@ -35,6 +35,17 @@
       <li><a href="../paca/?role=invalid&amp;shadow=closed">Closed shadow root, exploratory</a> — no ACT outcome; engine visibility is unsupported.</li>
     </ul>
 
+    <h2 id="dynamic">Dynamic, frame and interaction tests</h2>
+    <p>Deterministic states that exercise asynchronous updates, node replacement, nested shadow roots, same-origin frames and disclosure interactions.</p>
+    <ul>
+      <li><a href="../hedgehog/?state=async">React: name supplied after mount</a> — stable <code>?state=async</code>, ready marker <code>async-ready</code>.</li>
+      <li><a href="../hedgehog/?state=replaced">React: target node replaced</a> — stable <code>?state=replaced</code>, explicit replace action.</li>
+      <li><a href="../wombat/?state=async">Vue: reactive name after mount</a> — stable <code>?state=async</code>.</li>
+      <li><a href="../paca/?role=valid&amp;shadow=nested">Paca: nested open shadow roots</a> — target inside a shadow root inside another shadow root.</li>
+      <li><a href="frames/single-frame/">Single frame</a>, <a href="frames/nested-frame/">nested frame</a> and <a href="frames/two-frames/">two frames</a> — same-origin targets in different browsing contexts.</li>
+      <li><a href="interaction/reveal-target/">Reveal an unnamed control</a> — the target is absent until the disclosure opens.</li>
+    </ul>
+
     <h2 id="correlation">Correlation experiments</h2>
     <p>Deliberate fixtures for testing target identity, duplicate detection and multiple rules on one element. These are not isolated single-target ACT cases.</p>
     <ul>

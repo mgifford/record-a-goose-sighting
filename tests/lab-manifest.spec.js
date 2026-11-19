@@ -103,3 +103,35 @@ test.describe('review evidence requirements', () => {
     )
   })
 })
+
+test.describe('frame and interaction validation', () => {
+  test('rejects a frame file that does not exist', () => {
+    const copy = structuredClone(manifest)
+    const entry = copy.cases.find((item) => item.id === 'frame-single-target')
+    entry.target.frame = ['missing-frame.html']
+
+    expect(validateManifest(copy, ROOT)).toContainEqual(
+      expect.stringContaining('frame file does not exist')
+    )
+  })
+
+  test('rejects an unsupported interaction action', () => {
+    const copy = structuredClone(manifest)
+    const entry = copy.cases.find((item) => item.id === 'interaction-reveal-target')
+    entry.interaction.action = 'hover'
+
+    expect(validateManifest(copy, ROOT)).toContainEqual(
+      expect.stringContaining('unsupported interaction action')
+    )
+  })
+
+  test('requires a host or hostPath for shadow targets', () => {
+    const copy = structuredClone(manifest)
+    const entry = copy.cases.find((item) => item.id === 'paca-valid-nested')
+    delete entry.target.hostPath
+
+    expect(validateManifest(copy, ROOT)).toContainEqual(
+      expect.stringContaining('need a host selector or hostPath')
+    )
+  })
+})

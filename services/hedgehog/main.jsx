@@ -7,6 +7,10 @@ const version = typeof __APP_VERSION__ === 'string' ? __APP_VERSION__ : 'dev'
 function App () {
   const [step, setStep] = useState('form')
   const [named, setNamed] = useState(queryState === 'updated')
+  const [nodeKey, setNodeKey] = useState(0)
+  const [phase, setPhase] = useState(
+    queryState === 'async' ? 'async-pending' : queryState === 'replaced' ? 'replaced-pending' : 'ready'
+  )
   const [place, setPlace] = useState('')
   const [date, setDate] = useState('')
   const [activity, setActivity] = useState('')
@@ -15,10 +19,22 @@ function App () {
   const doneHeading = useRef(null)
 
   useEffect(() => {
+    if (queryState === 'async') {
+      queueMicrotask(() => {
+        setNamed(true)
+        setPhase('async-ready')
+      })
+    }
+  }, [])
+
+  useEffect(() => {
     const app = document.getElementById('app')
+    const labState = queryState === 'async' || queryState === 'replaced'
+      ? phase
+      : named ? 'updated' : 'initial'
     app.dataset.testReady = 'true'
-    app.dataset.labState = named ? 'updated' : 'initial'
-  }, [named])
+    app.dataset.labState = labState
+  }, [named, phase])
 
   useEffect(() => {
     if (step === 'review') reviewHeading.current?.focus()
@@ -38,8 +54,10 @@ function App () {
         <h2 id="experiment-heading">ACT experiment: dynamically supplied button name</h2>
         <p className="meta">Rule <a href="https://www.w3.org/WAI/standards-guidelines/act/rules/97a4e1/">97a4e1: Button has non-empty accessible name</a> (approved). Expected outcome: failed in the initial state, passed in the updated state. Review status: unreviewed hypothesis. This is an experimental example, not a verified ACT verdict.</p>
         <button
+          key={nodeKey}
           type="button"
           id="test-target"
+          data-node-version={nodeKey}
           aria-label={named ? 'Review hedgehog sighting' : ''}
         >
           <span aria-hidden="true">↪</span>
@@ -49,7 +67,22 @@ function App () {
             {named ? 'Remove the example accessible name' : 'Add the example accessible name'}
           </button>
         </p>
-        <p className="meta">Stable states: <code>?state=initial</code> and <code>?state=updated</code>.</p>
+        {queryState === 'replaced' && (
+          <p>
+            <button
+              type="button"
+              id="replace-target"
+              onClick={() => {
+                setNodeKey((value) => value + 1)
+                setNamed(true)
+                setPhase('replaced')
+              }}
+            >
+              Replace the example target
+            </button>
+          </p>
+        )}
+        <p className="meta">Stable states: <code>?state=initial</code>, <code>?state=updated</code>, <code>?state=async</code> and <code>?state=replaced</code>.</p>
       </section>
 
       {step === 'form' && (

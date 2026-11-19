@@ -39,7 +39,10 @@ No engine names or predicted detection results appear in the manifest.
 | Target | `target.targetId` | Stable within a scenario/page |
 | Rule | `act.ruleId` | Six-character W3C ACT rule |
 | Page | `urlPath` | Relative to the laboratory site root |
-| State | `urlPath` query + `readySelector` | Deterministic; no session inheritance |
+| State | `stateId`, `urlPath` query + `readySelector` | Deterministic; no session inheritance |
+| Frame | `target.frame` | Ordered list of relative frame documents |
+| Shadow path | `target.hostPath` | Ordered host selectors for nested shadow roots |
+| Interaction | `interaction.action` + `selector` | Optional action required before the target state |
 
 Several cases may share a URL, a scenario and even a target. That is
 intentional: one element can fail two different ACT rules.
@@ -56,10 +59,21 @@ the DOM; the Playwright tests for each scenario assert target resolution.
 | `/lab/correlation/single-image/` | `single-image` | 1 | One failing image, the simplest shared-target case |
 | `/lab/correlation/multiple-rules-one-target/` | `single-target-two-rules` | 2 | One button failing both 97a4e1 and 674b10 |
 | `/lab/correlation/repeated-controls/` | `repeated-controls` | 5 | Three equivalent failures and two passing controls |
+| `/lab/frames/single-frame/` | `single-frame` | 1 | Unnamed button in one same-origin frame |
+| `/lab/frames/nested-frame/` | `nested-frame` | 1 | Unnamed button two browsing contexts deep |
+| `/lab/frames/two-frames/` | `two-frames` | 2 | Same `#target` selector in two different frames |
+| `/hedgehog/?state=async` | `react-async` | 1 | Accessible name supplied after mount |
+| `/hedgehog/?state=replaced` | `react-replaced` | 1 | Target node replaced, with an explicit action |
+| `/wombat/?state=async` | `vue-async` | 1 | Reactive accessible name after mount |
+| `/paca/?role=valid&shadow=nested` | `paca-nested-open` | 1 | Target inside a shadow root inside a shadow root |
+| `/lab/interaction/reveal-target/` | `reveal-target` | 1 | Target absent until a disclosure opens |
 
 Every target has a stable `targetId`. The two-image cases share a class and
 differ in `id` and image resource. The repeated controls share a class and
-differ only by `id` and accessible name.
+differ only by `id` and accessible name. The frame cases deliberately reuse
+`#target` in different browsing contexts, so the frame path is part of the
+target identity. The nested-shadow case uses `hostPath` rather than a single
+host selector.
 
 The fixtures do **not** predict how many findings an engine will produce. They
 declare the targets and outcomes that a scanner must resolve.
@@ -78,10 +92,10 @@ upstream ACT snapshot checksum are published separately at
 `/lab/provenance.json`. Build metadata is not mixed into the content
 fingerprint, and no timestamps are hashed.
 
-A fingerprint changes when a fixture's rendered HTML or a directly referenced
-asset changes. It does **not** yet follow transitive dependencies (for example
-an image referenced from CSS). That limitation is documented rather than
-guessed at.
+A fingerprint changes when a fixture's rendered HTML, a frame document, or a
+directly referenced asset changes. It does **not** yet follow transitive
+dependencies (for example an image referenced from CSS). That limitation is
+documented rather than guessed at.
 
 ## Reviews
 

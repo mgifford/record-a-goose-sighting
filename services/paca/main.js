@@ -41,9 +41,10 @@ class PacaSighting extends HTMLElement {
 
     const params = new URLSearchParams(window.location.search)
     const shadowMode = params.get('shadow') === 'closed' ? 'closed' : 'open'
+    const nested = params.get('shadow') === 'nested'
     const role = params.get('role') === 'valid' ? 'button' : 'goose'
 
-    this.dataset.shadowMode = shadowMode
+    this.dataset.shadowMode = nested ? 'nested-open' : shadowMode
     this.dataset.role = role
 
     const shadow = this.attachShadow({ mode: shadowMode })
@@ -115,7 +116,14 @@ class PacaSighting extends HTMLElement {
     const resetButton = element('button', { type: 'button' }, 'Report another sighting')
     done.append(doneHeading, doneText, resetButton)
 
-    shadow.append(status, experiment, form, review, done)
+    if (nested) {
+      const innerHost = element('div', { id: 'nested-host' })
+      const inner = innerHost.attachShadow({ mode: 'open' })
+      inner.append(style.cloneNode(true), experiment)
+      shadow.append(status, innerHost, form, review, done)
+    } else {
+      shadow.append(status, experiment, form, review, done)
+    }
 
     form.addEventListener('submit', (event) => {
       event.preventDefault()
@@ -153,7 +161,7 @@ class PacaSighting extends HTMLElement {
     })
 
     this.dataset.testReady = 'true'
-    this.dataset.labState = `${role}-${shadowMode}`
+    this.dataset.labState = `${role}-${nested ? 'nested-open' : shadowMode}`
     this.dataset.appVersion = version
   }
 }
