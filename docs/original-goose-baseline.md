@@ -50,10 +50,10 @@ tools are `tests/tools/capture.mjs` and `tests/tools/compare.mjs`.
 
 ## Intentional problems
 
-`docs/original-goose-issues.json` enumerates the 18 issues described by the
+`docs/original-goose-issues.json` now enumerates the 19 issues described by the
 answer key, with:
 
-- the answer-key position (1–18), route and short title;
+- the answer-key position (1–19), route and short title;
 - WCAG criteria and whether the item is a failure, a best practice, or a
   manual concern (several are explicitly not WCAG 2.1 AA failures);
 - the evidence type (DOM, computed style, keyboard, axe, manual);
@@ -83,13 +83,15 @@ material:
 The static migration preserved the first four behaviours. The missing mask icon
 was pointed at the icon that is actually shipped; this has no visual effect.
 
-## The 19-versus-18 discrepancy
+## The original 19-versus-18 discrepancy
 
-The answer key says "19 issues in total" and describes 18. Commit `66a64cb`
+At baseline, the answer key said "19 issues in total" and described 18. Commit `66a64cb`
 removed the nineteenth entry (*`Role="button"` missing on link to next page*)
 when the attribute was added to the start link, but the total was not updated.
-The page now says "19 issues in total (likely 18)" so learners are not misled.
-No nineteenth defect has been invented. See
+The page at that time said "19 issues in total (likely 18)" so learners were not misled.
+A nineteenth defect was added later by choice: the start-page image with a
+file-name alternative. This baseline section records the original state; the
+current inventory and answer page both list 19. See
 [`baseline/README.md`](../baseline/README.md) for the git history.
 
 ## Preservation guarantees

@@ -282,6 +282,14 @@ test.describe('confirmation page defects', () => {
     expect(alignment).toBe('justify')
   })
 
+  test('keeps the start illustration with a file-name alternative', async ({ page }) => {
+    await page.goto(PAGES['steps-start'])
+
+    const image = page.locator('img[src*="goose-illustration.svg"]')
+    await expect(image).toHaveCount(1)
+    await expect(image).toHaveAttribute('alt', 'goose-illustration.svg')
+  })
+
   test('keeps the animated GIF without alternative text', async ({ page }) => {
     await page.goto(PAGES['steps-end'])
 
@@ -304,13 +312,13 @@ test.describe('confirmation page defects', () => {
 })
 
 test.describe('answer sheet integrity', () => {
-  test('still claims 19 issues while describing 18', async ({ page }) => {
+  test('lists all 19 issues on the answer page', async ({ page }) => {
     await page.goto(PAGES['steps-answers'])
 
     // The published count and the number of described issues are recorded as
     // they were found. Correcting either is a separate content decision.
-    await expect(page.locator('p').first()).toContainText('There are 19 issues in total (likely 18)')
-    await expect(page.locator('dt')).toHaveCount(18)
+    await expect(page.locator('p').first()).toContainText('There are 19 issues in total')
+    await expect(page.locator('dt')).toHaveCount(19)
   })
 
   test('keeps the worksheet available', async ({ page }) => {

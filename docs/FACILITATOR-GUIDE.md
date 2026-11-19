@@ -11,7 +11,7 @@ many problems as they can, and then compare their findings with the answer key.
 The point is not to produce a clean automated score. It is to practise
 reviewing a service the way a person would use it.
 
-The exercise contains 18 described issues. The answer page says 19; the
+The exercise contains 19 described issues.
 discrepancy is explained in [original-goose-baseline.md](original-goose-baseline.md).
 Do not present it as 19 without explaining that the list enumerates 18.
 
@@ -92,7 +92,7 @@ Do not let the group open the answers during the review. The worksheet is at
 
 ## Common traps
 
-- **"The tool passed it."** Automated checks catch 4 of the 18 described
+- **"The tool passed it."** Automated checks catch 4 of the 19 described
   issues. Show the detection matrix: a clean report is not a clean page.
 - **"I tabbed through and it worked."** Reaching a control is not the same as
   seeing where focus is, or knowing what it does.

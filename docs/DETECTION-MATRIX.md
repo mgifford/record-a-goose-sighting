@@ -1,7 +1,7 @@
 # Detection matrix
 
 The [detection matrix page](../app/views/blind-spots.html) — published at
-`/blind-spots/` — shows, for each of the 18 described issues, whether automated
+`/blind-spots/` — shows, for each of the 19 described issues, whether automated
 tools detect it, which manual techniques expose it, and why automation misses it.
 
 ## Why it exists
@@ -41,7 +41,7 @@ the row count, the automated/manual split and the accessible table markup.
 | Detection | Count | Examples |
 | :--- | ---: | :--- |
 | Automated | 4 | missing title, low contrast, skipped heading level, missing image alternative |
-| Manual only | 14 | focus visibility, keyboard reachability, link purpose, new tab, placeholder-only hint, animation control |
+| Manual only | 15 | focus visibility, keyboard reachability, link purpose, new tab, placeholder-only hint, animation control |
 
 Automated coverage was assessed against the axe-core 4.14 checks used by
 Accessibility Insights for Web Fast Pass. It is a snapshot, not a permanent property: rules change, and a missing

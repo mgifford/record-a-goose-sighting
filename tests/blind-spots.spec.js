@@ -70,7 +70,7 @@ test.describe('what automation misses', () => {
 
 test.describe('detection inventory integrity', () => {
   test('every issue has a detection method and a manual technique', () => {
-    expect(INVENTORY.issues).toHaveLength(18)
+    expect(INVENTORY.issues).toHaveLength(19)
 
     for (const issue of INVENTORY.issues) {
       expect(issue.detection, issue.id).toBeTruthy()

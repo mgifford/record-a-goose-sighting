@@ -1,7 +1,7 @@
 # Keyboard focus practice
 
 `/steps/keyboard-practice/` is an optional extension to the six-page exercise.
-It is not one of the six pages and is not included in the 18-item answer key.
+It is not one of the six pages and is not included in the 19-item answer key.
 
 The page deliberately contains three focus problems that an Accessibility
 Insights **Fast Pass** does not report. They require using **Tab stops**,

@@ -66,8 +66,11 @@ issues. This is not a migration regression; git history explains it.
 "18 issues". The alternative — adding a nineteenth described issue — would
 require adding a new planted defect, which is out of scope. The migration
 preserves the text exactly, and
-`tests/accessibility-regression.spec.js` asserts that the page still says 19
-while listing 18, so the discrepancy cannot be silently "fixed" without a
+A nineteenth issue was later added deliberately (the start-page image with a
+file-name alternative), so the current answer page and inventory both list 19.
+This baseline records the original 18. The historical test that guarded the
+mismatch was updated to assert the intended 19. The discrepancy should not be
+silently "fixed" without a
 deliberate decision.
 
 ## Intentional problems vs. unexpected ones
@@ -106,7 +109,7 @@ explicit goal of the migration.
 ## Deliberate changes after the migration
 
 Two follow-up changes intentionally diverge from this snapshot. They were made
-after the parity run, and they do not change any of the 18 described defects:
+after the parity run, and they do not change any of the original 18 described defects:
 
 1. **Answers page wording.** "There are 19 issues in total" became "There are
    19 issues in total (likely 18)" so learners are not misled by the stale

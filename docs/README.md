@@ -3,7 +3,7 @@
 | Document | Purpose |
 | :--- | :--- |
 | [original-goose-baseline.md](original-goose-baseline.md) | Provenance, artifacts and method for the pre-migration baseline |
-| [original-goose-issues.json](original-goose-issues.json) | Machine-readable inventory of the 18 described issues, with detection methods |
+| [original-goose-issues.json](original-goose-issues.json) | Machine-readable inventory of the 19 described issues, with detection methods |
 | [DETECTION-MATRIX.md](DETECTION-MATRIX.md) | How automation coverage is assessed and maintained |
 | [FACILITATOR-GUIDE.md](FACILITATOR-GUIDE.md) | Running the exercise as a workshop, debrief prompts and common traps |
 | [MANUAL-TEST-SCRIPTS.md](MANUAL-TEST-SCRIPTS.md) | Keyboard, screen reader, zoom, forced-colours, motion and content scripts |

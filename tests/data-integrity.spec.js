@@ -89,13 +89,13 @@ test.describe('W3C ACT upstream snapshot', () => {
 })
 
 test.describe('original Goose preservation inventory', () => {
-  test('lists the 18 described issues without inventing a nineteenth', () => {
+  test('lists all 19 described issues', () => {
     const inventory = readJson(INVENTORY)
 
     expect(inventory.schemaVersion).toBe('goose-preservation/1')
     expect(inventory.counts.documentedTotal).toBe(19)
-    expect(inventory.counts.enumerated).toBe(18)
-    expect(inventory.issues).toHaveLength(18)
+    expect(inventory.counts.enumerated).toBe(19)
+    expect(inventory.issues).toHaveLength(19)
 
     const ids = new Set()
     const numbers = new Set()
@@ -107,7 +107,7 @@ test.describe('original Goose preservation inventory', () => {
       numbers.add(issue.answerKeyNumber)
 
       expect(issue.answerKeyNumber).toBeGreaterThanOrEqual(1)
-      expect(issue.answerKeyNumber).toBeLessThanOrEqual(18)
+      expect(issue.answerKeyNumber).toBeLessThanOrEqual(19)
       expect(issue.route).toMatch(/^steps\/[a-z-]+\/$/)
       expect(['failure', 'best-practice', 'manual-concern']).toContain(issue.wcag.status)
       expect(Array.isArray(issue.wcag.criteria)).toBe(true)

@@ -42,8 +42,8 @@ answer key, the stated total and the detection split. If approved:
    - `detection.automated` and `detection.manual`, with `whyMissed` when no
      automated rule detects it.
 3. Describe it on the answers page.
-4. Update the stated total deliberately. The page currently says “19 issues in
-   total (likely 18)”; do not make that wording less honest.
+4. Update the stated total deliberately. The page and inventory both list 19
+   issues; keep them in step when adding or resolving one.
 5. Add or update a Playwright assertion.
 6. Check the rendered detection matrix at `/blind-spots/`.
 

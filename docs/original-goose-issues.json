@@ -11,8 +11,8 @@
   },
   "counts": {
     "documentedTotal": 19,
-    "enumerated": 18,
-    "note": "The answer key says 19 issues but enumerates 18. Commit 66a64cb removed the role=button answer when that attribute was added, without updating the total. The live page now reads '19 issues in total (likely 18)'. This inventory records the 18 described items and does not invent a nineteenth."
+    "enumerated": 19,
+    "note": "The answer key originally said 19 issues but enumerated 18. The nineteenth entry, start-image-filename-alt, was added deliberately and the answer page now lists all 19."
   },
   "issues": [
     {
@@ -630,6 +630,41 @@
         },
         "whyMissed": "The animation is an image; control availability is not part of its markup."
       }
+    },
+    {
+      "id": "start-image-filename-alt",
+      "answerKeyNumber": 19,
+      "page": "steps/start",
+      "route": "steps/start/",
+      "title": "Image alternative is a file name",
+      "category": "images",
+      "wcag": {
+        "criteria": [
+          "1.1.1"
+        ],
+        "status": "failure"
+      },
+      "evidence": {
+        "type": "dom",
+        "assertion": "The start-page illustration uses alt=\"goose-illustration.svg\", which names the file rather than describing the image.",
+        "test": "tests/accessibility-regression.spec.js: keeps the start illustration with a file-name alternative"
+      },
+      "detection": {
+        "automated": {
+          "detected": false,
+          "tools": [],
+          "note": "A non-empty alt passes image-alt checks; automation does not judge whether it is equivalent."
+        },
+        "manual": {
+          "methods": [
+            "screen reader",
+            "images list"
+          ],
+          "test": "Listen to the start-page illustration in a screen reader and compare the announcement with the visible scene."
+        },
+        "whyMissed": "Automation can confirm that an alternative exists, not that it describes the image."
+      }
     }
-  ]
+  ],
+  "notes": null
 }

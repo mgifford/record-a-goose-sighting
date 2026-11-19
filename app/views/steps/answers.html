@@ -13,7 +13,7 @@ Answers - Record a goose sighting
     <h1 class="govuk-heading-xl">Accessibility issues in 'Record a goose sighting'</h1>
 
 
-    <p>Here is the answer sheet for the 'Record a goose sighting' accessibility testing exercise. There are 19 issues in total (likely 18).</p>
+    <p>Here is the answer sheet for the 'Record a goose sighting' accessibility testing exercise. There are 19 issues in total.</p>
 
     <p>Some of these issues would not be WCAG (Web Content Accessibility Guidelines) 2.1 failures. But, they could present issues to users with access needs, and WCAG compliance doesn't neccessarily mean that something is accessible.</p>
 
@@ -38,6 +38,9 @@ Answers - Record a goose sighting
 
       <dt class="govuk-!-font-weight-bold">Poor focus styling on link</dt>
       <dd>If the focus state style doesn't have a high enough contrast and it can be really hard to tell where focus is. This particularly effects people who have a sight impairement. In this instance, this issue can be fixed by adding the appropriate Design System link class.</dd>
+
+      <dt class="govuk-!-font-weight-bold">Image alternative is a file name</dt>
+      <dd>The start-page illustration has <code>alt="goose-illustration.svg"</code>. A screen reader user hears the file name rather than a description of the goose beside the pond. A non-empty alternative passes automated checks, but 1.1.1 requires the alternative to be equivalent to the image.</dd>
     </dl>
 
     <h3 class="govuk-heading-s">Do you like geese page</h3>

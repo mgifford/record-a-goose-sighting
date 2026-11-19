@@ -16,7 +16,7 @@ problems must be re-verified. It must not be folded into routine maintenance.
   baseline must be captured and reviewed.
 - **It can change the taught defects.** The exercise depends on component
   behaviours (missing legend, summary list, date input, panel, focus styling).
-  Each of the 18 described issues must be re-checked against the new component
+  Each of the 19 described issues must be re-checked against the new component
   output — and still preserved.
 - **It changes the JavaScript loading model.** GOV.UK Frontend 5 ships an ES
   module, so `application.js` and the script tags change shape.
@@ -86,7 +86,7 @@ the likely visible differences are:
 ## Acceptance criteria
 
 - All nine pages render and the six-page journey works.
-- All 18 described issues are still present and detectable.
+- All 19 described issues are still present and detectable.
 - The axe baseline has been reviewed, not merely regenerated.
 - Screenshots at desktop and mobile have been reviewed by a human.
 - The build remains static and reproducible; `npm ci && npm run build && npm test`
