@@ -17,6 +17,12 @@
       color: #0b0c0c;
       padding: 1rem;
     }
+    .interpretation-order {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: flex-end;
+      gap: 1rem;
+    }
   </style>
 </head>
 <body>
@@ -123,10 +129,112 @@
       </table>
     </section>
 
+
+    <section class="interpretation-case" id="case-link-purpose">
+      <h2>7. A tool pass that depends on context: uninformative link text</h2>
+      <div class="fixture">
+        <p><a href="#case-link-purpose">Read more</a></p>
+      </div>
+      <table class="summary">
+        <caption class="visually-hidden">Tool output and review conclusion</caption>
+        <tbody>
+          <tr><th scope="row">Tool output</th><td>No <code>link-name</code> finding: the link has non-empty text.</td></tr>
+          <tr><th scope="row">Review conclusion</th><td><strong>Context-dependent, not automatically a 2.4.4 failure.</strong> In a links list, "Read more" has no determinable purpose. If the surrounding sentence names the destination, it can pass.</td></tr>
+          <tr><th scope="row">Why</th><td>The rule checks that a name exists. It cannot decide whether the name identifies the destination in every context.</td></tr>
+        </tbody>
+      </table>
+      <details>
+        <summary>How to test</summary>
+        <ol>
+          <li>Open the links list in a screen reader, or read the link without its surrounding sentence.</li>
+          <li>Ask: can you name the destination from the link text alone?</li>
+          <li>Repeat with the surrounding paragraph present. Record both observations; do not change the verdict to "failure" unless the purpose is unavailable in every realistic context.</li>
+        </ol>
+      </details>
+    </section>
+
+    <section class="interpretation-case" id="case-image-alt">
+      <h2>8. A tool pass that fails review: an inaccurate image alternative</h2>
+      <div class="fixture">
+        <img id="wrong-alt-image" src="/lab/goose-b.svg" alt="A cat asleep" width="120" height="80">
+      </div>
+      <table class="summary">
+        <caption class="visually-hidden">Tool output and review conclusion</caption>
+        <tbody>
+          <tr><th scope="row">Tool output</th><td>No <code>image-alt</code> finding: an alternative attribute is present.</td></tr>
+          <tr><th scope="row">Review conclusion</th><td><strong>1.1.1 failure.</strong> The alternative does not describe the image.</td></tr>
+          <tr><th scope="row">Why</th><td>Automation checks for a non-empty alternative, not whether it is equivalent to the image's purpose.</td></tr>
+        </tbody>
+      </table>
+      <details>
+        <summary>How to test</summary>
+        <ol>
+          <li>Open the images list in a screen reader and listen to the alternative.</li>
+          <li>Compare it with the visible image and with the image's role in the page.</li>
+          <li>Record the heard alternative and why it is or is not equivalent.</li>
+        </ol>
+      </details>
+    </section>
+
+    <section class="interpretation-case" id="case-visual-order">
+      <h2>9. A tool pass that needs a keyboard: visual order differs from DOM order</h2>
+      <div class="fixture interpretation-order">
+        <a id="order-first" href="#case-visual-order">First item in the DOM</a>
+        <a id="order-second" href="#case-visual-order">Second item in the DOM</a>
+      </div>
+      <table class="summary">
+        <caption class="visually-hidden">Tool output and review conclusion</caption>
+        <tbody>
+          <tr><th scope="row">Tool output</th><td>No automated finding: both links have names and valid targets.</td></tr>
+          <tr><th scope="row">Review conclusion</th><td><strong>Potential 1.3.2 / 2.4.3 issue, context-dependent.</strong> The second item appears first visually, but Tab follows DOM order. If the sequence carries meaning, the mismatch is a failure.</td></tr>
+          <tr><th scope="row">Why</th><td>CSS <code>order</code> and <code>flex-direction</code> change rendering without changing DOM or focus order.</td></tr>
+        </tbody>
+      </table>
+      <details>
+        <summary>How to test</summary>
+        <ol>
+          <li>Tab from the address bar through the two links and record the order.</li>
+          <li>Compare it with the left-to-right visual order.</li>
+          <li>At 320 px and 200% zoom, check the order again.</li>
+          <li>Decide whether reading the content in the keyboard order changes its meaning.</li>
+        </ol>
+      </details>
+    </section>
+
+    <section class="interpretation-case" id="case-status-message">
+      <h2>10. A tool pass that needs a listener: an uninformative status message</h2>
+      <div class="fixture">
+        <button type="button" id="status-button">Update status</button>
+        <p id="status-message" role="status" aria-live="polite">No update</p>
+      </div>
+      <table class="summary">
+        <caption class="visually-hidden">Tool output and review conclusion</caption>
+        <tbody>
+          <tr><th scope="row">Tool output</th><td>No automated finding: the status region is valid and the button has a name.</td></tr>
+          <tr><th scope="row">Review conclusion</th><td><strong>Usability concern, not a 4.1.3 failure by itself.</strong> The message is announced, but "Updated" does not say what changed or whether the action succeeded.</td></tr>
+          <tr><th scope="row">Why</th><td>Status-message rules can confirm that a live region exists; they do not judge whether the announcement is useful.</td></tr>
+        </tbody>
+      </table>
+      <details>
+        <summary>How to test</summary>
+        <ol>
+          <li>With a screen reader running, activate the button.</li>
+          <li>Listen to the announcement without looking at the screen.</li>
+          <li>Record whether you can tell what changed and whether the action succeeded.</li>
+        </ol>
+      </details>
+    </section>
+
+    <p class="meta">Reproduction steps for every case are in the <a href="https://github.com/mgifford/record-a-goose-sighting/blob/master/docs/MANUAL-LAB-SCRIPTS.md">laboratory manual scripts</a>.</p>
     <p class="meta">Assessment reflects axe-core 4.14 at the time of writing. Tool output changes; the review conclusion does not.</p>
   </main>
   <footer>
     <p>Part of the animal-reporting laboratory. <a href="../">Back to the laboratory</a>.</p>
   </footer>
+  <script>
+    document.getElementById('status-button').addEventListener('click', () => {
+      document.getElementById('status-message').textContent = 'Updated'
+    })
+  </script>
 </body>
 </html>

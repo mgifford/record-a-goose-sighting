@@ -78,6 +78,7 @@ Facilitators and maintainers should start with the [documentation index](docs/RE
 
 - [Facilitator guide](docs/FACILITATOR-GUIDE.md) — formats, timing, debrief prompts and common traps
 - [Manual test scripts](docs/MANUAL-TEST-SCRIPTS.md) — keyboard, screen reader, zoom, forced colours, motion and content review
+- [Laboratory manual scripts](docs/MANUAL-LAB-SCRIPTS.md) — reproduction steps and evidence guidance for the isolated fixtures
 - [Detection matrix](docs/DETECTION-MATRIX.md) — which of the 18 issues automation misses, and why
 - [Exercise inventory](docs/original-goose-issues.json) — where every issue lives and how it is guarded
 

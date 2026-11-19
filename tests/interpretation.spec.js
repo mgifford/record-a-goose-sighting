@@ -5,16 +5,20 @@ import { test, expect } from '@playwright/test'
 const AXE_PATH = path.resolve(import.meta.dirname, '../node_modules/axe-core/axe.min.js')
 
 test.describe('interpreting tool results', () => {
-  test('presents six deliberate interpretation cases', async ({ page }) => {
+  test('presents ten deliberate interpretation cases', async ({ page }) => {
     await page.goto('lab/interpretation/')
 
     await expect(page).toHaveTitle('Interpreting tool results')
     await expect(page.getByRole('heading', { level: 1 })).toHaveText('Interpreting tool results')
-    await expect(page.locator('.interpretation-case')).toHaveCount(6)
+    await expect(page.locator('.interpretation-case')).toHaveCount(10)
 
-    await expect(page.getByRole('heading', { level: 2 })).toHaveCount(6)
+    await expect(page.getByRole('heading', { level: 2 })).toHaveCount(10)
     await expect(page.getByText('best-practice finding, not a WCAG failure')).toBeVisible()
     await expect(page.getByText('tool pass that fails review: invisible focus')).toBeVisible()
+    await expect(page.getByText('uninformative link text')).toBeVisible()
+    await expect(page.getByText('inaccurate image alternative')).toBeVisible()
+    await expect(page.getByText('visual order differs from DOM order')).toBeVisible()
+    await expect(page.getByText('uninformative status message')).toBeVisible()
   })
 
   test('matches the recorded axe observations', async ({ page }) => {
@@ -64,13 +68,32 @@ test.describe('interpreting tool results', () => {
     await page.goto('lab/interpretation/')
 
     const images = page.locator('.fixture img')
-    await expect(images).toHaveCount(2)
+    await expect(images).toHaveCount(3)
 
     const alternatives = await images.evaluateAll((elements) =>
       elements.map((element) => element.getAttribute('alt'))
     )
 
-    expect(alternatives).toEqual(['', 'goose-mark.svg'])
+    expect(alternatives).toEqual(['', 'goose-mark.svg', 'A cat asleep'])
+  })
+
+  test('demonstrates context-dependent judgments without inventing failures', async ({ page }) => {
+    await page.goto('lab/interpretation/')
+
+    const more = page.getByRole('link', { name: 'Read more' })
+    await expect(more).toBeVisible()
+    expect(await more.ariaSnapshot()).toContain('Read more')
+
+    await expect(page.locator('#wrong-alt-image')).toHaveAttribute('alt', 'A cat asleep')
+
+    const order = page.locator('.interpretation-order')
+    const direction = await order.evaluate((element) => getComputedStyle(element).flexDirection)
+    expect(direction).toBe('row-reverse')
+    const ids = await order.locator('a').evaluateAll((links) => links.map((link) => link.id))
+    expect(ids).toEqual(['order-first', 'order-second'])
+
+    await page.getByRole('button', { name: 'Update status' }).click()
+    await expect(page.locator('#status-message')).toHaveText('Updated')
   })
 
   test('keeps the hidden-instruction example hidden', async ({ page }) => {
