@@ -63,6 +63,7 @@ Conformance Testing (ACT) rules:
 | [/paca/](https://mgifford.github.io/record-a-goose-sighting/paca/) | Web Components | An ARIA role inside an open or closed shadow root |
 | [/lab/](https://mgifford.github.io/record-a-goose-sighting/lab/) | Static HTML | The catalogue, isolated ACT fixtures and the fixture manifest |
 | [/lab/interpretation/](https://mgifford.github.io/record-a-goose-sighting/lab/interpretation/) | Static HTML | Tool findings that need human interpretation: best practice versus failure, incomplete results, and tool passes that fail review |
+| [/lab/correlation/](https://mgifford.github.io/record-a-goose-sighting/lab/correlation/two-images/) | Static HTML | Correlation experiments: multiple targets, one target with two rules, and repeated equivalent controls |
 
 The laboratory is a teaching and research surface. It is not a WCAG
 conformance claim, it does not rank tools, and its fixture outcomes are

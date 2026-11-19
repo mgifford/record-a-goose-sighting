@@ -16,9 +16,14 @@
       },
       "expected": "passed",
       "review": "unreviewed",
-      "target": { "scope": "light-dom", "selector": "#test-target" },
+      "target": {
+        "scope": "light-dom",
+        "selector": "#test-target"
+      },
       "readySelector": "[data-test-ready='true']",
-      "provenance": { "sourceFile": "services/lab/aria/role-valid/index.html" },
+      "provenance": {
+        "sourceFile": "services/lab/aria/role-valid/index.html"
+      },
       "notes": "Valid role token. Does not establish button keyboard operability."
     },
     {
@@ -35,9 +40,14 @@
       },
       "expected": "failed",
       "review": "unreviewed",
-      "target": { "scope": "light-dom", "selector": "#test-target" },
+      "target": {
+        "scope": "light-dom",
+        "selector": "#test-target"
+      },
       "readySelector": "[data-test-ready='true']",
-      "provenance": { "sourceFile": "services/lab/aria/role-invalid/index.html" },
+      "provenance": {
+        "sourceFile": "services/lab/aria/role-invalid/index.html"
+      },
       "notes": "Invalid role token; browsers ignore it and fall back to the implicit role."
     },
     {
@@ -54,9 +64,14 @@
       },
       "expected": "passed",
       "review": "unreviewed",
-      "target": { "scope": "light-dom", "selector": "#test-target" },
+      "target": {
+        "scope": "light-dom",
+        "selector": "#test-target"
+      },
       "readySelector": "[data-test-ready='true']",
-      "provenance": { "sourceFile": "services/lab/names/button-named/index.html" },
+      "provenance": {
+        "sourceFile": "services/lab/names/button-named/index.html"
+      },
       "notes": "Accessible name supplied by aria-label on an otherwise empty button."
     },
     {
@@ -73,9 +88,14 @@
       },
       "expected": "failed",
       "review": "unreviewed",
-      "target": { "scope": "light-dom", "selector": "#test-target" },
+      "target": {
+        "scope": "light-dom",
+        "selector": "#test-target"
+      },
       "readySelector": "[data-test-ready='true']",
-      "provenance": { "sourceFile": "services/lab/names/button-unnamed/index.html" },
+      "provenance": {
+        "sourceFile": "services/lab/names/button-unnamed/index.html"
+      },
       "notes": "Empty button with no content or attribute that can provide a name."
     },
     {
@@ -92,9 +112,14 @@
       },
       "expected": "failed",
       "review": "unreviewed",
-      "target": { "scope": "light-dom", "selector": "#test-target" },
+      "target": {
+        "scope": "light-dom",
+        "selector": "#test-target"
+      },
       "readySelector": "[data-test-ready='true'][data-lab-state='initial']",
-      "provenance": { "sourceFile": "services/hedgehog/main.jsx" },
+      "provenance": {
+        "sourceFile": "services/hedgehog/main.jsx"
+      },
       "notes": "Wait for the React state marker before evaluating."
     },
     {
@@ -111,9 +136,14 @@
       },
       "expected": "passed",
       "review": "unreviewed",
-      "target": { "scope": "light-dom", "selector": "#test-target" },
+      "target": {
+        "scope": "light-dom",
+        "selector": "#test-target"
+      },
       "readySelector": "[data-test-ready='true'][data-lab-state='updated']",
-      "provenance": { "sourceFile": "services/hedgehog/main.jsx" },
+      "provenance": {
+        "sourceFile": "services/hedgehog/main.jsx"
+      },
       "notes": "Wait for the React state marker before evaluating."
     },
     {
@@ -130,9 +160,14 @@
       },
       "expected": "failed",
       "review": "unreviewed",
-      "target": { "scope": "light-dom", "selector": "#test-target" },
+      "target": {
+        "scope": "light-dom",
+        "selector": "#test-target"
+      },
       "readySelector": "[data-test-ready='true'][data-lab-state='initial']",
-      "provenance": { "sourceFile": "services/wombat/App.vue" },
+      "provenance": {
+        "sourceFile": "services/wombat/App.vue"
+      },
       "notes": "Wait for the Vue state marker before evaluating."
     },
     {
@@ -149,9 +184,14 @@
       },
       "expected": "passed",
       "review": "unreviewed",
-      "target": { "scope": "light-dom", "selector": "#test-target" },
+      "target": {
+        "scope": "light-dom",
+        "selector": "#test-target"
+      },
       "readySelector": "[data-test-ready='true'][data-lab-state='updated']",
-      "provenance": { "sourceFile": "services/wombat/App.vue" },
+      "provenance": {
+        "sourceFile": "services/wombat/App.vue"
+      },
       "notes": "Wait for the Vue state marker before evaluating."
     },
     {
@@ -168,9 +208,15 @@
       },
       "expected": "passed",
       "review": "unreviewed",
-      "target": { "scope": "open-shadow", "host": "#test-host", "selector": "#test-target" },
+      "target": {
+        "scope": "open-shadow",
+        "host": "#test-host",
+        "selector": "#test-target"
+      },
       "readySelector": "#test-host[data-test-ready='true']",
-      "provenance": { "sourceFile": "services/paca/main.js" },
+      "provenance": {
+        "sourceFile": "services/paca/main.js"
+      },
       "notes": "Open shadow root; engine support for shadow DOM must be reported explicitly."
     },
     {
@@ -187,9 +233,15 @@
       },
       "expected": "failed",
       "review": "unreviewed",
-      "target": { "scope": "open-shadow", "host": "#test-host", "selector": "#test-target" },
+      "target": {
+        "scope": "open-shadow",
+        "host": "#test-host",
+        "selector": "#test-target"
+      },
       "readySelector": "#test-host[data-test-ready='true']",
-      "provenance": { "sourceFile": "services/paca/main.js" },
+      "provenance": {
+        "sourceFile": "services/paca/main.js"
+      },
       "notes": "Invalid role inside an open shadow root."
     },
     {
@@ -207,10 +259,313 @@
       "expected": null,
       "execution": "unsupported",
       "review": "unreviewed",
-      "target": { "scope": "closed-shadow", "host": "#test-host", "selector": null },
+      "target": {
+        "scope": "closed-shadow",
+        "host": "#test-host",
+        "selector": null
+      },
       "readySelector": "#test-host[data-test-ready='true']",
-      "provenance": { "sourceFile": "services/paca/main.js" },
+      "provenance": {
+        "sourceFile": "services/paca/main.js"
+      },
       "notes": "Exploratory. A closed shadow root is not automatically a WCAG failure, and engine visibility is unsupported here. No ACT outcome may be recorded."
+    },
+    {
+      "id": "correlation-two-images-a",
+      "service": "lab",
+      "framework": "html",
+      "category": "target-correlation",
+      "scenarioId": "two-distinct-images",
+      "urlPath": "lab/correlation/two-images/",
+      "act": {
+        "ruleId": "23a2a8",
+        "ruleName": "Image has non-empty accessible name",
+        "ruleStatus": "approved",
+        "ruleRevision": "2023-08-31",
+        "ruleUrl": "https://www.w3.org/WAI/standards-guidelines/act/rules/23a2a8/"
+      },
+      "expected": "failed",
+      "review": "unreviewed",
+      "target": {
+        "scope": "light-dom",
+        "selector": "#missing-alt-a",
+        "targetId": "missing-alt-a"
+      },
+      "readySelector": "[data-test-ready='true']",
+      "provenance": {
+        "sourceFile": "services/lab/correlation/two-images/index.html"
+      },
+      "notes": "First of two distinct images sharing the fixture-image class. Missing alt is deliberate."
+    },
+    {
+      "id": "correlation-two-images-b",
+      "service": "lab",
+      "framework": "html",
+      "category": "target-correlation",
+      "scenarioId": "two-distinct-images",
+      "urlPath": "lab/correlation/two-images/",
+      "act": {
+        "ruleId": "23a2a8",
+        "ruleName": "Image has non-empty accessible name",
+        "ruleStatus": "approved",
+        "ruleRevision": "2023-08-31",
+        "ruleUrl": "https://www.w3.org/WAI/standards-guidelines/act/rules/23a2a8/"
+      },
+      "expected": "failed",
+      "review": "unreviewed",
+      "target": {
+        "scope": "light-dom",
+        "selector": "#missing-alt-b",
+        "targetId": "missing-alt-b"
+      },
+      "readySelector": "[data-test-ready='true']",
+      "provenance": {
+        "sourceFile": "services/lab/correlation/two-images/index.html"
+      },
+      "notes": "Second of two distinct images sharing the fixture-image class. Missing alt is deliberate."
+    },
+    {
+      "id": "correlation-two-images-control",
+      "service": "lab",
+      "framework": "html",
+      "category": "target-correlation",
+      "scenarioId": "two-distinct-images",
+      "urlPath": "lab/correlation/two-images/",
+      "act": {
+        "ruleId": "23a2a8",
+        "ruleName": "Image has non-empty accessible name",
+        "ruleStatus": "approved",
+        "ruleRevision": "2023-08-31",
+        "ruleUrl": "https://www.w3.org/WAI/standards-guidelines/act/rules/23a2a8/"
+      },
+      "expected": "passed",
+      "review": "unreviewed",
+      "target": {
+        "scope": "light-dom",
+        "selector": "#named-image-control",
+        "targetId": "named-image-control"
+      },
+      "readySelector": "[data-test-ready='true']",
+      "provenance": {
+        "sourceFile": "services/lab/correlation/two-images/index.html"
+      },
+      "notes": "Passing control with a meaningful text alternative."
+    },
+    {
+      "id": "correlation-single-image",
+      "service": "lab",
+      "framework": "html",
+      "category": "shared-target",
+      "scenarioId": "single-image",
+      "urlPath": "lab/correlation/single-image/",
+      "act": {
+        "ruleId": "23a2a8",
+        "ruleName": "Image has non-empty accessible name",
+        "ruleStatus": "approved",
+        "ruleRevision": "2023-08-31",
+        "ruleUrl": "https://www.w3.org/WAI/standards-guidelines/act/rules/23a2a8/"
+      },
+      "expected": "failed",
+      "review": "unreviewed",
+      "target": {
+        "scope": "light-dom",
+        "selector": "#missing-alt",
+        "targetId": "missing-alt"
+      },
+      "readySelector": "[data-test-ready='true']",
+      "provenance": {
+        "sourceFile": "services/lab/correlation/single-image/index.html"
+      },
+      "notes": "Simplest shared-target case: one image, one rule failure."
+    },
+    {
+      "id": "correlation-multi-rule-button-name",
+      "service": "lab",
+      "framework": "html",
+      "category": "multi-rule-target",
+      "scenarioId": "single-target-two-rules",
+      "urlPath": "lab/correlation/multiple-rules-one-target/",
+      "act": {
+        "ruleId": "97a4e1",
+        "ruleName": "Button has non-empty accessible name",
+        "ruleStatus": "approved",
+        "ruleRevision": "2023-08-31",
+        "ruleUrl": "https://www.w3.org/WAI/standards-guidelines/act/rules/97a4e1/"
+      },
+      "expected": "failed",
+      "review": "unreviewed",
+      "target": {
+        "scope": "light-dom",
+        "selector": "#target",
+        "targetId": "target"
+      },
+      "readySelector": "[data-test-ready='true']",
+      "provenance": {
+        "sourceFile": "services/lab/correlation/multiple-rules-one-target/index.html"
+      },
+      "notes": "Same element as correlation-multi-rule-role-value, different ACT rule."
+    },
+    {
+      "id": "correlation-multi-rule-role-value",
+      "service": "lab",
+      "framework": "html",
+      "category": "multi-rule-target",
+      "scenarioId": "single-target-two-rules",
+      "urlPath": "lab/correlation/multiple-rules-one-target/",
+      "act": {
+        "ruleId": "674b10",
+        "ruleName": "Role attribute has valid value",
+        "ruleStatus": "approved",
+        "ruleRevision": "2023-12-20",
+        "ruleUrl": "https://www.w3.org/WAI/standards-guidelines/act/rules/674b10/"
+      },
+      "expected": "failed",
+      "review": "unreviewed",
+      "target": {
+        "scope": "light-dom",
+        "selector": "#target",
+        "targetId": "target"
+      },
+      "readySelector": "[data-test-ready='true']",
+      "provenance": {
+        "sourceFile": "services/lab/correlation/multiple-rules-one-target/index.html"
+      },
+      "notes": "Same element as correlation-multi-rule-button-name, different ACT rule."
+    },
+    {
+      "id": "correlation-repeated-unnamed-a",
+      "service": "lab",
+      "framework": "html",
+      "category": "repeated-targets",
+      "scenarioId": "repeated-controls",
+      "urlPath": "lab/correlation/repeated-controls/",
+      "act": {
+        "ruleId": "97a4e1",
+        "ruleName": "Button has non-empty accessible name",
+        "ruleStatus": "approved",
+        "ruleRevision": "2023-08-31",
+        "ruleUrl": "https://www.w3.org/WAI/standards-guidelines/act/rules/97a4e1/"
+      },
+      "expected": "failed",
+      "review": "unreviewed",
+      "target": {
+        "scope": "light-dom",
+        "selector": "#unnamed-a",
+        "targetId": "unnamed-a"
+      },
+      "readySelector": "[data-test-ready='true']",
+      "provenance": {
+        "sourceFile": "services/lab/correlation/repeated-controls/index.html"
+      },
+      "notes": "First unnamed button. Distinct target on the repeated-controls scenario."
+    },
+    {
+      "id": "correlation-repeated-unnamed-b",
+      "service": "lab",
+      "framework": "html",
+      "category": "repeated-targets",
+      "scenarioId": "repeated-controls",
+      "urlPath": "lab/correlation/repeated-controls/",
+      "act": {
+        "ruleId": "97a4e1",
+        "ruleName": "Button has non-empty accessible name",
+        "ruleStatus": "approved",
+        "ruleRevision": "2023-08-31",
+        "ruleUrl": "https://www.w3.org/WAI/standards-guidelines/act/rules/97a4e1/"
+      },
+      "expected": "failed",
+      "review": "unreviewed",
+      "target": {
+        "scope": "light-dom",
+        "selector": "#unnamed-b",
+        "targetId": "unnamed-b"
+      },
+      "readySelector": "[data-test-ready='true']",
+      "provenance": {
+        "sourceFile": "services/lab/correlation/repeated-controls/index.html"
+      },
+      "notes": "Second unnamed button. Distinct target on the repeated-controls scenario."
+    },
+    {
+      "id": "correlation-repeated-unnamed-c",
+      "service": "lab",
+      "framework": "html",
+      "category": "repeated-targets",
+      "scenarioId": "repeated-controls",
+      "urlPath": "lab/correlation/repeated-controls/",
+      "act": {
+        "ruleId": "97a4e1",
+        "ruleName": "Button has non-empty accessible name",
+        "ruleStatus": "approved",
+        "ruleRevision": "2023-08-31",
+        "ruleUrl": "https://www.w3.org/WAI/standards-guidelines/act/rules/97a4e1/"
+      },
+      "expected": "failed",
+      "review": "unreviewed",
+      "target": {
+        "scope": "light-dom",
+        "selector": "#unnamed-c",
+        "targetId": "unnamed-c"
+      },
+      "readySelector": "[data-test-ready='true']",
+      "provenance": {
+        "sourceFile": "services/lab/correlation/repeated-controls/index.html"
+      },
+      "notes": "Third unnamed button. Distinct target on the repeated-controls scenario."
+    },
+    {
+      "id": "correlation-repeated-named-a",
+      "service": "lab",
+      "framework": "html",
+      "category": "repeated-targets",
+      "scenarioId": "repeated-controls",
+      "urlPath": "lab/correlation/repeated-controls/",
+      "act": {
+        "ruleId": "97a4e1",
+        "ruleName": "Button has non-empty accessible name",
+        "ruleStatus": "approved",
+        "ruleRevision": "2023-08-31",
+        "ruleUrl": "https://www.w3.org/WAI/standards-guidelines/act/rules/97a4e1/"
+      },
+      "expected": "passed",
+      "review": "unreviewed",
+      "target": {
+        "scope": "light-dom",
+        "selector": "#named-a",
+        "targetId": "named-a"
+      },
+      "readySelector": "[data-test-ready='true']",
+      "provenance": {
+        "sourceFile": "services/lab/correlation/repeated-controls/index.html"
+      },
+      "notes": "Correctly named button, passing control. Distinct target on the repeated-controls scenario."
+    },
+    {
+      "id": "correlation-repeated-named-b",
+      "service": "lab",
+      "framework": "html",
+      "category": "repeated-targets",
+      "scenarioId": "repeated-controls",
+      "urlPath": "lab/correlation/repeated-controls/",
+      "act": {
+        "ruleId": "97a4e1",
+        "ruleName": "Button has non-empty accessible name",
+        "ruleStatus": "approved",
+        "ruleRevision": "2023-08-31",
+        "ruleUrl": "https://www.w3.org/WAI/standards-guidelines/act/rules/97a4e1/"
+      },
+      "expected": "passed",
+      "review": "unreviewed",
+      "target": {
+        "scope": "light-dom",
+        "selector": "#named-b",
+        "targetId": "named-b"
+      },
+      "readySelector": "[data-test-ready='true']",
+      "provenance": {
+        "sourceFile": "services/lab/correlation/repeated-controls/index.html"
+      },
+      "notes": "Correctly named button, passing control. Distinct target on the repeated-controls scenario."
     }
   ]
 }

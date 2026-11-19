@@ -17,6 +17,10 @@ const entries = [
   'lab/names/button-named/index.html',
   'lab/names/button-unnamed/index.html',
   'lab/interpretation/index.html',
+  'lab/correlation/two-images/index.html',
+  'lab/correlation/single-image/index.html',
+  'lab/correlation/multiple-rules-one-target/index.html',
+  'lab/correlation/repeated-controls/index.html',
   'hedgehog/index.html',
   'wombat/index.html',
   'paca/index.html'

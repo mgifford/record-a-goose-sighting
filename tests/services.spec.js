@@ -265,7 +265,7 @@ test.describe('fixture manifest', () => {
     const manifest = await response.json()
 
     expect(manifest.schemaVersion).toBe('act-lab-fixture/2')
-    expect(manifest.cases.length).toBe(11)
+    expect(manifest.cases.length).toBeGreaterThanOrEqual(11)
 
     const ids = new Set()
 
@@ -282,6 +282,22 @@ test.describe('fixture manifest', () => {
       expect(['passed', 'failed', 'inapplicable', null]).toContain(entry.expected)
       expect(['unreviewed', 'reviewed', 'disputed']).toContain(entry.review)
       expect(entry.provenance.contentHash).toMatch(/^[a-f0-9]{64}$/)
+    }
+
+    for (const id of [
+      'html-valid-role',
+      'html-invalid-role',
+      'html-button-named',
+      'html-button-unnamed',
+      'react-button-initial',
+      'react-button-updated',
+      'vue-button-initial',
+      'vue-button-updated',
+      'paca-valid-open',
+      'paca-invalid-open',
+      'paca-invalid-closed'
+    ]) {
+      expect(ids.has(id), id).toBe(true)
     }
 
     const closed = manifest.cases.find((entry) => entry.id === 'paca-invalid-closed')

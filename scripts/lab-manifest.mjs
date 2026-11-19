@@ -31,6 +31,7 @@ export function validateManifest (manifest, root = ROOT) {
   }
 
   const seen = new Set()
+  const targets = new Map()
 
   for (const [index, entry] of manifest.cases.entries()) {
     const where = `cases[${index}]${entry.id ? ` (${entry.id})` : ''}`
@@ -38,6 +39,16 @@ export function validateManifest (manifest, root = ROOT) {
     if (!/^[a-z0-9-]+$/.test(entry.id || '')) errors.push(`${where}: invalid id`)
     if (seen.has(entry.id)) errors.push(`${where}: duplicate id`)
     seen.add(entry.id)
+
+    if (entry.category !== undefined && !/^[a-z0-9-]+$/.test(entry.category)) {
+      errors.push(`${where}: invalid category`)
+    }
+    if (entry.scenarioId !== undefined && !/^[a-z0-9-]+$/.test(entry.scenarioId)) {
+      errors.push(`${where}: invalid scenarioId`)
+    }
+    if (entry.target?.targetId !== undefined && !/^[a-z0-9-]+$/.test(entry.target.targetId)) {
+      errors.push(`${where}: invalid target.targetId`)
+    }
 
     if (!OUTCOMES.has(entry.expected) && entry.expected !== null) {
       errors.push(`${where}: expected must be passed, failed, inapplicable or null`)
@@ -83,6 +94,21 @@ export function validateManifest (manifest, root = ROOT) {
       const pathname = entry.urlPath.split('?')[0]
       const file = path.join(root, 'services', pathname, 'index.html')
       if (!fs.existsSync(file)) errors.push(`${where}: missing entry ${path.relative(root, file)}`)
+    }
+
+    if (entry.target?.targetId && typeof entry.urlPath === 'string') {
+      const key = `${entry.urlPath.split('?')[0]}|${entry.target.targetId}`
+      const signature = JSON.stringify({
+        scope: entry.target.scope,
+        selector: entry.target.selector ?? null,
+        host: entry.target.host ?? null
+      })
+      const previous = targets.get(key)
+
+      if (previous !== undefined && previous !== signature) {
+        errors.push(`${where}: targetId ${entry.target.targetId} resolves to conflicting target definitions`)
+      }
+      targets.set(key, signature)
     }
 
     if (!entry.provenance?.sourceFile) {
