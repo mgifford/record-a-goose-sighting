@@ -53,6 +53,7 @@ function siteUrl (route = '') {
 
 const PAGES = [
   'index',
+  'blind-spots',
   'steps/start',
   'steps/geese-liked',
   'steps/goose-type',
@@ -168,8 +169,13 @@ function createEnvironment () {
 }
 
 function buildPages (env) {
+  const inventory = JSON.parse(fs.readFileSync(path.join(ROOT, 'docs/original-goose-issues.json'), 'utf8'))
+
   const context = {
     serviceName: 'Record a goose sighting',
+    issues: inventory.issues,
+    documentedTotal: inventory.counts.documentedTotal,
+    automatedIssueCount: inventory.issues.filter((issue) => issue.detection?.automated?.detected).length,
     baseUrl,
     asset_path: siteUrl('public/'),
     releaseVersion: `v${pkg.version}`,

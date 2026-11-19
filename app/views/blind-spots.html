@@ -1,0 +1,71 @@
+{% extends "layout_unbranded.html" %}
+
+{% block pageTitle %}
+What automation misses - Record a goose sighting
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <a class="govuk-back-link" href="{{ siteUrl('steps/answers/') }}">Back to the answers</a>
+
+    <h1 class="govuk-heading-xl">What automation misses</h1>
+
+    <p class="govuk-body-l">Automated tools catch some of the issues in this exercise. Most of them need a person using the page in a particular way.</p>
+
+    <div class="govuk-inset-text">
+      <p class="govuk-body">This exercise describes {{ documentedTotal }} issues. Automated checks catch <strong>{{ automatedIssueCount }}</strong> of them. The other <strong>{{ issues.length - automatedIssueCount }}</strong> need manual checks, judgement, or both.</p>
+      <p class="govuk-body">Detection was assessed with axe-core 4.14 rules and WAVE's published checks. Tools change, and a rule appearing or disappearing is not a statement about WCAG conformance.</p>
+    </div>
+
+    <h2 class="govuk-heading-m">Detection by issue</h2>
+
+    <ul class="govuk-list">
+      {% for issue in issues %}
+      <li class="app-detection govuk-!-margin-bottom-6">
+        <h3 class="govuk-heading-s govuk-!-margin-bottom-1">
+          <a class="govuk-link" href="{{ siteUrl(issue.route) }}">{{ issue.title }}</a>
+        </h3>
+        <p class="govuk-body-s govuk-!-margin-bottom-2">{{ issue.page }}</p>
+
+        <dl class="govuk-summary-list govuk-summary-list--no-border govuk-!-margin-bottom-0">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Automated</dt>
+            <dd class="govuk-summary-list__value">
+              {% if issue.detection.automated.detected %}
+                <strong class="govuk-tag govuk-tag--green">Detected</strong>
+                <span class="govuk-body-s govuk-!-display-block">{{ issue.detection.automated.tools | join(', ') }}</span>
+              {% else %}
+                <strong class="govuk-tag govuk-tag--red">Not detected</strong>
+              {% endif %}
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Manual checks</dt>
+            <dd class="govuk-summary-list__value">{{ issue.detection.manual.methods | join(', ') }}</dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Why automation misses it</dt>
+            <dd class="govuk-summary-list__value">
+              {% if issue.detection.whyMissed %}
+                {{ issue.detection.whyMissed }}
+              {% else %}
+                —
+              {% endif %}
+            </dd>
+          </div>
+        </dl>
+      </li>
+      {% endfor %}
+    </ul>
+
+    <h2 class="govuk-heading-m">Using this in a review</h2>
+
+    <p class="govuk-body">A clean automated report is not evidence that a page is usable. For each “Not detected” row, the manual checks column names the technique that exposes the problem. The <a class="govuk-link" href="{{ siteUrl('steps/worksheet/') }}">worksheet</a> is a starting point; the <a class="govuk-link" href="{{ siteUrl('steps/answers/') }}">answers</a> describe the defects themselves.</p>
+
+    <p class="govuk-body">This page is about detection, not conformance. Some of these issues are best practice rather than WCAG 2.1 AA failures, and WCAG compliance does not by itself make a service accessible.</p>
+  </div>
+</div>
+
+{% endblock %}
