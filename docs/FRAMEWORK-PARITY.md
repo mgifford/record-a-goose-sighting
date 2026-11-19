@@ -108,4 +108,12 @@ Parity tests will run the same scripted journey against each framework:
 6. focus and error-summary behaviour match the contract;
 7. the ACT target remains unchanged.
 
-The React implementation is the reference; Vue and Web Components follow it.
+## Implementation status
+
+| Framework | Status |
+|---|---|
+| React (Hedgehog) | Reference implementation |
+| Vue (Wombat) | Ported to the same contract |
+| Web Components (Paca) | Next port |
+
+The React implementation is the reference; Web Components still follow it.
