@@ -22,11 +22,31 @@
       "route": "steps/start/",
       "title": "Two first-level headings",
       "category": "structure",
-      "wcag": { "criteria": ["1.3.1"], "status": "best-practice" },
+      "wcag": {
+        "criteria": [
+          "1.3.1"
+        ],
+        "status": "best-practice"
+      },
       "evidence": {
         "type": "dom",
         "assertion": "The page contains two h1 elements; the second is the related-links heading.",
         "test": "tests/accessibility-regression.spec.js: keeps two first-level headings"
+      },
+      "detection": {
+        "automated": {
+          "detected": false,
+          "tools": [],
+          "note": "No axe rule flags duplicate h1 elements."
+        },
+        "manual": {
+          "methods": [
+            "visual inspection",
+            "heading outline"
+          ],
+          "test": "Open the headings list and compare the outline with the visible structure."
+        },
+        "whyMissed": "The DOM is valid and every heading has text; judging whether two h1s make sense is contextual."
       }
     },
     {
@@ -36,11 +56,31 @@
       "route": "steps/start/",
       "title": "Related links appear in a different order to the DOM",
       "category": "focus-order",
-      "wcag": { "criteria": ["2.4.3"], "status": "manual-concern" },
+      "wcag": {
+        "criteria": [
+          "2.4.3"
+        ],
+        "status": "manual-concern"
+      },
       "evidence": {
         "type": "computed-style+keyboard",
         "assertion": "CSS order values are 1, 3, 2 while the DOM and Tab order are Wikipedia, More, RSPB.",
         "test": "tests/accessibility-regression.spec.js: keeps the related links in a different visual order to the DOM"
+      },
+      "detection": {
+        "automated": {
+          "detected": false,
+          "tools": [],
+          "note": "CSS order is not part of the accessibility tree."
+        },
+        "manual": {
+          "methods": [
+            "keyboard",
+            "visual inspection"
+          ],
+          "test": "Tab through the related links and compare the focus order with the visual order."
+        },
+        "whyMissed": "Tools read DOM order; they do not notice that the rendered order differs."
       }
     },
     {
@@ -50,11 +90,31 @@
       "route": "steps/start/",
       "title": "External link opens a new tab without warning",
       "category": "navigation",
-      "wcag": { "criteria": ["3.2.5"], "status": "best-practice" },
+      "wcag": {
+        "criteria": [
+          "3.2.5"
+        ],
+        "status": "best-practice"
+      },
       "evidence": {
         "type": "dom",
         "assertion": "The RSPB link has target=_blank and its accessible name gives no advance warning.",
         "test": "tests/accessibility-regression.spec.js: keeps an external link that opens a new tab without warning"
+      },
+      "detection": {
+        "automated": {
+          "detected": false,
+          "tools": [],
+          "note": "target=_blank is valid markup."
+        },
+        "manual": {
+          "methods": [
+            "keyboard",
+            "content review"
+          ],
+          "test": "Activate the RSPB link and check whether the new tab was announced in advance."
+        },
+        "whyMissed": "Whether a new tab is expected depends on the link text and the user context."
       }
     },
     {
@@ -64,11 +124,31 @@
       "route": "steps/start/",
       "title": "Ambiguous 'More' link text",
       "category": "content",
-      "wcag": { "criteria": ["2.4.4"], "status": "best-practice" },
+      "wcag": {
+        "criteria": [
+          "2.4.4"
+        ],
+        "status": "best-practice"
+      },
       "evidence": {
         "type": "dom",
         "assertion": "The link's accessible name is exactly 'More' and only makes sense from the surrounding section.",
         "test": "tests/accessibility-regression.spec.js: keeps the ambiguous \"More\" link text"
+      },
+      "detection": {
+        "automated": {
+          "detected": false,
+          "tools": [],
+          "note": "The link has non-empty text, so automated name checks pass."
+        },
+        "manual": {
+          "methods": [
+            "screen reader",
+            "links list"
+          ],
+          "test": "Read the links list out of context and decide whether \"More\" is meaningful."
+        },
+        "whyMissed": "Automation can test that a name exists, not whether it is useful."
       }
     },
     {
@@ -78,11 +158,31 @@
       "route": "steps/start/",
       "title": "Related links lose their focus indicator",
       "category": "focus-visible",
-      "wcag": { "criteria": ["2.4.7"], "status": "failure" },
+      "wcag": {
+        "criteria": [
+          "2.4.7"
+        ],
+        "status": "failure"
+      },
       "evidence": {
         "type": "computed-style",
         "assertion": "Focused a.link elements have outline:none and a transparent background.",
         "test": "tests/accessibility-regression.spec.js: keeps the invisible focus indicator on the related links"
+      },
+      "detection": {
+        "automated": {
+          "detected": false,
+          "tools": [],
+          "note": "No axe rule evaluates whether the focus indicator is visible."
+        },
+        "manual": {
+          "methods": [
+            "keyboard",
+            "computed styles"
+          ],
+          "test": "Focus each related link and look for a visible indicator."
+        },
+        "whyMissed": "Focus visibility is a rendering outcome; the CSS deliberately removes outline and background."
       }
     },
     {
@@ -92,11 +192,33 @@
       "route": "steps/geese-liked/",
       "title": "Missing page title",
       "category": "page-title",
-      "wcag": { "criteria": ["2.4.2"], "status": "failure" },
+      "wcag": {
+        "criteria": [
+          "2.4.2"
+        ],
+        "status": "failure"
+      },
       "evidence": {
         "type": "dom",
         "assertion": "document.title is empty.",
         "test": "tests/accessibility-regression.spec.js: keeps the empty page title"
+      },
+      "detection": {
+        "automated": {
+          "detected": true,
+          "tools": [
+            "axe: document-title",
+            "WAVE"
+          ],
+          "note": "A missing title is a standard automated check."
+        },
+        "manual": {
+          "methods": [
+            "screen reader"
+          ],
+          "test": "Listen to the page title announcement when the page loads."
+        },
+        "whyMissed": ""
       }
     },
     {
@@ -106,11 +228,32 @@
       "route": "steps/geese-liked/",
       "title": "Radio group has no legend",
       "category": "forms",
-      "wcag": { "criteria": ["1.3.1", "4.1.2"], "status": "failure" },
+      "wcag": {
+        "criteria": [
+          "1.3.1",
+          "4.1.2"
+        ],
+        "status": "failure"
+      },
       "evidence": {
         "type": "dom",
         "assertion": "The fieldset contains no legend and the question sits outside it.",
         "test": "tests/accessibility-regression.spec.js: keeps the empty radio group legend"
+      },
+      "detection": {
+        "automated": {
+          "detected": false,
+          "tools": [],
+          "note": "The fieldset exists but has no legend; automated grouping checks do not treat this as a failure."
+        },
+        "manual": {
+          "methods": [
+            "screen reader",
+            "forms mode"
+          ],
+          "test": "Navigate to the radio group and listen for its group label."
+        },
+        "whyMissed": "The radio buttons are individually named; the missing group name only appears in the interaction."
       }
     },
     {
@@ -120,11 +263,30 @@
       "route": "steps/geese-liked/",
       "title": "Continue button removed from sequential focus",
       "category": "keyboard",
-      "wcag": { "criteria": ["2.1.1"], "status": "failure" },
+      "wcag": {
+        "criteria": [
+          "2.1.1"
+        ],
+        "status": "failure"
+      },
       "evidence": {
         "type": "dom+keyboard",
         "assertion": "The submit button has tabindex=-1 and is never reached by Tab.",
         "test": "tests/accessibility-regression.spec.js: keeps the Continue button out of sequential keyboard focus"
+      },
+      "detection": {
+        "automated": {
+          "detected": false,
+          "tools": [],
+          "note": "tabindex=-1 is valid and is used legitimately for programmatic focus."
+        },
+        "manual": {
+          "methods": [
+            "keyboard"
+          ],
+          "test": "Tab from the radios and try to reach Continue without using the mouse."
+        },
+        "whyMissed": "Automated checks test attributes in isolation, not whether every control is keyboard reachable."
       }
     },
     {
@@ -134,11 +296,33 @@
       "route": "steps/geese-liked/",
       "title": "Low-contrast hint text",
       "category": "colour",
-      "wcag": { "criteria": ["1.4.3"], "status": "failure" },
+      "wcag": {
+        "criteria": [
+          "1.4.3"
+        ],
+        "status": "failure"
+      },
       "evidence": {
         "type": "computed-style",
         "assertion": "Hint colour is rgb(157, 157, 161) on white; contrast is below 4.5:1.",
         "test": "tests/accessibility-regression.spec.js: keeps the low-contrast hint text"
+      },
+      "detection": {
+        "automated": {
+          "detected": true,
+          "tools": [
+            "axe: color-contrast",
+            "WAVE"
+          ],
+          "note": "Contrast is measurable when colours are resolvable."
+        },
+        "manual": {
+          "methods": [
+            "visual inspection"
+          ],
+          "test": "Compare the hint with the background and confirm the ratio."
+        },
+        "whyMissed": ""
       }
     },
     {
@@ -148,11 +332,31 @@
       "route": "steps/goose-type/",
       "title": "Page title is 'Boop - Record a goose sighting'",
       "category": "page-title",
-      "wcag": { "criteria": ["2.4.2"], "status": "failure" },
+      "wcag": {
+        "criteria": [
+          "2.4.2"
+        ],
+        "status": "failure"
+      },
       "evidence": {
         "type": "dom",
         "assertion": "The title contains 'Boop' and does not describe the page question.",
         "test": "tests/accessibility-regression.spec.js: keeps the \"Boop\" page title"
+      },
+      "detection": {
+        "automated": {
+          "detected": false,
+          "tools": [],
+          "note": "document-title only checks that a title is present."
+        },
+        "manual": {
+          "methods": [
+            "screen reader",
+            "content review"
+          ],
+          "test": "Read the title aloud and decide whether it describes this page."
+        },
+        "whyMissed": "The title is non-empty but meaningless; usefulness is a judgement."
       }
     },
     {
@@ -162,11 +366,30 @@
       "route": "steps/goose-type/",
       "title": "Visually hidden, keyboard-focusable 'Ghost goose'",
       "category": "focus-visible",
-      "wcag": { "criteria": ["2.4.7"], "status": "failure" },
+      "wcag": {
+        "criteria": [
+          "2.4.7"
+        ],
+        "status": "failure"
+      },
       "evidence": {
         "type": "keyboard",
         "assertion": "The visually hidden paragraph has tabindex=0 and is the second Tab stop.",
         "test": "tests/accessibility-regression.spec.js: keeps the focusable, visually hidden ghost goose"
+      },
+      "detection": {
+        "automated": {
+          "detected": false,
+          "tools": [],
+          "note": "No rule pairs tabindex=0 with visually hidden text."
+        },
+        "manual": {
+          "methods": [
+            "keyboard"
+          ],
+          "test": "Tab from the page start and observe focus disappearing onto \"Ghost goose\"."
+        },
+        "whyMissed": "The element is valid; the problem is where focus goes and what the user can see."
       }
     },
     {
@@ -176,11 +399,31 @@
       "route": "steps/goose-type/",
       "title": "Formatting hint only available as placeholder text",
       "category": "forms",
-      "wcag": { "criteria": ["3.3.2"], "status": "best-practice" },
+      "wcag": {
+        "criteria": [
+          "3.3.2"
+        ],
+        "status": "best-practice"
+      },
       "evidence": {
         "type": "dom",
         "assertion": "The input has a placeholder and no persistent hint or aria-describedby.",
         "test": "tests/accessibility-regression.spec.js: keeps the placeholder as the only formatting instruction"
+      },
+      "detection": {
+        "automated": {
+          "detected": false,
+          "tools": [],
+          "note": "A placeholder is not itself a failure."
+        },
+        "manual": {
+          "methods": [
+            "content review",
+            "cognitive walkthrough"
+          ],
+          "test": "Type a value and check whether the formatting guidance is still available."
+        },
+        "whyMissed": "Tools cannot know that the placeholder is the only instruction."
       }
     },
     {
@@ -190,11 +433,31 @@
       "route": "steps/check-your-answers/",
       "title": "Change links use incorrect visually hidden text",
       "category": "content",
-      "wcag": { "criteria": ["2.4.4"], "status": "best-practice" },
+      "wcag": {
+        "criteria": [
+          "2.4.4"
+        ],
+        "status": "best-practice"
+      },
       "evidence": {
         "type": "dom",
         "assertion": "Visually hidden text reads 'biscuits' and 'cake' instead of the field being changed.",
         "test": "tests/accessibility-regression.spec.js: keeps the incorrect visually hidden Change-link text"
+      },
+      "detection": {
+        "automated": {
+          "detected": false,
+          "tools": [],
+          "note": "Visually hidden text exists and is non-empty."
+        },
+        "manual": {
+          "methods": [
+            "screen reader",
+            "links list"
+          ],
+          "test": "Read each Change link in the links list and check what it changes."
+        },
+        "whyMissed": "Accuracy of hidden text is a content judgement, not a structural rule."
       }
     },
     {
@@ -204,11 +467,32 @@
       "route": "steps/check-your-answers/",
       "title": "Heading level jumps from h1 to h3",
       "category": "structure",
-      "wcag": { "criteria": ["1.3.1"], "status": "failure" },
+      "wcag": {
+        "criteria": [
+          "1.3.1"
+        ],
+        "status": "failure"
+      },
       "evidence": {
         "type": "dom",
         "assertion": "The first two heading levels are 1 then 3.",
         "test": "tests/accessibility-regression.spec.js: keeps the incorrect heading hierarchy"
+      },
+      "detection": {
+        "automated": {
+          "detected": true,
+          "tools": [
+            "axe: heading-order"
+          ],
+          "note": "Skipped heading levels are checked by axe and WAVE."
+        },
+        "manual": {
+          "methods": [
+            "heading outline"
+          ],
+          "test": "Check the heading outline for a jump from h1 to h3."
+        },
+        "whyMissed": ""
       }
     },
     {
@@ -218,11 +502,29 @@
       "route": "steps/end/",
       "title": "All-caps confirmation heading",
       "category": "content",
-      "wcag": { "criteria": [], "status": "best-practice" },
+      "wcag": {
+        "criteria": [],
+        "status": "best-practice"
+      },
       "evidence": {
         "type": "dom",
         "assertion": "The confirmation heading is literally 'GOOSE RECORDED'.",
         "test": "tests/accessibility-regression.spec.js: keeps the uppercase confirmation heading"
+      },
+      "detection": {
+        "automated": {
+          "detected": false,
+          "tools": [],
+          "note": "Text in capitals is valid content."
+        },
+        "manual": {
+          "methods": [
+            "visual inspection",
+            "dyslexia-aware review"
+          ],
+          "test": "Read the confirmation heading and ask whether the capitals slow reading."
+        },
+        "whyMissed": "This is a readability judgement rather than a rule violation."
       }
     },
     {
@@ -232,11 +534,31 @@
       "route": "steps/end/",
       "title": "Justified paragraph",
       "category": "typography",
-      "wcag": { "criteria": ["1.4.8"], "status": "best-practice" },
+      "wcag": {
+        "criteria": [
+          "1.4.8"
+        ],
+        "status": "best-practice"
+      },
       "evidence": {
         "type": "computed-style",
         "assertion": "The paragraph computes to text-align: justify.",
         "test": "tests/accessibility-regression.spec.js: keeps the justified text"
+      },
+      "detection": {
+        "automated": {
+          "detected": false,
+          "tools": [],
+          "note": "text-align: justify is not flagged."
+        },
+        "manual": {
+          "methods": [
+            "visual inspection",
+            "computed styles"
+          ],
+          "test": "Read the paragraph and look at the uneven word spacing."
+        },
+        "whyMissed": "Justification is a typographic outcome that depends on the rendered line lengths."
       }
     },
     {
@@ -246,11 +568,33 @@
       "route": "steps/end/",
       "title": "Animated GIF has no alternative text",
       "category": "images",
-      "wcag": { "criteria": ["1.1.1"], "status": "failure" },
+      "wcag": {
+        "criteria": [
+          "1.1.1"
+        ],
+        "status": "failure"
+      },
       "evidence": {
         "type": "dom+axe",
         "assertion": "The confirmation image has no alt attribute and axe reports image-alt.",
         "test": "tests/accessibility-regression.spec.js: keeps the animated GIF without alternative text"
+      },
+      "detection": {
+        "automated": {
+          "detected": true,
+          "tools": [
+            "axe: image-alt",
+            "WAVE"
+          ],
+          "note": "A missing alt attribute is a standard automated failure."
+        },
+        "manual": {
+          "methods": [
+            "screen reader"
+          ],
+          "test": "Listen to the image announcement on the confirmation page."
+        },
+        "whyMissed": ""
       }
     },
     {
@@ -260,11 +604,31 @@
       "route": "steps/end/",
       "title": "Animation cannot be paused or stopped",
       "category": "motion",
-      "wcag": { "criteria": ["2.2.2"], "status": "failure" },
+      "wcag": {
+        "criteria": [
+          "2.2.2"
+        ],
+        "status": "failure"
+      },
       "evidence": {
         "type": "manual",
         "assertion": "The looping GIF has no pause, stop or hide control.",
         "test": "tests/accessibility-regression.spec.js: keeps the animation uncontrollable"
+      },
+      "detection": {
+        "automated": {
+          "detected": false,
+          "tools": [],
+          "note": "No rule checks whether a looping GIF can be paused."
+        },
+        "manual": {
+          "methods": [
+            "visual inspection",
+            "motion sensitivity review"
+          ],
+          "test": "Watch the page for more than five seconds and look for a pause or stop control."
+        },
+        "whyMissed": "The animation is an image; control availability is not part of its markup."
       }
     }
   ]

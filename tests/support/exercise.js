@@ -18,7 +18,8 @@ export const ROUTES = [
   { path: 'steps/check-your-answers/', name: 'check-your-answers' },
   { path: 'steps/end/', name: 'end' },
   { path: 'steps/worksheet/', name: 'worksheet' },
-  { path: 'steps/answers/', name: 'answers' }
+  { path: 'steps/answers/', name: 'answers' },
+  { path: 'blind-spots/', name: 'blind-spots' }
 ]
 
 export const DEFAULT_ANSWERS = {

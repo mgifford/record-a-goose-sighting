@@ -35,7 +35,8 @@ The journey has six pages:
 
 There is a [worksheet](https://mgifford.github.io/record-a-goose-sighting/steps/worksheet/)
 for recording findings and an [answers page](https://mgifford.github.io/record-a-goose-sighting/steps/answers/)
-describing the planted problems.
+describing the planted problems. The [detection matrix](https://mgifford.github.io/record-a-goose-sighting/blind-spots/)
+shows which issues automated tools miss and which manual checks expose them.
 
 ### 18 issues are described, but the answers page says 19
 
