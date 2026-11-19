@@ -230,21 +230,31 @@ test.describe('report a wombat (Vue)', () => {
     expect(await page.locator('#test-target').ariaSnapshot()).toContain('Review wombat sighting')
   })
 
-  test('announces the review step and completes the journey', async ({ page }) => {
+  test('validates, reviews and completes the journey', async ({ page }) => {
     await page.goto('wombat/?state=updated')
+    await page.getByRole('button', { name: 'Start now' }).click()
+    await expect(page.locator('#page-heading')).toBeFocused()
+    await expect(page.locator('#page-heading')).toHaveText('Do you like wombats?')
 
-    await page.fill('#place', 'Burrow entrance')
-    await page.fill('#date', '2026-11-18')
-    await page.fill('#activity', 'Digging')
-    await page.getByRole('button', { name: 'Review the sighting' }).click()
+    await page.getByRole('button', { name: 'Continue' }).click()
+    await expect(page.locator('.error-summary')).toBeFocused()
+    await expect(page.locator('.error-summary')).toContainText('Select yes or no')
 
-    await expect(page.locator('#review-heading')).toBeFocused()
-    await expect(page.locator('[role="status"]')).toHaveText('Review your sighting before confirming.')
-    await expect(page.locator('.summary')).toContainText('Burrow entrance')
+    await page.locator('#liked-yes').check()
+    await page.getByRole('button', { name: 'Continue' }).click()
+    await page.fill('#type', 'Common wombat')
+    await page.getByRole('button', { name: 'Continue' }).click()
+    await page.fill('#date-day', '18')
+    await page.fill('#date-month', '11')
+    await page.fill('#date-year', '2026')
+    await page.getByRole('button', { name: 'Continue' }).click()
 
-    await page.getByRole('button', { name: 'Confirm sighting' }).click()
-    await expect(page.locator('#done-heading')).toBeFocused()
-    await expect(page.getByText('The fictional wombat sighting has been recorded in this browser only.')).toBeVisible()
+    await expect(page.locator('.summary')).toContainText('Common wombat')
+    await expect(page.locator('[role="status"]')).toContainText('Check your answers')
+
+    await page.getByRole('button', { name: 'Send the sighting' }).click()
+    await expect(page.locator('#page-heading')).toBeFocused()
+    await expect(page.locator('#page-heading')).toHaveText('Sighting recorded')
   })
 })
 
