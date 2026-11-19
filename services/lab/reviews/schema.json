@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mgifford.github.io/record-a-goose-sighting/lab/reviews/schema.json",
+  "title": "Fixture review record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "fixtureId",
+    "status",
+    "expectedOutcome",
+    "reviewedAt",
+    "reviewer",
+    "methods",
+    "evidence",
+    "limitations"
+  ],
+  "properties": {
+    "schemaVersion": { "const": "fixture-review/1" },
+    "fixtureId": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+    "scenarioId": { "type": ["string", "null"], "pattern": "^[a-z0-9-]+$" },
+    "status": { "enum": ["unreviewed", "reviewed", "disputed"] },
+    "expectedOutcome": { "enum": ["passed", "failed", "inapplicable", null] },
+    "reviewedAt": { "type": ["string", "null"], "format": "date-time" },
+    "reviewer": { "type": ["string", "null"] },
+    "methods": { "type": "array", "items": { "type": "string" } },
+    "evidence": { "type": "array", "items": { "type": "string" } },
+    "rationale": { "type": ["string", "null"] },
+    "limitations": { "type": "array", "items": { "type": "string" } }
+  },
+  "allOf": [
+    {
+      "if": { "properties": { "status": { "const": "reviewed" } } },
+      "then": {
+        "required": ["reviewedAt", "reviewer", "methods", "evidence"],
+        "properties": {
+          "reviewedAt": { "type": "string", "minLength": 1 },
+          "reviewer": { "type": "string", "minLength": 1 },
+          "methods": { "minItems": 1 },
+          "evidence": { "minItems": 1 }
+        }
+      }
+    }
+  ]
+}
