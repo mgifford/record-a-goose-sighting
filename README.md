@@ -38,16 +38,16 @@ for recording findings and an [answers page](https://mgifford.github.io/record-a
 describing the planted problems. The [detection matrix](https://mgifford.github.io/record-a-goose-sighting/blind-spots/)
 shows which issues automated tools miss and which manual checks expose them.
 
-### 18 issues are described, but the answers page says 19
+### 19 issues are described and listed
 
 The answers page originally said "There are 19 issues in total" and then
-described **18** issues. The sentence now reads "There are 19 issues in total
-(likely 18)" so that learners are not misled by a stale count.
+described **18** issues. Commit `66a64cb` had removed a nineteenth answer when
+the underlying problem was "fixed", but the total was never updated.
 
-The discrepancy is a content defect in the original exercise, not a migration
-defect. Commit `66a64cb` removed a nineteenth answer when the underlying problem
-was "fixed", but the total was never updated. See
-[baseline/README.md](baseline/README.md) for the history and the remaining
+That historical gap is now closed deliberately: issue 19 is the start-page
+image whose alternative is the file name `goose-illustration.svg`. The answer
+page now lists all 19. See [baseline/README.md](baseline/README.md) for the
+original history and the remaining
 recommendation to settle on a single number.
 
 ### The animal-reporting laboratory
@@ -79,7 +79,7 @@ Facilitators and maintainers should start with the [documentation index](docs/RE
 - [Facilitator guide](docs/FACILITATOR-GUIDE.md) — formats, timing, debrief prompts and common traps
 - [Manual test scripts](docs/MANUAL-TEST-SCRIPTS.md) — keyboard, screen reader, zoom, forced colours, motion and content review
 - [Laboratory manual scripts](docs/MANUAL-LAB-SCRIPTS.md) — reproduction steps and evidence guidance for the isolated fixtures
-- [Detection matrix](docs/DETECTION-MATRIX.md) — which of the 18 issues automation misses, and why
+- [Detection matrix](docs/DETECTION-MATRIX.md) — which of the 19 issues automation misses, and why
 - [Exercise inventory](docs/original-goose-issues.json) — where every issue lives and how it is guarded
 
 ## Running the site locally
@@ -288,10 +288,10 @@ dist-lab/                 intermediate laboratory build (not committed)
   Note that the upstream `approved` flag and `rulePage` can disagree for some
   cases; rule status is never derived from `rulePage` here.
 - **Preservation inventory:** [`docs/original-goose-issues.json`](docs/original-goose-issues.json)
-  lists the 18 described Goose issues with routes, WCAG status, evidence type and
+  lists the 19 described Goose issues with routes, WCAG status, evidence type and
   the regression test that guards each one. It is intentionally separate from
   the ACT fixtures because most of those problems have no approved ACT rule. The
-  narrative, provenance and 19-versus-18 explanation are in
+  narrative, provenance and count history are in
   [`docs/original-goose-baseline.md`](docs/original-goose-baseline.md).
 
 ### Why no jQuery or Prototype Kit runtime

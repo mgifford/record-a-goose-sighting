@@ -2,7 +2,7 @@
 
 The Goose journey is the process reference. The React (Hedgehog), Vue (Wombat)
 and Web Components (Paca) services reproduce the **process**, not the Goose
-content or its 18 defects.
+content or its 19 defects.
 
 ## Level of parity
 

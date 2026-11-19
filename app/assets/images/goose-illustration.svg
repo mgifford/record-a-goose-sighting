@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 240" width="480" height="240" role="img" aria-labelledby="goose-title goose-desc">
+  <title id="goose-title">A goose beside a pond</title>
+  <desc id="goose-desc">A white goose with an orange beak stands beside blue water, with reeds and a yellow sun.</desc>
+  <rect width="480" height="240" fill="#e8f1f5"/>
+  <circle cx="405" cy="52" r="28" fill="#ffdd00"/>
+  <path d="M0 168 Q80 142 160 168 T320 168 T480 168 V240 H0 Z" fill="#b8d8e8"/>
+  <path d="M0 190 Q100 170 200 190 T400 190 T480 190 V240 H0 Z" fill="#7fb6d0"/>
+  <path d="M90 92 C90 60 120 48 150 60 C164 66 172 82 168 100 L158 150 C156 162 146 170 134 170 L116 170 C104 170 94 162 92 150 Z" fill="#ffffff" stroke="#0b0c0c" stroke-width="4"/>
+  <path d="M154 70 C168 50 188 48 198 56" fill="none" stroke="#0b0c0c" stroke-width="5"/>
+  <circle cx="200" cy="54" r="16" fill="#ffffff" stroke="#0b0c0c" stroke-width="4"/>
+  <path d="M214 50 L244 58 L214 66 Z" fill="#e3902a"/>
+  <circle cx="204" cy="48" r="3" fill="#0b0c0c"/>
+  <path d="M120 170 L120 196 M142 170 L142 196" stroke="#e3902a" stroke-width="5"/>
+  <path d="M300 150 L310 110 M330 150 L320 110 M360 150 L350 110" stroke="#3f6b3a" stroke-width="5"/>
+  <path d="M310 110 Q300 92 312 82 M320 110 Q330 90 318 80 M350 110 Q340 90 352 80" fill="none" stroke="#3f6b3a" stroke-width="4"/>
+</svg>
