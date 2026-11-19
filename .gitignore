@@ -1,5 +1,6 @@
 node_modules/
 dist/
+dist-lab/
 .cache/
 .pw-browsers/
 .npm-cache/
@@ -7,6 +8,7 @@ dist/
 .playwright/
 test-results/
 playwright-report/
-public/
+# Legacy root build output (the laboratory has its own public/ directory)
+/public/
 .DS_Store
 .env

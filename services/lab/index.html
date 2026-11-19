@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Animal reporting laboratory</title>
+  <link rel="stylesheet" href="/lab/lab-styles.css">
+</head>
+<body>
+  <header>
+    <nav aria-label="Site">
+      <a href="../">Record a goose sighting</a>
+      <a href="./" aria-current="page">Laboratory</a>
+    </nav>
+  </header>
+  <main>
+    <h1>Animal reporting laboratory</h1>
+    <p class="notice">These are fictional services for accessibility research and training. They are not real government services. The laboratory interface is intended to be usable; only the explicitly labelled fixture targets contain deliberately broken conditions.</p>
+
+    <h2>Report a sighting</h2>
+    <p>Three sibling services implement the same reporting journey in different rendering models. Each has a control to compare an initial and an updated accessibility state.</p>
+    <ul>
+      <li><a href="../hedgehog/">Report a hedgehog</a> — React, with a dynamically supplied button name.</li>
+      <li><a href="../wombat/">Report a wombat</a> — Vue, with a reactive button name and live status message.</li>
+      <li><a href="../paca/">Report a paca</a> — native Web Components, with an ARIA role inside an open or closed shadow root.</li>
+    </ul>
+
+    <h2>Isolated ACT fixtures</h2>
+    <p>Each fixture isolates one target for one <abbr title="Accessibility Conformance Testing">ACT</abbr> rule. Expected outcomes are unreviewed hypotheses, not verified results.</p>
+    <ul>
+      <li><a href="aria/role-valid/">Valid ARIA role</a> — rule 674b10, expected passed.</li>
+      <li><a href="aria/role-invalid/">Invalid ARIA role</a> — rule 674b10, expected failed.</li>
+      <li><a href="names/button-named/">Button with an accessible name</a> — rule 97a4e1, expected passed.</li>
+      <li><a href="names/button-unnamed/">Button without an accessible name</a> — rule 97a4e1, expected failed.</li>
+      <li><a href="../paca/?role=invalid&amp;shadow=closed">Closed shadow root, exploratory</a> — no ACT outcome; engine visibility is unsupported.</li>
+    </ul>
+
+    <h2>Manifest and provenance</h2>
+    <ul>
+      <li><a href="fixtures.json">Fixture manifest (JSON)</a> — stable IDs, target scope, expected outcomes, review status and source hashes.</li>
+      <li><a href="https://www.w3.org/WAI/standards-guidelines/act/rules/674b10/">ACT rule 674b10: role attribute has valid value</a> (approved).</li>
+      <li><a href="https://www.w3.org/WAI/standards-guidelines/act/rules/97a4e1/">ACT rule 97a4e1: button has non-empty accessible name</a> (approved).</li>
+      <li><a href="https://github.com/mgifford/record-a-goose-sighting/tree/master/services">Source for these services</a>.</li>
+    </ul>
+
+    <h2>Scope</h2>
+    <p>Automated ACT results describe rule evaluation for declared targets. They do not establish WCAG conformance, do not rank tools, and do not cover requirements that lack an approved ACT rule. A missing finding is not a pass.</p>
+  </main>
+  <footer>
+    <p>Part of the <a href="../">Record a goose sighting</a> accessibility exercise. MIT licensed.</p>
+  </footer>
+</body>
+</html>

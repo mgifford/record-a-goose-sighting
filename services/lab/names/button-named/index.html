@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en" data-test-ready="true">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Button fixture: accessible name present</title>
+  <link rel="stylesheet" href="/lab/lab-styles.css">
+</head>
+<body>
+  <header>
+    <nav aria-label="Site">
+      <a href="../../../">Record a goose sighting</a>
+      <a href="../../">Laboratory</a>
+    </nav>
+  </header>
+  <main>
+    <h1>Button fixture: accessible name present</h1>
+    <p class="meta">ACT rule <a href="https://www.w3.org/WAI/standards-guidelines/act/rules/97a4e1/">97a4e1: Button has non-empty accessible name</a> (approved, revision 31 August 2023). Expected outcome: <strong>passed</strong>. Review status: unreviewed hypothesis. Target: <code>#test-target</code>. <a href="../../fixtures.json">Manifest entry</a>.</p>
+    <p>This is one isolated case, not a WCAG conformance claim.</p>
+
+    <div class="fixture">
+      <button type="button" id="test-target" aria-label="Report an animal"></button>
+    </div>
+  </main>
+  <footer>
+    <p>Part of the animal-reporting laboratory.</p>
+  </footer>
+</body>
+</html>
