@@ -25,7 +25,8 @@
         "sourceFile": "services/lab/aria/role-valid/index.html"
       },
       "notes": "Valid role token. Does not establish button keyboard operability.",
-      "reviewRecord": "lab/reviews/records/html-valid-role.json"
+      "reviewRecord": "lab/reviews/records/html-valid-role.json",
+      "title": "Valid ARIA role"
     },
     {
       "id": "html-invalid-role",
@@ -50,7 +51,8 @@
         "sourceFile": "services/lab/aria/role-invalid/index.html"
       },
       "notes": "Invalid role token; browsers ignore it and fall back to the implicit role.",
-      "reviewRecord": "lab/reviews/records/html-invalid-role.json"
+      "reviewRecord": "lab/reviews/records/html-invalid-role.json",
+      "title": "Invalid ARIA role"
     },
     {
       "id": "html-button-named",
@@ -75,7 +77,8 @@
         "sourceFile": "services/lab/names/button-named/index.html"
       },
       "notes": "Accessible name supplied by aria-label on an otherwise empty button.",
-      "reviewRecord": "lab/reviews/records/html-button-named.json"
+      "reviewRecord": "lab/reviews/records/html-button-named.json",
+      "title": "Button with an accessible name"
     },
     {
       "id": "html-button-unnamed",
@@ -100,7 +103,8 @@
         "sourceFile": "services/lab/names/button-unnamed/index.html"
       },
       "notes": "Empty button with no content or attribute that can provide a name.",
-      "reviewRecord": "lab/reviews/records/html-button-unnamed.json"
+      "reviewRecord": "lab/reviews/records/html-button-unnamed.json",
+      "title": "Button without an accessible name"
     },
     {
       "id": "react-button-initial",
@@ -125,7 +129,8 @@
         "sourceFile": "services/hedgehog/main.jsx"
       },
       "notes": "Wait for the React state marker before evaluating.",
-      "reviewRecord": "lab/reviews/records/react-button-initial.json"
+      "reviewRecord": "lab/reviews/records/react-button-initial.json",
+      "title": "React: name absent initially"
     },
     {
       "id": "react-button-updated",
@@ -150,7 +155,8 @@
         "sourceFile": "services/hedgehog/main.jsx"
       },
       "notes": "Wait for the React state marker before evaluating.",
-      "reviewRecord": "lab/reviews/records/react-button-updated.json"
+      "reviewRecord": "lab/reviews/records/react-button-updated.json",
+      "title": "React: name added"
     },
     {
       "id": "vue-button-initial",
@@ -175,7 +181,8 @@
         "sourceFile": "services/wombat/App.vue"
       },
       "notes": "Wait for the Vue state marker before evaluating.",
-      "reviewRecord": "lab/reviews/records/vue-button-initial.json"
+      "reviewRecord": "lab/reviews/records/vue-button-initial.json",
+      "title": "Vue: name absent initially"
     },
     {
       "id": "vue-button-updated",
@@ -200,7 +207,8 @@
         "sourceFile": "services/wombat/App.vue"
       },
       "notes": "Wait for the Vue state marker before evaluating.",
-      "reviewRecord": "lab/reviews/records/vue-button-updated.json"
+      "reviewRecord": "lab/reviews/records/vue-button-updated.json",
+      "title": "Vue: name added"
     },
     {
       "id": "paca-valid-open",
@@ -226,7 +234,8 @@
         "sourceFile": "services/paca/main.js"
       },
       "notes": "Open shadow root; engine support for shadow DOM must be reported explicitly.",
-      "reviewRecord": "lab/reviews/records/paca-valid-open.json"
+      "reviewRecord": "lab/reviews/records/paca-valid-open.json",
+      "title": "Paca: valid role in an open shadow root"
     },
     {
       "id": "paca-invalid-open",
@@ -252,7 +261,8 @@
         "sourceFile": "services/paca/main.js"
       },
       "notes": "Invalid role inside an open shadow root.",
-      "reviewRecord": "lab/reviews/records/paca-invalid-open.json"
+      "reviewRecord": "lab/reviews/records/paca-invalid-open.json",
+      "title": "Paca: invalid role in an open shadow root"
     },
     {
       "id": "paca-invalid-closed",
@@ -279,7 +289,8 @@
         "sourceFile": "services/paca/main.js"
       },
       "notes": "Exploratory. A closed shadow root is not automatically a WCAG failure, and engine visibility is unsupported here. No ACT outcome may be recorded.",
-      "reviewRecord": "lab/reviews/records/paca-invalid-closed.json"
+      "reviewRecord": "lab/reviews/records/paca-invalid-closed.json",
+      "title": "Paca: closed shadow root (exploratory)"
     },
     {
       "id": "correlation-two-images-a",
@@ -307,7 +318,8 @@
         "sourceFile": "services/lab/correlation/two-images/index.html"
       },
       "notes": "First of two distinct images sharing the fixture-image class. Missing alt is deliberate.",
-      "reviewRecord": "lab/reviews/records/correlation-two-images-a.json"
+      "reviewRecord": "lab/reviews/records/correlation-two-images-a.json",
+      "title": "Two images: first missing alternative"
     },
     {
       "id": "correlation-two-images-b",
@@ -335,7 +347,8 @@
         "sourceFile": "services/lab/correlation/two-images/index.html"
       },
       "notes": "Second of two distinct images sharing the fixture-image class. Missing alt is deliberate.",
-      "reviewRecord": "lab/reviews/records/correlation-two-images-b.json"
+      "reviewRecord": "lab/reviews/records/correlation-two-images-b.json",
+      "title": "Two images: second missing alternative"
     },
     {
       "id": "correlation-two-images-control",
@@ -363,7 +376,8 @@
         "sourceFile": "services/lab/correlation/two-images/index.html"
       },
       "notes": "Passing control with a meaningful text alternative.",
-      "reviewRecord": "lab/reviews/records/correlation-two-images-control.json"
+      "reviewRecord": "lab/reviews/records/correlation-two-images-control.json",
+      "title": "Two images: named control"
     },
     {
       "id": "correlation-single-image",
@@ -391,7 +405,8 @@
         "sourceFile": "services/lab/correlation/single-image/index.html"
       },
       "notes": "Simplest shared-target case: one image, one rule failure.",
-      "reviewRecord": "lab/reviews/records/correlation-single-image.json"
+      "reviewRecord": "lab/reviews/records/correlation-single-image.json",
+      "title": "Single image with no alternative"
     },
     {
       "id": "correlation-multi-rule-button-name",
@@ -419,7 +434,8 @@
         "sourceFile": "services/lab/correlation/multiple-rules-one-target/index.html"
       },
       "notes": "Same element as correlation-multi-rule-role-value, different ACT rule.",
-      "reviewRecord": "lab/reviews/records/correlation-multi-rule-button-name.json"
+      "reviewRecord": "lab/reviews/records/correlation-multi-rule-button-name.json",
+      "title": "One target: missing button name"
     },
     {
       "id": "correlation-multi-rule-role-value",
@@ -447,7 +463,8 @@
         "sourceFile": "services/lab/correlation/multiple-rules-one-target/index.html"
       },
       "notes": "Same element as correlation-multi-rule-button-name, different ACT rule.",
-      "reviewRecord": "lab/reviews/records/correlation-multi-rule-role-value.json"
+      "reviewRecord": "lab/reviews/records/correlation-multi-rule-role-value.json",
+      "title": "One target: invalid role value"
     },
     {
       "id": "correlation-repeated-unnamed-a",
@@ -475,7 +492,8 @@
         "sourceFile": "services/lab/correlation/repeated-controls/index.html"
       },
       "notes": "First unnamed button. Distinct target on the repeated-controls scenario.",
-      "reviewRecord": "lab/reviews/records/correlation-repeated-unnamed-a.json"
+      "reviewRecord": "lab/reviews/records/correlation-repeated-unnamed-a.json",
+      "title": "Repeated controls: first unnamed button"
     },
     {
       "id": "correlation-repeated-unnamed-b",
@@ -503,7 +521,8 @@
         "sourceFile": "services/lab/correlation/repeated-controls/index.html"
       },
       "notes": "Second unnamed button. Distinct target on the repeated-controls scenario.",
-      "reviewRecord": "lab/reviews/records/correlation-repeated-unnamed-b.json"
+      "reviewRecord": "lab/reviews/records/correlation-repeated-unnamed-b.json",
+      "title": "Repeated controls: second unnamed button"
     },
     {
       "id": "correlation-repeated-unnamed-c",
@@ -531,7 +550,8 @@
         "sourceFile": "services/lab/correlation/repeated-controls/index.html"
       },
       "notes": "Third unnamed button. Distinct target on the repeated-controls scenario.",
-      "reviewRecord": "lab/reviews/records/correlation-repeated-unnamed-c.json"
+      "reviewRecord": "lab/reviews/records/correlation-repeated-unnamed-c.json",
+      "title": "Repeated controls: third unnamed button"
     },
     {
       "id": "correlation-repeated-named-a",
@@ -559,7 +579,8 @@
         "sourceFile": "services/lab/correlation/repeated-controls/index.html"
       },
       "notes": "Correctly named button, passing control. Distinct target on the repeated-controls scenario.",
-      "reviewRecord": "lab/reviews/records/correlation-repeated-named-a.json"
+      "reviewRecord": "lab/reviews/records/correlation-repeated-named-a.json",
+      "title": "Repeated controls: first named control"
     },
     {
       "id": "correlation-repeated-named-b",
@@ -587,7 +608,8 @@
         "sourceFile": "services/lab/correlation/repeated-controls/index.html"
       },
       "notes": "Correctly named button, passing control. Distinct target on the repeated-controls scenario.",
-      "reviewRecord": "lab/reviews/records/correlation-repeated-named-b.json"
+      "reviewRecord": "lab/reviews/records/correlation-repeated-named-b.json",
+      "title": "Repeated controls: second named control"
     },
     {
       "id": "frame-single-target",
@@ -619,7 +641,8 @@
         "sourceFile": "services/lab/frames/single-frame/index.html"
       },
       "notes": "One unnamed button in one same-origin iframe.",
-      "reviewRecord": "lab/reviews/records/frame-single-target.json"
+      "reviewRecord": "lab/reviews/records/frame-single-target.json",
+      "title": "Single frame: unnamed button"
     },
     {
       "id": "frame-nested-target",
@@ -652,7 +675,8 @@
         "sourceFile": "services/lab/frames/nested-frame/index.html"
       },
       "notes": "One unnamed button two browsing contexts deep.",
-      "reviewRecord": "lab/reviews/records/frame-nested-target.json"
+      "reviewRecord": "lab/reviews/records/frame-nested-target.json",
+      "title": "Nested frame: unnamed button"
     },
     {
       "id": "frame-two-first",
@@ -684,7 +708,8 @@
         "sourceFile": "services/lab/frames/two-frames/index.html"
       },
       "notes": "First of two frames. Same selector as the second target, different browsing context.",
-      "reviewRecord": "lab/reviews/records/frame-two-first.json"
+      "reviewRecord": "lab/reviews/records/frame-two-first.json",
+      "title": "Two frames: first unnamed button"
     },
     {
       "id": "frame-two-second",
@@ -716,7 +741,8 @@
         "sourceFile": "services/lab/frames/two-frames/index.html"
       },
       "notes": "Second of two frames. Same selector as the first target, different browsing context.",
-      "reviewRecord": "lab/reviews/records/frame-two-second.json"
+      "reviewRecord": "lab/reviews/records/frame-two-second.json",
+      "title": "Two frames: second unnamed button"
     },
     {
       "id": "react-button-async",
@@ -745,7 +771,8 @@
         "sourceFile": "services/hedgehog/main.jsx"
       },
       "notes": "Accessible name supplied after mount by a deterministic microtask.",
-      "reviewRecord": "lab/reviews/records/react-button-async.json"
+      "reviewRecord": "lab/reviews/records/react-button-async.json",
+      "title": "React: name supplied after mount"
     },
     {
       "id": "react-button-replaced",
@@ -779,7 +806,8 @@
         "selector": "#replace-target"
       },
       "nodePreserved": false,
-      "reviewRecord": "lab/reviews/records/react-button-replaced.json"
+      "reviewRecord": "lab/reviews/records/react-button-replaced.json",
+      "title": "React: target node replaced"
     },
     {
       "id": "vue-button-async",
@@ -808,7 +836,8 @@
         "sourceFile": "services/wombat/App.vue"
       },
       "notes": "Vue supplies the accessible name after mount.",
-      "reviewRecord": "lab/reviews/records/vue-button-async.json"
+      "reviewRecord": "lab/reviews/records/vue-button-async.json",
+      "title": "Vue: name supplied after mount"
     },
     {
       "id": "paca-valid-nested",
@@ -841,7 +870,8 @@
         "sourceFile": "services/paca/main.js"
       },
       "notes": "Target is inside a shadow root nested in another open shadow root.",
-      "reviewRecord": "lab/reviews/records/paca-valid-nested.json"
+      "reviewRecord": "lab/reviews/records/paca-valid-nested.json",
+      "title": "Paca: nested open shadow roots"
     },
     {
       "id": "interaction-reveal-target",
@@ -874,7 +904,8 @@
         "action": "click",
         "selector": "#reveal"
       },
-      "reviewRecord": "lab/reviews/records/interaction-reveal-target.json"
+      "reviewRecord": "lab/reviews/records/interaction-reveal-target.json",
+      "title": "Disclosure reveals an unnamed button"
     }
   ]
 }

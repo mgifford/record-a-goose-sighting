@@ -139,6 +139,9 @@ export function validateManifest (manifest, root = ROOT) {
     if (entry.stateId !== undefined && !/^[a-z0-9-]+$/.test(entry.stateId)) {
       errors.push(`${where}: invalid stateId`)
     }
+    if (typeof entry.title !== 'string' || entry.title.trim() === '') {
+      errors.push(`${where}: missing title`)
+    }
     if (entry.target?.hostPath !== undefined) {
       if (!Array.isArray(entry.target.hostPath) || entry.target.hostPath.length === 0 ||
           entry.target.hostPath.some((selector) => typeof selector !== 'string' || selector.length === 0)) {

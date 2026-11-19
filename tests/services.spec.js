@@ -336,7 +336,11 @@ test.describe('laboratory output', () => {
       'wombat/',
       'paca/',
       'lab/lab-styles.css',
-      'lab/fixtures.json'
+      'lab/fixtures.json',
+      'lab/catalogue/',
+      'lab/catalogue.json',
+      'lab/scenarios.json',
+      'lab/coverage.json'
     ]
 
     for (const page of pages) {
