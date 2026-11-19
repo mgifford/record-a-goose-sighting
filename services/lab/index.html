@@ -32,7 +32,26 @@
       <li><a href="aria/role-invalid/">Invalid ARIA role</a> — rule 674b10, expected failed.</li>
       <li><a href="names/button-named/">Button with an accessible name</a> — rule 97a4e1, expected passed.</li>
       <li><a href="names/button-unnamed/">Button without an accessible name</a> — rule 97a4e1, expected failed.</li>
+      <li><a href="names/link-named/">Link with an accessible name</a> — rule c487ae, expected passed.</li>
+      <li><a href="names/link-unnamed/">Link without an accessible name</a> — rule c487ae, expected failed.</li>
+      <li><a href="names/field-named/">Form field with an accessible name</a> — rule e086e5, expected passed.</li>
+      <li><a href="names/field-unnamed/">Form field without an accessible name</a> — rule e086e5, expected failed.</li>
       <li><a href="../paca/?role=invalid&amp;shadow=closed">Closed shadow root, exploratory</a> — no ACT outcome; engine visibility is unsupported.</li>
+    </ul>
+
+    <h2 id="applicability">Inapplicable cases</h2>
+    <p>These pages contain no eligible target for the named rule. “Inapplicable” is an ACT outcome, not a scanner that failed to run.</p>
+    <ul>
+      <li><a href="applicability/no-buttons/">No buttons</a> — rule 97a4e1 inapplicable.</li>
+      <li><a href="applicability/no-images/">No images</a> — rule 23a2a8 inapplicable.</li>
+    </ul>
+
+    <h2 id="preferences">User-preference scenarios</h2>
+    <p>Manual rendering comparisons. These are not ACT fixtures and do not establish conformance.</p>
+    <ul>
+      <li><a href="preferences/reduced-motion/">Reduced motion</a> — one animation respects the preference, one ignores it.</li>
+      <li><a href="preferences/forced-colors/">Forced colours</a> — an outline survives; a background-image focus cue does not.</li>
+      <li><a href="preferences/text-spacing/">Text spacing and reflow</a> — increased spacing at 320 CSS pixels.</li>
     </ul>
 
     <h2 id="dynamic">Dynamic, frame and interaction tests</h2>

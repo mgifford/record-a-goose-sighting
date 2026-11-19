@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Form field with an accessible name</title>
+  <link rel="stylesheet" href="/lab/lab-styles.css">
+</head>
+<body>
+  <header><nav aria-label="Site"><a href="../../../">Record a goose sighting</a><a href="../../">Laboratory</a></nav></header>
+  <main data-test-ready="true">
+    <h1>Form field with an accessible name</h1>
+    <p class="notice">This is a passing control. The input has a visible label.</p>
+    <p class="meta">Rule <a href="https://www.w3.org/WAI/standards-guidelines/act/rules/e086e5/">e086e5: Form field has non-empty accessible name</a> (approved). Expected outcome: <strong>passed</strong>, unreviewed. <a href="../../fixtures.json">Manifest entry</a>.</p>
+    <section class="fixture" aria-labelledby="fixture-heading">
+      <h2 id="fixture-heading">The passing field</h2>
+      <p><label for="target">Where did you see the goose?</label><br><input id="target" name="target" type="text"></p>
+    </section>
+  </main>
+  <footer><p>Part of the animal-reporting laboratory. MIT licensed.</p></footer>
+</body>
+</html>

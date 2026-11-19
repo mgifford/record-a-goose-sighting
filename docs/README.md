@@ -11,6 +11,7 @@
 | [EVIDENCE-LOG-TEMPLATE.md](EVIDENCE-LOG-TEMPLATE.md) | Recording observations consistently |
 | [CONTRIBUTING-EXERCISE.md](CONTRIBUTING-EXERCISE.md) | Preserving the exercise when changing or adding issues |
 | [FIXTURE-CONTRACT.md](FIXTURE-CONTRACT.md) | Fixture identity, correlation experiments, provenance, reviews and the Open Scans boundary |
+| [COVERAGE-MATRIX.md](COVERAGE-MATRIX.md) | Current rule, outcome, technology and context coverage, and the ACT outcome categories |
 | [services/lab/reviews/README.md](../services/lab/reviews/README.md) | Review status, evidence requirements and governance |
 | [govuk-frontend-upgrade.md](govuk-frontend-upgrade.md) | Scoped plan for a future GOV.UK Frontend 5 upgrade |
 

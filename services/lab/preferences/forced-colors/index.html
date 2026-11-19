@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Forced colours focus indicators</title>
+  <link rel="stylesheet" href="/lab/lab-styles.css">
+  <style>
+    .focus-outline:focus { outline: 3px solid #0b0c0c; outline-offset: 2px; }
+    .focus-background:focus {
+      outline: none;
+      background-image: linear-gradient(90deg, #ffdd00, #ffdd00);
+      color: #0b0c0c;
+    }
+    @media (forced-colors: active) {
+      .focus-background:focus { background-image: none; }
+    }
+    .focus-list { display: flex; flex-wrap: wrap; gap: 1rem; list-style: none; padding: 0; }
+    .focus-list a { display: inline-block; padding: 0.75rem; border: 2px solid #0b0c0c; }
+  </style>
+</head>
+<body>
+  <header><nav aria-label="Site"><a href="../../../">Record a goose sighting</a><a href="../../">Laboratory</a></nav></header>
+  <main data-test-ready="true">
+    <h1>Forced colours focus indicators</h1>
+    <p class="notice">Both links have a focus treatment. In forced-colours mode, one is replaced by the user's palette and the other loses its only visible cue.</p>
+    <p class="meta">Manual comparison page, not an ACT fixture. Focus each link with Windows high contrast or browser forced-colours emulation.</p>
+    <ul class="focus-list">
+      <li><a id="outline-focus" class="focus-outline" href="#outline-focus">Outline focus indicator</a></li>
+      <li><a id="background-focus" class="focus-background" href="#background-focus">Background-image focus indicator</a></li>
+    </ul>
+    <h2>What to observe</h2>
+    <ol>
+      <li>Focus the first link. The outline remains visible in forced-colours mode.</li>
+      <li>Focus the second link. The background image is suppressed, so the focus indicator disappears.</li>
+      <li>Record the browser, operating system and palette. A forced-colours result is not a universal claim about every engine.</li>
+    </ol>
+  </main>
+  <footer><p>Part of the animal-reporting laboratory. MIT licensed.</p></footer>
+</body>
+</html>

@@ -21,7 +21,7 @@ const UPSTREAM_METADATA = path.join(ROOT, 'services/lab/upstream/metadata.json')
 const OUTCOMES = new Set(['passed', 'failed', 'inapplicable'])
 const REVIEW_STATES = new Set(['unreviewed', 'reviewed', 'disputed'])
 const RULE_STATUSES = new Set(['approved', 'proposed', 'deprecated'])
-const SCOPES = new Set(['light-dom', 'open-shadow', 'closed-shadow'])
+const SCOPES = new Set(['light-dom', 'open-shadow', 'closed-shadow', 'document'])
 const EXECUTION_STATES = new Set(['executed', 'unsupported', 'notRun', 'error'])
 
 const BASE = normalizeBase(process.env.SITE_BASE || '/record-a-goose-sighting/')
@@ -183,10 +183,16 @@ export function validateManifest (manifest, root = ROOT) {
     }
 
     if (!SCOPES.has(entry.target?.scope)) errors.push(`${where}: invalid target scope`)
-    if (entry.target?.scope === 'light-dom' || entry.target?.scope === 'open-shadow') {
+    if (entry.target?.scope === 'document') {
+      if (entry.target.selector !== null && entry.target.selector !== undefined) {
+        errors.push(`${where}: document-scope targets cannot have a selector`)
+      }
+      if (entry.target.targetId) errors.push(`${where}: document-scope targets cannot have a targetId`)
+    } else if (entry.target?.scope === 'light-dom' || entry.target?.scope === 'open-shadow') {
       if (!entry.target.selector) errors.push(`${where}: missing target selector`)
     }
-    if (entry.target?.scope !== 'light-dom' && !entry.target.host && !entry.target.hostPath) {
+    if ((entry.target?.scope === 'open-shadow' || entry.target?.scope === 'closed-shadow') &&
+        !entry.target.host && !entry.target.hostPath) {
       errors.push(`${where}: shadow-root targets need a host selector or hostPath`)
     }
     if (entry.target?.scope === 'closed-shadow' && entry.target.selector !== null) {

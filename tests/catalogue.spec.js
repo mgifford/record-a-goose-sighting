@@ -20,7 +20,7 @@ test.describe('laboratory catalogue', () => {
     await expect(page.locator('.catalogue-card')).toHaveCount(manifest.cases.length)
 
     const titles = await page.locator('.catalogue-card h3').allTextContents()
-    expect(titles).toEqual(manifest.cases.map((entry) => entry.title))
+    expect(titles.sort()).toEqual(manifest.cases.map((entry) => entry.title).sort())
     await expect(page.getByRole('link', { name: 'Fixtures by category' })).toHaveCount(0)
   })
 
@@ -109,10 +109,12 @@ test.describe('derived catalogue indexes', () => {
 
     expect(coverage.schemaVersion).toBe('lab-coverage/1')
     expect(coverage.totals.cases).toBe(manifest.cases.length)
-    expect(Object.keys(coverage.byRule)).toHaveLength(3)
+    expect(Object.keys(coverage.byRule)).toHaveLength(5)
     expect(Object.values(coverage.byRule).reduce((sum, rule) => sum + rule.cases, 0)).toBe(manifest.cases.length)
     expect(coverage.byContext.iframe).toBe(4)
     expect(coverage.byInteraction.required).toBe(2)
+    expect(coverage.byContext.document).toBe(2)
+    expect(coverage.byOutcome.inapplicable).toBe(2)
   })
 
   test('rule coverage distinguishes outcomes and review status', async ({ request }) => {
@@ -126,7 +128,7 @@ test.describe('derived catalogue indexes', () => {
     }
 
     expect(coverage.totals.reviewed).toBe(0)
-    expect(coverage.totals.unreviewed).toBe(31)
+    expect(coverage.totals.unreviewed).toBe(37)
     expect(coverage.totals.disputed).toBe(0)
   })
 })

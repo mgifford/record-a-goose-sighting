@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reduced motion preference</title>
+  <link rel="stylesheet" href="/lab/lab-styles.css">
+  <style>
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .motion-example { width: 4rem; height: 4rem; border: 4px solid #0b0c0c; display: grid; place-items: center; }
+    .motion-safe { animation: spin 2s linear infinite; }
+    .motion-always { animation: spin 2s linear infinite; }
+    .motion-grid { display: flex; flex-wrap: wrap; gap: 2rem; align-items: start; }
+    @media (prefers-reduced-motion: reduce) {
+      .motion-safe { animation: none; }
+    }
+  </style>
+</head>
+<body>
+  <header><nav aria-label="Site"><a href="../../../">Record a goose sighting</a><a href="../../">Laboratory</a></nav></header>
+  <main data-test-ready="true">
+    <h1>Reduced motion preference</h1>
+    <p class="notice">One shape respects <code>prefers-reduced-motion: reduce</code>; the other deliberately ignores it. A media query alone does not establish WCAG 2.2.2 conformance.</p>
+    <p class="meta">Manual comparison page, not an ACT fixture. Test with the operating-system or browser reduced-motion setting.</p>
+    <div class="motion-grid">
+      <section aria-labelledby="safe-heading">
+        <h2 id="safe-heading">Respects the preference</h2>
+        <div class="motion-example motion-safe" id="motion-safe" aria-hidden="true">↻</div>
+      </section>
+      <section aria-labelledby="always-heading">
+        <h2 id="always-heading">Ignores the preference</h2>
+        <div class="motion-example motion-always" id="motion-always" aria-hidden="true">↻</div>
+      </section>
+    </div>
+    <p>Pausing or stopping motion is a separate question from honouring the preference. See the <a href="https://github.com/mgifford/record-a-goose-sighting/blob/master/docs/MANUAL-LAB-SCRIPTS.md">manual laboratory scripts</a>.</p>
+  </main>
+  <footer><p>Part of the animal-reporting laboratory. MIT licensed.</p></footer>
+</body>
+</html>

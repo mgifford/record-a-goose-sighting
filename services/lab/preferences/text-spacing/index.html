@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Text spacing and reflow</title>
+  <link rel="stylesheet" href="/lab/lab-styles.css">
+</head>
+<body>
+  <header><nav aria-label="Site"><a href="../../../">Record a goose sighting</a><a href="../../">Laboratory</a></nav></header>
+  <main data-test-ready="true">
+    <h1>Text spacing and reflow</h1>
+    <p class="notice">Apply increased text spacing and a 320 CSS-pixel viewport. The page should not clip or scroll horizontally. This is a manual rendering test, not an ACT fixture.</p>
+    <section aria-labelledby="spacing-heading">
+      <h2 id="spacing-heading">A longer passage</h2>
+      <p>Accessibility testing is not a single scan. A page can have a complete heading outline, a valid document language and named controls, and still be difficult to use when text is enlarged, spacing is increased or the viewport is narrow. Read this passage at 200% zoom and again at 320 CSS pixels.</p>
+      <p>Check that no text is cut off, that words do not overlap, and that controls remain large enough to use. The page may wrap into a single column; that is expected. Horizontal scrolling is the signal to investigate.</p>
+      <ul>
+        <li>Line height at least 1.5 times the font size.</li>
+        <li>Paragraph spacing at least twice the font size.</li>
+        <li>Letter spacing at least 0.12 times the font size.</li>
+        <li>Word spacing at least 0.16 times the font size.</li>
+      </ul>
+      <p><a href="../../">Return to the laboratory</a>.</p>
+    </section>
+  </main>
+  <footer><p>Part of the animal-reporting laboratory. MIT licensed.</p></footer>
+</body>
+</html>

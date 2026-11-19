@@ -41,6 +41,7 @@ No engine names or predicted detection results appear in the manifest.
 | Page | `urlPath` | Relative to the laboratory site root |
 | State | `stateId`, `urlPath` query + `readySelector` | Deterministic; no session inheritance |
 | Frame | `target.frame` | Ordered list of relative frame documents |
+| Document scope | `target.scope: "document"` | An inapplicable case with no eligible target |
 | Shadow path | `target.hostPath` | Ordered host selectors for nested shadow roots |
 | Interaction | `interaction.action` + `selector` | Optional action required before the target state |
 
@@ -59,6 +60,10 @@ the DOM; the Playwright tests for each scenario assert target resolution.
 | `/lab/correlation/single-image/` | `single-image` | 1 | One failing image, the simplest shared-target case |
 | `/lab/correlation/multiple-rules-one-target/` | `single-target-two-rules` | 2 | One button failing both 97a4e1 and 674b10 |
 | `/lab/correlation/repeated-controls/` | `repeated-controls` | 5 | Three equivalent failures and two passing controls |
+| `/lab/applicability/no-buttons/` | `applicability-no-buttons` | 1 | Rule 97a4e1 inapplicable: no button elements |
+| `/lab/applicability/no-images/` | `applicability-no-images` | 1 | Rule 23a2a8 inapplicable: no image elements |
+| `/lab/names/link-unnamed/`, `/lab/names/link-named/` | `link-name` | 2 | Rule c487ae failed/passed |
+| `/lab/names/field-unnamed/`, `/lab/names/field-named/` | `field-name` | 2 | Rule e086e5 failed/passed |
 | `/lab/frames/single-frame/` | `single-frame` | 1 | Unnamed button in one same-origin frame |
 | `/lab/frames/nested-frame/` | `nested-frame` | 1 | Unnamed button two browsing contexts deep |
 | `/lab/frames/two-frames/` | `two-frames` | 2 | Same `#target` selector in two different frames |
@@ -67,6 +72,14 @@ the DOM; the Playwright tests for each scenario assert target resolution.
 | `/wombat/?state=async` | `vue-async` | 1 | Reactive accessible name after mount |
 | `/paca/?role=valid&shadow=nested` | `paca-nested-open` | 1 | Target inside a shadow root inside a shadow root |
 | `/lab/interaction/reveal-target/` | `reveal-target` | 1 | Target absent until a disclosure opens |
+
+The preference pages under `/lab/preferences/` are manual rendering scenarios,
+not ACT fixtures: reduced motion, forced colours and text spacing/reflow. They
+are deliberately absent from the manifest because they do not define a
+single-target ACT rule outcome.
+
+See [COVERAGE-MATRIX.md](COVERAGE-MATRIX.md) for the current counts and the
+distinction between passed, failed, inapplicable, cannot tell and untested.
 
 Every target has a stable `targetId`. The two-image cases share a class and
 differ in `id` and image resource. The repeated controls share a class and
