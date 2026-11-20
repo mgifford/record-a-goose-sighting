@@ -1,384 +1,146 @@
-# Record a goose sighting
+# Record a Goose Sighting
 
-> **This is a fictional government service used for accessibility training. It
-> deliberately contains accessibility problems. Do not copy this code as an
-> example of accessible markup — and do not "fix" the problems you find here
-> without reading [Intentional accessibility problems](#intentional-accessibility-problems).**
+An intentionally inaccessible fictional government service and testing playground for exploring accessibility barriers, false positives, false negatives, and the limitations of automated accessibility testing.
 
-A static rebuild of the [Ministry of Justice](https://github.com/ministryofjustice/record-a-goose-sighting)
-GOV.UK Prototype Kit exercise. The exercise has been migrated from a
-continuously running Express application to a static site built with Nunjucks
-and hosted on GitHub Pages. The exercise itself — its content, appearance,
-journey and planted accessibility problems — is unchanged.
+This project is a fork of the original [Record a Goose Sighting](https://github.com/ministryofjustice/record-a-goose-sighting) exercise created by the UK Ministry of Justice. It builds on that work by introducing additional test cases, modern web technologies, and opportunities to compare human and automated accessibility testing.
 
-**Hosted exercise:** <https://mgifford.github.io/record-a-goose-sighting/>
+**[Explore the live playground](https://mgifford.github.io/record-a-goose-sighting/)**
 
-The same site also hosts three sibling fictional services and an isolated
-[ACT laboratory](https://mgifford.github.io/record-a-goose-sighting/lab/).
+> **Important:** This project deliberately contains accessibility problems. They are maintained for educational and research purposes. Do not copy the defective implementations into production or fix intentional defects without reviewing the [contribution guidance](docs/CONTRIBUTING-EXERCISE.md).
 
-## What the exercise is
+## Explore the playground
 
-You are asked to review a made-up service for recording goose sightings. The
-service uses GOV.UK Design System components, but they have been misused in a
-number of places. Your task is to find as many of the accessibility problems as
-you can in about 20 minutes, using the keyboard, Accessibility Insights and the browser
-developer tools.
+Everything can be explored directly in your browser, without installing anything.
 
-The journey has six pages:
+- **[Record a Goose Sighting](https://mgifford.github.io/record-a-goose-sighting/)**: Find accessibility barriers in a fictional government service.
+- **[Accessibility testing laboratory](https://mgifford.github.io/record-a-goose-sighting/lab/)**: Explore controlled test cases involving HTML, React, Vue, Web Components, ARIA, dynamic content, and different DOM contexts.
+- **[Automated testing blind spots](https://mgifford.github.io/record-a-goose-sighting/blind-spots/)**: Investigate problems automated tools miss and those requiring human judgment.
+- **[Testing worksheet](https://mgifford.github.io/record-a-goose-sighting/steps/worksheet/)**: Record your observations before consulting the [answer key](https://mgifford.github.io/record-a-goose-sighting/steps/answers/).
 
-1. Start page
-2. Do you like geese?
-3. What type of goose did you see?
-4. When did you see the goose?
-5. Check your answers
-6. Confirmation
+The original exercise takes approximately 20 minutes. The laboratory supports more detailed experimentation and research.
 
-There is a [worksheet](https://mgifford.github.io/record-a-goose-sighting/steps/worksheet/)
-for recording findings and an [answers page](https://mgifford.github.io/record-a-goose-sighting/steps/answers/)
-describing the planted problems. The [detection matrix](https://mgifford.github.io/record-a-goose-sighting/blind-spots/)
-shows which issues automated tools miss and which manual checks expose them.
+## What are we testing?
 
-### 19 issues are described and listed
+Automated accessibility tools are valuable, but their findings require interpretation.
 
-The answers page originally said "There are 19 issues in total" and then
-described **18** issues. Commit `66a64cb` had removed a nineteenth answer when
-the underlying problem was "fixed", but the total was never updated.
+This project provides reproducible examples for investigating:
 
-That historical gap is now closed deliberately: issue 19 is the start-page
-image whose alternative is the file name `goose-illustration.svg`. The answer
-page now lists all 19. See [baseline/README.md](baseline/README.md) for the
-original history and the remaining
-recommendation to settle on a single number.
+- **True positives:** Genuine accessibility failures correctly identified by automated tools.
+- **False positives:** Findings reported as failures that do not actually violate the applicable rule or requirement.
+- **False negatives:** Accessibility failures that automated tools fail to identify.
+- **Inapplicable tests:** Rules that do not apply to a particular element or page.
+- **Human judgment:** Issues involving meaning, context, usability, or interpretation that automation cannot reliably resolve.
+- **Testing complexity:** Dynamic content, component frameworks, shadow DOM, iframes, user preferences, and interaction states.
 
-### The animal-reporting laboratory
+Not every reported issue is a WCAG failure, and not every clean automated scan indicates an accessible experience.
 
-The site now includes a small collection of sibling services that report
-different fictional animals, plus isolated cases for W3C Accessibility
-Conformance Testing (ACT) rules:
+The playground is designed for both human testers and automated testing engines. It encourages investigation, disagreement, and evidence-based conclusions rather than treating any single tool as authoritative.
 
-| URL | Built with | Purpose |
-|---|---|---|
-| [/hedgehog/](https://mgifford.github.io/record-a-goose-sighting/hedgehog/) | React | A dynamically supplied button name, in initial and updated states |
-| [/wombat/](https://mgifford.github.io/record-a-goose-sighting/wombat/) | Vue | A reactive button name and a live status message |
-| [/paca/](https://mgifford.github.io/record-a-goose-sighting/paca/) | Web Components | An ARIA role inside an open or closed shadow root |
-| [/lab/](https://mgifford.github.io/record-a-goose-sighting/lab/) | Static HTML | The catalogue, isolated ACT fixtures and the fixture manifest |
-| [/lab/interpretation/](https://mgifford.github.io/record-a-goose-sighting/lab/interpretation/) | Static HTML | Tool findings that need human interpretation: best practice versus failure, incomplete results, and tool passes that fail review |
-| [/lab/correlation/](https://mgifford.github.io/record-a-goose-sighting/lab/correlation/two-images/) | Static HTML | Correlation experiments: multiple targets, one target with two rules, and repeated equivalent controls |
-| [/lab/frames/](https://mgifford.github.io/record-a-goose-sighting/lab/frames/two-frames/) | Static HTML | Same-origin iframe targets, including nested frames and two frames with the same selector |
-| [Dynamic states](https://mgifford.github.io/record-a-goose-sighting/lab/#dynamic) | React/Vue/Web Components | Async names, node replacement, nested shadow roots and a disclosure interaction |
+Test cases include documented expected outcomes and review status. Unreviewed expectations are hypotheses, not verified conclusions.
 
-The laboratory is a teaching and research surface. It is not a WCAG
-conformance claim, it does not rank tools, and its fixture outcomes are
-unreviewed hypotheses. The surrounding interface is intended to be accessible;
-only the declared fixture targets contain deliberate defects.
+## Human and automated testing
 
-## Running a workshop
+The project supports complementary approaches.
 
-Facilitators and maintainers should start with the [documentation index](docs/README.md):
+**Human testers** can explore user journeys, keyboard interactions, assistive technology behaviour, visual presentation, and the context of reported issues.
 
-- [Facilitator guide](docs/FACILITATOR-GUIDE.md) — formats, timing, debrief prompts and common traps
-- [Manual test scripts](docs/MANUAL-TEST-SCRIPTS.md) — keyboard, screen reader, zoom, forced colours, motion and content review
-- [Laboratory manual scripts](docs/MANUAL-LAB-SCRIPTS.md) — reproduction steps and evidence guidance for the isolated fixtures
-- [Detection matrix](docs/DETECTION-MATRIX.md) — which of the 19 issues automation misses, and why
-- [Exercise inventory](docs/original-goose-issues.json) — where every issue lives and how it is guarded
+**Automated tools** can evaluate reproducible test cases, compare results against expected outcomes, and help identify differences between testing engines.
 
-## Running the site locally
+[Open Scans](https://github.com/mgifford/open-scans) complements this work:
 
-Requirements: Node.js 22 LTS and npm.
+- **Record a Goose Sighting** maintains test cases, intentional defects, expected outcomes, and manual testing evidence.
+- **Open Scans** manages scanner execution, ACT mappings, duplicate detection, cross-engine comparisons, and historical reporting.
+
+Together, these projects provide a foundation for investigating the strengths and weaknesses of automated accessibility testing.
+
+Neither project should be interpreted as providing a definitive ranking of accessibility tools or establishing WCAG conformance.
+
+## Get involved
+
+**Contributions are welcome from developers, accessibility specialists, researchers, designers, content authors, and people interested in improving accessibility testing.**
+
+You can help by:
+
+- Identifying and documenting suspected false positives or false negatives.
+- Reviewing test cases and validating their expected outcomes.
+- Providing manual testing evidence, including keyboard and assistive technology observations.
+- Suggesting realistic accessibility edge cases or more complex testing scenarios.
+- Improving the clarity and accessibility of the playground itself.
+- Testing different tools and reporting unexpected results.
+- Improving documentation, exercises, and workshop materials.
+
+[Report a problem or suggest an improvement](https://github.com/mgifford/record-a-goose-sighting/issues)
+
+[Review the contribution guidelines](docs/CONTRIBUTING-EXERCISE.md)
+
+Intentional accessibility defects must remain reproducible and documented. Changes should preserve consistency between test cases, expected outcomes, documentation, and automated regression tests.
+
+## Getting started locally
+
+**You do not need to run this project locally to use the playground.** The [GitHub Pages site](https://mgifford.github.io/record-a-goose-sighting/) provides direct access to the exercises and laboratory.
+
+Local development is intended for people who want to modify the examples, experiment with new scenarios, or contribute code.
+
+You need Node.js 22 or a compatible newer version and npm.
 
 ```bash
 git clone https://github.com/mgifford/record-a-goose-sighting.git
 cd record-a-goose-sighting
-
 npm ci
 npm run build
 npm run preview
 ```
 
-`npm run preview` serves the generated site at
-<http://127.0.0.1:4173/record-a-goose-sighting/>, matching the GitHub Pages
-subpath. This includes the laboratory at `/lab/`, and the three services at
-`/hedgehog/`, `/wombat/` and `/paca/`.
+Open `http://127.0.0.1:4173/record-a-goose-sighting/` in your browser.
 
-The build runs in two stages: `npm run build:goose` renders the exercise, then
-`npm run build:lab` builds the laboratory and merges it. To run one stage on its
-own, use those scripts; `npm run build` runs both. The W3C test-case snapshot is
-never downloaded during a build — use `npm run act:import` deliberately when
-updating it, and `npm run act:check` to validate without publishing.
-
-To preview at the domain root instead (useful when comparing with the original
-application):
-
-```bash
-SITE_BASE=/ npm run build
-SITE_BASE=/ npm run preview
-```
-
-On PowerShell, set the variable first: `$env:SITE_BASE="/"`.
-
-`dist/` is generated and is not committed. `npm run build` fails if an
-intentional defect has been removed from the templates or stylesheet, if a
-root-relative URL has crept in, or if a required asset is missing.
-
-## Running the tests
+To run the automated tests:
 
 ```bash
 npx playwright install chromium
 npm test
 ```
 
-`npm test` rebuilds the site, starts the local preview server and runs the
-Playwright suite:
+Playwright tests help preserve intentional defects, validate laboratory fixtures, and detect unintended regressions.
 
-| File | What it covers |
-|---|---|
-| `tests/journey.spec.js` | The six page journey, persistence, editing, refresh, back/forward, HTML injection, storage failure, no-JavaScript fallback, reflow at 320px/375px/640px |
-| `tests/accessibility-regression.spec.js` | Every intentional accessibility problem, plus axe results compared with the original application's baseline |
-| `tests/static-build.spec.js` | All nine Goose URLs, assets, internal links, absence of server runtime or analytics, dependency limits |
-| `tests/services.spec.js` | The catalogue, isolated ACT fixtures, the three framework services, the manifest, and preservation of the Goose output |
-| `tests/data-integrity.spec.js` | W3C ACT snapshot provenance and checksums, and the original Goose preservation inventory |
+See the [documentation](docs/README.md) for detailed development and testing guidance.
 
-To run the suite in all three Playwright engines:
+## Project status and limitations
 
-```bash
-npx playwright install
-BROWSERS=all npx playwright test
-```
+This is an experimental educational and research project, not a production government service.
 
-GitHub Actions runs the suite in Chromium, Firefox and WebKit on every push and
-pull request.
+The original Ministry of Justice exercise remains the foundation. This fork adds a static GitHub Pages implementation, additional fictional services, and an expanding laboratory of accessibility testing scenarios.
 
-### Baseline tooling
+Test fixtures and automated checks can establish reproducible technical conditions, but they cannot independently establish every accessibility outcome. Human review and supporting evidence remain essential.
 
-`baseline/` contains a captured snapshot of the original Express application:
-rendered HTML, screenshots at desktop and mobile sizes, keyboard focus order,
-computed styles and axe results. Two tools support it:
+Accessibility issues in the exercise and declared laboratory targets are intentional. Unexpected accessibility barriers in the surrounding playground are not and should be reported.
 
-```bash
-# Capture the current site (writes to a new directory)
-node tests/tools/capture.mjs http://127.0.0.1:4173/record-a-goose-sighting/ my-capture
+## AI use
 
-# Compare two captures
-node tests/tools/compare.mjs baseline/metrics.json my-capture/metrics.json
-```
+Generative AI is used to assist with the creation and ongoing maintenance of this repository, including code, documentation, testing, and development activities.
 
-## Deployment
+AI-generated content may contain errors or omissions. Maintainers remain responsible for accepting changes, and AI-generated conclusions are not substitutes for independent verification.
 
-`.github/workflows/pages.yml` builds, tests and publishes the site:
+Accessibility findings and expected outcomes should be supported by reproducible evidence. Community review, corrections, and contributions are encouraged.
 
-- Pull requests targeting `master` build and run the full test suite but do not
-  publish.
-- Pushes to `master` (the default branch) deploy, as does the manual
-  `workflow_dispatch` trigger.
-- No repository secrets are required.
+## Documentation
 
-**Required one-time setup:** open the repository **Settings → Pages** and set
-**Build and deployment → Source** to **GitHub Actions**. Committing the workflow
-is not sufficient on its own, and Pages is not enabled for this repository at
-the time of writing. Once enabled, the workflow publishes to
-<https://mgifford.github.io/record-a-goose-sighting/>.
+The [documentation index](docs/README.md) provides more detailed information, including:
 
-The deployment path is set in two places, both of which must change together if
-the repository is renamed:
+- [Facilitator guide](docs/FACILITATOR-GUIDE.md)
+- [Manual testing scripts](docs/MANUAL-TEST-SCRIPTS.md)
+- [ACT fixture guidance](docs/ACT-MANIFEST-GUIDE.md)
+- [Detection matrix](docs/DETECTION-MATRIX.md)
+- [Fixture coverage and limitations](docs/COVERAGE-MATRIX.md)
+- [Original exercise and preservation history](docs/original-goose-baseline.md)
 
-- `SITE_BASE: /record-a-goose-sighting/` in `.github/workflows/pages.yml`
-- `BASE_PATH` in `playwright.config.js`
+## License and attribution
 
-### Repository protections
+This project is available under the [MIT License](LICENCE.txt).
 
-Dependency updates are handled by Dependabot
-([`.github/dependabot.yml`](.github/dependabot.yml)). `govuk-frontend` is
-excluded from automated updates: changing its major version is a separate
-project (see [docs/govuk-frontend-upgrade.md](docs/govuk-frontend-upgrade.md)).
+It is a fork of [Record a Goose Sighting](https://github.com/ministryofjustice/record-a-goose-sighting), originally developed by the UK Ministry of Justice using the GOV.UK Design System.
 
-Branch protection is a repository setting rather than a file. To require the
-test job on pull requests while keeping direct pushes to `master` working:
+The original exercise demonstrates how accessibility barriers can be introduced even when teams use established design systems.
 
-```bash
-gh api -X PUT repos/mgifford/record-a-goose-sighting/branches/master/protection \
-  --input - <<'JSON'
-{
-  "required_status_checks": { "strict": false, "contexts": ["Build and test"] },
-  "enforce_admins": false,
-  "required_pull_request_reviews": null,
-  "restrictions": null,
-  "allow_force_pushes": false,
-  "allow_deletions": false
-}
-JSON
-```
+This fork preserves that educational foundation while extending it into a broader playground for human and automated accessibility testing, including the investigation of false positives, false negatives, and ambiguous results.
 
-## Architecture
-
-```text
-app/
-  assets/images/          favicon and touch icons
-  assets/javascripts/
-    application.js        initialises GOV.UK Frontend
-    goose-session.js      sessionStorage persistence for form answers
-  assets/sass/
-    unbranded.scss        the single stylesheet (including planted defects)
-  views/
-    layout_unbranded.html GOV.UK template with branding suppressed
-    includes/scripts.html script order
-    index.html            instructions
-    steps/*.html          the six exercise pages, worksheet and answers
-services/
-  lab/                    ACT catalogue, four isolated fixtures, manifest source
-  lab/upstream/           pinned W3C ACT test-case metadata and provenance
-  hedgehog/               React reporting service
-  wombat/                 Vue reporting service
-  paca/                   Web Components reporting service
-  public/lab/             shared laboratory styles
-scripts/
-  build.mjs               Nunjucks rendering, Sass compilation, asset copying
-  lab-manifest.mjs        validates the ACT manifest, adds source hashes, publishes it
-  act-upstream.mjs        imports/validates the pinned W3C test-case snapshot
-  merge-lab.mjs           guarded merge; verifies Goose files are byte-identical
-  serve.mjs               static preview server for the Pages subpath
-tests/
-  *.spec.js               Playwright suites
-  baseline/axe.json       recorded axe findings from the original application
-  tools/                  capture and comparison utilities
-vite.config.mjs           laboratory build (React, Vue, Web Components, fixtures)
-baseline/                 snapshot of the original Express application
-dist/                     generated output (not committed)
-dist-lab/                 intermediate laboratory build (not committed)
-```
-
-- **Templates:** the existing Nunjucks templates are rendered at build time. No
-  template engine runs in the browser.
-- **Styling:** [GOV.UK Frontend](https://github.com/alphagov/govuk-frontend)
-  3.15.0, compiled with dart-sass. The frontend major version is pinned
-  deliberately: upgrading it could change the markup and behaviour that the
-  exercise depends on. That would be a separate project.
-- **No backend:** there is no Express server, database or API. The generated
-  `dist/` directory contains only HTML, CSS, JavaScript, fonts, images and
-  `.nojekyll`.
-- **Answers:** form values are kept in `sessionStorage` under the key
-  `goose-sighting-exercise:v1`, scoped to the browser tab. The check-your-answers
-  page fills its summary from that storage using `textContent`, so submitted
-  text is never interpreted as HTML. If the browser blocks storage (for example
-  after a privacy setting), the pages still navigate but answers are not
-  retained — that limitation is deliberate and documented rather than worked
-  around with a server or cookies.
-- **Navigation:** forms use `method="get"` so that they degrade to normal
-  navigation without JavaScript. When JavaScript is available, submission is
-  intercepted, the answers are saved, and the browser navigates to a clean URL —
-  answers do not appear in the query string.
-- **Laboratory build:** Vite compiles the React, Vue and Web Components services
-  and the static ACT fixtures into `dist-lab/`, then
-  `scripts/merge-lab.mjs` copies only the laboratory directories into `dist/`.
-  The merge refuses to run without the Goose output, refuses to copy a root
-  index, and fails if any pre-existing file changed. Framework code is bundled
-  locally; no CDN is used at runtime.
-- **ACT fixtures:** `services/lab/fixtures.json` is the source of truth for 11
-  cases, each mapped to an approved W3C ACT rule (674b10 or 97a4e1). The build
-  validates the schema, records a SHA-256 of each fixture source and publishes
-  the manifest at `/lab/fixtures.json`. All expected outcomes remain marked
-  `unreviewed`; the closed-shadow case deliberately has no ACT outcome because
-  an engine cannot inspect it, and a missing finding is never treated as a pass.
-- **W3C data:** `services/lab/upstream/` holds a pinned snapshot of the official
-  ACT test-case dataset (1,211 cases at import time) with its source URL,
-  retrieval date, SHA-256, rule/test-case identifiers, expected outcomes and
-  approval flags. It is downloaded only by the explicit `npm run act:import`
-  command and validated on every build; normal builds never fetch it. The
-  snapshot is published at `/lab/upstream/` with its provenance metadata and is
-  used under the [W3C Document License](https://www.w3.org/copyright/document-license-2023/).
-  Note that the upstream `approved` flag and `rulePage` can disagree for some
-  cases; rule status is never derived from `rulePage` here.
-- **Preservation inventory:** [`docs/original-goose-issues.json`](docs/original-goose-issues.json)
-  lists the 19 described Goose issues with routes, WCAG status, evidence type and
-  the regression test that guards each one. It is intentionally separate from
-  the ACT fixtures because most of those problems have no approved ACT rule. The
-  narrative, provenance and count history are in
-  [`docs/original-goose-baseline.md`](docs/original-goose-baseline.md).
-
-### Why no jQuery or Prototype Kit runtime
-
-The original application loaded jQuery 1.11.3 and a Prototype Kit
-`auto-store-data` script that posted every form to the server. Neither is
-needed: GOV.UK Frontend 3 is dependency-free, and `goose-session.js` replaces
-the session middleware. Removing them changed no rendered output: at migration
-time the screenshot comparison was pixel-identical to the original at both
-desktop and mobile widths (see [baseline/](baseline/)).
-
-Two deliberate follow-up changes now diverge from that snapshot: the answers
-page annotates the stale count, and the confirmation page uses a locally
-generated GIF instead of one hotlinked from giphy.com.
-
-## Intentional accessibility problems
-
-The following problems are part of the exercise. The tests in
-`tests/accessibility-regression.spec.js` **fail if they are fixed**, because a
-silent fix would reduce the value of the exercise and would contradict the
-answers page.
-
-| Page | Planted problem |
-|---|---|
-| Start | Two `<h1>` elements |
-| Start | DOM order of the related links differs from their visual order (CSS `order`) |
-| Start | Link opens in a new tab (`target="_blank"`) without warning |
-| Start | Ambiguous "More" link text |
-| Start | Focus indicator removed from the related links (`.link:focus`) |
-| Do you like geese? | Empty page `<title>` |
-| Do you like geese? | Radio group has no `<legend>` (the question sits outside the fieldset) |
-| Do you like geese? | Continue button excluded from keyboard focus (`tabindex="-1"`) |
-| Do you like geese? | Hint text fails contrast (`#9d9da1` on white) |
-| What type of goose? | Page title is "Boop - Record a goose sighting" |
-| What type of goose? | Visually hidden "Ghost goose" text is keyboard focusable (`tabindex="0"`) |
-| What type of goose? | Instructions only available as placeholder text |
-| When did you see the goose? | None — this page is intentionally clean |
-| Check your answers | Visually hidden Change-link text reads "biscuits" / "cake" |
-| Check your answers | Heading hierarchy jumps from `<h1>` to `<h3>` |
-| Confirmation | Uppercase heading "GOOSE RECORDED" |
-| Confirmation | Justified paragraph |
-| Confirmation | Animated GIF with no `alt` attribute |
-| Confirmation | Animation cannot be paused or stopped |
-
-If you change any of these on purpose — for example to modernise the exercise —
-update the answers page, this table, `tests/accessibility-regression.spec.js`
-and `tests/baseline/axe.json` in the same change. Do not run an accessibility
-tool with autofix enabled.
-
-Note that automated tools only detect a subset of these problems: the axe
-baseline contains five rule types (`region`, `color-contrast`,
-`document-title`, `heading-order`, `image-alt`). The others need keyboard and
-visual checks, which is part of the lesson.
-
-## Privacy
-
-- Answers typed into the exercise stay in the browser tab's `sessionStorage`.
-  They are never sent to a server and disappear when the tab is closed.
-- Google Analytics has been removed. The original application loaded GA4
-  (`G-S0FNENEJGR`) on every page; the static site loads no analytics.
-- The laboratory services keep form values in component state only and do not
-  transmit them. The Goose journey keeps its answers in `sessionStorage`.
-- Every asset is served from this site, including the confirmation-page GIF.
-  The GIF is generated for this repository by
-  `scripts/art/make-goose-gif.py`, so there is no third-party image request and
-  no image licensing ambiguity. The GIF is animated and has no alternative text
-  because that is part of the exercise.
-- Pages carry `<meta name="robots" content="noindex">` and `robots.txt` contains
-  `Disallow: /`. These reproduce the original `X-Robots-Tag: noindex` *intent*
-  as best GitHub Pages allows. They are advisory; they are not access control.
-
-## Licence and attribution
-
-Released under the MIT Licence — see [LICENCE.txt](LICENCE.txt). The licence
-notice (Crown Copyright, Government Digital Service) is preserved in
-`dist/LICENCE.txt`.
-
-The original exercise was created by the Ministry of Justice:
-<https://github.com/ministryofjustice/record-a-goose-sighting>. This repository
-is a static rebuild of that work. Other versions of the exercise include the
-[NHS accessibility exercise](https://github.com/nhsuk/accessibility-training)
-and the Co-op's [Report a leaky bag of flour](https://github.com/coopdigital/return-a-leaky-bag-of-flour).
-
-## Contributing
-
-Feedback and corrections are welcome — open an issue or a pull request. When
-contributing, please keep the migration's central constraint in mind: **the
-fictional service is supposed to be inaccessible**. Improvements to the testing
-infrastructure, documentation, build or deployment are welcome; improvements to
-the exercise pages are changes to the exercise and need to be discussed first.
+Contributions and improvements are welcome.
