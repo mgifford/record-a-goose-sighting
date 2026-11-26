@@ -1,0 +1,5219 @@
+{
+  "schemaVersion": "known-defects/1",
+  "description": "Canonical machine-readable registry of every intentional accessibility defect in this project. Generated from the authoritative source records listed in `sources`; do not edit by hand.",
+  "generatedBy": "npm run defects:generate",
+  "sources": [
+    {
+      "path": "docs/original-goose-issues.json",
+      "kind": "goose-inventory",
+      "description": "Authoritative inventory of the preserved original exercise defects.",
+      "sha256": "d161c9d46e2f74fa9cc469638eeee46a785cf5b73a83b5c696128d81af54f001"
+    },
+    {
+      "path": "services/lab/fixtures.json",
+      "kind": "act-fixture-manifest",
+      "description": "Authoritative ACT fixture manifest; failed and unsupported cases become defect records.",
+      "sha256": "0066f64fedf2b6bf4f57af7689436256d7388099d8c7fc85ac6835c667b386a0"
+    },
+    {
+      "path": "data/defect-annotations.json",
+      "kind": "annotation",
+      "description": "Curated locators, expected behaviour and impact for imported records.",
+      "sha256": "7e4606251a6a74cc1fe50cba90068e8ca84abf8959ca1a864c40e6099203fb72"
+    },
+    {
+      "path": "data/defects/busy-state-not-cleared.json",
+      "kind": "defect-record",
+      "description": "Hand-authored defect record for a defect that is not an ACT fixture case.",
+      "sha256": "2b9c043e781dd08f95704a4e69aba1f5a6a65fe0c8c32c0ee320b8963e3cd2d6"
+    },
+    {
+      "path": "data/defects/disclosure-expanded-state-stale.json",
+      "kind": "defect-record",
+      "description": "Hand-authored defect record for a defect that is not an ACT fixture case.",
+      "sha256": "d56b2c2c0c3fc823e2af2870190d9300426a2295e3c63d1a3c51c1b5481f8fa2"
+    },
+    {
+      "path": "data/defects/error-focus-not-moved-to-summary.json",
+      "kind": "defect-record",
+      "description": "Hand-authored defect record for a defect that is not an ACT fixture case.",
+      "sha256": "36aabe4c5d21f2f1edffcdc156373bee2afbb888ff958629db537e3ab97f5797"
+    },
+    {
+      "path": "data/defects/error-not-associated-with-field.json",
+      "kind": "defect-record",
+      "description": "Hand-authored defect record for a defect that is not an ACT fixture case.",
+      "sha256": "b3ee1ba0fc4fc4aebefd815c03e6a74a6ffec7612686cb7fa195c9d20d0f16ce"
+    },
+    {
+      "path": "data/defects/error-summary-link-broken.json",
+      "kind": "defect-record",
+      "description": "Hand-authored defect record for a defect that is not an ACT fixture case.",
+      "sha256": "ae5c0050d33836c3781293148cd624e50ca164dcad0d6625f4d7f8766915e237"
+    },
+    {
+      "path": "data/defects/focus-lost-after-item-removal.json",
+      "kind": "defect-record",
+      "description": "Hand-authored defect record for a defect that is not an ACT fixture case.",
+      "sha256": "a212f5c41073ebc1903438cf8ac1d46856d48854a1b596776399a9d523649525"
+    },
+    {
+      "path": "data/defects/hint-hidden-from-accessibility-tree.json",
+      "kind": "defect-record",
+      "description": "Hand-authored defect record for a defect that is not an ACT fixture case.",
+      "sha256": "636185107d955cb922b6db1a400b721114d89c1e588708ce6271791d62616a6b"
+    },
+    {
+      "path": "data/defects/name-contradicts-visible-label.json",
+      "kind": "defect-record",
+      "description": "Hand-authored defect record for a defect that is not an ACT fixture case.",
+      "sha256": "92b80f30b41c53e76e1890d27320f5ed951dabbc33cbb8fbb882d7074ede9ab0"
+    },
+    {
+      "path": "data/defects/required-field-not-identified.json",
+      "kind": "defect-record",
+      "description": "Hand-authored defect record for a defect that is not an ACT fixture case.",
+      "sha256": "8486e3400b4df6a707435e5df3181830a1d73ec4f21816e862585942f55e6b19"
+    },
+    {
+      "path": "data/defects/status-message-not-announced.json",
+      "kind": "defect-record",
+      "description": "Hand-authored defect record for a defect that is not an ACT fixture case.",
+      "sha256": "5a5603387411fa0afa71cce7c6c2bd62aec86e0611ad49763ba83338a9cd7039"
+    },
+    {
+      "path": "data/defects/switch-pointer-only.json",
+      "kind": "defect-record",
+      "description": "Hand-authored defect record for a defect that is not an ACT fixture case.",
+      "sha256": "a8c0a6a248a0f4cef3773c4283d94cf030e1cdf2269eccbe30f203d0d023d962"
+    },
+    {
+      "path": "data/defects/visual-heading-not-semantic.json",
+      "kind": "defect-record",
+      "description": "Hand-authored defect record for a defect that is not an ACT fixture case.",
+      "sha256": "12bc5302a17088875324b472d58e23063a499100b2d4a66ccde627df12bf18f6"
+    },
+    {
+      "path": "data/schemas/known-defects.schema.json",
+      "kind": "schema",
+      "description": "JSON Schema for this registry.",
+      "sha256": "05c8d26531e253a87172e26451f2bcd930599715fe186e7a84c438a825818f7e"
+    }
+  ],
+  "counts": {
+    "defects": 52,
+    "byService": {
+      "goose": 19,
+      "hedgehog": 1,
+      "lab": 29,
+      "paca": 2,
+      "wombat": 1
+    },
+    "byCategory": {
+      "accessible-name": 15,
+      "aria-state": 1,
+      "aria-validity": 4,
+      "colour": 1,
+      "content": 3,
+      "dynamic-content": 2,
+      "focus-management": 2,
+      "focus-order": 1,
+      "focus-visible": 2,
+      "forms": 6,
+      "image-alternative": 3,
+      "images": 2,
+      "keyboard": 2,
+      "motion": 1,
+      "navigation": 1,
+      "page-title": 2,
+      "structure": 3,
+      "typography": 1
+    },
+    "byClassification": {
+      "act-rule-failure": 20,
+      "best-practice": 8,
+      "candidate-wcag-failure": 10,
+      "exploratory": 1,
+      "usability-concern": 2,
+      "wcag-failure": 11
+    },
+    "byReviewLifecycle": {
+      "reproduced-automatically": 52
+    },
+    "wcagCriteria": {
+      "1.1.1": 2,
+      "1.3.1": 4,
+      "1.4.3": 1,
+      "1.4.8": 1,
+      "2.1.1": 2,
+      "2.2.2": 1,
+      "2.4.2": 2,
+      "2.4.3": 2,
+      "2.4.4": 2,
+      "2.4.7": 2,
+      "2.5.3": 1,
+      "3.2.5": 1,
+      "3.3.1": 2,
+      "3.3.2": 3,
+      "4.1.2": 3,
+      "4.1.3": 2
+    },
+    "actRules": {
+      "23a2a8": 3,
+      "674b10": 4,
+      "97a4e1": 12,
+      "c487ae": 1,
+      "e086e5": 1
+    }
+  },
+  "defects": [
+    {
+      "id": "check-heading-order",
+      "aliases": [
+        "answer-key:14"
+      ],
+      "title": "Heading level jumps from h1 to h3",
+      "description": "The first two heading levels are 1 then 3.",
+      "service": "goose",
+      "fixtureId": null,
+      "component": "Check your answers heading structure",
+      "category": "structure",
+      "classification": "wcag-failure",
+      "url": "steps/check-your-answers/",
+      "fragment": null,
+      "locators": [
+        {
+          "type": "xpath",
+          "value": "(//h3)[1]",
+          "note": "The first h3 follows the h1 directly, skipping h2."
+        },
+        {
+          "type": "css",
+          "value": "h1"
+        }
+      ],
+      "relatedElements": [],
+      "preconditions": [],
+      "interactionSteps": [],
+      "environment": null,
+      "expectedBehaviour": "Heading levels increase by one and reflect the structure of the page.",
+      "actualBehaviour": "The first two heading levels are 1 then 3.",
+      "userImpact": "Screen reader users navigating by heading cannot tell whether content is missing or how the page is organised.",
+      "affectedCapabilities": [
+        "screen-reader",
+        "cognitive"
+      ],
+      "wcag": [
+        {
+          "criterion": "1.3.1",
+          "status": "claimed",
+          "note": "Documented as a failure in the original exercise. No independent conformance review is recorded."
+        }
+      ],
+      "actRules": [],
+      "detection": {
+        "expectedMethods": [
+          "accessibility-tree-inspection"
+        ],
+        "observed": [],
+        "note": ""
+      },
+      "manualTests": [
+        "Check the heading outline for a jump from h1 to h3."
+      ],
+      "assistiveTechnologyTests": [],
+      "evidence": {
+        "assertions": [
+          "The first two heading levels are 1 then 3."
+        ],
+        "tests": [
+          "tests/accessibility-regression.spec.js: keeps the incorrect heading hierarchy"
+        ],
+        "artifacts": [],
+        "commands": [
+          "npx playwright test tests/accessibility-regression.spec.js"
+        ]
+      },
+      "controlFixtureId": null,
+      "reviewStatus": {
+        "lifecycle": "reproduced-automatically",
+        "dimensions": {
+          "automatedReproduction": "verified",
+          "manualReproduction": "not-run",
+          "assistiveTechnology": "not-run",
+          "independentReview": "not-run"
+        },
+        "note": "Automated reproduction asserts the DOM or rendered condition. That is not an assistive-technology observation and it does not independently confirm the WCAG claim."
+      },
+      "sources": [],
+      "introducedIn": "steps/check-your-answers@original-goose-3f23c97",
+      "lastVerified": null,
+      "provenance": {
+        "origin": "imported",
+        "derivedFrom": [
+          "docs/original-goose-issues.json",
+          "data/defect-annotations.json"
+        ]
+      },
+      "notApplicable": [
+        "fixtureId",
+        "actRules",
+        "controlFixtureId"
+      ]
+    },
+    {
+      "id": "check-hidden-change-text",
+      "aliases": [
+        "answer-key:13"
+      ],
+      "title": "Change links use incorrect visually hidden text",
+      "description": "Visually hidden text reads 'biscuits' and 'cake' instead of the field being changed. Accuracy of hidden text is a content judgement, not a structural rule.",
+      "service": "goose",
+      "fixtureId": null,
+      "component": "Check your answers change links",
+      "category": "content",
+      "classification": "best-practice",
+      "url": "steps/check-your-answers/",
+      "fragment": null,
+      "locators": [
+        {
+          "type": "xpath",
+          "value": "//*[contains(@class,'govuk-visually-hidden') and contains(., 'biscuits')]",
+          "note": "The first of the two incorrect hidden change labels."
+        }
+      ],
+      "relatedElements": [],
+      "preconditions": [],
+      "interactionSteps": [],
+      "environment": null,
+      "expectedBehaviour": "Visually hidden text makes each Change link unique by naming the answer it changes.",
+      "actualBehaviour": "Visually hidden text reads 'biscuits' and 'cake' instead of the field being changed.",
+      "userImpact": "Screen reader users hear meaningless words instead of the field being changed.",
+      "affectedCapabilities": [
+        "screen-reader",
+        "cognitive"
+      ],
+      "wcag": [
+        {
+          "criterion": "2.4.4",
+          "status": "claimed",
+          "note": "Documented as a failure in the original exercise. No independent conformance review is recorded."
+        }
+      ],
+      "actRules": [],
+      "detection": {
+        "expectedMethods": [
+          "screen-reader-evaluation"
+        ],
+        "observed": [],
+        "note": "Accuracy of hidden text is a content judgement, not a structural rule."
+      },
+      "manualTests": [
+        "Read each Change link in the links list and check what it changes."
+      ],
+      "assistiveTechnologyTests": [],
+      "evidence": {
+        "assertions": [
+          "Visually hidden text reads 'biscuits' and 'cake' instead of the field being changed."
+        ],
+        "tests": [
+          "tests/accessibility-regression.spec.js: keeps the incorrect visually hidden Change-link text"
+        ],
+        "artifacts": [],
+        "commands": [
+          "npx playwright test tests/accessibility-regression.spec.js"
+        ]
+      },
+      "controlFixtureId": null,
+      "reviewStatus": {
+        "lifecycle": "reproduced-automatically",
+        "dimensions": {
+          "automatedReproduction": "verified",
+          "manualReproduction": "not-run",
+          "assistiveTechnology": "not-run",
+          "independentReview": "not-run"
+        },
+        "note": "Automated reproduction asserts the DOM or rendered condition. That is not an assistive-technology observation and it does not independently confirm the WCAG claim."
+      },
+      "sources": [],
+      "introducedIn": "steps/check-your-answers@original-goose-3f23c97",
+      "lastVerified": null,
+      "provenance": {
+        "origin": "imported",
+        "derivedFrom": [
+          "docs/original-goose-issues.json",
+          "data/defect-annotations.json"
+        ]
+      },
+      "notApplicable": [
+        "fixtureId",
+        "actRules",
+        "controlFixtureId"
+      ]
+    },
+    {
+      "id": "end-animation-control",
+      "aliases": [
+        "answer-key:18"
+      ],
+      "title": "Animation cannot be paused or stopped",
+      "description": "The looping GIF has no pause, stop or hide control. The animation is an image; control availability is not part of its markup.",
+      "service": "goose",
+      "fixtureId": null,
+      "component": "Confirmation celebration animation",
+      "category": "motion",
+      "classification": "wcag-failure",
+      "url": "steps/end/",
+      "fragment": null,
+      "locators": [
+        {
+          "type": "css",
+          "value": "img[src*=\"goose-celebration.gif\"]"
+        }
+      ],
+      "relatedElements": [
+        {
+          "purpose": "absent-pause-control",
+          "note": "No button or control exists to pause, stop or hide the animation."
+        }
+      ],
+      "preconditions": [],
+      "interactionSteps": [],
+      "environment": null,
+      "expectedBehaviour": "Moving content that starts automatically can be paused, stopped or hidden, or runs for no more than five seconds.",
+      "actualBehaviour": "The looping GIF has no pause, stop or hide control.",
+      "userImpact": "Continuous movement distracts and can make the rest of the page difficult to use, particularly for people with attention-related conditions.",
+      "affectedCapabilities": [
+        "cognitive",
+        "reduced-motion"
+      ],
+      "wcag": [
+        {
+          "criterion": "2.2.2",
+          "status": "claimed",
+          "note": "Documented as a failure in the original exercise. No independent conformance review is recorded."
+        }
+      ],
+      "actRules": [],
+      "detection": {
+        "expectedMethods": [
+          "assisted-visual-review",
+          "heuristic-analysis"
+        ],
+        "observed": [],
+        "note": "The animation is an image; control availability is not part of its markup."
+      },
+      "manualTests": [
+        "Watch the page for more than five seconds and look for a pause or stop control."
+      ],
+      "assistiveTechnologyTests": [],
+      "evidence": {
+        "assertions": [
+          "The looping GIF has no pause, stop or hide control."
+        ],
+        "tests": [
+          "tests/accessibility-regression.spec.js: keeps the animation uncontrollable"
+        ],
+        "artifacts": [],
+        "commands": [
+          "npx playwright test tests/accessibility-regression.spec.js"
+        ]
+      },
+      "controlFixtureId": null,
+      "reviewStatus": {
+        "lifecycle": "reproduced-automatically",
+        "dimensions": {
+          "automatedReproduction": "verified",
+          "manualReproduction": "not-run",
+          "assistiveTechnology": "not-run",
+          "independentReview": "not-run"
+        },
+        "note": "Automated reproduction asserts the DOM or rendered condition. That is not an assistive-technology observation and it does not independently confirm the WCAG claim."
+      },
+      "sources": [],
+      "introducedIn": "steps/end@original-goose-3f23c97",
+      "lastVerified": null,
+      "provenance": {
+        "origin": "imported",
+        "derivedFrom": [
+          "docs/original-goose-issues.json",
+          "data/defect-annotations.json"
+        ]
+      },
+      "notApplicable": [
+        "fixtureId",
+        "actRules",
+        "controlFixtureId"
+      ]
+    },
+    {
+      "id": "end-gif-alt",
+      "aliases": [
+        "answer-key:17"
+      ],
+      "title": "Animated GIF has no alternative text",
+      "description": "The confirmation image has no alt attribute and axe reports image-alt.",
+      "service": "goose",
+      "fixtureId": null,
+      "component": "Confirmation celebration image",
+      "category": "images",
+      "classification": "wcag-failure",
+      "url": "steps/end/",
+      "fragment": null,
+      "locators": [
+        {
+          "type": "css",
+          "value": "img[src*=\"goose-celebration.gif\"]"
+        }
+      ],
+      "relatedElements": [],
+      "preconditions": [],
+      "interactionSteps": [],
+      "environment": null,
+      "expectedBehaviour": "A meaningful image has a text alternative that conveys the information the image provides.",
+      "actualBehaviour": "The confirmation image has no alt attribute and axe reports image-alt.",
+      "userImpact": "Screen reader users lose the confirmation message carried only by the animated image.",
+      "affectedCapabilities": [
+        "screen-reader"
+      ],
+      "wcag": [
+        {
+          "criterion": "1.1.1",
+          "status": "claimed",
+          "note": "Documented as a failure in the original exercise. No independent conformance review is recorded."
+        }
+      ],
+      "actRules": [],
+      "detection": {
+        "expectedMethods": [
+          "screen-reader-evaluation"
+        ],
+        "observed": [],
+        "note": ""
+      },
+      "manualTests": [
+        "Listen to the image announcement on the confirmation page."
+      ],
+      "assistiveTechnologyTests": [],
+      "evidence": {
+        "assertions": [
+          "The confirmation image has no alt attribute and axe reports image-alt."
+        ],
+        "tests": [
+          "tests/accessibility-regression.spec.js: keeps the animated GIF without alternative text"
+        ],
+        "artifacts": [],
+        "commands": [
+          "npx playwright test tests/accessibility-regression.spec.js"
+        ]
+      },
+      "controlFixtureId": null,
+      "reviewStatus": {
+        "lifecycle": "reproduced-automatically",
+        "dimensions": {
+          "automatedReproduction": "verified",
+          "manualReproduction": "not-run",
+          "assistiveTechnology": "not-run",
+          "independentReview": "not-run"
+        },
+        "note": "Automated reproduction asserts the DOM or rendered condition. That is not an assistive-technology observation and it does not independently confirm the WCAG claim."
+      },
+      "sources": [],
+      "introducedIn": "steps/end@original-goose-3f23c97",
+      "lastVerified": null,
+      "provenance": {
+        "origin": "imported",
+        "derivedFrom": [
+          "docs/original-goose-issues.json",
+          "data/defect-annotations.json"
+        ]
+      },
+      "notApplicable": [
+        "fixtureId",
+        "actRules",
+        "controlFixtureId"
+      ]
+    },
+    {
+      "id": "end-justified-text",
+      "aliases": [
+        "answer-key:16"
+      ],
+      "title": "Justified paragraph",
+      "description": "The paragraph computes to text-align: justify. Justification is a typographic outcome that depends on the rendered line lengths.",
+      "service": "goose",
+      "fixtureId": null,
+      "component": "Confirmation page paragraph",
+      "category": "typography",
+      "classification": "best-practice",
+      "url": "steps/end/",
+      "fragment": null,
+      "locators": [
+        {
+          "type": "css",
+          "value": ".justified-text"
+        }
+      ],
+      "relatedElements": [],
+      "preconditions": [],
+      "interactionSteps": [],
+      "environment": null,
+      "expectedBehaviour": "Body paragraphs are left-aligned so that word and letter spacing stay even.",
+      "actualBehaviour": "The paragraph computes to text-align: justify.",
+      "userImpact": "Justified spacing creates uneven gaps that make text harder to track for people with dyslexia.",
+      "affectedCapabilities": [
+        "cognitive"
+      ],
+      "wcag": [
+        {
+          "criterion": "1.4.8",
+          "status": "claimed",
+          "note": "Documented as a failure in the original exercise. No independent conformance review is recorded."
+        }
+      ],
+      "actRules": [],
+      "detection": {
+        "expectedMethods": [
+          "assisted-visual-review",
+          "computed-style-analysis"
+        ],
+        "observed": [],
+        "note": "Justification is a typographic outcome that depends on the rendered line lengths."
+      },
+      "manualTests": [
+        "Read the paragraph and look at the uneven word spacing."
+      ],
+      "assistiveTechnologyTests": [],
+      "evidence": {
+        "assertions": [
+          "The paragraph computes to text-align: justify."
+        ],
+        "tests": [
+          "tests/accessibility-regression.spec.js: keeps the justified text"
+        ],
+        "artifacts": [],
+        "commands": [
+          "npx playwright test tests/accessibility-regression.spec.js"
+        ]
+      },
+      "controlFixtureId": null,
+      "reviewStatus": {
+        "lifecycle": "reproduced-automatically",
+        "dimensions": {
+          "automatedReproduction": "verified",
+          "manualReproduction": "not-run",
+          "assistiveTechnology": "not-run",
+          "independentReview": "not-run"
+        },
+        "note": "Automated reproduction asserts the DOM or rendered condition. That is not an assistive-technology observation and it does not independently confirm the WCAG claim."
+      },
+      "sources": [],
+      "introducedIn": "steps/end@original-goose-3f23c97",
+      "lastVerified": null,
+      "provenance": {
+        "origin": "imported",
+        "derivedFrom": [
+          "docs/original-goose-issues.json",
+          "data/defect-annotations.json"
+        ]
+      },
+      "notApplicable": [
+        "fixtureId",
+        "actRules",
+        "controlFixtureId"
+      ]
+    },
+    {
+      "id": "end-uppercase-heading",
+      "aliases": [
+        "answer-key:15"
+      ],
+      "title": "All-caps confirmation heading",
+      "description": "The confirmation heading is literally 'GOOSE RECORDED'. This is a readability judgement rather than a rule violation.",
+      "service": "goose",
+      "fixtureId": null,
+      "component": "Confirmation panel title",
+      "category": "content",
+      "classification": "best-practice",
+      "url": "steps/end/",
+      "fragment": null,
+      "locators": [
+        {
+          "type": "css",
+          "value": ".govuk-panel__title"
+        }
+      ],
+      "relatedElements": [],
+      "preconditions": [],
+      "interactionSteps": [],
+      "environment": null,
+      "expectedBehaviour": "Headings use sentence case rather than words set entirely in capitals.",
+      "actualBehaviour": "The confirmation heading is literally 'GOOSE RECORDED'.",
+      "userImpact": "Words in all capitals lose their shape and are harder to read for people with dyslexia.",
+      "affectedCapabilities": [
+        "cognitive"
+      ],
+      "wcag": [],
+      "actRules": [],
+      "detection": {
+        "expectedMethods": [
+          "assisted-visual-review",
+          "heuristic-analysis"
+        ],
+        "observed": [],
+        "note": "This is a readability judgement rather than a rule violation."
+      },
+      "manualTests": [
+        "Read the confirmation heading and ask whether the capitals slow reading."
+      ],
+      "assistiveTechnologyTests": [],
+      "evidence": {
+        "assertions": [
+          "The confirmation heading is literally 'GOOSE RECORDED'."
+        ],
+        "tests": [
+          "tests/accessibility-regression.spec.js: keeps the uppercase confirmation heading"
+        ],
+        "artifacts": [],
+        "commands": [
+          "npx playwright test tests/accessibility-regression.spec.js"
+        ]
+      },
+      "controlFixtureId": null,
+      "reviewStatus": {
+        "lifecycle": "reproduced-automatically",
+        "dimensions": {
+          "automatedReproduction": "verified",
+          "manualReproduction": "not-run",
+          "assistiveTechnology": "not-run",
+          "independentReview": "not-run"
+        },
+        "note": "Automated reproduction asserts the DOM or rendered condition. That is not an assistive-technology observation and it does not independently confirm the WCAG claim."
+      },
+      "sources": [],
+      "introducedIn": "steps/end@original-goose-3f23c97",
+      "lastVerified": null,
+      "provenance": {
+        "origin": "imported",
+        "derivedFrom": [
+          "docs/original-goose-issues.json",
+          "data/defect-annotations.json"
+        ]
+      },
+      "notApplicable": [
+        "fixtureId",
+        "actRules",
+        "controlFixtureId"
+      ]
+    },
+    {
+      "id": "geese-empty-title",
+      "aliases": [
+        "answer-key:6"
+      ],
+      "title": "Missing page title",
+      "description": "document.title is empty.",
+      "service": "goose",
+      "fixtureId": null,
+      "component": "Do you like geese page title",
+      "category": "page-title",
+      "classification": "wcag-failure",
+      "url": "steps/geese-liked/",
+      "fragment": null,
+      "locators": [
+        {
+          "type": "document-title",
+          "value": null,
+          "note": "document.title is the empty string."
+        }
+      ],
+      "relatedElements": [],
+      "preconditions": [],
+      "interactionSteps": [],
+      "environment": null,
+      "expectedBehaviour": "Every page has a descriptive, unique title that starts with the page-specific information.",
+      "actualBehaviour": "document.title is empty.",
+      "userImpact": "Screen reader users hear no page context when the page loads, and tab users cannot identify the page.",
+      "affectedCapabilities": [
+        "screen-reader",
+        "cognitive"
+      ],
+      "wcag": [
+        {
+          "criterion": "2.4.2",
+          "status": "claimed",
+          "note": "Documented as a failure in the original exercise. No independent conformance review is recorded."
+        }
+      ],
+      "actRules": [],
+      "detection": {
+        "expectedMethods": [
+          "screen-reader-evaluation"
+        ],
+        "observed": [],
+        "note": ""
+      },
+      "manualTests": [
+        "Listen to the page title announcement when the page loads."
+      ],
+      "assistiveTechnologyTests": [],
+      "evidence": {
+        "assertions": [
+          "document.title is empty."
+        ],
+        "tests": [
+          "tests/accessibility-regression.spec.js: keeps the empty page title"
+        ],
+        "artifacts": [],
+        "commands": [
+          "npx playwright test tests/accessibility-regression.spec.js"
+        ]
+      },
+      "controlFixtureId": null,
+      "reviewStatus": {
+        "lifecycle": "reproduced-automatically",
+        "dimensions": {
+          "automatedReproduction": "verified",
+          "manualReproduction": "not-run",
+          "assistiveTechnology": "not-run",
+          "independentReview": "not-run"
+        },
+        "note": "Automated reproduction asserts the DOM or rendered condition. That is not an assistive-technology observation and it does not independently confirm the WCAG claim."
+      },
+      "sources": [],
+      "introducedIn": "steps/geese-liked@original-goose-3f23c97",
+      "lastVerified": null,
+      "provenance": {
+        "origin": "imported",
+        "derivedFrom": [
+          "docs/original-goose-issues.json",
+          "data/defect-annotations.json"
+        ]
+      },
+      "notApplicable": [
+        "fixtureId",
+        "actRules",
+        "controlFixtureId"
+      ]
+    },
+    {
+      "id": "geese-low-contrast",
+      "aliases": [
+        "answer-key:9"
+      ],
+      "title": "Low-contrast hint text",
+      "description": "Hint colour is rgb(157, 157, 161) on white; contrast is below 4.5:1.",
+      "service": "goose",
+      "fixtureId": null,
+      "component": "Do you like geese hint text",
+      "category": "colour",
+      "classification": "wcag-failure",
+      "url": "steps/geese-liked/",
+      "fragment": null,
+      "locators": [
+        {
+          "type": "css",
+          "value": ".goose-liked-hint"
+        }
+      ],
+      "relatedElements": [],
+      "preconditions": [],
+      "interactionSteps": [],
+      "environment": null,
+      "expectedBehaviour": "Hint text meets a 4.5:1 contrast ratio against its background.",
+      "actualBehaviour": "Hint colour is rgb(157, 157, 161) on white; contrast is below 4.5:1.",
+      "userImpact": "Low-vision users may not be able to read the hint, which carries information needed to answer the question.",
+      "affectedCapabilities": [
+        "low-vision"
+      ],
+      "wcag": [
+        {
+          "criterion": "1.4.3",
+          "status": "claimed",
+          "note": "Documented as a failure in the original exercise. No independent conformance review is recorded."
+        }
+      ],
+      "actRules": [],
+      "detection": {
+        "expectedMethods": [
+          "assisted-visual-review"
+        ],
+        "observed": [],
+        "note": ""
+      },
+      "manualTests": [
+        "Compare the hint with the background and confirm the ratio."
+      ],
+      "assistiveTechnologyTests": [],
+      "evidence": {
+        "assertions": [
+          "Hint colour is rgb(157, 157, 161) on white; contrast is below 4.5:1."
+        ],
+        "tests": [
+          "tests/accessibility-regression.spec.js: keeps the low-contrast hint text"
+        ],
+        "artifacts": [],
+        "commands": [
+          "npx playwright test tests/accessibility-regression.spec.js"
+        ]
+      },
+      "controlFixtureId": null,
+      "reviewStatus": {
+        "lifecycle": "reproduced-automatically",
+        "dimensions": {
+          "automatedReproduction": "verified",
+          "manualReproduction": "not-run",
+          "assistiveTechnology": "not-run",
+          "independentReview": "not-run"
+        },
+        "note": "Automated reproduction asserts the DOM or rendered condition. That is not an assistive-technology observation and it does not independently confirm the WCAG claim."
+      },
+      "sources": [],
+      "introducedIn": "steps/geese-liked@original-goose-3f23c97",
+      "lastVerified": null,
+      "provenance": {
+        "origin": "imported",
+        "derivedFrom": [
+          "docs/original-goose-issues.json",
+          "data/defect-annotations.json"
+        ]
+      },
+      "notApplicable": [
+        "fixtureId",
+        "actRules",
+        "controlFixtureId"
+      ]
+    },
+    {
+      "id": "geese-missing-legend",
+      "aliases": [
+        "answer-key:7"
+      ],
+      "title": "Radio group has no legend",
+      "description": "The fieldset contains no legend and the question sits outside it. The radio buttons are individually named; the missing group name only appears in the interaction.",
+      "service": "goose",
+      "fixtureId": null,
+      "component": "Do you like geese radio group",
+      "category": "forms",
+      "classification": "wcag-failure",
+      "url": "steps/geese-liked/",
+      "fragment": null,
+      "locators": [
+        {
+          "type": "css",
+          "value": "fieldset"
+        },
+        {
+          "type": "role",
+          "role": "group",
+          "name": null,
+          "note": "The fieldset is exposed as an unnamed group because it has no legend."
+        }
+      ],
+      "relatedElements": [
+        {
+          "purpose": "group-question",
+          "css": "h1"
+        }
+      ],
+      "preconditions": [],
+      "interactionSteps": [],
+      "environment": null,
+      "expectedBehaviour": "The radio group's question is programmatically associated as the group label and is announced with the options.",
+      "actualBehaviour": "The fieldset contains no legend and the question sits outside it.",
+      "userImpact": "Screen reader users hear three unlabelled options and cannot tell what question they answer.",
+      "affectedCapabilities": [
+        "screen-reader",
+        "cognitive"
+      ],
+      "wcag": [
+        {
+          "criterion": "1.3.1",
+          "status": "claimed",
+          "note": "Documented as a failure in the original exercise. No independent conformance review is recorded."
+        },
+        {
+          "criterion": "4.1.2",
+          "status": "claimed",
+          "note": "Documented as a failure in the original exercise. No independent conformance review is recorded."
+        }
+      ],
+      "actRules": [],
+      "detection": {
+        "expectedMethods": [
+          "screen-reader-evaluation"
+        ],
+        "observed": [],
+        "note": "The radio buttons are individually named; the missing group name only appears in the interaction."
+      },
+      "manualTests": [
+        "Navigate to the radio group and listen for its group label."
+      ],
+      "assistiveTechnologyTests": [],
+      "evidence": {
+        "assertions": [
+          "The fieldset contains no legend and the question sits outside it."
+        ],
+        "tests": [
+          "tests/accessibility-regression.spec.js: keeps the empty radio group legend"
+        ],
+        "artifacts": [],
+        "commands": [
+          "npx playwright test tests/accessibility-regression.spec.js"
+        ]
+      },
+      "controlFixtureId": null,
+      "reviewStatus": {
+        "lifecycle": "reproduced-automatically",
+        "dimensions": {
+          "automatedReproduction": "verified",
+          "manualReproduction": "not-run",
+          "assistiveTechnology": "not-run",
+          "independentReview": "not-run"
+        },
+        "note": "Automated reproduction asserts the DOM or rendered condition. That is not an assistive-technology observation and it does not independently confirm the WCAG claim."
+      },
+      "sources": [
+        {
+          "title": "WCAG 2.2 technique H71: Providing a description for groups of form controls using fieldset and legend",
+          "url": "https://www.w3.org/WAI/WCAG22/Techniques/html/H71"
+        }
+      ],
+      "introducedIn": "steps/geese-liked@original-goose-3f23c97",
+      "lastVerified": null,
+      "provenance": {
+        "origin": "imported",
+        "derivedFrom": [
+          "docs/original-goose-issues.json",
+          "data/defect-annotations.json"
+        ]
+      },
+      "notApplicable": [
+        "fixtureId",
+        "actRules",
+        "controlFixtureId"
+      ]
+    },
+    {
+      "id": "geese-tabindex",
+      "aliases": [
+        "answer-key:8"
+      ],
+      "title": "Continue button removed from sequential focus",
+      "description": "The submit button has tabindex=-1 and is never reached by Tab. Automated checks test attributes in isolation, not whether every control is keyboard reachable.",
+      "service": "goose",
+      "fixtureId": null,
+      "component": "Do you like geese continue button",
+      "category": "keyboard",
+      "classification": "wcag-failure",
+      "url": "steps/geese-liked/",
+      "fragment": null,
+      "locators": [
+        {
+          "type": "css",
+          "value": "button.govuk-button"
+        }
+      ],
+      "relatedElements": [],
+      "preconditions": [],
+      "interactionSteps": [],
+      "environment": null,
+      "expectedBehaviour": "Every submit control is reachable with the Tab key.",
+      "actualBehaviour": "The submit button has tabindex=-1 and is never reached by Tab.",
+      "userImpact": "Keyboard and switch users can appear trapped on the page, and many will abandon the service.",
+      "affectedCapabilities": [
+        "keyboard-only",
+        "switch-control",
+        "screen-reader"
+      ],
+      "wcag": [
+        {
+          "criterion": "2.1.1",
+          "status": "claimed",
+          "note": "Documented as a failure in the original exercise. No independent conformance review is recorded."
+        }
+      ],
+      "actRules": [],
+      "detection": {
+        "expectedMethods": [
+          "manual-keyboard-evaluation"
+        ],
+        "observed": [],
+        "note": "Automated checks test attributes in isolation, not whether every control is keyboard reachable."
+      },
+      "manualTests": [
+        "Tab from the radios and try to reach Continue without using the mouse."
+      ],
+      "assistiveTechnologyTests": [],
+      "evidence": {
+        "assertions": [
+          "The submit button has tabindex=-1 and is never reached by Tab."
+        ],
+        "tests": [
+          "tests/accessibility-regression.spec.js: keeps the Continue button out of sequential keyboard focus"
+        ],
+        "artifacts": [],
+        "commands": [
+          "npx playwright test tests/accessibility-regression.spec.js"
+        ]
+      },
+      "controlFixtureId": null,
+      "reviewStatus": {
+        "lifecycle": "reproduced-automatically",
+        "dimensions": {
+          "automatedReproduction": "verified",
+          "manualReproduction": "not-run",
+          "assistiveTechnology": "not-run",
+          "independentReview": "not-run"
+        },
+        "note": "Automated reproduction asserts the DOM or rendered condition. That is not an assistive-technology observation and it does not independently confirm the WCAG claim."
+      },
+      "sources": [],
+      "introducedIn": "steps/geese-liked@original-goose-3f23c97",
+      "lastVerified": null,
+      "provenance": {
+        "origin": "imported",
+        "derivedFrom": [
+          "docs/original-goose-issues.json",
+          "data/defect-annotations.json"
+        ]
+      },
+      "notApplicable": [
+        "fixtureId",
+        "actRules",
+        "controlFixtureId"
+      ]
+    },
+    {
+      "id": "goose-type-boop-title",
+      "aliases": [
+        "answer-key:10"
+      ],
+      "title": "Page title is 'Boop - Record a goose sighting'",
+      "description": "The title contains 'Boop' and does not describe the page question. The title is non-empty but meaningless; usefulness is a judgement.",
+      "service": "goose",
+      "fixtureId": null,
+      "component": "Goose type page title",
+      "category": "page-title",
+      "classification": "wcag-failure",
+      "url": "steps/goose-type/",
+      "fragment": null,
+      "locators": [
+        {
+          "type": "document-title",
+          "value": null,
+          "note": "The title is 'Boop - Record a goose sighting'."
+        }
+      ],
+      "relatedElements": [],
+      "preconditions": [],
+      "interactionSteps": [],
+      "environment": null,
+      "expectedBehaviour": "The page title describes the page question and the service.",
+      "actualBehaviour": "The title contains 'Boop' and does not describe the page question.",
+      "userImpact": "Screen reader users hear an unrelated word instead of the task, and cannot identify the page from a tab or history list.",
+      "affectedCapabilities": [
+        "screen-reader",
+        "cognitive"
+      ],
+      "wcag": [
+        {
+          "criterion": "2.4.2",
+          "status": "claimed",
+          "note": "Documented as a failure in the original exercise. No independent conformance review is recorded."
+        }
+      ],
+      "actRules": [],
+      "detection": {
+        "expectedMethods": [
+          "heuristic-analysis",
+          "screen-reader-evaluation"
+        ],
+        "observed": [],
+        "note": "The title is non-empty but meaningless; usefulness is a judgement."
+      },
+      "manualTests": [
+        "Read the title aloud and decide whether it describes this page."
+      ],
+      "assistiveTechnologyTests": [],
+      "evidence": {
+        "assertions": [
+          "The title contains 'Boop' and does not describe the page question."
+        ],
+        "tests": [
+          "tests/accessibility-regression.spec.js: keeps the \"Boop\" page title"
+        ],
+        "artifacts": [],
+        "commands": [
+          "npx playwright test tests/accessibility-regression.spec.js"
+        ]
+      },
+      "controlFixtureId": null,
+      "reviewStatus": {
+        "lifecycle": "reproduced-automatically",
+        "dimensions": {
+          "automatedReproduction": "verified",
+          "manualReproduction": "not-run",
+          "assistiveTechnology": "not-run",
+          "independentReview": "not-run"
+        },
+        "note": "Automated reproduction asserts the DOM or rendered condition. That is not an assistive-technology observation and it does not independently confirm the WCAG claim."
+      },
+      "sources": [],
+      "introducedIn": "steps/goose-type@original-goose-3f23c97",
+      "lastVerified": null,
+      "provenance": {
+        "origin": "imported",
+        "derivedFrom": [
+          "docs/original-goose-issues.json",
+          "data/defect-annotations.json"
+        ]
+      },
+      "notApplicable": [
+        "fixtureId",
+        "actRules",
+        "controlFixtureId"
+      ]
+    },
+    {
+      "id": "goose-type-ghost-goose",
+      "aliases": [
+        "answer-key:11"
+      ],
+      "title": "Visually hidden, keyboard-focusable 'Ghost goose'",
+      "description": "The visually hidden paragraph has tabindex=0 and is the second Tab stop. The element is valid; the problem is where focus goes and what the user can see.",
+      "service": "goose",
+      "fixtureId": null,
+      "component": "Goose type hidden paragraph",
+      "category": "focus-visible",
+      "classification": "wcag-failure",
+      "url": "steps/goose-type/",
+      "fragment": null,
+      "locators": [
+        {
+          "type": "text",
+          "value": "Ghost goose"
+        }
+      ],
+      "relatedElements": [],
+      "preconditions": [],
+      "interactionSteps": [],
+      "environment": null,
+      "expectedBehaviour": "Content that receives focus is visible, and content that is not relevant is not in the tab order.",
+      "actualBehaviour": "The visually hidden paragraph has tabindex=0 and is the second Tab stop.",
+      "userImpact": "Focus appears to disappear for keyboard users, who cannot tell where they are or what will activate.",
+      "affectedCapabilities": [
+        "keyboard-only",
+        "low-vision",
+        "screen-magnification"
+      ],
+      "wcag": [
+        {
+          "criterion": "2.4.7",
+          "status": "claimed",
+          "note": "Documented as a failure in the original exercise. No independent conformance review is recorded."
+        }
+      ],
+      "actRules": [],
+      "detection": {
+        "expectedMethods": [
+          "manual-keyboard-evaluation"
+        ],
+        "observed": [],
+        "note": "The element is valid; the problem is where focus goes and what the user can see."
+      },
+      "manualTests": [
+        "Tab from the page start and observe focus disappearing onto \"Ghost goose\"."
+      ],
+      "assistiveTechnologyTests": [],
+      "evidence": {
+        "assertions": [
+          "The visually hidden paragraph has tabindex=0 and is the second Tab stop."
+        ],
+        "tests": [
+          "tests/accessibility-regression.spec.js: keeps the focusable, visually hidden ghost goose"
+        ],
+        "artifacts": [],
+        "commands": [
+          "npx playwright test tests/accessibility-regression.spec.js"
+        ]
+      },
+      "controlFixtureId": null,
+      "reviewStatus": {
+        "lifecycle": "reproduced-automatically",
+        "dimensions": {
+          "automatedReproduction": "verified",
+          "manualReproduction": "not-run",
+          "assistiveTechnology": "not-run",
+          "independentReview": "not-run"
+        },
+        "note": "Automated reproduction asserts the DOM or rendered condition. That is not an assistive-technology observation and it does not independently confirm the WCAG claim."
+      },
+      "sources": [],
+      "introducedIn": "steps/goose-type@original-goose-3f23c97",
+      "lastVerified": null,
+      "provenance": {
+        "origin": "imported",
+        "derivedFrom": [
+          "docs/original-goose-issues.json",
+          "data/defect-annotations.json"
+        ]
+      },
+      "notApplicable": [
+        "fixtureId",
+        "actRules",
+        "controlFixtureId"
+      ]
+    },
+    {
+      "id": "goose-type-placeholder",
+      "aliases": [
+        "answer-key:12"
+      ],
+      "title": "Formatting hint only available as placeholder text",
+      "description": "The input has a placeholder and no persistent hint or aria-describedby. Tools cannot know that the placeholder is the only instruction.",
+      "service": "goose",
+      "fixtureId": null,
+      "component": "Goose type input",
+      "category": "forms",
+      "classification": "best-practice",
+      "url": "steps/goose-type/",
+      "fragment": null,
+      "locators": [
+        {
+          "type": "css",
+          "value": "input[name=\"goose-type\"]"
+        }
+      ],
+      "relatedElements": [],
+      "preconditions": [],
+      "interactionSteps": [],
+      "environment": null,
+      "expectedBehaviour": "Formatting instructions and hints stay visible during data entry and are programmatically associated with the field.",
+      "actualBehaviour": "The input has a placeholder and no persistent hint or aria-describedby.",
+      "userImpact": "People with memory or cognitive impairments must clear the field to re-read the example, and may not know the expected format.",
+      "affectedCapabilities": [
+        "cognitive",
+        "screen-reader"
+      ],
+      "wcag": [
+        {
+          "criterion": "3.3.2",
+          "status": "claimed",
+          "note": "Documented as a failure in the original exercise. No independent conformance review is recorded."
+        }
+      ],
+      "actRules": [],
+      "detection": {
+        "expectedMethods": [
+          "heuristic-analysis"
+        ],
+        "observed": [],
+        "note": "Tools cannot know that the placeholder is the only instruction."
+      },
+      "manualTests": [
+        "Type a value and check whether the formatting guidance is still available."
+      ],
+      "assistiveTechnologyTests": [],
+      "evidence": {
+        "assertions": [
+          "The input has a placeholder and no persistent hint or aria-describedby."
+        ],
+        "tests": [
+          "tests/accessibility-regression.spec.js: keeps the placeholder as the only formatting instruction"
+        ],
+        "artifacts": [],
+        "commands": [
+          "npx playwright test tests/accessibility-regression.spec.js"
+        ]
+      },
+      "controlFixtureId": null,
+      "reviewStatus": {
+        "lifecycle": "reproduced-automatically",
+        "dimensions": {
+          "automatedReproduction": "verified",
+          "manualReproduction": "not-run",
+          "assistiveTechnology": "not-run",
+          "independentReview": "not-run"
+        },
+        "note": "Automated reproduction asserts the DOM or rendered condition. That is not an assistive-technology observation and it does not independently confirm the WCAG claim."
+      },
+      "sources": [],
+      "introducedIn": "steps/goose-type@original-goose-3f23c97",
+      "lastVerified": null,
+      "provenance": {
+        "origin": "imported",
+        "derivedFrom": [
+          "docs/original-goose-issues.json",
+          "data/defect-annotations.json"
+        ]
+      },
+      "notApplicable": [
+        "fixtureId",
+        "actRules",
+        "controlFixtureId"
+      ]
+    },
+    {
+      "id": "start-ambiguous-link",
+      "aliases": [
+        "answer-key:4"
+      ],
+      "title": "Ambiguous 'More' link text",
+      "description": "The link's accessible name is exactly 'More' and only makes sense from the surrounding section. Automation can test that a name exists, not whether it is useful.",
+      "service": "goose",
+      "fixtureId": null,
+      "component": "Related links: 'More' link",
+      "category": "content",
+      "classification": "best-practice",
+      "url": "steps/start/",
+      "fragment": null,
+      "locators": [
+        {
+          "type": "role",
+          "role": "link",
+          "name": "More"
+        },
+        {
+          "type": "css",
+          "value": "a[href=\"https://www.wildlondon.org.uk/\"]"
+        }
+      ],
+      "relatedElements": [],
+      "preconditions": [],
+      "interactionSteps": [],
+      "environment": null,
+      "expectedBehaviour": "Link text identifies its destination when read out of context.",
+      "actualBehaviour": "The link's accessible name is exactly 'More' and only makes sense from the surrounding section.",
+      "userImpact": "Screen reader users browsing the links list hear 'More' with no indication of where it leads.",
+      "affectedCapabilities": [
+        "screen-reader",
+        "cognitive"
+      ],
+      "wcag": [
+        {
+          "criterion": "2.4.4",
+          "status": "claimed",
+          "note": "Documented as a failure in the original exercise. No independent conformance review is recorded."
+        }
+      ],
+      "actRules": [],
+      "detection": {
+        "expectedMethods": [
+          "screen-reader-evaluation"
+        ],
+        "observed": [],
+        "note": "Automation can test that a name exists, not whether it is useful."
+      },
+      "manualTests": [
+        "Read the links list out of context and decide whether \"More\" is meaningful."
+      ],
+      "assistiveTechnologyTests": [],
+      "evidence": {
+        "assertions": [
+          "The link's accessible name is exactly 'More' and only makes sense from the surrounding section."
+        ],
+        "tests": [
+          "tests/accessibility-regression.spec.js: keeps the ambiguous \"More\" link text"
+        ],
+        "artifacts": [],
+        "commands": [
+          "npx playwright test tests/accessibility-regression.spec.js"
+        ]
+      },
+      "controlFixtureId": null,
+      "reviewStatus": {
+        "lifecycle": "reproduced-automatically",
+        "dimensions": {
+          "automatedReproduction": "verified",
+          "manualReproduction": "not-run",
+          "assistiveTechnology": "not-run",
+          "independentReview": "not-run"
+        },
+        "note": "Automated reproduction asserts the DOM or rendered condition. That is not an assistive-technology observation and it does not independently confirm the WCAG claim."
+      },
+      "sources": [],
+      "introducedIn": "steps/start@original-goose-3f23c97",
+      "lastVerified": null,
+      "provenance": {
+        "origin": "imported",
+        "derivedFrom": [
+          "docs/original-goose-issues.json",
+          "data/defect-annotations.json"
+        ]
+      },
+      "notApplicable": [
+        "fixtureId",
+        "actRules",
+        "controlFixtureId"
+      ]
+    },
+    {
+      "id": "start-dom-visual-order",
+      "aliases": [
+        "answer-key:2"
+      ],
+      "title": "Related links appear in a different order to the DOM",
+      "description": "CSS order values are 1, 3, 2 while the DOM and Tab order are Wikipedia, More, RSPB. Tools read DOM order; they do not notice that the rendered order differs.",
+      "service": "goose",
+      "fixtureId": null,
+      "component": "Related links list",
+      "category": "focus-order",
+      "classification": "usability-concern",
+      "url": "steps/start/",
+      "fragment": null,
+      "locators": [
+        {
+          "type": "css",
+          "value": ".custom-list",
+          "note": "The related-links list itself; CSS order is 1, 3, 2 while DOM order is Wikipedia, More, RSPB."
+        }
+      ],
+      "relatedElements": [],
+      "preconditions": [],
+      "interactionSteps": [],
+      "environment": null,
+      "expectedBehaviour": "Focus and reading order follow the visual order of the related links.",
+      "actualBehaviour": "CSS order values are 1, 3, 2 while the DOM and Tab order are Wikipedia, More, RSPB.",
+      "userImpact": "Keyboard and magnification users move through links in an order that contradicts what they see, and can lose track of focus.",
+      "affectedCapabilities": [
+        "keyboard-only",
+        "screen-magnification",
+        "screen-reader"
+      ],
+      "wcag": [
+        {
+          "criterion": "2.4.3",
+          "status": "claimed",
+          "note": "Documented as a failure in the original exercise. No independent conformance review is recorded."
+        }
+      ],
+      "actRules": [],
+      "detection": {
+        "expectedMethods": [
+          "assisted-visual-review",
+          "manual-keyboard-evaluation"
+        ],
+        "observed": [],
+        "note": "Tools read DOM order; they do not notice that the rendered order differs."
+      },
+      "manualTests": [
+        "Tab through the related links and compare the focus order with the visual order."
+      ],
+      "assistiveTechnologyTests": [],
+      "evidence": {
+        "assertions": [
+          "CSS order values are 1, 3, 2 while the DOM and Tab order are Wikipedia, More, RSPB."
+        ],
+        "tests": [
+          "tests/accessibility-regression.spec.js: keeps the related links in a different visual order to the DOM"
+        ],
+        "artifacts": [],
+        "commands": [
+          "npx playwright test tests/accessibility-regression.spec.js"
+        ]
+      },
+      "controlFixtureId": null,
+      "reviewStatus": {
+        "lifecycle": "reproduced-automatically",
+        "dimensions": {
+          "automatedReproduction": "verified",
+          "manualReproduction": "not-run",
+          "assistiveTechnology": "not-run",
+          "independentReview": "not-run"
+        },
+        "note": "Automated reproduction asserts the DOM or rendered condition. That is not an assistive-technology observation and it does not independently confirm the WCAG claim."
+      },
+      "sources": [],
+      "introducedIn": "steps/start@original-goose-3f23c97",
+      "lastVerified": null,
+      "provenance": {
+        "origin": "imported",
+        "derivedFrom": [
+          "docs/original-goose-issues.json",
+          "data/defect-annotations.json"
+        ]
+      },
+      "notApplicable": [
+        "fixtureId",
+        "actRules",
+        "controlFixtureId"
+      ]
+    },
+    {
+      "id": "start-focus-style",
+      "aliases": [
+        "answer-key:5"
+      ],
+      "title": "Related links lose their focus indicator",
+      "description": "Focused a.link elements have outline:none and a transparent background. Focus visibility is a rendering outcome; the CSS deliberately removes outline and background.",
+      "service": "goose",
+      "fixtureId": null,
+      "component": "Related links: focus indicator",
+      "category": "focus-visible",
+      "classification": "wcag-failure",
+      "url": "steps/start/",
+      "fragment": null,
+      "locators": [
+        {
+          "type": "css",
+          "value": ".custom-list > li:first-child a",
+          "note": "The first related link; every a.link element has the same focus styling."
+        }
+      ],
+      "relatedElements": [],
+      "preconditions": [],
+      "interactionSteps": [],
+      "environment": null,
+      "expectedBehaviour": "Every interactive element has a focus indicator that is clearly visible against its background.",
+      "actualBehaviour": "Focused a.link elements have outline:none and a transparent background.",
+      "userImpact": "Keyboard, switch and low-vision users cannot tell which link currently has focus.",
+      "affectedCapabilities": [
+        "keyboard-only",
+        "low-vision",
+        "screen-magnification",
+        "switch-control"
+      ],
+      "wcag": [
+        {
+          "criterion": "2.4.7",
+          "status": "claimed",
+          "note": "Documented as a failure in the original exercise. No independent conformance review is recorded."
+        }
+      ],
+      "actRules": [],
+      "detection": {
+        "expectedMethods": [
+          "computed-style-analysis",
+          "manual-keyboard-evaluation"
+        ],
+        "observed": [],
+        "note": "Focus visibility is a rendering outcome; the CSS deliberately removes outline and background."
+      },
+      "manualTests": [
+        "Focus each related link and look for a visible indicator."
+      ],
+      "assistiveTechnologyTests": [],
+      "evidence": {
+        "assertions": [
+          "Focused a.link elements have outline:none and a transparent background."
+        ],
+        "tests": [
+          "tests/accessibility-regression.spec.js: keeps the invisible focus indicator on the related links"
+        ],
+        "artifacts": [],
+        "commands": [
+          "npx playwright test tests/accessibility-regression.spec.js"
+        ]
+      },
+      "controlFixtureId": null,
+      "reviewStatus": {
+        "lifecycle": "reproduced-automatically",
+        "dimensions": {
+          "automatedReproduction": "verified",
+          "manualReproduction": "not-run",
+          "assistiveTechnology": "not-run",
+          "independentReview": "not-run"
+        },
+        "note": "Automated reproduction asserts the DOM or rendered condition. That is not an assistive-technology observation and it does not independently confirm the WCAG claim."
+      },
+      "sources": [],
+      "introducedIn": "steps/start@original-goose-3f23c97",
+      "lastVerified": null,
+      "provenance": {
+        "origin": "imported",
+        "derivedFrom": [
+          "docs/original-goose-issues.json",
+          "data/defect-annotations.json"
+        ]
+      },
+      "notApplicable": [
+        "fixtureId",
+        "actRules",
+        "controlFixtureId"
+      ]
+    },
+    {
+      "id": "start-image-filename-alt",
+      "aliases": [
+        "answer-key:19"
+      ],
+      "title": "Image alternative is a file name",
+      "description": "The start-page illustration uses alt=\"goose-illustration.svg\", which names the file rather than describing the image. Automation can confirm that an alternative exists, not that it describes the image.",
+      "service": "goose",
+      "fixtureId": null,
+      "component": "Start page illustration",
+      "category": "images",
+      "classification": "wcag-failure",
+      "url": "steps/start/",
+      "fragment": null,
+      "locators": [
+        {
+          "type": "css",
+          "value": "img[src*=\"goose-illustration.svg\"]"
+        }
+      ],
+      "relatedElements": [],
+      "preconditions": [],
+      "interactionSteps": [],
+      "environment": null,
+      "expectedBehaviour": "The illustration's text alternative describes the scene rather than naming the file.",
+      "actualBehaviour": "The start-page illustration uses alt=\"goose-illustration.svg\", which names the file rather than describing the image.",
+      "userImpact": "Screen reader users hear a file name instead of a description of the goose beside the pond.",
+      "affectedCapabilities": [
+        "screen-reader"
+      ],
+      "wcag": [
+        {
+          "criterion": "1.1.1",
+          "status": "claimed",
+          "note": "Documented as a failure in the original exercise. No independent conformance review is recorded."
+        }
+      ],
+      "actRules": [],
+      "detection": {
+        "expectedMethods": [
+          "screen-reader-evaluation"
+        ],
+        "observed": [],
+        "note": "Automation can confirm that an alternative exists, not that it describes the image."
+      },
+      "manualTests": [
+        "Listen to the start-page illustration in a screen reader and compare the announcement with the visible scene."
+      ],
+      "assistiveTechnologyTests": [],
+      "evidence": {
+        "assertions": [
+          "The start-page illustration uses alt=\"goose-illustration.svg\", which names the file rather than describing the image."
+        ],
+        "tests": [
+          "tests/accessibility-regression.spec.js: keeps the start illustration with a file-name alternative"
+        ],
+        "artifacts": [],
+        "commands": [
+          "npx playwright test tests/accessibility-regression.spec.js"
+        ]
+      },
+      "controlFixtureId": null,
+      "reviewStatus": {
+        "lifecycle": "reproduced-automatically",
+        "dimensions": {
+          "automatedReproduction": "verified",
+          "manualReproduction": "not-run",
+          "assistiveTechnology": "not-run",
+          "independentReview": "not-run"
+        },
+        "note": "Automated reproduction asserts the DOM or rendered condition. That is not an assistive-technology observation and it does not independently confirm the WCAG claim."
+      },
+      "sources": [],
+      "introducedIn": "steps/start@original-goose-3f23c97",
+      "lastVerified": null,
+      "provenance": {
+        "origin": "imported",
+        "derivedFrom": [
+          "docs/original-goose-issues.json",
+          "data/defect-annotations.json"
+        ]
+      },
+      "notApplicable": [
+        "fixtureId",
+        "actRules",
+        "controlFixtureId"
+      ]
+    },
+    {
+      "id": "start-new-tab",
+      "aliases": [
+        "answer-key:3"
+      ],
+      "title": "External link opens a new tab without warning",
+      "description": "The RSPB link has target=_blank and its accessible name gives no advance warning. Whether a new tab is expected depends on the link text and the user context.",
+      "service": "goose",
+      "fixtureId": null,
+      "component": "Related links: external RSPB link",
+      "category": "navigation",
+      "classification": "best-practice",
+      "url": "steps/start/",
+      "fragment": null,
+      "locators": [
+        {
+          "type": "css",
+          "value": "a[target=\"_blank\"]"
+        },
+        {
+          "type": "role",
+          "role": "link",
+          "name": "Visit the RSPB website"
+        }
+      ],
+      "relatedElements": [],
+      "preconditions": [],
+      "interactionSteps": [],
+      "environment": null,
+      "expectedBehaviour": "A link that opens a new tab tells the user in advance, in text or through an accessible description.",
+      "actualBehaviour": "The RSPB link has target=_blank and its accessible name gives no advance warning.",
+      "userImpact": "People who use a screen reader or keyboard may not realise a new tab opened and cannot use Back to return.",
+      "affectedCapabilities": [
+        "screen-reader",
+        "keyboard-only",
+        "cognitive"
+      ],
+      "wcag": [
+        {
+          "criterion": "3.2.5",
+          "status": "claimed",
+          "note": "Documented as a failure in the original exercise. No independent conformance review is recorded."
+        }
+      ],
+      "actRules": [],
+      "detection": {
+        "expectedMethods": [
+          "heuristic-analysis",
+          "manual-keyboard-evaluation"
+        ],
+        "observed": [],
+        "note": "Whether a new tab is expected depends on the link text and the user context."
+      },
+      "manualTests": [
+        "Activate the RSPB link and check whether the new tab was announced in advance."
+      ],
+      "assistiveTechnologyTests": [],
+      "evidence": {
+        "assertions": [
+          "The RSPB link has target=_blank and its accessible name gives no advance warning."
+        ],
+        "tests": [
+          "tests/accessibility-regression.spec.js: keeps an external link that opens a new tab without warning"
+        ],
+        "artifacts": [],
+        "commands": [
+          "npx playwright test tests/accessibility-regression.spec.js"
+        ]
+      },
+      "controlFixtureId": null,
+      "reviewStatus": {
+        "lifecycle": "reproduced-automatically",
+        "dimensions": {
+          "automatedReproduction": "verified",
+          "manualReproduction": "not-run",
+          "assistiveTechnology": "not-run",
+          "independentReview": "not-run"
+        },
+        "note": "Automated reproduction asserts the DOM or rendered condition. That is not an assistive-technology observation and it does not independently confirm the WCAG claim."
+      },
+      "sources": [],
+      "introducedIn": "steps/start@original-goose-3f23c97",
+      "lastVerified": null,
+      "provenance": {
+        "origin": "imported",
+        "derivedFrom": [
+          "docs/original-goose-issues.json",
+          "data/defect-annotations.json"
+        ]
+      },
+      "notApplicable": [
+        "fixtureId",
+        "actRules",
+        "controlFixtureId"
+      ]
+    },
+    {
+      "id": "start-two-h1",
+      "aliases": [
+        "answer-key:1"
+      ],
+      "title": "Two first-level headings",
+      "description": "The page contains two h1 elements; the second is the related-links heading. The DOM is valid and every heading has text; judging whether two h1s make sense is contextual.",
+      "service": "goose",
+      "fixtureId": null,
+      "component": "Start page headings and related-links section",
+      "category": "structure",
+      "classification": "best-practice",
+      "url": "steps/start/",
+      "fragment": null,
+      "locators": [
+        {
+          "type": "xpath",
+          "value": "(//h1)[2]",
+          "note": "The second h1 is the related-links heading."
+        },
+        {
+          "type": "role",
+          "role": "heading",
+          "name": "Information about Geese"
+        }
+      ],
+      "relatedElements": [],
+      "preconditions": [],
+      "interactionSteps": [],
+      "environment": null,
+      "expectedBehaviour": "Each page exposes one top-level heading, and subsections use a heading level that reflects the page structure.",
+      "actualBehaviour": "The page contains two h1 elements; the second is the related-links heading.",
+      "userImpact": "Screen reader and outline users find a duplicate top-level entry and cannot tell which heading describes the page itself.",
+      "affectedCapabilities": [
+        "screen-reader",
+        "cognitive"
+      ],
+      "wcag": [
+        {
+          "criterion": "1.3.1",
+          "status": "claimed",
+          "note": "Documented as a failure in the original exercise. No independent conformance review is recorded."
+        }
+      ],
+      "actRules": [],
+      "detection": {
+        "expectedMethods": [
+          "accessibility-tree-inspection",
+          "assisted-visual-review"
+        ],
+        "observed": [],
+        "note": "The DOM is valid and every heading has text; judging whether two h1s make sense is contextual."
+      },
+      "manualTests": [
+        "Open the headings list and compare the outline with the visible structure."
+      ],
+      "assistiveTechnologyTests": [],
+      "evidence": {
+        "assertions": [
+          "The page contains two h1 elements; the second is the related-links heading."
+        ],
+        "tests": [
+          "tests/accessibility-regression.spec.js: keeps two first-level headings"
+        ],
+        "artifacts": [],
+        "commands": [
+          "npx playwright test tests/accessibility-regression.spec.js"
+        ]
+      },
+      "controlFixtureId": null,
+      "reviewStatus": {
+        "lifecycle": "reproduced-automatically",
+        "dimensions": {
+          "automatedReproduction": "verified",
+          "manualReproduction": "not-run",
+          "assistiveTechnology": "not-run",
+          "independentReview": "not-run"
+        },
+        "note": "Automated reproduction asserts the DOM or rendered condition. That is not an assistive-technology observation and it does not independently confirm the WCAG claim."
+      },
+      "sources": [
+        {
+          "title": "WCAG 2.2 technique H42: Using h1-h6 to identify headings",
+          "url": "https://www.w3.org/WAI/WCAG22/Techniques/html/H42"
+        }
+      ],
+      "introducedIn": "steps/start@original-goose-3f23c97",
+      "lastVerified": null,
+      "provenance": {
+        "origin": "imported",
+        "derivedFrom": [
+          "docs/original-goose-issues.json",
+          "data/defect-annotations.json"
+        ]
+      },
+      "notApplicable": [
+        "fixtureId",
+        "actRules",
+        "controlFixtureId"
+      ]
+    },
+    {
+      "id": "react-button-initial",
+      "aliases": [],
+      "title": "React: name absent initially",
+      "description": "Wait for the React state marker before evaluating.",
+      "service": "hedgehog",
+      "fixtureId": "react-button-initial",
+      "component": "button",
+      "category": "accessible-name",
+      "classification": "act-rule-failure",
+      "url": "hedgehog/?state=initial",
+      "fragment": null,
+      "locators": [
+        {
+          "type": "css",
+          "value": "#test-target"
+        }
+      ],
+      "relatedElements": [],
+      "preconditions": [],
+      "interactionSteps": [],
+      "environment": null,
+      "expectedBehaviour": "The target satisfies ACT rule 97a4e1: Button has non-empty accessible name.",
+      "actualBehaviour": "The target does not satisfy ACT rule 97a4e1 (Button has non-empty accessible name). Wait for the React state marker before evaluating.",
+      "userImpact": "A control without an accessible name is announced without its purpose, so screen-reader, voice-control and switch users cannot identify it reliably.",
+      "affectedCapabilities": [
+        "screen-reader",
+        "voice-control",
+        "switch-control"
+      ],
+      "wcag": [],
+      "actRules": [
+        {
+          "ruleId": "97a4e1",
+          "status": "failed",
+          "ruleName": "Button has non-empty accessible name",
+          "ruleUrl": "https://www.w3.org/WAI/standards-guidelines/act/rules/97a4e1/"
+        }
+      ],
+      "detection": {
+        "expectedMethods": [
+          "dom-inspection",
+          "accessibility-tree-inspection"
+        ],
+        "observed": [],
+        "note": "ACT rule outcome only. A WCAG mapping has not been reviewed for this fixture."
+      },
+      "manualTests": [
+        "Open the accessibility tree for the target and confirm that the button exposes a non-empty, meaningful accessible name."
+      ],
+      "assistiveTechnologyTests": [],
+      "evidence": {
+        "assertions": [],
+        "tests": [],
+        "artifacts": [
+          "lab/reviews/records/react-button-initial.json"
+        ],
+        "commands": [
+          "npm run defects:verify -- --id react-button-initial"
+        ]
+      },
+      "controlFixtureId": "react-button-updated",
+      "reviewStatus": {
+        "lifecycle": "reproduced-automatically",
+        "dimensions": {
+          "automatedReproduction": "verified",
+          "manualReproduction": "not-run",
+          "assistiveTechnology": "not-run",
+          "independentReview": "not-run"
+        },
+        "note": "Locator resolution and the declared fixture state are asserted automatically. The ACT outcome remains an unreviewed hypothesis until a person records a review."
+      },
+      "sources": [
+        {
+          "title": "Button has non-empty accessible name (ACT rule 97a4e1)",
+          "url": "https://www.w3.org/WAI/standards-guidelines/act/rules/97a4e1/"
+        }
+      ],
+      "introducedIn": null,
+      "lastVerified": null,
+      "provenance": {
+        "origin": "derived",
+        "derivedFrom": [
+          "services/lab/fixtures.json",
+          "data/defect-annotations.json"
+        ]
+      },
+      "notApplicable": []
+    },
+    {
+      "service": "lab",
+      "fixtureId": null,
+      "aliases": [],
+      "preconditions": [],
+      "interactionSteps": [
+        {
+          "action": "click",
+          "selector": "#check-a"
+        },
+        {
+          "action": "waitFor",
+          "selector": "#results-a",
+          "note": "Text becomes 4 sessions available in the next seven days."
+        },
+        {
+          "action": "assert",
+          "selector": "#results-a",
+          "note": "aria-busy remains true."
+        }
+      ],
+      "environment": null,
+      "actRules": [],
+      "controlFixtureId": null,
+      "introducedIn": null,
+      "lastVerified": null,
+      "notApplicable": [
+        "fixtureId",
+        "actRules"
+      ],
+      "id": "busy-state-not-cleared",
+      "title": "Busy state is set and never cleared",
+      "description": "The availability check marks its status region aria-busy=true before the update and never removes the attribute. The visible results are correct, but assistive technology may keep treating the region as still updating and withhold the new content.",
+      "component": "Availability result region (variant A)",
+      "category": "dynamic-content",
+      "classification": "candidate-wcag-failure",
+      "url": "lab/subtle/status/",
+      "locators": [
+        {
+          "type": "css",
+          "value": "#results-a"
+        }
+      ],
+      "relatedElements": [
+        {
+          "purpose": "comparison-control",
+          "css": "#results-b",
+          "note": "Clears aria-busy after rendering the results."
+        }
+      ],
+      "expectedBehaviour": "A busy state is cleared once the update is complete, so the new content can be announced.",
+      "actualBehaviour": "aria-busy=true remains on the status region after the results have rendered.",
+      "userImpact": "Screen-reader users may never hear the result count even though it is visible on screen.",
+      "affectedCapabilities": [
+        "screen-reader"
+      ],
+      "wcag": [
+        {
+          "criterion": "4.1.3",
+          "status": "candidate",
+          "note": "A status update may be withheld because the region is marked busy indefinitely."
+        }
+      ],
+      "detection": {
+        "expectedMethods": [
+          "dom-inspection",
+          "mutation-observation"
+        ],
+        "observed": [],
+        "note": "The attribute is only observable after the asynchronous update."
+      },
+      "manualTests": [
+        "Activate Check availability with a screen reader running and listen for the result count."
+      ],
+      "assistiveTechnologyTests": [
+        {
+          "platform": "macOS",
+          "browser": "Safari",
+          "assistiveTechnology": "VoiceOver",
+          "procedure": "Navigate to the target with the VoiceOver rotor and confirm what is announced.",
+          "status": "not-run"
+        }
+      ],
+      "evidence": {
+        "assertions": [
+          "aria-busy remains true after the results text is rendered."
+        ],
+        "tests": [
+          "tests/subtle-defects.spec.js: keeps the busy state set in variant A"
+        ],
+        "artifacts": [],
+        "commands": [
+          "npx playwright test tests/subtle-defects.spec.js"
+        ]
+      },
+      "sources": [
+        {
+          "title": "WAI-ARIA 1.2: aria-busy",
+          "url": "https://www.w3.org/TR/wai-aria-1.2/#aria-busy"
+        }
+      ],
+      "reviewStatus": {
+        "lifecycle": "reproduced-automatically",
+        "dimensions": {
+          "automatedReproduction": "verified",
+          "manualReproduction": "not-run",
+          "assistiveTechnology": "not-run",
+          "independentReview": "not-run"
+        },
+        "note": "A Playwright regression test preserves the defective behaviour and its control. That is automated reproduction, not a manual or assistive-technology observation."
+      },
+      "fragment": null,
+      "provenance": {
+        "origin": "curated",
+        "derivedFrom": [
+          "data/defects/busy-state-not-cleared.json"
+        ],
+        "note": "Hand-authored record. Its expected behaviour is a hypothesis until an independent review records evidence."
+      }
+    },
+    {
+      "id": "correlation-multi-rule-button-name",
+      "aliases": [],
+      "title": "One target: missing button name",
+      "description": "Same element as correlation-multi-rule-role-value, different ACT rule.",
+      "service": "lab",
+      "fixtureId": "correlation-multi-rule-button-name",
+      "component": "button",
+      "category": "accessible-name",
+      "classification": "act-rule-failure",
+      "url": "lab/correlation/multiple-rules-one-target/",
+      "fragment": null,
+      "locators": [
+        {
+          "type": "css",
+          "value": "#target"
+        }
+      ],
+      "relatedElements": [],
+      "preconditions": [],
+      "interactionSteps": [],
+      "environment": null,
+      "expectedBehaviour": "The target satisfies ACT rule 97a4e1: Button has non-empty accessible name.",
+      "actualBehaviour": "The target does not satisfy ACT rule 97a4e1 (Button has non-empty accessible name). Same element as correlation-multi-rule-role-value, different ACT rule.",
+      "userImpact": "A control without an accessible name is announced without its purpose, so screen-reader, voice-control and switch users cannot identify it reliably.",
+      "affectedCapabilities": [
+        "screen-reader",
+        "voice-control",
+        "switch-control"
+      ],
+      "wcag": [],
+      "actRules": [
+        {
+          "ruleId": "97a4e1",
+          "status": "failed",
+          "ruleName": "Button has non-empty accessible name",
+          "ruleUrl": "https://www.w3.org/WAI/standards-guidelines/act/rules/97a4e1/"
+        }
+      ],
+      "detection": {
+        "expectedMethods": [
+          "dom-inspection",
+          "accessibility-tree-inspection"
+        ],
+        "observed": [],
+        "note": "ACT rule outcome only. A WCAG mapping has not been reviewed for this fixture."
+      },
+      "manualTests": [
+        "Open the accessibility tree for the target and confirm that the button exposes a non-empty, meaningful accessible name."
+      ],
+      "assistiveTechnologyTests": [],
+      "evidence": {
+        "assertions": [],
+        "tests": [],
+        "artifacts": [
+          "lab/reviews/records/correlation-multi-rule-button-name.json"
+        ],
+        "commands": [
+          "npm run defects:verify -- --id correlation-multi-rule-button-name"
+        ]
+      },
+      "controlFixtureId": null,
+      "reviewStatus": {
+        "lifecycle": "reproduced-automatically",
+        "dimensions": {
+          "automatedReproduction": "verified",
+          "manualReproduction": "not-run",
+          "assistiveTechnology": "not-run",
+          "independentReview": "not-run"
+        },
+        "note": "Locator resolution and the declared fixture state are asserted automatically. The ACT outcome remains an unreviewed hypothesis until a person records a review."
+      },
+      "sources": [
+        {
+          "title": "Button has non-empty accessible name (ACT rule 97a4e1)",
+          "url": "https://www.w3.org/WAI/standards-guidelines/act/rules/97a4e1/"
+        }
+      ],
+      "introducedIn": null,
+      "lastVerified": null,
+      "provenance": {
+        "origin": "derived",
+        "derivedFrom": [
+          "services/lab/fixtures.json",
+          "data/defect-annotations.json"
+        ]
+      },
+      "notApplicable": []
+    },
+    {
+      "id": "correlation-multi-rule-role-value",
+      "aliases": [],
+      "title": "One target: invalid role value",
+      "description": "Same element as correlation-multi-rule-button-name, different ACT rule.",
+      "service": "lab",
+      "fixtureId": "correlation-multi-rule-role-value",
+      "component": "element with a role attribute",
+      "category": "aria-validity",
+      "classification": "act-rule-failure",
+      "url": "lab/correlation/multiple-rules-one-target/",
+      "fragment": null,
+      "locators": [
+        {
+          "type": "css",
+          "value": "#target"
+        }
+      ],
+      "relatedElements": [],
+      "preconditions": [],
+      "interactionSteps": [],
+      "environment": null,
+      "expectedBehaviour": "The target satisfies ACT rule 674b10: Role attribute has valid value.",
+      "actualBehaviour": "The target does not satisfy ACT rule 674b10 (Role attribute has valid value). Same element as correlation-multi-rule-button-name, different ACT rule.",
+      "userImpact": "An invalid role is ignored by browsers, so the element exposes an unintended implicit role and assistive-technology users receive the wrong interaction model.",
+      "affectedCapabilities": [
+        "screen-reader"
+      ],
+      "wcag": [],
+      "actRules": [
+        {
+          "ruleId": "674b10",
+          "status": "failed",
+          "ruleName": "Role attribute has valid value",
+          "ruleUrl": "https://www.w3.org/WAI/standards-guidelines/act/rules/674b10/"
+        }
+      ],
+      "detection": {
+        "expectedMethods": [
+          "dom-inspection",
+          "accessibility-tree-inspection"
+        ],
+        "observed": [],
+        "note": "ACT rule outcome only. A WCAG mapping has not been reviewed for this fixture."
+      },
+      "manualTests": [
+        "Inspect the attribute and the computed role, and confirm that the role token is valid."
+      ],
+      "assistiveTechnologyTests": [],
+      "evidence": {
+        "assertions": [],
+        "tests": [],
+        "artifacts": [
+          "lab/reviews/records/correlation-multi-rule-role-value.json"
+        ],
+        "commands": [
+          "npm run defects:verify -- --id correlation-multi-rule-role-value"
+        ]
+      },
+      "controlFixtureId": null,
+      "reviewStatus": {
+        "lifecycle": "reproduced-automatically",
+        "dimensions": {
+          "automatedReproduction": "verified",
+          "manualReproduction": "not-run",
+          "assistiveTechnology": "not-run",
+          "independentReview": "not-run"
+        },
+        "note": "Locator resolution and the declared fixture state are asserted automatically. The ACT outcome remains an unreviewed hypothesis until a person records a review."
+      },
+      "sources": [
+        {
+          "title": "Role attribute has valid value (ACT rule 674b10)",
+          "url": "https://www.w3.org/WAI/standards-guidelines/act/rules/674b10/"
+        }
+      ],
+      "introducedIn": null,
+      "lastVerified": null,
+      "provenance": {
+        "origin": "derived",
+        "derivedFrom": [
+          "services/lab/fixtures.json",
+          "data/defect-annotations.json"
+        ]
+      },
+      "notApplicable": []
+    },
+    {
+      "id": "correlation-repeated-unnamed-a",
+      "aliases": [],
+      "title": "Repeated controls: first unnamed button",
+      "description": "First unnamed button. Distinct target on the repeated-controls scenario.",
+      "service": "lab",
+      "fixtureId": "correlation-repeated-unnamed-a",
+      "component": "button",
+      "category": "accessible-name",
+      "classification": "act-rule-failure",
+      "url": "lab/correlation/repeated-controls/",
+      "fragment": null,
+      "locators": [
+        {
+          "type": "css",
+          "value": "#unnamed-a"
+        }
+      ],
+      "relatedElements": [],
+      "preconditions": [],
+      "interactionSteps": [],
+      "environment": null,
+      "expectedBehaviour": "The target satisfies ACT rule 97a4e1: Button has non-empty accessible name.",
+      "actualBehaviour": "The target does not satisfy ACT rule 97a4e1 (Button has non-empty accessible name). First unnamed button. Distinct target on the repeated-controls scenario.",
+      "userImpact": "A control without an accessible name is announced without its purpose, so screen-reader, voice-control and switch users cannot identify it reliably.",
+      "affectedCapabilities": [
+        "screen-reader",
+        "voice-control",
+        "switch-control"
+      ],
+      "wcag": [],
+      "actRules": [
+        {
+          "ruleId": "97a4e1",
+          "status": "failed",
+          "ruleName": "Button has non-empty accessible name",
+          "ruleUrl": "https://www.w3.org/WAI/standards-guidelines/act/rules/97a4e1/"
+        }
+      ],
+      "detection": {
+        "expectedMethods": [
+          "dom-inspection",
+          "accessibility-tree-inspection"
+        ],
+        "observed": [],
+        "note": "ACT rule outcome only. A WCAG mapping has not been reviewed for this fixture."
+      },
+      "manualTests": [
+        "Open the accessibility tree for the target and confirm that the button exposes a non-empty, meaningful accessible name."
+      ],
+      "assistiveTechnologyTests": [],
+      "evidence": {
+        "assertions": [],
+        "tests": [],
+        "artifacts": [
+          "lab/reviews/records/correlation-repeated-unnamed-a.json"
+        ],
+        "commands": [
+          "npm run defects:verify -- --id correlation-repeated-unnamed-a"
+        ]
+      },
+      "controlFixtureId": "correlation-repeated-named-a",
+      "reviewStatus": {
+        "lifecycle": "reproduced-automatically",
+        "dimensions": {
+          "automatedReproduction": "verified",
+          "manualReproduction": "not-run",
+          "assistiveTechnology": "not-run",
+          "independentReview": "not-run"
+        },
+        "note": "Locator resolution and the declared fixture state are asserted automatically. The ACT outcome remains an unreviewed hypothesis until a person records a review."
+      },
+      "sources": [
+        {
+          "title": "Button has non-empty accessible name (ACT rule 97a4e1)",
+          "url": "https://www.w3.org/WAI/standards-guidelines/act/rules/97a4e1/"
+        }
+      ],
+      "introducedIn": null,
+      "lastVerified": null,
+      "provenance": {
+        "origin": "derived",
+        "derivedFrom": [
+          "services/lab/fixtures.json",
+          "data/defect-annotations.json"
+        ]
+      },
+      "notApplicable": []
+    },
+    {
+      "id": "correlation-repeated-unnamed-b",
+      "aliases": [],
+      "title": "Repeated controls: second unnamed button",
+      "description": "Second unnamed button. Distinct target on the repeated-controls scenario.",
+      "service": "lab",
+      "fixtureId": "correlation-repeated-unnamed-b",
+      "component": "button",
+      "category": "accessible-name",
+      "classification": "act-rule-failure",
+      "url": "lab/correlation/repeated-controls/",
+      "fragment": null,
+      "locators": [
+        {
+          "type": "css",
+          "value": "#unnamed-b"
+        }
+      ],
+      "relatedElements": [],
+      "preconditions": [],
+      "interactionSteps": [],
+      "environment": null,
+      "expectedBehaviour": "The target satisfies ACT rule 97a4e1: Button has non-empty accessible name.",
+      "actualBehaviour": "The target does not satisfy ACT rule 97a4e1 (Button has non-empty accessible name). Second unnamed button. Distinct target on the repeated-controls scenario.",
+      "userImpact": "A control without an accessible name is announced without its purpose, so screen-reader, voice-control and switch users cannot identify it reliably.",
+      "affectedCapabilities": [
+        "screen-reader",
+        "voice-control",
+        "switch-control"
+      ],
+      "wcag": [],
+      "actRules": [
+        {
+          "ruleId": "97a4e1",
+          "status": "failed",
+          "ruleName": "Button has non-empty accessible name",
+          "ruleUrl": "https://www.w3.org/WAI/standards-guidelines/act/rules/97a4e1/"
+        }
+      ],
+      "detection": {
+        "expectedMethods": [
+          "dom-inspection",
+          "accessibility-tree-inspection"
+        ],
+        "observed": [],
+        "note": "ACT rule outcome only. A WCAG mapping has not been reviewed for this fixture."
+      },
+      "manualTests": [
+        "Open the accessibility tree for the target and confirm that the button exposes a non-empty, meaningful accessible name."
+      ],
+      "assistiveTechnologyTests": [],
+      "evidence": {
+        "assertions": [],
+        "tests": [],
+        "artifacts": [
+          "lab/reviews/records/correlation-repeated-unnamed-b.json"
+        ],
+        "commands": [
+          "npm run defects:verify -- --id correlation-repeated-unnamed-b"
+        ]
+      },
+      "controlFixtureId": "correlation-repeated-named-a",
+      "reviewStatus": {
+        "lifecycle": "reproduced-automatically",
+        "dimensions": {
+          "automatedReproduction": "verified",
+          "manualReproduction": "not-run",
+          "assistiveTechnology": "not-run",
+          "independentReview": "not-run"
+        },
+        "note": "Locator resolution and the declared fixture state are asserted automatically. The ACT outcome remains an unreviewed hypothesis until a person records a review."
+      },
+      "sources": [
+        {
+          "title": "Button has non-empty accessible name (ACT rule 97a4e1)",
+          "url": "https://www.w3.org/WAI/standards-guidelines/act/rules/97a4e1/"
+        }
+      ],
+      "introducedIn": null,
+      "lastVerified": null,
+      "provenance": {
+        "origin": "derived",
+        "derivedFrom": [
+          "services/lab/fixtures.json",
+          "data/defect-annotations.json"
+        ]
+      },
+      "notApplicable": []
+    },
+    {
+      "id": "correlation-repeated-unnamed-c",
+      "aliases": [],
+      "title": "Repeated controls: third unnamed button",
+      "description": "Third unnamed button. Distinct target on the repeated-controls scenario.",
+      "service": "lab",
+      "fixtureId": "correlation-repeated-unnamed-c",
+      "component": "button",
+      "category": "accessible-name",
+      "classification": "act-rule-failure",
+      "url": "lab/correlation/repeated-controls/",
+      "fragment": null,
+      "locators": [
+        {
+          "type": "css",
+          "value": "#unnamed-c"
+        }
+      ],
+      "relatedElements": [],
+      "preconditions": [],
+      "interactionSteps": [],
+      "environment": null,
+      "expectedBehaviour": "The target satisfies ACT rule 97a4e1: Button has non-empty accessible name.",
+      "actualBehaviour": "The target does not satisfy ACT rule 97a4e1 (Button has non-empty accessible name). Third unnamed button. Distinct target on the repeated-controls scenario.",
+      "userImpact": "A control without an accessible name is announced without its purpose, so screen-reader, voice-control and switch users cannot identify it reliably.",
+      "affectedCapabilities": [
+        "screen-reader",
+        "voice-control",
+        "switch-control"
+      ],
+      "wcag": [],
+      "actRules": [
+        {
+          "ruleId": "97a4e1",
+          "status": "failed",
+          "ruleName": "Button has non-empty accessible name",
+          "ruleUrl": "https://www.w3.org/WAI/standards-guidelines/act/rules/97a4e1/"
+        }
+      ],
+      "detection": {
+        "expectedMethods": [
+          "dom-inspection",
+          "accessibility-tree-inspection"
+        ],
+        "observed": [],
+        "note": "ACT rule outcome only. A WCAG mapping has not been reviewed for this fixture."
+      },
+      "manualTests": [
+        "Open the accessibility tree for the target and confirm that the button exposes a non-empty, meaningful accessible name."
+      ],
+      "assistiveTechnologyTests": [],
+      "evidence": {
+        "assertions": [],
+        "tests": [],
+        "artifacts": [
+          "lab/reviews/records/correlation-repeated-unnamed-c.json"
+        ],
+        "commands": [
+          "npm run defects:verify -- --id correlation-repeated-unnamed-c"
+        ]
+      },
+      "controlFixtureId": "correlation-repeated-named-a",
+      "reviewStatus": {
+        "lifecycle": "reproduced-automatically",
+        "dimensions": {
+          "automatedReproduction": "verified",
+          "manualReproduction": "not-run",
+          "assistiveTechnology": "not-run",
+          "independentReview": "not-run"
+        },
+        "note": "Locator resolution and the declared fixture state are asserted automatically. The ACT outcome remains an unreviewed hypothesis until a person records a review."
+      },
+      "sources": [
+        {
+          "title": "Button has non-empty accessible name (ACT rule 97a4e1)",
+          "url": "https://www.w3.org/WAI/standards-guidelines/act/rules/97a4e1/"
+        }
+      ],
+      "introducedIn": null,
+      "lastVerified": null,
+      "provenance": {
+        "origin": "derived",
+        "derivedFrom": [
+          "services/lab/fixtures.json",
+          "data/defect-annotations.json"
+        ]
+      },
+      "notApplicable": []
+    },
+    {
+      "id": "correlation-single-image",
+      "aliases": [],
+      "title": "Single image with no alternative",
+      "description": "Simplest shared-target case: one image, one rule failure.",
+      "service": "lab",
+      "fixtureId": "correlation-single-image",
+      "component": "image",
+      "category": "image-alternative",
+      "classification": "act-rule-failure",
+      "url": "lab/correlation/single-image/",
+      "fragment": null,
+      "locators": [
+        {
+          "type": "css",
+          "value": "#missing-alt"
+        }
+      ],
+      "relatedElements": [],
+      "preconditions": [],
+      "interactionSteps": [],
+      "environment": null,
+      "expectedBehaviour": "The target satisfies ACT rule 23a2a8: Image has non-empty accessible name.",
+      "actualBehaviour": "The target does not satisfy ACT rule 23a2a8 (Image has non-empty accessible name). Simplest shared-target case: one image, one rule failure.",
+      "userImpact": "An image without an accessible name is announced as an unlabelled graphic, so screen-reader users lose the information it conveys.",
+      "affectedCapabilities": [
+        "screen-reader"
+      ],
+      "wcag": [],
+      "actRules": [
+        {
+          "ruleId": "23a2a8",
+          "status": "failed",
+          "ruleName": "Image has non-empty accessible name",
+          "ruleUrl": "https://www.w3.org/WAI/standards-guidelines/act/rules/23a2a8/"
+        }
+      ],
+      "detection": {
+        "expectedMethods": [
+          "dom-inspection",
+          "accessibility-tree-inspection"
+        ],
+        "observed": [],
+        "note": "ACT rule outcome only. A WCAG mapping has not been reviewed for this fixture."
+      },
+      "manualTests": [
+        "Open the images list and confirm that the target image exposes a text alternative."
+      ],
+      "assistiveTechnologyTests": [],
+      "evidence": {
+        "assertions": [],
+        "tests": [],
+        "artifacts": [
+          "lab/reviews/records/correlation-single-image.json"
+        ],
+        "commands": [
+          "npm run defects:verify -- --id correlation-single-image"
+        ]
+      },
+      "controlFixtureId": "correlation-two-images-control",
+      "reviewStatus": {
+        "lifecycle": "reproduced-automatically",
+        "dimensions": {
+          "automatedReproduction": "verified",
+          "manualReproduction": "not-run",
+          "assistiveTechnology": "not-run",
+          "independentReview": "not-run"
+        },
+        "note": "Locator resolution and the declared fixture state are asserted automatically. The ACT outcome remains an unreviewed hypothesis until a person records a review."
+      },
+      "sources": [
+        {
+          "title": "Image has non-empty accessible name (ACT rule 23a2a8)",
+          "url": "https://www.w3.org/WAI/standards-guidelines/act/rules/23a2a8/"
+        }
+      ],
+      "introducedIn": null,
+      "lastVerified": null,
+      "provenance": {
+        "origin": "derived",
+        "derivedFrom": [
+          "services/lab/fixtures.json",
+          "data/defect-annotations.json"
+        ]
+      },
+      "notApplicable": []
+    },
+    {
+      "id": "correlation-two-images-a",
+      "aliases": [],
+      "title": "Two images: first missing alternative",
+      "description": "First of two distinct images sharing the fixture-image class. Missing alt is deliberate.",
+      "service": "lab",
+      "fixtureId": "correlation-two-images-a",
+      "component": "image",
+      "category": "image-alternative",
+      "classification": "act-rule-failure",
+      "url": "lab/correlation/two-images/",
+      "fragment": null,
+      "locators": [
+        {
+          "type": "css",
+          "value": "#missing-alt-a"
+        }
+      ],
+      "relatedElements": [],
+      "preconditions": [],
+      "interactionSteps": [],
+      "environment": null,
+      "expectedBehaviour": "The target satisfies ACT rule 23a2a8: Image has non-empty accessible name.",
+      "actualBehaviour": "The target does not satisfy ACT rule 23a2a8 (Image has non-empty accessible name). First of two distinct images sharing the fixture-image class. Missing alt is deliberate.",
+      "userImpact": "An image without an accessible name is announced as an unlabelled graphic, so screen-reader users lose the information it conveys.",
+      "affectedCapabilities": [
+        "screen-reader"
+      ],
+      "wcag": [],
+      "actRules": [
+        {
+          "ruleId": "23a2a8",
+          "status": "failed",
+          "ruleName": "Image has non-empty accessible name",
+          "ruleUrl": "https://www.w3.org/WAI/standards-guidelines/act/rules/23a2a8/"
+        }
+      ],
+      "detection": {
+        "expectedMethods": [
+          "dom-inspection",
+          "accessibility-tree-inspection"
+        ],
+        "observed": [],
+        "note": "ACT rule outcome only. A WCAG mapping has not been reviewed for this fixture."
+      },
+      "manualTests": [
+        "Open the images list and confirm that the target image exposes a text alternative."
+      ],
+      "assistiveTechnologyTests": [],
+      "evidence": {
+        "assertions": [],
+        "tests": [],
+        "artifacts": [
+          "lab/reviews/records/correlation-two-images-a.json"
+        ],
+        "commands": [
+          "npm run defects:verify -- --id correlation-two-images-a"
+        ]
+      },
+      "controlFixtureId": "correlation-two-images-control",
+      "reviewStatus": {
+        "lifecycle": "reproduced-automatically",
+        "dimensions": {
+          "automatedReproduction": "verified",
+          "manualReproduction": "not-run",
+          "assistiveTechnology": "not-run",
+          "independentReview": "not-run"
+        },
+        "note": "Locator resolution and the declared fixture state are asserted automatically. The ACT outcome remains an unreviewed hypothesis until a person records a review."
+      },
+      "sources": [
+        {
+          "title": "Image has non-empty accessible name (ACT rule 23a2a8)",
+          "url": "https://www.w3.org/WAI/standards-guidelines/act/rules/23a2a8/"
+        }
+      ],
+      "introducedIn": null,
+      "lastVerified": null,
+      "provenance": {
+        "origin": "derived",
+        "derivedFrom": [
+          "services/lab/fixtures.json",
+          "data/defect-annotations.json"
+        ]
+      },
+      "notApplicable": []
+    },
+    {
+      "id": "correlation-two-images-b",
+      "aliases": [],
+      "title": "Two images: second missing alternative",
+      "description": "Second of two distinct images sharing the fixture-image class. Missing alt is deliberate.",
+      "service": "lab",
+      "fixtureId": "correlation-two-images-b",
+      "component": "image",
+      "category": "image-alternative",
+      "classification": "act-rule-failure",
+      "url": "lab/correlation/two-images/",
+      "fragment": null,
+      "locators": [
+        {
+          "type": "css",
+          "value": "#missing-alt-b"
+        }
+      ],
+      "relatedElements": [],
+      "preconditions": [],
+      "interactionSteps": [],
+      "environment": null,
+      "expectedBehaviour": "The target satisfies ACT rule 23a2a8: Image has non-empty accessible name.",
+      "actualBehaviour": "The target does not satisfy ACT rule 23a2a8 (Image has non-empty accessible name). Second of two distinct images sharing the fixture-image class. Missing alt is deliberate.",
+      "userImpact": "An image without an accessible name is announced as an unlabelled graphic, so screen-reader users lose the information it conveys.",
+      "affectedCapabilities": [
+        "screen-reader"
+      ],
+      "wcag": [],
+      "actRules": [
+        {
+          "ruleId": "23a2a8",
+          "status": "failed",
+          "ruleName": "Image has non-empty accessible name",
+          "ruleUrl": "https://www.w3.org/WAI/standards-guidelines/act/rules/23a2a8/"
+        }
+      ],
+      "detection": {
+        "expectedMethods": [
+          "dom-inspection",
+          "accessibility-tree-inspection"
+        ],
+        "observed": [],
+        "note": "ACT rule outcome only. A WCAG mapping has not been reviewed for this fixture."
+      },
+      "manualTests": [
+        "Open the images list and confirm that the target image exposes a text alternative."
+      ],
+      "assistiveTechnologyTests": [],
+      "evidence": {
+        "assertions": [],
+        "tests": [],
+        "artifacts": [
+          "lab/reviews/records/correlation-two-images-b.json"
+        ],
+        "commands": [
+          "npm run defects:verify -- --id correlation-two-images-b"
+        ]
+      },
+      "controlFixtureId": "correlation-two-images-control",
+      "reviewStatus": {
+        "lifecycle": "reproduced-automatically",
+        "dimensions": {
+          "automatedReproduction": "verified",
+          "manualReproduction": "not-run",
+          "assistiveTechnology": "not-run",
+          "independentReview": "not-run"
+        },
+        "note": "Locator resolution and the declared fixture state are asserted automatically. The ACT outcome remains an unreviewed hypothesis until a person records a review."
+      },
+      "sources": [
+        {
+          "title": "Image has non-empty accessible name (ACT rule 23a2a8)",
+          "url": "https://www.w3.org/WAI/standards-guidelines/act/rules/23a2a8/"
+        }
+      ],
+      "introducedIn": null,
+      "lastVerified": null,
+      "provenance": {
+        "origin": "derived",
+        "derivedFrom": [
+          "services/lab/fixtures.json",
+          "data/defect-annotations.json"
+        ]
+      },
+      "notApplicable": []
+    },
+    {
+      "service": "lab",
+      "fixtureId": null,
+      "aliases": [],
+      "preconditions": [],
+      "interactionSteps": [
+        {
+          "action": "click",
+          "selector": "#toggle-a"
+        },
+        {
+          "action": "assert",
+          "selector": "#panel-a",
+          "state": "visible"
+        }
+      ],
+      "environment": null,
+      "actRules": [],
+      "controlFixtureId": null,
+      "introducedIn": null,
+      "lastVerified": null,
+      "notApplicable": [
+        "fixtureId",
+        "actRules"
+      ],
+      "id": "disclosure-expanded-state-stale",
+      "title": "Disclosure reports a collapsed state while the panel is open",
+      "description": "The filter button controls a panel and changes its own text, but aria-expanded is never updated, so it keeps reporting false while the panel is visible.",
+      "component": "Filter disclosure button (variant A)",
+      "category": "aria-state",
+      "classification": "candidate-wcag-failure",
+      "url": "lab/subtle/aria-state/",
+      "locators": [
+        {
+          "type": "css",
+          "value": "#toggle-a"
+        },
+        {
+          "type": "role",
+          "role": "button",
+          "name": "Hide filters"
+        }
+      ],
+      "relatedElements": [
+        {
+          "purpose": "panel",
+          "css": "#panel-a"
+        },
+        {
+          "purpose": "comparison-control",
+          "css": "#toggle-b",
+          "note": "Updates aria-expanded on each toggle."
+        }
+      ],
+      "expectedBehaviour": "A control that expands and collapses content keeps its expanded state in sync with the content it controls.",
+      "actualBehaviour": "aria-expanded remains false after the panel opens.",
+      "userImpact": "Screen-reader users are told the filters are collapsed when they are open, and may not know the new content appeared.",
+      "affectedCapabilities": [
+        "screen-reader",
+        "voice-control",
+        "cognitive"
+      ],
+      "wcag": [
+        {
+          "criterion": "4.1.2",
+          "status": "candidate"
+        }
+      ],
+      "detection": {
+        "expectedMethods": [
+          "accessibility-tree-inspection",
+          "dom-inspection",
+          "automated-pointer-interaction"
+        ],
+        "observed": [],
+        "note": "The initial state is valid; only the post-interaction state is wrong."
+      },
+      "manualTests": [
+        "Open the panel with a screen reader running and listen to the button's expanded state."
+      ],
+      "assistiveTechnologyTests": [
+        {
+          "platform": "macOS",
+          "browser": "Safari",
+          "assistiveTechnology": "VoiceOver",
+          "procedure": "Navigate to the target with the VoiceOver rotor and confirm what is announced.",
+          "status": "not-run"
+        }
+      ],
+      "evidence": {
+        "assertions": [
+          "After the panel opens, aria-expanded is still false on #toggle-a."
+        ],
+        "tests": [
+          "tests/subtle-defects.spec.js: keeps the expanded state stale in variant A"
+        ],
+        "artifacts": [],
+        "commands": [
+          "npx playwright test tests/subtle-defects.spec.js"
+        ]
+      },
+      "sources": [
+        {
+          "title": "WAI-ARIA Authoring Practices: Disclosure pattern",
+          "url": "https://www.w3.org/WAI/ARIA/apg/patterns/disclosure/"
+        }
+      ],
+      "reviewStatus": {
+        "lifecycle": "reproduced-automatically",
+        "dimensions": {
+          "automatedReproduction": "verified",
+          "manualReproduction": "not-run",
+          "assistiveTechnology": "not-run",
+          "independentReview": "not-run"
+        },
+        "note": "A Playwright regression test preserves the defective behaviour and its control. That is automated reproduction, not a manual or assistive-technology observation."
+      },
+      "fragment": null,
+      "provenance": {
+        "origin": "curated",
+        "derivedFrom": [
+          "data/defects/disclosure-expanded-state-stale.json"
+        ],
+        "note": "Hand-authored record. Its expected behaviour is a hypothesis until an independent review records evidence."
+      }
+    },
+    {
+      "service": "lab",
+      "fixtureId": null,
+      "aliases": [],
+      "preconditions": [],
+      "interactionSteps": [
+        {
+          "action": "click",
+          "selector": "#submit-a"
+        },
+        {
+          "action": "assert",
+          "selector": "#summary-a",
+          "state": "visible"
+        }
+      ],
+      "environment": null,
+      "actRules": [],
+      "controlFixtureId": null,
+      "introducedIn": null,
+      "lastVerified": null,
+      "notApplicable": [
+        "fixtureId",
+        "actRules"
+      ],
+      "id": "error-focus-not-moved-to-summary",
+      "title": "Focus stays on the submit button after validation fails",
+      "description": "When validation fails, the error summary appears above the form without receiving focus. The user is left on the Continue button, below the new content.",
+      "component": "Error summary focus (variant A)",
+      "category": "focus-management",
+      "classification": "best-practice",
+      "url": "lab/subtle/errors/",
+      "locators": [
+        {
+          "type": "css",
+          "value": "#submit-a"
+        }
+      ],
+      "relatedElements": [
+        {
+          "purpose": "error-summary",
+          "css": "#summary-a"
+        },
+        {
+          "purpose": "comparison-control",
+          "css": "#summary-b-heading",
+          "note": "Receives focus when the summary is shown."
+        }
+      ],
+      "expectedBehaviour": "After failed validation, focus moves to the error summary or the first invalid field so the failure is announced.",
+      "actualBehaviour": "Focus remains on the Continue button and the summary is not announced.",
+      "userImpact": "Keyboard and screen-reader users may not realise validation failed and can remain at the bottom of the form.",
+      "affectedCapabilities": [
+        "keyboard-only",
+        "screen-reader"
+      ],
+      "wcag": [
+        {
+          "criterion": "3.3.1",
+          "status": "informational",
+          "note": "The error is identified in text. Moving focus is a recommended pattern, not a separate WCAG requirement."
+        }
+      ],
+      "detection": {
+        "expectedMethods": [
+          "automated-keyboard-interaction",
+          "dom-inspection"
+        ],
+        "observed": [],
+        "note": "Requires an interaction test that records document.activeElement after submit."
+      },
+      "manualTests": [
+        "Submit the empty form with the keyboard and check whether focus moves to the summary."
+      ],
+      "assistiveTechnologyTests": [
+        {
+          "platform": "macOS",
+          "browser": "Safari",
+          "assistiveTechnology": "VoiceOver",
+          "procedure": "Navigate to the target with the VoiceOver rotor and confirm what is announced.",
+          "status": "not-run"
+        }
+      ],
+      "evidence": {
+        "assertions": [
+          "document.activeElement is #submit-a after the error summary is shown."
+        ],
+        "tests": [
+          "tests/subtle-defects.spec.js: keeps variant A errors unassociated, unfocused and linked to nothing"
+        ],
+        "artifacts": [],
+        "commands": [
+          "npx playwright test tests/subtle-defects.spec.js"
+        ]
+      },
+      "sources": [
+        {
+          "title": "WCAG 2.2 Understanding 3.3.1: Error Identification",
+          "url": "https://www.w3.org/WAI/WCAG22/Understanding/error-identification"
+        }
+      ],
+      "reviewStatus": {
+        "lifecycle": "reproduced-automatically",
+        "dimensions": {
+          "automatedReproduction": "verified",
+          "manualReproduction": "not-run",
+          "assistiveTechnology": "not-run",
+          "independentReview": "not-run"
+        },
+        "note": "A Playwright regression test preserves the defective behaviour and its control. That is automated reproduction, not a manual or assistive-technology observation."
+      },
+      "fragment": null,
+      "provenance": {
+        "origin": "curated",
+        "derivedFrom": [
+          "data/defects/error-focus-not-moved-to-summary.json"
+        ],
+        "note": "Hand-authored record. Its expected behaviour is a hypothesis until an independent review records evidence."
+      }
+    },
+    {
+      "service": "lab",
+      "fixtureId": null,
+      "aliases": [],
+      "preconditions": [
+        "The form is submitted with an empty date."
+      ],
+      "interactionSteps": [
+        {
+          "action": "click",
+          "selector": "#submit-a"
+        },
+        {
+          "action": "assert",
+          "selector": "#error-a",
+          "state": "visible"
+        }
+      ],
+      "environment": null,
+      "actRules": [],
+      "controlFixtureId": null,
+      "introducedIn": null,
+      "lastVerified": null,
+      "notApplicable": [
+        "fixtureId",
+        "actRules"
+      ],
+      "id": "error-not-associated-with-field",
+      "title": "Visible error is not associated with the field",
+      "description": "The inline error is visible under the date field but the input has no aria-describedby and no aria-invalid state, so the message exists only visually.",
+      "component": "Observation date field (variant A)",
+      "category": "forms",
+      "classification": "candidate-wcag-failure",
+      "url": "lab/subtle/errors/",
+      "locators": [
+        {
+          "type": "css",
+          "value": "#date-a"
+        }
+      ],
+      "relatedElements": [
+        {
+          "purpose": "inline-error",
+          "css": "#error-a"
+        },
+        {
+          "purpose": "comparison-control",
+          "css": "#date-b",
+          "note": "Describes the field with the hint and the error and sets aria-invalid."
+        }
+      ],
+      "expectedBehaviour": "The field is programmatically identified as invalid and its error message is part of the field's accessible description.",
+      "actualBehaviour": "The input exposes neither aria-invalid nor a description that includes the error.",
+      "userImpact": "Screen-reader users reach the field without hearing the error and cannot tell what needs correcting.",
+      "affectedCapabilities": [
+        "screen-reader",
+        "cognitive"
+      ],
+      "wcag": [
+        {
+          "criterion": "3.3.1",
+          "status": "candidate",
+          "note": "The error is identified in text but is not associated with the field programmatically."
+        }
+      ],
+      "detection": {
+        "expectedMethods": [
+          "dom-inspection",
+          "accessibility-tree-inspection"
+        ],
+        "observed": [],
+        "note": "Automated scanners often detect this pattern, but the defect is defined by the missing association rather than by any specific tool rule."
+      },
+      "manualTests": [
+        "Submit the empty form, then move to the date field in forms mode and listen for the error."
+      ],
+      "assistiveTechnologyTests": [
+        {
+          "platform": "macOS",
+          "browser": "Safari",
+          "assistiveTechnology": "VoiceOver",
+          "procedure": "Navigate to the target with the VoiceOver rotor and confirm what is announced.",
+          "status": "not-run"
+        }
+      ],
+      "evidence": {
+        "assertions": [
+          "The input has no aria-describedby and no aria-invalid after the error is shown."
+        ],
+        "tests": [
+          "tests/subtle-defects.spec.js: keeps variant A errors unassociated, unfocused and linked to nothing"
+        ],
+        "artifacts": [],
+        "commands": [
+          "npx playwright test tests/subtle-defects.spec.js"
+        ]
+      },
+      "sources": [
+        {
+          "title": "WCAG 2.2 Understanding 3.3.1: Error Identification",
+          "url": "https://www.w3.org/WAI/WCAG22/Understanding/error-identification"
+        }
+      ],
+      "reviewStatus": {
+        "lifecycle": "reproduced-automatically",
+        "dimensions": {
+          "automatedReproduction": "verified",
+          "manualReproduction": "not-run",
+          "assistiveTechnology": "not-run",
+          "independentReview": "not-run"
+        },
+        "note": "A Playwright regression test preserves the defective behaviour and its control. That is automated reproduction, not a manual or assistive-technology observation."
+      },
+      "fragment": null,
+      "provenance": {
+        "origin": "curated",
+        "derivedFrom": [
+          "data/defects/error-not-associated-with-field.json"
+        ],
+        "note": "Hand-authored record. Its expected behaviour is a hypothesis until an independent review records evidence."
+      }
+    },
+    {
+      "service": "lab",
+      "fixtureId": null,
+      "aliases": [],
+      "preconditions": [],
+      "interactionSteps": [
+        {
+          "action": "click",
+          "selector": "#submit-a"
+        },
+        {
+          "action": "click",
+          "selector": "#summary-a a"
+        },
+        {
+          "action": "assert",
+          "selector": "#date-a",
+          "note": "Focus does not move to the field."
+        }
+      ],
+      "environment": null,
+      "actRules": [],
+      "controlFixtureId": null,
+      "introducedIn": null,
+      "lastVerified": null,
+      "notApplicable": [
+        "fixtureId",
+        "actRules"
+      ],
+      "id": "error-summary-link-broken",
+      "title": "Error summary links to an element that does not exist",
+      "description": "The error summary link points at #date-a-field, but the input's id is date-a. Activating the link does nothing, so the summary cannot be used to reach the field.",
+      "component": "Error summary link (variant A)",
+      "category": "forms",
+      "classification": "usability-concern",
+      "url": "lab/subtle/errors/",
+      "locators": [
+        {
+          "type": "css",
+          "value": "#summary-a a",
+          "phase": "after"
+        }
+      ],
+      "relatedElements": [
+        {
+          "purpose": "missing-target",
+          "css": "#date-a-field",
+          "note": "Does not exist in the document."
+        },
+        {
+          "purpose": "actual-field",
+          "css": "#date-a"
+        },
+        {
+          "purpose": "comparison-control",
+          "css": "#summary-b a",
+          "note": "Links to the real field id."
+        }
+      ],
+      "expectedBehaviour": "Each error summary link moves focus to the field that needs correcting.",
+      "actualBehaviour": "The link's fragment does not match any element id, so activating it has no effect.",
+      "userImpact": "People who rely on the summary to navigate errors cannot reach the field and must search the page.",
+      "affectedCapabilities": [
+        "screen-reader",
+        "keyboard-only",
+        "cognitive"
+      ],
+      "wcag": [],
+      "detection": {
+        "expectedMethods": [
+          "dom-inspection",
+          "heuristic-analysis"
+        ],
+        "observed": [],
+        "note": "No WCAG failure is claimed: the error is still identified in text. The defect is an inoperative recovery link."
+      },
+      "manualTests": [
+        "Submit the empty form and activate the error summary link. Check whether focus moves to the field."
+      ],
+      "assistiveTechnologyTests": [],
+      "evidence": {
+        "assertions": [
+          "#date-a-field has no matching element; the input id is #date-a."
+        ],
+        "tests": [
+          "tests/subtle-defects.spec.js: keeps variant A errors unassociated, unfocused and linked to nothing"
+        ],
+        "artifacts": [],
+        "commands": [
+          "npx playwright test tests/subtle-defects.spec.js"
+        ]
+      },
+      "sources": [
+        {
+          "title": "GOV.UK Design System: Error summary",
+          "url": "https://design-system.service.gov.uk/components/error-summary/"
+        }
+      ],
+      "reviewStatus": {
+        "lifecycle": "reproduced-automatically",
+        "dimensions": {
+          "automatedReproduction": "verified",
+          "manualReproduction": "not-run",
+          "assistiveTechnology": "not-run",
+          "independentReview": "not-run"
+        },
+        "note": "A Playwright regression test preserves the defective behaviour and its control. That is automated reproduction, not a manual or assistive-technology observation."
+      },
+      "fragment": null,
+      "provenance": {
+        "origin": "curated",
+        "derivedFrom": [
+          "data/defects/error-summary-link-broken.json"
+        ],
+        "note": "Hand-authored record. Its expected behaviour is a hypothesis until an independent review records evidence."
+      }
+    },
+    {
+      "id": "field-unnamed",
+      "aliases": [],
+      "title": "Form field without an accessible name",
+      "description": "The input has no label, aria-label or aria-labelledby.",
+      "service": "lab",
+      "fixtureId": "field-unnamed",
+      "component": "form field",
+      "category": "accessible-name",
+      "classification": "act-rule-failure",
+      "url": "lab/names/field-unnamed/",
+      "fragment": null,
+      "locators": [
+        {
+          "type": "css",
+          "value": "#target"
+        }
+      ],
+      "relatedElements": [],
+      "preconditions": [],
+      "interactionSteps": [],
+      "environment": null,
+      "expectedBehaviour": "The target satisfies ACT rule e086e5: Form field has non-empty accessible name.",
+      "actualBehaviour": "The target does not satisfy ACT rule e086e5 (Form field has non-empty accessible name). The input has no label, aria-label or aria-labelledby.",
+      "userImpact": "A form field without an accessible name gives no indication of what to enter, so screen-reader and voice-control users cannot complete the field confidently.",
+      "affectedCapabilities": [
+        "screen-reader",
+        "voice-control",
+        "cognitive"
+      ],
+      "wcag": [],
+      "actRules": [
+        {
+          "ruleId": "e086e5",
+          "status": "failed",
+          "ruleName": "Form field has non-empty accessible name",
+          "ruleUrl": "https://www.w3.org/WAI/standards-guidelines/act/rules/e086e5/"
+        }
+      ],
+      "detection": {
+        "expectedMethods": [
+          "dom-inspection",
+          "accessibility-tree-inspection"
+        ],
+        "observed": [],
+        "note": "ACT rule outcome only. A WCAG mapping has not been reviewed for this fixture."
+      },
+      "manualTests": [
+        "Navigate to the field in forms mode and confirm that it announces a label."
+      ],
+      "assistiveTechnologyTests": [],
+      "evidence": {
+        "assertions": [],
+        "tests": [],
+        "artifacts": [
+          "lab/reviews/records/field-unnamed.json"
+        ],
+        "commands": [
+          "npm run defects:verify -- --id field-unnamed"
+        ]
+      },
+      "controlFixtureId": null,
+      "reviewStatus": {
+        "lifecycle": "reproduced-automatically",
+        "dimensions": {
+          "automatedReproduction": "verified",
+          "manualReproduction": "not-run",
+          "assistiveTechnology": "not-run",
+          "independentReview": "not-run"
+        },
+        "note": "Locator resolution and the declared fixture state are asserted automatically. The ACT outcome remains an unreviewed hypothesis until a person records a review."
+      },
+      "sources": [
+        {
+          "title": "Form field has non-empty accessible name (ACT rule e086e5)",
+          "url": "https://www.w3.org/WAI/standards-guidelines/act/rules/e086e5/"
+        }
+      ],
+      "introducedIn": null,
+      "lastVerified": null,
+      "provenance": {
+        "origin": "derived",
+        "derivedFrom": [
+          "services/lab/fixtures.json",
+          "data/defect-annotations.json"
+        ]
+      },
+      "notApplicable": []
+    },
+    {
+      "service": "lab",
+      "fixtureId": null,
+      "aliases": [],
+      "preconditions": [
+        "Three attendees are selected."
+      ],
+      "interactionSteps": [
+        {
+          "action": "focus",
+          "selector": "#remove-a-2"
+        },
+        {
+          "action": "click",
+          "selector": "#remove-a-2"
+        },
+        {
+          "action": "assert",
+          "selector": "#list-a",
+          "note": "Two items remain and focus is on the document body."
+        }
+      ],
+      "environment": null,
+      "actRules": [],
+      "controlFixtureId": null,
+      "introducedIn": null,
+      "lastVerified": null,
+      "notApplicable": [
+        "fixtureId",
+        "actRules"
+      ],
+      "id": "focus-lost-after-item-removal",
+      "title": "Focus returns to the document after removing the focused item",
+      "description": "Removing an attendee deletes the list item that contains the focused Remove button. Nothing else receives focus, so the browser moves focus to the document body and the user's position in the page is lost.",
+      "component": "Selected attendees list (variant A)",
+      "category": "focus-management",
+      "classification": "candidate-wcag-failure",
+      "url": "lab/subtle/focus-removal/",
+      "locators": [
+        {
+          "type": "css",
+          "value": "#remove-a-2",
+          "phase": "before"
+        }
+      ],
+      "relatedElements": [
+        {
+          "purpose": "comparison-control",
+          "css": "#remove-b-2",
+          "note": "Moves focus to the next remaining Remove button."
+        },
+        {
+          "purpose": "updated-count",
+          "css": "#count-a"
+        }
+      ],
+      "expectedBehaviour": "After removing an item, focus moves to the next logical target so that keyboard and screen-reader users keep their place.",
+      "actualBehaviour": "The focused element is removed and document.activeElement becomes the body.",
+      "userImpact": "Keyboard users restart from the top of the page, and screen-reader users may not hear that the removal happened or where they are.",
+      "affectedCapabilities": [
+        "keyboard-only",
+        "switch-control",
+        "screen-reader"
+      ],
+      "wcag": [
+        {
+          "criterion": "2.4.3",
+          "status": "candidate",
+          "note": "Focus order is disrupted by the update."
+        }
+      ],
+      "detection": {
+        "expectedMethods": [
+          "automated-keyboard-interaction",
+          "dom-inspection"
+        ],
+        "observed": [],
+        "note": "Only an interaction test that records document.activeElement after the update exposes this."
+      },
+      "manualTests": [
+        "Focus the second Remove button and activate it. Check where focus goes without touching the mouse."
+      ],
+      "assistiveTechnologyTests": [
+        {
+          "platform": "Windows",
+          "browser": "Firefox",
+          "assistiveTechnology": "NVDA",
+          "procedure": "Focus the second Remove button, activate it and listen for confirmation and the next focus position.",
+          "status": "not-run"
+        }
+      ],
+      "evidence": {
+        "assertions": [
+          "After removing the second attendee, document.activeElement is the body element."
+        ],
+        "tests": [
+          "tests/subtle-defects.spec.js: keeps losing focus in variant A"
+        ],
+        "artifacts": [],
+        "commands": [
+          "npx playwright test tests/subtle-defects.spec.js"
+        ]
+      },
+      "sources": [
+        {
+          "title": "WCAG 2.2 Understanding 2.4.3: Focus Order",
+          "url": "https://www.w3.org/WAI/WCAG22/Understanding/focus-order"
+        }
+      ],
+      "reviewStatus": {
+        "lifecycle": "reproduced-automatically",
+        "dimensions": {
+          "automatedReproduction": "verified",
+          "manualReproduction": "not-run",
+          "assistiveTechnology": "not-run",
+          "independentReview": "not-run"
+        },
+        "note": "A Playwright regression test preserves the defective behaviour and its control. That is automated reproduction, not a manual or assistive-technology observation."
+      },
+      "fragment": null,
+      "provenance": {
+        "origin": "curated",
+        "derivedFrom": [
+          "data/defects/focus-lost-after-item-removal.json"
+        ],
+        "note": "Hand-authored record. Its expected behaviour is a hypothesis until an independent review records evidence."
+      }
+    },
+    {
+      "id": "frame-nested-target",
+      "aliases": [],
+      "title": "Nested frame: unnamed button",
+      "description": "One unnamed button two browsing contexts deep.",
+      "service": "lab",
+      "fixtureId": "frame-nested-target",
+      "component": "button",
+      "category": "accessible-name",
+      "classification": "act-rule-failure",
+      "url": "lab/frames/nested-frame/",
+      "fragment": null,
+      "locators": [
+        {
+          "type": "css",
+          "value": "#target",
+          "framePath": [
+            "outer.html",
+            "inner.html"
+          ]
+        }
+      ],
+      "relatedElements": [],
+      "preconditions": [],
+      "interactionSteps": [],
+      "environment": null,
+      "expectedBehaviour": "The target satisfies ACT rule 97a4e1: Button has non-empty accessible name.",
+      "actualBehaviour": "The target does not satisfy ACT rule 97a4e1 (Button has non-empty accessible name). One unnamed button two browsing contexts deep.",
+      "userImpact": "A control without an accessible name is announced without its purpose, so screen-reader, voice-control and switch users cannot identify it reliably.",
+      "affectedCapabilities": [
+        "screen-reader",
+        "voice-control",
+        "switch-control"
+      ],
+      "wcag": [],
+      "actRules": [
+        {
+          "ruleId": "97a4e1",
+          "status": "failed",
+          "ruleName": "Button has non-empty accessible name",
+          "ruleUrl": "https://www.w3.org/WAI/standards-guidelines/act/rules/97a4e1/"
+        }
+      ],
+      "detection": {
+        "expectedMethods": [
+          "dom-inspection",
+          "accessibility-tree-inspection"
+        ],
+        "observed": [],
+        "note": "ACT rule outcome only. A WCAG mapping has not been reviewed for this fixture."
+      },
+      "manualTests": [
+        "Open the accessibility tree for the target and confirm that the button exposes a non-empty, meaningful accessible name."
+      ],
+      "assistiveTechnologyTests": [],
+      "evidence": {
+        "assertions": [],
+        "tests": [],
+        "artifacts": [
+          "lab/reviews/records/frame-nested-target.json"
+        ],
+        "commands": [
+          "npm run defects:verify -- --id frame-nested-target"
+        ]
+      },
+      "controlFixtureId": null,
+      "reviewStatus": {
+        "lifecycle": "reproduced-automatically",
+        "dimensions": {
+          "automatedReproduction": "verified",
+          "manualReproduction": "not-run",
+          "assistiveTechnology": "not-run",
+          "independentReview": "not-run"
+        },
+        "note": "Locator resolution and the declared fixture state are asserted automatically. The ACT outcome remains an unreviewed hypothesis until a person records a review."
+      },
+      "sources": [
+        {
+          "title": "Button has non-empty accessible name (ACT rule 97a4e1)",
+          "url": "https://www.w3.org/WAI/standards-guidelines/act/rules/97a4e1/"
+        }
+      ],
+      "introducedIn": null,
+      "lastVerified": null,
+      "provenance": {
+        "origin": "derived",
+        "derivedFrom": [
+          "services/lab/fixtures.json",
+          "data/defect-annotations.json"
+        ]
+      },
+      "notApplicable": []
+    },
+    {
+      "id": "frame-single-target",
+      "aliases": [],
+      "title": "Single frame: unnamed button",
+      "description": "One unnamed button in one same-origin iframe.",
+      "service": "lab",
+      "fixtureId": "frame-single-target",
+      "component": "button",
+      "category": "accessible-name",
+      "classification": "act-rule-failure",
+      "url": "lab/frames/single-frame/",
+      "fragment": null,
+      "locators": [
+        {
+          "type": "css",
+          "value": "#target",
+          "framePath": [
+            "frame.html"
+          ]
+        }
+      ],
+      "relatedElements": [],
+      "preconditions": [],
+      "interactionSteps": [],
+      "environment": null,
+      "expectedBehaviour": "The target satisfies ACT rule 97a4e1: Button has non-empty accessible name.",
+      "actualBehaviour": "The target does not satisfy ACT rule 97a4e1 (Button has non-empty accessible name). One unnamed button in one same-origin iframe.",
+      "userImpact": "A control without an accessible name is announced without its purpose, so screen-reader, voice-control and switch users cannot identify it reliably.",
+      "affectedCapabilities": [
+        "screen-reader",
+        "voice-control",
+        "switch-control"
+      ],
+      "wcag": [],
+      "actRules": [
+        {
+          "ruleId": "97a4e1",
+          "status": "failed",
+          "ruleName": "Button has non-empty accessible name",
+          "ruleUrl": "https://www.w3.org/WAI/standards-guidelines/act/rules/97a4e1/"
+        }
+      ],
+      "detection": {
+        "expectedMethods": [
+          "dom-inspection",
+          "accessibility-tree-inspection"
+        ],
+        "observed": [],
+        "note": "ACT rule outcome only. A WCAG mapping has not been reviewed for this fixture."
+      },
+      "manualTests": [
+        "Open the accessibility tree for the target and confirm that the button exposes a non-empty, meaningful accessible name."
+      ],
+      "assistiveTechnologyTests": [],
+      "evidence": {
+        "assertions": [],
+        "tests": [],
+        "artifacts": [
+          "lab/reviews/records/frame-single-target.json"
+        ],
+        "commands": [
+          "npm run defects:verify -- --id frame-single-target"
+        ]
+      },
+      "controlFixtureId": null,
+      "reviewStatus": {
+        "lifecycle": "reproduced-automatically",
+        "dimensions": {
+          "automatedReproduction": "verified",
+          "manualReproduction": "not-run",
+          "assistiveTechnology": "not-run",
+          "independentReview": "not-run"
+        },
+        "note": "Locator resolution and the declared fixture state are asserted automatically. The ACT outcome remains an unreviewed hypothesis until a person records a review."
+      },
+      "sources": [
+        {
+          "title": "Button has non-empty accessible name (ACT rule 97a4e1)",
+          "url": "https://www.w3.org/WAI/standards-guidelines/act/rules/97a4e1/"
+        }
+      ],
+      "introducedIn": null,
+      "lastVerified": null,
+      "provenance": {
+        "origin": "derived",
+        "derivedFrom": [
+          "services/lab/fixtures.json",
+          "data/defect-annotations.json"
+        ]
+      },
+      "notApplicable": []
+    },
+    {
+      "id": "frame-two-first",
+      "aliases": [],
+      "title": "Two frames: first unnamed button",
+      "description": "First of two frames. Same selector as the second target, different browsing context.",
+      "service": "lab",
+      "fixtureId": "frame-two-first",
+      "component": "button",
+      "category": "accessible-name",
+      "classification": "act-rule-failure",
+      "url": "lab/frames/two-frames/",
+      "fragment": null,
+      "locators": [
+        {
+          "type": "css",
+          "value": "#target",
+          "framePath": [
+            "first.html"
+          ]
+        }
+      ],
+      "relatedElements": [],
+      "preconditions": [],
+      "interactionSteps": [],
+      "environment": null,
+      "expectedBehaviour": "The target satisfies ACT rule 97a4e1: Button has non-empty accessible name.",
+      "actualBehaviour": "The target does not satisfy ACT rule 97a4e1 (Button has non-empty accessible name). First of two frames. Same selector as the second target, different browsing context.",
+      "userImpact": "A control without an accessible name is announced without its purpose, so screen-reader, voice-control and switch users cannot identify it reliably.",
+      "affectedCapabilities": [
+        "screen-reader",
+        "voice-control",
+        "switch-control"
+      ],
+      "wcag": [],
+      "actRules": [
+        {
+          "ruleId": "97a4e1",
+          "status": "failed",
+          "ruleName": "Button has non-empty accessible name",
+          "ruleUrl": "https://www.w3.org/WAI/standards-guidelines/act/rules/97a4e1/"
+        }
+      ],
+      "detection": {
+        "expectedMethods": [
+          "dom-inspection",
+          "accessibility-tree-inspection"
+        ],
+        "observed": [],
+        "note": "ACT rule outcome only. A WCAG mapping has not been reviewed for this fixture."
+      },
+      "manualTests": [
+        "Open the accessibility tree for the target and confirm that the button exposes a non-empty, meaningful accessible name."
+      ],
+      "assistiveTechnologyTests": [],
+      "evidence": {
+        "assertions": [],
+        "tests": [],
+        "artifacts": [
+          "lab/reviews/records/frame-two-first.json"
+        ],
+        "commands": [
+          "npm run defects:verify -- --id frame-two-first"
+        ]
+      },
+      "controlFixtureId": null,
+      "reviewStatus": {
+        "lifecycle": "reproduced-automatically",
+        "dimensions": {
+          "automatedReproduction": "verified",
+          "manualReproduction": "not-run",
+          "assistiveTechnology": "not-run",
+          "independentReview": "not-run"
+        },
+        "note": "Locator resolution and the declared fixture state are asserted automatically. The ACT outcome remains an unreviewed hypothesis until a person records a review."
+      },
+      "sources": [
+        {
+          "title": "Button has non-empty accessible name (ACT rule 97a4e1)",
+          "url": "https://www.w3.org/WAI/standards-guidelines/act/rules/97a4e1/"
+        }
+      ],
+      "introducedIn": null,
+      "lastVerified": null,
+      "provenance": {
+        "origin": "derived",
+        "derivedFrom": [
+          "services/lab/fixtures.json",
+          "data/defect-annotations.json"
+        ]
+      },
+      "notApplicable": []
+    },
+    {
+      "id": "frame-two-second",
+      "aliases": [],
+      "title": "Two frames: second unnamed button",
+      "description": "Second of two frames. Same selector as the first target, different browsing context.",
+      "service": "lab",
+      "fixtureId": "frame-two-second",
+      "component": "button",
+      "category": "accessible-name",
+      "classification": "act-rule-failure",
+      "url": "lab/frames/two-frames/",
+      "fragment": null,
+      "locators": [
+        {
+          "type": "css",
+          "value": "#target",
+          "framePath": [
+            "second.html"
+          ]
+        }
+      ],
+      "relatedElements": [],
+      "preconditions": [],
+      "interactionSteps": [],
+      "environment": null,
+      "expectedBehaviour": "The target satisfies ACT rule 97a4e1: Button has non-empty accessible name.",
+      "actualBehaviour": "The target does not satisfy ACT rule 97a4e1 (Button has non-empty accessible name). Second of two frames. Same selector as the first target, different browsing context.",
+      "userImpact": "A control without an accessible name is announced without its purpose, so screen-reader, voice-control and switch users cannot identify it reliably.",
+      "affectedCapabilities": [
+        "screen-reader",
+        "voice-control",
+        "switch-control"
+      ],
+      "wcag": [],
+      "actRules": [
+        {
+          "ruleId": "97a4e1",
+          "status": "failed",
+          "ruleName": "Button has non-empty accessible name",
+          "ruleUrl": "https://www.w3.org/WAI/standards-guidelines/act/rules/97a4e1/"
+        }
+      ],
+      "detection": {
+        "expectedMethods": [
+          "dom-inspection",
+          "accessibility-tree-inspection"
+        ],
+        "observed": [],
+        "note": "ACT rule outcome only. A WCAG mapping has not been reviewed for this fixture."
+      },
+      "manualTests": [
+        "Open the accessibility tree for the target and confirm that the button exposes a non-empty, meaningful accessible name."
+      ],
+      "assistiveTechnologyTests": [],
+      "evidence": {
+        "assertions": [],
+        "tests": [],
+        "artifacts": [
+          "lab/reviews/records/frame-two-second.json"
+        ],
+        "commands": [
+          "npm run defects:verify -- --id frame-two-second"
+        ]
+      },
+      "controlFixtureId": null,
+      "reviewStatus": {
+        "lifecycle": "reproduced-automatically",
+        "dimensions": {
+          "automatedReproduction": "verified",
+          "manualReproduction": "not-run",
+          "assistiveTechnology": "not-run",
+          "independentReview": "not-run"
+        },
+        "note": "Locator resolution and the declared fixture state are asserted automatically. The ACT outcome remains an unreviewed hypothesis until a person records a review."
+      },
+      "sources": [
+        {
+          "title": "Button has non-empty accessible name (ACT rule 97a4e1)",
+          "url": "https://www.w3.org/WAI/standards-guidelines/act/rules/97a4e1/"
+        }
+      ],
+      "introducedIn": null,
+      "lastVerified": null,
+      "provenance": {
+        "origin": "derived",
+        "derivedFrom": [
+          "services/lab/fixtures.json",
+          "data/defect-annotations.json"
+        ]
+      },
+      "notApplicable": []
+    },
+    {
+      "service": "lab",
+      "fixtureId": null,
+      "aliases": [],
+      "preconditions": [],
+      "interactionSteps": [],
+      "environment": null,
+      "actRules": [],
+      "controlFixtureId": null,
+      "introducedIn": null,
+      "lastVerified": null,
+      "notApplicable": [
+        "fixtureId",
+        "actRules"
+      ],
+      "id": "hint-hidden-from-accessibility-tree",
+      "title": "Field hint is hidden from the accessibility tree",
+      "description": "The reference-code hint is visible on screen but carries aria-hidden=true, and the input's aria-describedby points at it. The instruction is therefore removed from the accessibility tree instead of being associated with the field.",
+      "component": "Reference code field (variant A)",
+      "category": "forms",
+      "classification": "candidate-wcag-failure",
+      "url": "lab/subtle/reading/",
+      "locators": [
+        {
+          "type": "css",
+          "value": "#reference-a"
+        }
+      ],
+      "relatedElements": [
+        {
+          "purpose": "hidden-hint",
+          "css": "#hint-a"
+        },
+        {
+          "purpose": "comparison-control",
+          "css": "#reference-b",
+          "note": "Associates a hint that remains in the accessibility tree."
+        }
+      ],
+      "expectedBehaviour": "An instruction needed to complete a field is programmatically associated with it and available to assistive technology.",
+      "actualBehaviour": "The hint is aria-hidden and contributes no accessible description.",
+      "userImpact": "Screen-reader users do not learn where to find the reference code.",
+      "affectedCapabilities": [
+        "screen-reader",
+        "cognitive"
+      ],
+      "wcag": [
+        {
+          "criterion": "3.3.2",
+          "status": "candidate"
+        }
+      ],
+      "detection": {
+        "expectedMethods": [
+          "accessibility-tree-inspection",
+          "dom-inspection"
+        ],
+        "observed": [],
+        "note": "The text is visible, so an automated check that only looks for a description may treat the field as described."
+      },
+      "manualTests": [
+        "Move to the Reference code field in forms mode and listen for the hint."
+      ],
+      "assistiveTechnologyTests": [
+        {
+          "platform": "macOS",
+          "browser": "Safari",
+          "assistiveTechnology": "VoiceOver",
+          "procedure": "Navigate to the target with the VoiceOver rotor and confirm what is announced.",
+          "status": "not-run"
+        }
+      ],
+      "evidence": {
+        "assertions": [
+          "The input's accessible description is empty while the hint text is visible."
+        ],
+        "tests": [
+          "tests/subtle-defects.spec.js: keeps the hint hidden from assistive technology in variant A"
+        ],
+        "artifacts": [],
+        "commands": [
+          "npx playwright test tests/subtle-defects.spec.js"
+        ]
+      },
+      "sources": [
+        {
+          "title": "WCAG 2.2 Understanding 3.3.2: Labels or Instructions",
+          "url": "https://www.w3.org/WAI/WCAG22/Understanding/labels-or-instructions"
+        }
+      ],
+      "reviewStatus": {
+        "lifecycle": "reproduced-automatically",
+        "dimensions": {
+          "automatedReproduction": "verified",
+          "manualReproduction": "not-run",
+          "assistiveTechnology": "not-run",
+          "independentReview": "not-run"
+        },
+        "note": "A Playwright regression test preserves the defective behaviour and its control. That is automated reproduction, not a manual or assistive-technology observation."
+      },
+      "fragment": null,
+      "provenance": {
+        "origin": "curated",
+        "derivedFrom": [
+          "data/defects/hint-hidden-from-accessibility-tree.json"
+        ],
+        "note": "Hand-authored record. Its expected behaviour is a hypothesis until an independent review records evidence."
+      }
+    },
+    {
+      "id": "html-button-unnamed",
+      "aliases": [],
+      "title": "Button without an accessible name",
+      "description": "Empty button with no content or attribute that can provide a name.",
+      "service": "lab",
+      "fixtureId": "html-button-unnamed",
+      "component": "button",
+      "category": "accessible-name",
+      "classification": "act-rule-failure",
+      "url": "lab/names/button-unnamed/",
+      "fragment": null,
+      "locators": [
+        {
+          "type": "css",
+          "value": "#test-target"
+        }
+      ],
+      "relatedElements": [],
+      "preconditions": [],
+      "interactionSteps": [],
+      "environment": null,
+      "expectedBehaviour": "The target satisfies ACT rule 97a4e1: Button has non-empty accessible name.",
+      "actualBehaviour": "The target does not satisfy ACT rule 97a4e1 (Button has non-empty accessible name). Empty button with no content or attribute that can provide a name.",
+      "userImpact": "A control without an accessible name is announced without its purpose, so screen-reader, voice-control and switch users cannot identify it reliably.",
+      "affectedCapabilities": [
+        "screen-reader",
+        "voice-control",
+        "switch-control"
+      ],
+      "wcag": [],
+      "actRules": [
+        {
+          "ruleId": "97a4e1",
+          "status": "failed",
+          "ruleName": "Button has non-empty accessible name",
+          "ruleUrl": "https://www.w3.org/WAI/standards-guidelines/act/rules/97a4e1/"
+        }
+      ],
+      "detection": {
+        "expectedMethods": [
+          "dom-inspection",
+          "accessibility-tree-inspection"
+        ],
+        "observed": [],
+        "note": "ACT rule outcome only. A WCAG mapping has not been reviewed for this fixture."
+      },
+      "manualTests": [
+        "Open the accessibility tree for the target and confirm that the button exposes a non-empty, meaningful accessible name."
+      ],
+      "assistiveTechnologyTests": [],
+      "evidence": {
+        "assertions": [],
+        "tests": [],
+        "artifacts": [
+          "lab/reviews/records/html-button-unnamed.json"
+        ],
+        "commands": [
+          "npm run defects:verify -- --id html-button-unnamed"
+        ]
+      },
+      "controlFixtureId": "html-button-named",
+      "reviewStatus": {
+        "lifecycle": "reproduced-automatically",
+        "dimensions": {
+          "automatedReproduction": "verified",
+          "manualReproduction": "not-run",
+          "assistiveTechnology": "not-run",
+          "independentReview": "not-run"
+        },
+        "note": "Locator resolution and the declared fixture state are asserted automatically. The ACT outcome remains an unreviewed hypothesis until a person records a review."
+      },
+      "sources": [
+        {
+          "title": "Button has non-empty accessible name (ACT rule 97a4e1)",
+          "url": "https://www.w3.org/WAI/standards-guidelines/act/rules/97a4e1/"
+        }
+      ],
+      "introducedIn": null,
+      "lastVerified": null,
+      "provenance": {
+        "origin": "derived",
+        "derivedFrom": [
+          "services/lab/fixtures.json",
+          "data/defect-annotations.json"
+        ]
+      },
+      "notApplicable": []
+    },
+    {
+      "id": "html-invalid-role",
+      "aliases": [],
+      "title": "Invalid ARIA role",
+      "description": "Invalid role token; browsers ignore it and fall back to the implicit role.",
+      "service": "lab",
+      "fixtureId": "html-invalid-role",
+      "component": "element with a role attribute",
+      "category": "aria-validity",
+      "classification": "act-rule-failure",
+      "url": "lab/aria/role-invalid/",
+      "fragment": null,
+      "locators": [
+        {
+          "type": "css",
+          "value": "#test-target"
+        }
+      ],
+      "relatedElements": [],
+      "preconditions": [],
+      "interactionSteps": [],
+      "environment": null,
+      "expectedBehaviour": "The target satisfies ACT rule 674b10: Role attribute has valid value.",
+      "actualBehaviour": "The target does not satisfy ACT rule 674b10 (Role attribute has valid value). Invalid role token; browsers ignore it and fall back to the implicit role.",
+      "userImpact": "An invalid role is ignored by browsers, so the element exposes an unintended implicit role and assistive-technology users receive the wrong interaction model.",
+      "affectedCapabilities": [
+        "screen-reader"
+      ],
+      "wcag": [],
+      "actRules": [
+        {
+          "ruleId": "674b10",
+          "status": "failed",
+          "ruleName": "Role attribute has valid value",
+          "ruleUrl": "https://www.w3.org/WAI/standards-guidelines/act/rules/674b10/"
+        }
+      ],
+      "detection": {
+        "expectedMethods": [
+          "dom-inspection",
+          "accessibility-tree-inspection"
+        ],
+        "observed": [],
+        "note": "ACT rule outcome only. A WCAG mapping has not been reviewed for this fixture."
+      },
+      "manualTests": [
+        "Inspect the attribute and the computed role, and confirm that the role token is valid."
+      ],
+      "assistiveTechnologyTests": [],
+      "evidence": {
+        "assertions": [],
+        "tests": [],
+        "artifacts": [
+          "lab/reviews/records/html-invalid-role.json"
+        ],
+        "commands": [
+          "npm run defects:verify -- --id html-invalid-role"
+        ]
+      },
+      "controlFixtureId": null,
+      "reviewStatus": {
+        "lifecycle": "reproduced-automatically",
+        "dimensions": {
+          "automatedReproduction": "verified",
+          "manualReproduction": "not-run",
+          "assistiveTechnology": "not-run",
+          "independentReview": "not-run"
+        },
+        "note": "Locator resolution and the declared fixture state are asserted automatically. The ACT outcome remains an unreviewed hypothesis until a person records a review."
+      },
+      "sources": [
+        {
+          "title": "Role attribute has valid value (ACT rule 674b10)",
+          "url": "https://www.w3.org/WAI/standards-guidelines/act/rules/674b10/"
+        }
+      ],
+      "introducedIn": null,
+      "lastVerified": null,
+      "provenance": {
+        "origin": "derived",
+        "derivedFrom": [
+          "services/lab/fixtures.json",
+          "data/defect-annotations.json"
+        ]
+      },
+      "notApplicable": []
+    },
+    {
+      "id": "interaction-reveal-target",
+      "aliases": [],
+      "title": "Disclosure reveals an unnamed button",
+      "description": "The target does not exist until the disclosure is opened.",
+      "service": "lab",
+      "fixtureId": "interaction-reveal-target",
+      "component": "button",
+      "category": "accessible-name",
+      "classification": "act-rule-failure",
+      "url": "lab/interaction/reveal-target/",
+      "fragment": null,
+      "locators": [
+        {
+          "type": "css",
+          "value": "#target"
+        }
+      ],
+      "relatedElements": [],
+      "preconditions": [
+        "The fixture is loaded in its default state."
+      ],
+      "interactionSteps": [
+        {
+          "action": "click",
+          "selector": "#reveal",
+          "note": "Record the state before and after the interaction."
+        }
+      ],
+      "environment": null,
+      "expectedBehaviour": "The target satisfies ACT rule 97a4e1: Button has non-empty accessible name.",
+      "actualBehaviour": "The target does not satisfy ACT rule 97a4e1 (Button has non-empty accessible name). The target does not exist until the disclosure is opened.",
+      "userImpact": "A control without an accessible name is announced without its purpose, so screen-reader, voice-control and switch users cannot identify it reliably.",
+      "affectedCapabilities": [
+        "screen-reader",
+        "voice-control",
+        "switch-control"
+      ],
+      "wcag": [],
+      "actRules": [
+        {
+          "ruleId": "97a4e1",
+          "status": "failed",
+          "ruleName": "Button has non-empty accessible name",
+          "ruleUrl": "https://www.w3.org/WAI/standards-guidelines/act/rules/97a4e1/"
+        }
+      ],
+      "detection": {
+        "expectedMethods": [
+          "dom-inspection",
+          "accessibility-tree-inspection"
+        ],
+        "observed": [],
+        "note": "ACT rule outcome only. A WCAG mapping has not been reviewed for this fixture."
+      },
+      "manualTests": [
+        "Open the accessibility tree for the target and confirm that the button exposes a non-empty, meaningful accessible name."
+      ],
+      "assistiveTechnologyTests": [],
+      "evidence": {
+        "assertions": [],
+        "tests": [],
+        "artifacts": [
+          "lab/reviews/records/interaction-reveal-target.json"
+        ],
+        "commands": [
+          "npm run defects:verify -- --id interaction-reveal-target"
+        ]
+      },
+      "controlFixtureId": null,
+      "reviewStatus": {
+        "lifecycle": "reproduced-automatically",
+        "dimensions": {
+          "automatedReproduction": "verified",
+          "manualReproduction": "not-run",
+          "assistiveTechnology": "not-run",
+          "independentReview": "not-run"
+        },
+        "note": "Locator resolution and the declared fixture state are asserted automatically. The ACT outcome remains an unreviewed hypothesis until a person records a review."
+      },
+      "sources": [
+        {
+          "title": "Button has non-empty accessible name (ACT rule 97a4e1)",
+          "url": "https://www.w3.org/WAI/standards-guidelines/act/rules/97a4e1/"
+        }
+      ],
+      "introducedIn": null,
+      "lastVerified": null,
+      "provenance": {
+        "origin": "derived",
+        "derivedFrom": [
+          "services/lab/fixtures.json",
+          "data/defect-annotations.json"
+        ]
+      },
+      "notApplicable": []
+    },
+    {
+      "id": "link-unnamed",
+      "aliases": [],
+      "title": "Link without an accessible name",
+      "description": "The link has no text and no other accessible name.",
+      "service": "lab",
+      "fixtureId": "link-unnamed",
+      "component": "link",
+      "category": "accessible-name",
+      "classification": "act-rule-failure",
+      "url": "lab/names/link-unnamed/",
+      "fragment": null,
+      "locators": [
+        {
+          "type": "css",
+          "value": "#target"
+        }
+      ],
+      "relatedElements": [],
+      "preconditions": [],
+      "interactionSteps": [],
+      "environment": null,
+      "expectedBehaviour": "The target satisfies ACT rule c487ae: Link has non-empty accessible name.",
+      "actualBehaviour": "The target does not satisfy ACT rule c487ae (Link has non-empty accessible name). The link has no text and no other accessible name.",
+      "userImpact": "A link without an accessible name appears in a screen reader links list as an unlabelled item, and voice-control users cannot activate it by name.",
+      "affectedCapabilities": [
+        "screen-reader",
+        "voice-control"
+      ],
+      "wcag": [],
+      "actRules": [
+        {
+          "ruleId": "c487ae",
+          "status": "failed",
+          "ruleName": "Link has non-empty accessible name",
+          "ruleUrl": "https://www.w3.org/WAI/standards-guidelines/act/rules/c487ae/"
+        }
+      ],
+      "detection": {
+        "expectedMethods": [
+          "dom-inspection",
+          "accessibility-tree-inspection"
+        ],
+        "observed": [],
+        "note": "ACT rule outcome only. A WCAG mapping has not been reviewed for this fixture."
+      },
+      "manualTests": [
+        "List the links on the page and confirm that the target link has an accessible name that describes its destination."
+      ],
+      "assistiveTechnologyTests": [],
+      "evidence": {
+        "assertions": [],
+        "tests": [],
+        "artifacts": [
+          "lab/reviews/records/link-unnamed.json"
+        ],
+        "commands": [
+          "npm run defects:verify -- --id link-unnamed"
+        ]
+      },
+      "controlFixtureId": null,
+      "reviewStatus": {
+        "lifecycle": "reproduced-automatically",
+        "dimensions": {
+          "automatedReproduction": "verified",
+          "manualReproduction": "not-run",
+          "assistiveTechnology": "not-run",
+          "independentReview": "not-run"
+        },
+        "note": "Locator resolution and the declared fixture state are asserted automatically. The ACT outcome remains an unreviewed hypothesis until a person records a review."
+      },
+      "sources": [
+        {
+          "title": "Link has non-empty accessible name (ACT rule c487ae)",
+          "url": "https://www.w3.org/WAI/standards-guidelines/act/rules/c487ae/"
+        }
+      ],
+      "introducedIn": null,
+      "lastVerified": null,
+      "provenance": {
+        "origin": "derived",
+        "derivedFrom": [
+          "services/lab/fixtures.json",
+          "data/defect-annotations.json"
+        ]
+      },
+      "notApplicable": []
+    },
+    {
+      "service": "lab",
+      "fixtureId": null,
+      "aliases": [],
+      "preconditions": [],
+      "interactionSteps": [],
+      "environment": null,
+      "actRules": [],
+      "controlFixtureId": null,
+      "introducedIn": null,
+      "lastVerified": null,
+      "notApplicable": [
+        "fixtureId",
+        "actRules"
+      ],
+      "id": "name-contradicts-visible-label",
+      "title": "Accessible name contradicts the visible button label",
+      "description": "The Delete observation button carries aria-label=\"Save observation\". A mouse user reads Delete; an assistive-technology user hears Save. A non-empty accessible name therefore passes the automated name checks while describing the wrong action.",
+      "component": "Observation delete button (variant A)",
+      "category": "accessible-name",
+      "classification": "candidate-wcag-failure",
+      "url": "lab/subtle/names/",
+      "locators": [
+        {
+          "type": "css",
+          "value": "#delete-a"
+        },
+        {
+          "type": "role",
+          "role": "button",
+          "name": "Save observation"
+        }
+      ],
+      "relatedElements": [
+        {
+          "purpose": "comparison-control",
+          "css": "#delete-b",
+          "note": "Identical button whose accessible name matches the visible label."
+        },
+        {
+          "purpose": "confirmation",
+          "css": "#result-a"
+        }
+      ],
+      "expectedBehaviour": "The accessible name of a control contains the visible label text, so that the name and the visible action agree.",
+      "actualBehaviour": "The visible label is Delete observation, but aria-label replaces the accessible name with Save observation.",
+      "userImpact": "Voice-control users cannot activate the button by speaking its visible label, and screen-reader users are told the button does something other than what it does.",
+      "affectedCapabilities": [
+        "screen-reader",
+        "voice-control",
+        "cognitive"
+      ],
+      "wcag": [
+        {
+          "criterion": "2.5.3",
+          "status": "candidate",
+          "note": "The accessible name does not contain the visible label text."
+        },
+        {
+          "criterion": "4.1.2",
+          "status": "candidate",
+          "note": "The name is available to assistive technology but describes a different action."
+        }
+      ],
+      "detection": {
+        "expectedMethods": [
+          "accessibility-tree-inspection",
+          "dom-inspection",
+          "manual-keyboard-evaluation"
+        ],
+        "observed": [],
+        "note": "Automated name checks pass because the name is non-empty. Comparing the name with the visible label needs a human review or a heuristic check."
+      },
+      "manualTests": [
+        "Open the accessibility tree for both buttons and compare each accessible name with the text printed on the button.",
+        "Try to activate variant A by voice using its visible label."
+      ],
+      "assistiveTechnologyTests": [
+        {
+          "platform": "macOS",
+          "browser": "Safari",
+          "assistiveTechnology": "VoiceOver",
+          "procedure": "Navigate to the target with the VoiceOver rotor and confirm what is announced.",
+          "status": "not-run"
+        }
+      ],
+      "evidence": {
+        "assertions": [
+          "Variant A exposes the accessible name Save observation while displaying Delete observation."
+        ],
+        "tests": [
+          "tests/subtle-defects.spec.js: keeps the misleading accessible name on variant A"
+        ],
+        "artifacts": [],
+        "commands": [
+          "npx playwright test tests/subtle-defects.spec.js"
+        ]
+      },
+      "sources": [
+        {
+          "title": "WCAG 2.2 Understanding 2.5.3: Label in Name",
+          "url": "https://www.w3.org/WAI/WCAG22/Understanding/label-in-name"
+        }
+      ],
+      "reviewStatus": {
+        "lifecycle": "reproduced-automatically",
+        "dimensions": {
+          "automatedReproduction": "verified",
+          "manualReproduction": "not-run",
+          "assistiveTechnology": "not-run",
+          "independentReview": "not-run"
+        },
+        "note": "A Playwright regression test preserves the defective behaviour and its control. That is automated reproduction, not a manual or assistive-technology observation."
+      },
+      "fragment": null,
+      "provenance": {
+        "origin": "curated",
+        "derivedFrom": [
+          "data/defects/name-contradicts-visible-label.json"
+        ],
+        "note": "Hand-authored record. Its expected behaviour is a hypothesis until an independent review records evidence."
+      }
+    },
+    {
+      "service": "lab",
+      "fixtureId": null,
+      "aliases": [],
+      "preconditions": [],
+      "interactionSteps": [],
+      "environment": null,
+      "actRules": [],
+      "controlFixtureId": null,
+      "introducedIn": null,
+      "lastVerified": null,
+      "notApplicable": [
+        "fixtureId",
+        "actRules"
+      ],
+      "id": "required-field-not-identified",
+      "title": "Required field is not identified programmatically",
+      "description": "The date field is required to continue, but the input has neither a required attribute nor aria-required, and the label does not say so.",
+      "component": "Observation date field (variant A)",
+      "category": "forms",
+      "classification": "candidate-wcag-failure",
+      "url": "lab/subtle/errors/",
+      "locators": [
+        {
+          "type": "css",
+          "value": "#date-a"
+        }
+      ],
+      "relatedElements": [
+        {
+          "purpose": "comparison-control",
+          "css": "#date-b",
+          "note": "Uses the native required attribute."
+        },
+        {
+          "purpose": "label",
+          "css": "label[for=\"date-a\"]"
+        }
+      ],
+      "expectedBehaviour": "A field that must be completed is identified as required programmatically.",
+      "actualBehaviour": "The input has no required or aria-required attribute and no visible required indicator.",
+      "userImpact": "Screen-reader users are not told that the field is required until submission fails.",
+      "affectedCapabilities": [
+        "screen-reader",
+        "cognitive"
+      ],
+      "wcag": [
+        {
+          "criterion": "3.3.2",
+          "status": "candidate"
+        }
+      ],
+      "detection": {
+        "expectedMethods": [
+          "dom-inspection",
+          "accessibility-tree-inspection"
+        ],
+        "observed": [],
+        "note": "Static and accessibility-tree inspection both expose the missing state."
+      },
+      "manualTests": [
+        "Move to the date field in forms mode and listen for whether it is announced as required."
+      ],
+      "assistiveTechnologyTests": [
+        {
+          "platform": "macOS",
+          "browser": "Safari",
+          "assistiveTechnology": "VoiceOver",
+          "procedure": "Navigate to the target with the VoiceOver rotor and confirm what is announced.",
+          "status": "not-run"
+        }
+      ],
+      "evidence": {
+        "assertions": [
+          "#date-a has no required attribute; #date-b has required."
+        ],
+        "tests": [
+          "tests/subtle-defects.spec.js: keeps variant A errors unassociated, unfocused and linked to nothing"
+        ],
+        "artifacts": [],
+        "commands": [
+          "npx playwright test tests/subtle-defects.spec.js"
+        ]
+      },
+      "sources": [
+        {
+          "title": "WCAG 2.2 Understanding 3.3.2: Labels or Instructions",
+          "url": "https://www.w3.org/WAI/WCAG22/Understanding/labels-or-instructions"
+        }
+      ],
+      "reviewStatus": {
+        "lifecycle": "reproduced-automatically",
+        "dimensions": {
+          "automatedReproduction": "verified",
+          "manualReproduction": "not-run",
+          "assistiveTechnology": "not-run",
+          "independentReview": "not-run"
+        },
+        "note": "A Playwright regression test preserves the defective behaviour and its control. That is automated reproduction, not a manual or assistive-technology observation."
+      },
+      "fragment": null,
+      "provenance": {
+        "origin": "curated",
+        "derivedFrom": [
+          "data/defects/required-field-not-identified.json"
+        ],
+        "note": "Hand-authored record. Its expected behaviour is a hypothesis until an independent review records evidence."
+      }
+    },
+    {
+      "service": "lab",
+      "fixtureId": null,
+      "aliases": [],
+      "preconditions": [],
+      "interactionSteps": [
+        {
+          "action": "click",
+          "selector": "#save-a"
+        },
+        {
+          "action": "assert",
+          "selector": "#saved-a",
+          "state": "visible"
+        }
+      ],
+      "environment": null,
+      "actRules": [],
+      "controlFixtureId": null,
+      "introducedIn": null,
+      "lastVerified": null,
+      "notApplicable": [
+        "fixtureId",
+        "actRules"
+      ],
+      "id": "status-message-not-announced",
+      "title": "Saved confirmation appears without a status role",
+      "description": "Saving a draft reveals a confirmation paragraph that was hidden. There is no live region and no focus move, so the visible confirmation is silent for assistive technology.",
+      "component": "Draft save confirmation (variant A)",
+      "category": "dynamic-content",
+      "classification": "candidate-wcag-failure",
+      "url": "lab/subtle/status/",
+      "locators": [
+        {
+          "type": "css",
+          "value": "#saved-a",
+          "phase": "after"
+        }
+      ],
+      "relatedElements": [
+        {
+          "purpose": "comparison-control",
+          "css": "#saved-b",
+          "note": "An always-present role=status region whose text is updated."
+        },
+        {
+          "purpose": "trigger",
+          "css": "#save-a"
+        }
+      ],
+      "expectedBehaviour": "A status message that appears after an action is announced without moving focus.",
+      "actualBehaviour": "The message is inserted into a plain paragraph that was hidden; no live region or role=status exists.",
+      "userImpact": "Screen-reader users do not learn that the save succeeded and may repeat the action or assume it failed.",
+      "affectedCapabilities": [
+        "screen-reader",
+        "cognitive"
+      ],
+      "wcag": [
+        {
+          "criterion": "4.1.3",
+          "status": "candidate"
+        }
+      ],
+      "detection": {
+        "expectedMethods": [
+          "dom-inspection",
+          "accessibility-tree-inspection",
+          "manual-keyboard-evaluation"
+        ],
+        "observed": [],
+        "note": "Static analysis cannot prove the absence of an announcement; a screen-reader check or a live-region heuristic is required."
+      },
+      "manualTests": [
+        "Turn on a screen reader, activate Save draft and listen for a confirmation."
+      ],
+      "assistiveTechnologyTests": [
+        {
+          "platform": "macOS",
+          "browser": "Safari",
+          "assistiveTechnology": "VoiceOver",
+          "procedure": "Navigate to the target with the VoiceOver rotor and confirm what is announced.",
+          "status": "not-run"
+        }
+      ],
+      "evidence": {
+        "assertions": [
+          "The confirmation paragraph has no role and is shown by removing the hidden attribute."
+        ],
+        "tests": [
+          "tests/subtle-defects.spec.js: keeps the silent confirmation in variant A"
+        ],
+        "artifacts": [],
+        "commands": [
+          "npx playwright test tests/subtle-defects.spec.js"
+        ]
+      },
+      "sources": [
+        {
+          "title": "WCAG 2.2 Understanding 4.1.3: Status Messages",
+          "url": "https://www.w3.org/WAI/WCAG22/Understanding/status-messages"
+        }
+      ],
+      "reviewStatus": {
+        "lifecycle": "reproduced-automatically",
+        "dimensions": {
+          "automatedReproduction": "verified",
+          "manualReproduction": "not-run",
+          "assistiveTechnology": "not-run",
+          "independentReview": "not-run"
+        },
+        "note": "A Playwright regression test preserves the defective behaviour and its control. That is automated reproduction, not a manual or assistive-technology observation."
+      },
+      "fragment": null,
+      "provenance": {
+        "origin": "curated",
+        "derivedFrom": [
+          "data/defects/status-message-not-announced.json"
+        ],
+        "note": "Hand-authored record. Its expected behaviour is a hypothesis until an independent review records evidence."
+      }
+    },
+    {
+      "service": "lab",
+      "fixtureId": null,
+      "aliases": [],
+      "preconditions": [],
+      "interactionSteps": [
+        {
+          "action": "focus",
+          "selector": "#switch-a"
+        },
+        {
+          "action": "press",
+          "key": "Space",
+          "note": "aria-checked stays false."
+        }
+      ],
+      "environment": null,
+      "actRules": [],
+      "controlFixtureId": null,
+      "introducedIn": null,
+      "lastVerified": null,
+      "notApplicable": [
+        "fixtureId",
+        "actRules"
+      ],
+      "id": "switch-pointer-only",
+      "title": "Custom switch responds only to pointer input",
+      "description": "The alert preference is a focusable div with role=switch. It has a click handler but no key handling, so Enter and Space do nothing even though the control is in the tab order.",
+      "component": "Morning alert switch (variant A)",
+      "category": "keyboard",
+      "classification": "candidate-wcag-failure",
+      "url": "lab/subtle/keyboard-toggle/",
+      "locators": [
+        {
+          "type": "css",
+          "value": "#switch-a"
+        }
+      ],
+      "relatedElements": [
+        {
+          "purpose": "comparison-control",
+          "css": "#switch-b",
+          "note": "A native button with role=switch, which handles Space and Enter."
+        }
+      ],
+      "expectedBehaviour": "A switch in the tab order can be operated with the keyboard, using the keys its role implies.",
+      "actualBehaviour": "Only a pointer click toggles aria-checked; keyboard activation is ignored.",
+      "userImpact": "Keyboard, switch and voice-control users can reach the setting but cannot change it.",
+      "affectedCapabilities": [
+        "keyboard-only",
+        "switch-control",
+        "voice-control"
+      ],
+      "wcag": [
+        {
+          "criterion": "2.1.1",
+          "status": "candidate"
+        }
+      ],
+      "detection": {
+        "expectedMethods": [
+          "automated-keyboard-interaction",
+          "dom-inspection"
+        ],
+        "observed": [],
+        "note": "The role, name and focusability are all correct, so static checks pass."
+      },
+      "manualTests": [
+        "Focus the switch and press Space, then Enter. Confirm that the state does not change."
+      ],
+      "assistiveTechnologyTests": [
+        {
+          "platform": "Windows",
+          "browser": "Chrome",
+          "assistiveTechnology": "NVDA",
+          "procedure": "Focus the switch and press Space. Listen for the state change.",
+          "status": "not-run"
+        }
+      ],
+      "evidence": {
+        "assertions": [
+          "Space and Enter leave aria-checked as false; a click sets it to true."
+        ],
+        "tests": [
+          "tests/subtle-defects.spec.js: keeps the pointer-only switch inoperable from the keyboard"
+        ],
+        "artifacts": [],
+        "commands": [
+          "npx playwright test tests/subtle-defects.spec.js"
+        ]
+      },
+      "sources": [
+        {
+          "title": "WCAG 2.2 Understanding 2.1.1: Keyboard",
+          "url": "https://www.w3.org/WAI/WCAG22/Understanding/keyboard"
+        }
+      ],
+      "reviewStatus": {
+        "lifecycle": "reproduced-automatically",
+        "dimensions": {
+          "automatedReproduction": "verified",
+          "manualReproduction": "not-run",
+          "assistiveTechnology": "not-run",
+          "independentReview": "not-run"
+        },
+        "note": "A Playwright regression test preserves the defective behaviour and its control. That is automated reproduction, not a manual or assistive-technology observation."
+      },
+      "fragment": null,
+      "provenance": {
+        "origin": "curated",
+        "derivedFrom": [
+          "data/defects/switch-pointer-only.json"
+        ],
+        "note": "Hand-authored record. Its expected behaviour is a hypothesis until an independent review records evidence."
+      }
+    },
+    {
+      "service": "lab",
+      "fixtureId": null,
+      "aliases": [],
+      "preconditions": [],
+      "interactionSteps": [],
+      "environment": null,
+      "actRules": [],
+      "controlFixtureId": null,
+      "introducedIn": null,
+      "lastVerified": null,
+      "notApplicable": [
+        "fixtureId",
+        "actRules"
+      ],
+      "id": "visual-heading-not-semantic",
+      "title": "Visually styled heading is absent from the heading list",
+      "description": "The What happens next title is a paragraph styled to look like a heading. It looks correct but does not appear in the heading list or the accessibility tree's heading navigation.",
+      "component": "What happens next section title (variant A)",
+      "category": "structure",
+      "classification": "candidate-wcag-failure",
+      "url": "lab/subtle/reading/",
+      "locators": [
+        {
+          "type": "css",
+          "value": ".heading-3"
+        }
+      ],
+      "relatedElements": [
+        {
+          "purpose": "comparison-control",
+          "css": "#variant-b h3",
+          "note": "A real h3 in the control."
+        }
+      ],
+      "expectedBehaviour": "Text that acts as a heading uses a heading element so it appears in the heading list.",
+      "actualBehaviour": "The title is a p element with heading-like styling and no heading semantics.",
+      "userImpact": "Screen-reader users who navigate by heading miss the section entirely.",
+      "affectedCapabilities": [
+        "screen-reader",
+        "cognitive"
+      ],
+      "wcag": [
+        {
+          "criterion": "1.3.1",
+          "status": "candidate"
+        }
+      ],
+      "detection": {
+        "expectedMethods": [
+          "accessibility-tree-inspection",
+          "assisted-visual-review"
+        ],
+        "observed": [],
+        "note": "Visual review alone accepts the styled paragraph; the accessibility tree exposes the missing heading."
+      },
+      "manualTests": [
+        "Open the headings list for the page and look for What happens next."
+      ],
+      "assistiveTechnologyTests": [
+        {
+          "platform": "macOS",
+          "browser": "Safari",
+          "assistiveTechnology": "VoiceOver",
+          "procedure": "Navigate to the target with the VoiceOver rotor and confirm what is announced.",
+          "status": "not-run"
+        }
+      ],
+      "evidence": {
+        "assertions": [
+          "No heading named What happens next exists in variant A, while variant B exposes an h3."
+        ],
+        "tests": [
+          "tests/subtle-defects.spec.js: keeps the visual-only heading out of the heading list in variant A"
+        ],
+        "artifacts": [],
+        "commands": [
+          "npx playwright test tests/subtle-defects.spec.js"
+        ]
+      },
+      "sources": [
+        {
+          "title": "WCAG 2.2 Understanding 1.3.1: Info and Relationships",
+          "url": "https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships"
+        }
+      ],
+      "reviewStatus": {
+        "lifecycle": "reproduced-automatically",
+        "dimensions": {
+          "automatedReproduction": "verified",
+          "manualReproduction": "not-run",
+          "assistiveTechnology": "not-run",
+          "independentReview": "not-run"
+        },
+        "note": "A Playwright regression test preserves the defective behaviour and its control. That is automated reproduction, not a manual or assistive-technology observation."
+      },
+      "fragment": null,
+      "provenance": {
+        "origin": "curated",
+        "derivedFrom": [
+          "data/defects/visual-heading-not-semantic.json"
+        ],
+        "note": "Hand-authored record. Its expected behaviour is a hypothesis until an independent review records evidence."
+      }
+    },
+    {
+      "id": "paca-invalid-closed",
+      "aliases": [],
+      "title": "Paca: closed shadow root (exploratory)",
+      "description": "Exploratory. A closed shadow root is not automatically a WCAG failure, and engine visibility is unsupported here. No ACT outcome may be recorded.",
+      "service": "paca",
+      "fixtureId": "paca-invalid-closed",
+      "component": "element with a role attribute",
+      "category": "aria-validity",
+      "classification": "exploratory",
+      "url": "paca/?role=invalid&shadow=closed",
+      "fragment": null,
+      "locators": [
+        {
+          "type": "document-scope",
+          "value": null,
+          "note": "The target lives in a closed shadow root. Ordinary DOM locators cannot resolve it; accessibility-tree access must be reported separately."
+        }
+      ],
+      "relatedElements": [],
+      "preconditions": [],
+      "interactionSteps": [],
+      "environment": null,
+      "expectedBehaviour": "The target satisfies ACT rule 674b10: Role attribute has valid value.",
+      "actualBehaviour": "Exploratory. A closed shadow root is not automatically a WCAG failure, and engine visibility is unsupported here. No ACT outcome may be recorded. No ACT outcome is claimed.",
+      "userImpact": "An invalid role is ignored by browsers, so the element exposes an unintended implicit role and assistive-technology users receive the wrong interaction model.",
+      "affectedCapabilities": [
+        "screen-reader"
+      ],
+      "wcag": [],
+      "actRules": [
+        {
+          "ruleId": "674b10",
+          "status": "unknown",
+          "ruleName": "Role attribute has valid value",
+          "ruleUrl": "https://www.w3.org/WAI/standards-guidelines/act/rules/674b10/"
+        }
+      ],
+      "detection": {
+        "expectedMethods": [
+          "dom-inspection",
+          "accessibility-tree-inspection"
+        ],
+        "observed": [],
+        "note": "ACT rule outcome only. A WCAG mapping has not been reviewed for this fixture."
+      },
+      "manualTests": [
+        "Inspect the attribute and the computed role, and confirm that the role token is valid."
+      ],
+      "assistiveTechnologyTests": [],
+      "evidence": {
+        "assertions": [],
+        "tests": [],
+        "artifacts": [
+          "lab/reviews/records/paca-invalid-closed.json"
+        ],
+        "commands": [
+          "npm run defects:verify -- --id paca-invalid-closed"
+        ]
+      },
+      "controlFixtureId": null,
+      "reviewStatus": {
+        "lifecycle": "reproduced-automatically",
+        "dimensions": {
+          "automatedReproduction": "verified",
+          "manualReproduction": "not-run",
+          "assistiveTechnology": "not-run",
+          "independentReview": "not-run"
+        },
+        "note": "Locator resolution and the declared fixture state are asserted automatically. The ACT outcome remains an unreviewed hypothesis until a person records a review."
+      },
+      "sources": [
+        {
+          "title": "Role attribute has valid value (ACT rule 674b10)",
+          "url": "https://www.w3.org/WAI/standards-guidelines/act/rules/674b10/"
+        }
+      ],
+      "introducedIn": null,
+      "lastVerified": null,
+      "provenance": {
+        "origin": "derived",
+        "derivedFrom": [
+          "services/lab/fixtures.json",
+          "data/defect-annotations.json"
+        ]
+      },
+      "notApplicable": [
+        "controlFixtureId"
+      ]
+    },
+    {
+      "id": "paca-invalid-open",
+      "aliases": [],
+      "title": "Paca: invalid role in an open shadow root",
+      "description": "Invalid role inside an open shadow root.",
+      "service": "paca",
+      "fixtureId": "paca-invalid-open",
+      "component": "element with a role attribute",
+      "category": "aria-validity",
+      "classification": "act-rule-failure",
+      "url": "paca/?role=invalid&shadow=open",
+      "fragment": null,
+      "locators": [
+        {
+          "type": "css",
+          "value": "#test-target",
+          "shadowPath": [
+            "#test-host"
+          ]
+        }
+      ],
+      "relatedElements": [],
+      "preconditions": [],
+      "interactionSteps": [],
+      "environment": null,
+      "expectedBehaviour": "The target satisfies ACT rule 674b10: Role attribute has valid value.",
+      "actualBehaviour": "The target does not satisfy ACT rule 674b10 (Role attribute has valid value). Invalid role inside an open shadow root.",
+      "userImpact": "An invalid role is ignored by browsers, so the element exposes an unintended implicit role and assistive-technology users receive the wrong interaction model.",
+      "affectedCapabilities": [
+        "screen-reader"
+      ],
+      "wcag": [],
+      "actRules": [
+        {
+          "ruleId": "674b10",
+          "status": "failed",
+          "ruleName": "Role attribute has valid value",
+          "ruleUrl": "https://www.w3.org/WAI/standards-guidelines/act/rules/674b10/"
+        }
+      ],
+      "detection": {
+        "expectedMethods": [
+          "dom-inspection",
+          "accessibility-tree-inspection"
+        ],
+        "observed": [],
+        "note": "ACT rule outcome only. A WCAG mapping has not been reviewed for this fixture."
+      },
+      "manualTests": [
+        "Inspect the attribute and the computed role, and confirm that the role token is valid."
+      ],
+      "assistiveTechnologyTests": [],
+      "evidence": {
+        "assertions": [],
+        "tests": [],
+        "artifacts": [
+          "lab/reviews/records/paca-invalid-open.json"
+        ],
+        "commands": [
+          "npm run defects:verify -- --id paca-invalid-open"
+        ]
+      },
+      "controlFixtureId": "paca-valid-open",
+      "reviewStatus": {
+        "lifecycle": "reproduced-automatically",
+        "dimensions": {
+          "automatedReproduction": "verified",
+          "manualReproduction": "not-run",
+          "assistiveTechnology": "not-run",
+          "independentReview": "not-run"
+        },
+        "note": "Locator resolution and the declared fixture state are asserted automatically. The ACT outcome remains an unreviewed hypothesis until a person records a review."
+      },
+      "sources": [
+        {
+          "title": "Role attribute has valid value (ACT rule 674b10)",
+          "url": "https://www.w3.org/WAI/standards-guidelines/act/rules/674b10/"
+        }
+      ],
+      "introducedIn": null,
+      "lastVerified": null,
+      "provenance": {
+        "origin": "derived",
+        "derivedFrom": [
+          "services/lab/fixtures.json",
+          "data/defect-annotations.json"
+        ]
+      },
+      "notApplicable": []
+    },
+    {
+      "id": "vue-button-initial",
+      "aliases": [],
+      "title": "Vue: name absent initially",
+      "description": "Wait for the Vue state marker before evaluating.",
+      "service": "wombat",
+      "fixtureId": "vue-button-initial",
+      "component": "button",
+      "category": "accessible-name",
+      "classification": "act-rule-failure",
+      "url": "wombat/?state=initial",
+      "fragment": null,
+      "locators": [
+        {
+          "type": "css",
+          "value": "#test-target"
+        }
+      ],
+      "relatedElements": [],
+      "preconditions": [],
+      "interactionSteps": [],
+      "environment": null,
+      "expectedBehaviour": "The target satisfies ACT rule 97a4e1: Button has non-empty accessible name.",
+      "actualBehaviour": "The target does not satisfy ACT rule 97a4e1 (Button has non-empty accessible name). Wait for the Vue state marker before evaluating.",
+      "userImpact": "A control without an accessible name is announced without its purpose, so screen-reader, voice-control and switch users cannot identify it reliably.",
+      "affectedCapabilities": [
+        "screen-reader",
+        "voice-control",
+        "switch-control"
+      ],
+      "wcag": [],
+      "actRules": [
+        {
+          "ruleId": "97a4e1",
+          "status": "failed",
+          "ruleName": "Button has non-empty accessible name",
+          "ruleUrl": "https://www.w3.org/WAI/standards-guidelines/act/rules/97a4e1/"
+        }
+      ],
+      "detection": {
+        "expectedMethods": [
+          "dom-inspection",
+          "accessibility-tree-inspection"
+        ],
+        "observed": [],
+        "note": "ACT rule outcome only. A WCAG mapping has not been reviewed for this fixture."
+      },
+      "manualTests": [
+        "Open the accessibility tree for the target and confirm that the button exposes a non-empty, meaningful accessible name."
+      ],
+      "assistiveTechnologyTests": [],
+      "evidence": {
+        "assertions": [],
+        "tests": [],
+        "artifacts": [
+          "lab/reviews/records/vue-button-initial.json"
+        ],
+        "commands": [
+          "npm run defects:verify -- --id vue-button-initial"
+        ]
+      },
+      "controlFixtureId": "vue-button-updated",
+      "reviewStatus": {
+        "lifecycle": "reproduced-automatically",
+        "dimensions": {
+          "automatedReproduction": "verified",
+          "manualReproduction": "not-run",
+          "assistiveTechnology": "not-run",
+          "independentReview": "not-run"
+        },
+        "note": "Locator resolution and the declared fixture state are asserted automatically. The ACT outcome remains an unreviewed hypothesis until a person records a review."
+      },
+      "sources": [
+        {
+          "title": "Button has non-empty accessible name (ACT rule 97a4e1)",
+          "url": "https://www.w3.org/WAI/standards-guidelines/act/rules/97a4e1/"
+        }
+      ],
+      "introducedIn": null,
+      "lastVerified": null,
+      "provenance": {
+        "origin": "derived",
+        "derivedFrom": [
+          "services/lab/fixtures.json",
+          "data/defect-annotations.json"
+        ]
+      },
+      "notApplicable": []
+    }
+  ]
+}

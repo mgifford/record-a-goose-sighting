@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en" data-test-ready="true">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Record an observation: delete action</title>
+  <link rel="stylesheet" href="/lab/lab-styles.css">
+</head>
+<body>
+  <header><nav aria-label="Site"><a href="../../../">Record a goose sighting</a><a href="../../">Laboratory</a></nav></header>
+  <main>
+    <h1>Record an observation: delete action</h1>
+    <p class="meta">Two versions of the same observation record. Each Delete button removes the record and shows the same confirmation.</p>
+    <p>Compare what each button is called in the accessibility tree with the words printed on the button.</p>
+
+    <section aria-labelledby="variant-a">
+      <h2 id="variant-a">Variant A</h2>
+      <div class="fixture">
+        <h3 id="record-a">Observation 4821: mallard, 14:05</h3>
+        <p>Duck pond, north hide. Recorded by the site warden.</p>
+        <div class="actions">
+          <button type="button" id="delete-a" class="primary" aria-label="Save observation">Delete observation</button>
+        </div>
+        <p id="result-a" class="done" tabindex="-1" hidden>Observation deleted.</p>
+      </div>
+    </section>
+
+    <section aria-labelledby="variant-b">
+      <h2 id="variant-b">Variant B</h2>
+      <div class="fixture">
+        <h3 id="record-b">Observation 4822: mallard, 14:10</h3>
+        <p>Duck pond, south hide. Recorded by the site warden.</p>
+        <div class="actions">
+          <button type="button" id="delete-b" class="primary">Delete observation</button>
+        </div>
+        <p id="result-b" class="done" tabindex="-1" hidden>Observation deleted.</p>
+      </div>
+    </section>
+
+    <script>
+      for (const variant of ['a', 'b']) {
+        const button = document.getElementById(`delete-${variant}`)
+        const heading = document.getElementById(`record-${variant}`)
+        const result = document.getElementById(`result-${variant}`)
+
+        button.addEventListener('click', () => {
+          heading.hidden = true
+          heading.nextElementSibling.hidden = true
+          result.hidden = false
+          result.focus()
+        })
+      }
+    </script>
+  </main>
+  <footer><p>Part of the animal-reporting laboratory. MIT licensed.</p></footer>
+</body>
+</html>

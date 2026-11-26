@@ -1,0 +1,101 @@
+{
+  "service": "lab",
+  "fixtureId": null,
+  "aliases": [],
+  "preconditions": [],
+  "interactionSteps": [],
+  "environment": null,
+  "actRules": [],
+  "controlFixtureId": null,
+  "introducedIn": null,
+  "lastVerified": null,
+  "notApplicable": [
+    "fixtureId",
+    "actRules"
+  ],
+  "id": "hint-hidden-from-accessibility-tree",
+  "title": "Field hint is hidden from the accessibility tree",
+  "description": "The reference-code hint is visible on screen but carries aria-hidden=true, and the input's aria-describedby points at it. The instruction is therefore removed from the accessibility tree instead of being associated with the field.",
+  "component": "Reference code field (variant A)",
+  "category": "forms",
+  "classification": "candidate-wcag-failure",
+  "url": "lab/subtle/reading/",
+  "locators": [
+    {
+      "type": "css",
+      "value": "#reference-a"
+    }
+  ],
+  "relatedElements": [
+    {
+      "purpose": "hidden-hint",
+      "css": "#hint-a"
+    },
+    {
+      "purpose": "comparison-control",
+      "css": "#reference-b",
+      "note": "Associates a hint that remains in the accessibility tree."
+    }
+  ],
+  "expectedBehaviour": "An instruction needed to complete a field is programmatically associated with it and available to assistive technology.",
+  "actualBehaviour": "The hint is aria-hidden and contributes no accessible description.",
+  "userImpact": "Screen-reader users do not learn where to find the reference code.",
+  "affectedCapabilities": [
+    "screen-reader",
+    "cognitive"
+  ],
+  "wcag": [
+    {
+      "criterion": "3.3.2",
+      "status": "candidate"
+    }
+  ],
+  "detection": {
+    "expectedMethods": [
+      "accessibility-tree-inspection",
+      "dom-inspection"
+    ],
+    "observed": [],
+    "note": "The text is visible, so an automated check that only looks for a description may treat the field as described."
+  },
+  "manualTests": [
+    "Move to the Reference code field in forms mode and listen for the hint."
+  ],
+  "assistiveTechnologyTests": [
+    {
+      "platform": "macOS",
+      "browser": "Safari",
+      "assistiveTechnology": "VoiceOver",
+      "procedure": "Navigate to the target with the VoiceOver rotor and confirm what is announced.",
+      "status": "not-run"
+    }
+  ],
+  "evidence": {
+    "assertions": [
+      "The input's accessible description is empty while the hint text is visible."
+    ],
+    "tests": [
+      "tests/subtle-defects.spec.js: keeps the hint hidden from assistive technology in variant A"
+    ],
+    "artifacts": [],
+    "commands": [
+      "npx playwright test tests/subtle-defects.spec.js"
+    ]
+  },
+  "sources": [
+    {
+      "title": "WCAG 2.2 Understanding 3.3.2: Labels or Instructions",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/labels-or-instructions"
+    }
+  ],
+  "reviewStatus": {
+    "lifecycle": "reproduced-automatically",
+    "dimensions": {
+      "automatedReproduction": "verified",
+      "manualReproduction": "not-run",
+      "assistiveTechnology": "not-run",
+      "independentReview": "not-run"
+    },
+    "note": "A Playwright regression test preserves the defective behaviour and its control. That is automated reproduction, not a manual or assistive-technology observation."
+  }
+}

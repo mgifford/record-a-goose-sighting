@@ -1,0 +1,508 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mgifford.github.io/record-a-goose-sighting/schemas/known-defects.schema.json",
+  "title": "Record a Goose Sighting known-defect registry",
+  "description": "Canonical, generated registry of every intentional accessibility defect in the project. The schema is versioned separately from the generated registry so that consumers can pin an exact contract.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "description",
+    "generatedBy",
+    "sources",
+    "counts",
+    "defects"
+  ],
+  "properties": {
+    "schemaVersion": { "const": "known-defects/1" },
+    "description": { "type": "string", "minLength": 1 },
+    "generatedBy": { "type": "string", "minLength": 1 },
+    "sources": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/sourceFile" }
+    },
+    "counts": { "$ref": "#/$defs/counts" },
+    "defects": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/defect" }
+    }
+  },
+  "$defs": {
+    "sourceFile": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "kind", "description", "sha256"],
+      "properties": {
+        "path": {
+          "type": "string",
+          "pattern": "^(?!/)(?!.*\\.\\.)[A-Za-z0-9._/-]+$"
+        },
+        "kind": {
+          "enum": [
+            "goose-inventory",
+            "act-fixture-manifest",
+            "defect-record",
+            "annotation",
+            "schema"
+          ]
+        },
+        "description": { "type": "string", "minLength": 1 },
+        "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+      }
+    },
+    "counts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "defects",
+        "byService",
+        "byCategory",
+        "byClassification",
+        "byReviewLifecycle",
+        "wcagCriteria",
+        "actRules"
+      ],
+      "properties": {
+        "defects": { "type": "integer", "minimum": 1 },
+        "byService": { "$ref": "#/$defs/stringCounts" },
+        "byCategory": { "$ref": "#/$defs/stringCounts" },
+        "byClassification": { "$ref": "#/$defs/stringCounts" },
+        "byReviewLifecycle": { "$ref": "#/$defs/stringCounts" },
+        "wcagCriteria": { "$ref": "#/$defs/stringCounts" },
+        "actRules": { "$ref": "#/$defs/stringCounts" }
+      }
+    },
+    "stringCounts": {
+      "type": "object",
+      "propertyNames": { "type": "string", "minLength": 1 },
+      "additionalProperties": { "type": "integer", "minimum": 1 }
+    },
+    "locator": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type"],
+      "properties": {
+        "type": {
+          "enum": [
+            "css",
+            "xpath",
+            "absolute-xpath",
+            "id",
+            "role",
+            "text",
+            "dom-fingerprint",
+            "document-scope",
+            "document-title"
+          ]
+        },
+        "value": { "type": ["string", "null"] },
+        "role": { "type": ["string", "null"] },
+        "name": { "type": ["string", "null"] },
+        "note": { "type": ["string", "null"] },
+        "phase": { "enum": ["before", "after", "either"] },
+        "framePath": {
+          "type": ["array", "null"],
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "shadowPath": {
+          "type": ["array", "null"],
+          "items": { "type": "string", "minLength": 1 }
+        }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "type": { "const": "role" } } },
+          "then": { "required": ["role"] }
+        },
+        {
+          "if": { "properties": { "type": { "const": "document-scope" } } },
+          "then": { "properties": { "value": { "type": "null" } } }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "enum": ["css", "xpath", "absolute-xpath", "id", "text", "dom-fingerprint"]
+              }
+            }
+          },
+          "then": { "required": ["value"] }
+        }
+      ]
+    },
+    "relatedElement": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["purpose"],
+      "properties": {
+        "purpose": { "type": "string", "minLength": 1 },
+        "css": { "type": ["string", "null"] },
+        "role": { "type": ["string", "null"] },
+        "name": { "type": ["string", "null"] },
+        "note": { "type": ["string", "null"] }
+      },
+      "anyOf": [
+        { "required": ["css"] },
+        { "required": ["role"] },
+        { "required": ["note"] }
+      ]
+    },
+    "interactionStep": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["action"],
+      "properties": {
+        "action": {
+          "enum": ["click", "focus", "press", "type", "waitFor", "assert"]
+        },
+        "selector": { "type": ["string", "null"] },
+        "role": { "type": ["string", "null"] },
+        "name": { "type": ["string", "null"] },
+        "key": { "type": ["string", "null"] },
+        "value": { "type": ["string", "null"] },
+        "state": { "enum": ["visible", "hidden", "attached", "detached", null] },
+        "note": { "type": ["string", "null"] }
+      }
+    },
+    "environment": {
+      "type": ["object", "null"],
+      "additionalProperties": false,
+      "properties": {
+        "viewport": {
+          "type": ["object", "null"],
+          "additionalProperties": false,
+          "required": ["width", "height"],
+          "properties": {
+            "width": { "type": "integer", "minimum": 1 },
+            "height": { "type": "integer", "minimum": 1 }
+          }
+        },
+        "colorScheme": { "enum": ["light", "dark", "no-preference", null] },
+        "reducedMotion": { "enum": ["reduce", "no-preference", null] },
+        "forcedColors": { "enum": ["active", "none", null] },
+        "browser": { "type": ["string", "null"] },
+        "assistiveTechnology": { "type": ["string", "null"] }
+      }
+    },
+    "wcagMapping": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["criterion", "status"],
+      "properties": {
+        "criterion": { "type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$" },
+        "status": {
+          "enum": [
+            "claimed",
+            "candidate",
+            "confirmed",
+            "best-practice",
+            "disputed",
+            "informational"
+          ]
+        },
+        "note": { "type": ["string", "null"] }
+      }
+    },
+    "actMapping": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ruleId", "status"],
+      "properties": {
+        "ruleId": { "type": "string", "pattern": "^[a-z0-9]{6}$" },
+        "status": { "enum": ["failed", "passed", "inapplicable", "unknown"] },
+        "ruleName": { "type": ["string", "null"] },
+        "ruleUrl": { "type": ["string", "null"], "format": "uri" }
+      }
+    },
+    "observation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["date", "engine", "result"],
+      "properties": {
+        "date": { "type": "string", "format": "date" },
+        "engine": { "type": "string", "minLength": 1 },
+        "engineVersion": { "type": ["string", "null"] },
+        "ruleId": { "type": ["string", "null"] },
+        "browser": { "type": ["string", "null"] },
+        "interactionState": { "type": ["string", "null"] },
+        "result": {
+          "enum": ["detected", "not-detected", "partial", "inconclusive"]
+        },
+        "note": { "type": ["string", "null"] },
+        "evidence": { "type": ["string", "null"] }
+      }
+    },
+    "detection": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["expectedMethods", "observed", "note"],
+      "properties": {
+        "expectedMethods": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "static-markup-analysis",
+              "dom-inspection",
+              "accessibility-tree-inspection",
+              "computed-style-analysis",
+              "automated-keyboard-interaction",
+              "automated-pointer-interaction",
+              "environment-emulation",
+              "browser-geometry-inspection",
+              "mutation-observation",
+              "assisted-visual-review",
+              "heuristic-analysis",
+              "ai-text-evaluation",
+              "ai-image-evaluation",
+              "manual-keyboard-evaluation",
+              "screen-reader-evaluation",
+              "voice-control-evaluation",
+              "switch-control-evaluation",
+              "user-testing"
+            ]
+          },
+          "uniqueItems": true
+        },
+        "observed": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/observation" }
+        },
+        "note": { "type": ["string", "null"] }
+      }
+    },
+    "assistiveTechnologyTest": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["platform", "browser", "assistiveTechnology", "procedure", "status"],
+      "properties": {
+        "platform": { "type": "string", "minLength": 1 },
+        "browser": { "type": "string", "minLength": 1 },
+        "assistiveTechnology": { "type": "string", "minLength": 1 },
+        "procedure": { "type": "string", "minLength": 1 },
+        "status": {
+          "enum": ["not-run", "verified", "unavailable", "transcribed"]
+        },
+        "evidence": { "type": ["string", "null"] },
+        "note": { "type": ["string", "null"] }
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["assertions", "tests", "artifacts", "commands"],
+      "properties": {
+        "assertions": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+        "tests": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+        "artifacts": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+        "commands": { "type": "array", "items": { "type": "string", "minLength": 1 } }
+      }
+    },
+    "reviewStatus": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["lifecycle", "dimensions"],
+      "properties": {
+        "lifecycle": {
+          "enum": [
+            "proposed",
+            "implemented",
+            "reproduced-automatically",
+            "reproduced-manually",
+            "assistive-technology-verified",
+            "independently-reviewed",
+            "disputed",
+            "needs-evidence",
+            "deprecated"
+          ]
+        },
+        "dimensions": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "automatedReproduction",
+            "manualReproduction",
+            "assistiveTechnology",
+            "independentReview"
+          ],
+          "properties": {
+            "automatedReproduction": { "enum": ["verified", "not-run", "failed"] },
+            "manualReproduction": { "enum": ["verified", "not-run", "failed"] },
+            "assistiveTechnology": {
+              "enum": ["verified", "not-run", "unavailable", "failed"]
+            },
+            "independentReview": { "enum": ["reviewed", "not-run", "disputed"] }
+          }
+        },
+        "note": { "type": ["string", "null"] }
+      }
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["title", "url"],
+      "properties": {
+        "title": { "type": "string", "minLength": 1 },
+        "url": { "type": "string", "format": "uri" },
+        "note": { "type": ["string", "null"] }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["origin", "derivedFrom"],
+      "properties": {
+        "origin": { "enum": ["curated", "imported", "derived"] },
+        "derivedFrom": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "note": { "type": ["string", "null"] }
+      }
+    },
+    "defect": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "title",
+        "description",
+        "service",
+        "category",
+        "classification",
+        "url",
+        "locators",
+        "expectedBehaviour",
+        "actualBehaviour",
+        "userImpact",
+        "affectedCapabilities",
+        "wcag",
+        "actRules",
+        "detection",
+        "manualTests",
+        "assistiveTechnologyTests",
+        "evidence",
+        "reviewStatus",
+        "provenance",
+        "notApplicable"
+      ],
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$" },
+        "aliases": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 },
+          "uniqueItems": true
+        },
+        "title": { "type": "string", "minLength": 1 },
+        "description": { "type": "string", "minLength": 1 },
+        "service": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$" },
+        "fixtureId": {
+          "type": ["string", "null"],
+          "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+        },
+        "component": { "type": ["string", "null"] },
+        "category": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$" },
+        "classification": {
+          "enum": [
+            "wcag-failure",
+            "candidate-wcag-failure",
+            "act-rule-failure",
+            "best-practice",
+            "usability-concern",
+            "interoperability-issue",
+            "disputed",
+            "exploratory"
+          ]
+        },
+        "url": {
+          "type": "string",
+          "pattern": "^(?!/)(?!.*\\.\\.)[A-Za-z0-9._~/?=&%#-]*$"
+        },
+        "fragment": { "type": ["string", "null"], "pattern": "^[A-Za-z][A-Za-z0-9_:.-]*$" },
+        "locators": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/locator" }
+        },
+        "relatedElements": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/relatedElement" }
+        },
+        "preconditions": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "interactionSteps": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/interactionStep" }
+        },
+        "environment": { "$ref": "#/$defs/environment" },
+        "expectedBehaviour": { "type": "string", "minLength": 1 },
+        "actualBehaviour": { "type": "string", "minLength": 1 },
+        "userImpact": { "type": "string", "minLength": 1 },
+        "affectedCapabilities": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "screen-reader",
+              "keyboard-only",
+              "switch-control",
+              "voice-control",
+              "screen-magnification",
+              "braille",
+              "forced-colours",
+              "increased-text-spacing",
+              "colour-scheme",
+              "reduced-motion",
+              "cognitive",
+              "low-vision",
+              "deaf-or-hard-of-hearing",
+              "pointer-precision"
+            ]
+          },
+          "uniqueItems": true
+        },
+        "wcag": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/wcagMapping" }
+        },
+        "actRules": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/actMapping" }
+        },
+        "detection": { "$ref": "#/$defs/detection" },
+        "manualTests": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "assistiveTechnologyTests": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/assistiveTechnologyTest" }
+        },
+        "evidence": { "$ref": "#/$defs/evidence" },
+        "controlFixtureId": {
+          "type": ["string", "null"],
+          "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+        },
+        "reviewStatus": { "$ref": "#/$defs/reviewStatus" },
+        "sources": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/source" }
+        },
+        "introducedIn": { "type": ["string", "null"] },
+        "lastVerified": {
+          "type": ["string", "null"],
+          "format": "date"
+        },
+        "provenance": { "$ref": "#/$defs/provenance" },
+        "notApplicable": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 },
+          "uniqueItems": true
+        }
+      }
+    }
+  }
+}

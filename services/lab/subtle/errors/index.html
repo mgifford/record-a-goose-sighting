@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en" data-test-ready="true">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Report a sighting: observation date</title>
+  <link rel="stylesheet" href="/lab/lab-styles.css">
+  <style>
+    .error-message { color: #d4351c; font-weight: 600; margin: 0 0 0.5rem; }
+    .error-summary ul { margin-bottom: 0; }
+  </style>
+</head>
+<body>
+  <header><nav aria-label="Site"><a href="../../../">Record a goose sighting</a><a href="../../">Laboratory</a></nav></header>
+  <main>
+    <h1>Report a sighting: observation date</h1>
+    <p class="meta">Two versions of the same short form. Both show the same error summary and the same inline message when the date is empty.</p>
+    <p>Submit each form without entering a date, then compare the summary, the field and where focus goes.</p>
+
+    <section aria-labelledby="variant-a">
+      <h2 id="variant-a">Variant A</h2>
+      <div class="fixture">
+        <form id="form-a" novalidate>
+          <div class="error-summary" id="summary-a" hidden>
+            <h2 id="summary-a-heading" tabindex="-1">There is a problem</h2>
+            <ul>
+              <li><a href="#date-a-field">Enter the date you saw the goose</a></li>
+            </ul>
+          </div>
+          <div class="form-row">
+            <label for="date-a">Date of observation</label>
+            <p class="meta" id="hint-a">For example, 31 3 2026</p>
+            <p class="error-message" id="error-a" hidden>Enter the date you saw the goose</p>
+            <input id="date-a" name="observation-date" type="text" inputmode="numeric" autocomplete="off">
+          </div>
+          <button type="submit" class="primary" id="submit-a">Continue</button>
+        </form>
+      </div>
+    </section>
+
+    <section aria-labelledby="variant-b">
+      <h2 id="variant-b">Variant B</h2>
+      <div class="fixture">
+        <form id="form-b" novalidate>
+          <div class="error-summary" id="summary-b" hidden>
+            <h2 id="summary-b-heading" tabindex="-1">There is a problem</h2>
+            <ul>
+              <li><a href="#date-b">Enter the date you saw the goose</a></li>
+            </ul>
+          </div>
+          <div class="form-row">
+            <label for="date-b">Date of observation</label>
+            <p class="meta" id="hint-b">For example, 31 3 2026</p>
+            <p class="error-message" id="error-b" hidden>Enter the date you saw the goose</p>
+            <input id="date-b" name="observation-date" type="text" inputmode="numeric" autocomplete="off" required aria-describedby="hint-b error-b">
+          </div>
+          <button type="submit" class="primary" id="submit-b">Continue</button>
+        </form>
+      </div>
+    </section>
+
+    <script>
+      function setupForm (variant, describesError, movesFocus) {
+        const form = document.getElementById(`form-${variant}`)
+        const input = document.getElementById(`date-${variant}`)
+        const summary = document.getElementById(`summary-${variant}`)
+        const inlineError = document.getElementById(`error-${variant}`)
+        const heading = document.getElementById(`summary-${variant}-heading`)
+
+        form.addEventListener('submit', (event) => {
+          event.preventDefault()
+          if (input.value.trim() !== '') {
+            summary.hidden = true
+            inlineError.hidden = true
+            input.removeAttribute('aria-invalid')
+            return
+          }
+
+          summary.hidden = false
+          inlineError.hidden = false
+
+          if (describesError) input.setAttribute('aria-invalid', 'true')
+          if (movesFocus) heading.focus()
+        })
+      }
+
+      setupForm('a', false, false)
+      setupForm('b', true, true)
+    </script>
+  </main>
+  <footer><p>Part of the animal-reporting laboratory. MIT licensed.</p></footer>
+</body>
+</html>

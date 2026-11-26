@@ -1,0 +1,385 @@
+{
+  "schemaVersion": "defect-annotations/1",
+  "description": "Curated enrichment for defects whose authoritative source record does not carry a field. The defect registry merges these values over the imported record. Annotations must not change an expected outcome; they add locators, expected behaviour and impact evidence so that the imported record is independently reproducible.",
+  "goose": {
+    "start-two-h1": {
+      "component": "Start page headings and related-links section",
+      "locators": [
+        {
+          "type": "xpath",
+          "value": "(//h1)[2]",
+          "note": "The second h1 is the related-links heading."
+        },
+        {
+          "type": "role",
+          "role": "heading",
+          "name": "Information about Geese"
+        }
+      ],
+      "expectedBehaviour": "Each page exposes one top-level heading, and subsections use a heading level that reflects the page structure.",
+      "userImpact": "Screen reader and outline users find a duplicate top-level entry and cannot tell which heading describes the page itself.",
+      "affectedCapabilities": [
+        "screen-reader",
+        "cognitive"
+      ],
+      "sources": [
+        {
+          "title": "WCAG 2.2 technique H42: Using h1-h6 to identify headings",
+          "url": "https://www.w3.org/WAI/WCAG22/Techniques/html/H42"
+        }
+      ]
+    },
+    "start-dom-visual-order": {
+      "component": "Related links list",
+      "locators": [
+        {
+          "type": "css",
+          "value": ".custom-list",
+          "note": "The related-links list itself; CSS order is 1, 3, 2 while DOM order is Wikipedia, More, RSPB."
+        }
+      ],
+      "expectedBehaviour": "Focus and reading order follow the visual order of the related links.",
+      "userImpact": "Keyboard and magnification users move through links in an order that contradicts what they see, and can lose track of focus.",
+      "affectedCapabilities": [
+        "keyboard-only",
+        "screen-magnification",
+        "screen-reader"
+      ]
+    },
+    "start-new-tab": {
+      "component": "Related links: external RSPB link",
+      "locators": [
+        {
+          "type": "css",
+          "value": "a[target=\"_blank\"]"
+        },
+        {
+          "type": "role",
+          "role": "link",
+          "name": "Visit the RSPB website"
+        }
+      ],
+      "expectedBehaviour": "A link that opens a new tab tells the user in advance, in text or through an accessible description.",
+      "userImpact": "People who use a screen reader or keyboard may not realise a new tab opened and cannot use Back to return.",
+      "affectedCapabilities": [
+        "screen-reader",
+        "keyboard-only",
+        "cognitive"
+      ]
+    },
+    "start-ambiguous-link": {
+      "component": "Related links: 'More' link",
+      "locators": [
+        {
+          "type": "role",
+          "role": "link",
+          "name": "More"
+        },
+        {
+          "type": "css",
+          "value": "a[href=\"https://www.wildlondon.org.uk/\"]"
+        }
+      ],
+      "expectedBehaviour": "Link text identifies its destination when read out of context.",
+      "userImpact": "Screen reader users browsing the links list hear 'More' with no indication of where it leads.",
+      "affectedCapabilities": [
+        "screen-reader",
+        "cognitive"
+      ]
+    },
+    "start-focus-style": {
+      "component": "Related links: focus indicator",
+      "locators": [
+        {
+          "type": "css",
+          "value": ".custom-list > li:first-child a",
+          "note": "The first related link; every a.link element has the same focus styling."
+        }
+      ],
+      "expectedBehaviour": "Every interactive element has a focus indicator that is clearly visible against its background.",
+      "userImpact": "Keyboard, switch and low-vision users cannot tell which link currently has focus.",
+      "affectedCapabilities": [
+        "keyboard-only",
+        "low-vision",
+        "screen-magnification",
+        "switch-control"
+      ]
+    },
+    "geese-empty-title": {
+      "component": "Do you like geese page title",
+      "locators": [
+        {
+          "type": "document-title",
+          "value": null,
+          "note": "document.title is the empty string."
+        }
+      ],
+      "expectedBehaviour": "Every page has a descriptive, unique title that starts with the page-specific information.",
+      "userImpact": "Screen reader users hear no page context when the page loads, and tab users cannot identify the page.",
+      "affectedCapabilities": [
+        "screen-reader",
+        "cognitive"
+      ]
+    },
+    "geese-missing-legend": {
+      "component": "Do you like geese radio group",
+      "locators": [
+        {
+          "type": "css",
+          "value": "fieldset"
+        },
+        {
+          "type": "role",
+          "role": "group",
+          "name": null,
+          "note": "The fieldset is exposed as an unnamed group because it has no legend."
+        }
+      ],
+      "relatedElements": [
+        {
+          "purpose": "group-question",
+          "css": "h1"
+        }
+      ],
+      "expectedBehaviour": "The radio group's question is programmatically associated as the group label and is announced with the options.",
+      "userImpact": "Screen reader users hear three unlabelled options and cannot tell what question they answer.",
+      "affectedCapabilities": [
+        "screen-reader",
+        "cognitive"
+      ],
+      "sources": [
+        {
+          "title": "WCAG 2.2 technique H71: Providing a description for groups of form controls using fieldset and legend",
+          "url": "https://www.w3.org/WAI/WCAG22/Techniques/html/H71"
+        }
+      ]
+    },
+    "geese-tabindex": {
+      "component": "Do you like geese continue button",
+      "locators": [
+        {
+          "type": "css",
+          "value": "button.govuk-button"
+        }
+      ],
+      "expectedBehaviour": "Every submit control is reachable with the Tab key.",
+      "userImpact": "Keyboard and switch users can appear trapped on the page, and many will abandon the service.",
+      "affectedCapabilities": [
+        "keyboard-only",
+        "switch-control",
+        "screen-reader"
+      ]
+    },
+    "geese-low-contrast": {
+      "component": "Do you like geese hint text",
+      "locators": [
+        {
+          "type": "css",
+          "value": ".goose-liked-hint"
+        }
+      ],
+      "expectedBehaviour": "Hint text meets a 4.5:1 contrast ratio against its background.",
+      "userImpact": "Low-vision users may not be able to read the hint, which carries information needed to answer the question.",
+      "affectedCapabilities": [
+        "low-vision"
+      ]
+    },
+    "goose-type-boop-title": {
+      "component": "Goose type page title",
+      "locators": [
+        {
+          "type": "document-title",
+          "value": null,
+          "note": "The title is 'Boop - Record a goose sighting'."
+        }
+      ],
+      "expectedBehaviour": "The page title describes the page question and the service.",
+      "userImpact": "Screen reader users hear an unrelated word instead of the task, and cannot identify the page from a tab or history list.",
+      "affectedCapabilities": [
+        "screen-reader",
+        "cognitive"
+      ]
+    },
+    "goose-type-ghost-goose": {
+      "component": "Goose type hidden paragraph",
+      "locators": [
+        {
+          "type": "text",
+          "value": "Ghost goose"
+        }
+      ],
+      "expectedBehaviour": "Content that receives focus is visible, and content that is not relevant is not in the tab order.",
+      "userImpact": "Focus appears to disappear for keyboard users, who cannot tell where they are or what will activate.",
+      "affectedCapabilities": [
+        "keyboard-only",
+        "low-vision",
+        "screen-magnification"
+      ]
+    },
+    "goose-type-placeholder": {
+      "component": "Goose type input",
+      "locators": [
+        {
+          "type": "css",
+          "value": "input[name=\"goose-type\"]"
+        }
+      ],
+      "expectedBehaviour": "Formatting instructions and hints stay visible during data entry and are programmatically associated with the field.",
+      "userImpact": "People with memory or cognitive impairments must clear the field to re-read the example, and may not know the expected format.",
+      "affectedCapabilities": [
+        "cognitive",
+        "screen-reader"
+      ]
+    },
+    "check-hidden-change-text": {
+      "component": "Check your answers change links",
+      "locators": [
+        {
+          "type": "xpath",
+          "value": "//*[contains(@class,'govuk-visually-hidden') and contains(., 'biscuits')]",
+          "note": "The first of the two incorrect hidden change labels."
+        }
+      ],
+      "expectedBehaviour": "Visually hidden text makes each Change link unique by naming the answer it changes.",
+      "userImpact": "Screen reader users hear meaningless words instead of the field being changed.",
+      "affectedCapabilities": [
+        "screen-reader",
+        "cognitive"
+      ]
+    },
+    "check-heading-order": {
+      "component": "Check your answers heading structure",
+      "locators": [
+        {
+          "type": "xpath",
+          "value": "(//h3)[1]",
+          "note": "The first h3 follows the h1 directly, skipping h2."
+        },
+        {
+          "type": "css",
+          "value": "h1"
+        }
+      ],
+      "expectedBehaviour": "Heading levels increase by one and reflect the structure of the page.",
+      "userImpact": "Screen reader users navigating by heading cannot tell whether content is missing or how the page is organised.",
+      "affectedCapabilities": [
+        "screen-reader",
+        "cognitive"
+      ]
+    },
+    "end-uppercase-heading": {
+      "component": "Confirmation panel title",
+      "locators": [
+        {
+          "type": "css",
+          "value": ".govuk-panel__title"
+        }
+      ],
+      "expectedBehaviour": "Headings use sentence case rather than words set entirely in capitals.",
+      "userImpact": "Words in all capitals lose their shape and are harder to read for people with dyslexia.",
+      "affectedCapabilities": [
+        "cognitive"
+      ]
+    },
+    "end-justified-text": {
+      "component": "Confirmation page paragraph",
+      "locators": [
+        {
+          "type": "css",
+          "value": ".justified-text"
+        }
+      ],
+      "expectedBehaviour": "Body paragraphs are left-aligned so that word and letter spacing stay even.",
+      "userImpact": "Justified spacing creates uneven gaps that make text harder to track for people with dyslexia.",
+      "affectedCapabilities": [
+        "cognitive"
+      ]
+    },
+    "end-gif-alt": {
+      "component": "Confirmation celebration image",
+      "locators": [
+        {
+          "type": "css",
+          "value": "img[src*=\"goose-celebration.gif\"]"
+        }
+      ],
+      "expectedBehaviour": "A meaningful image has a text alternative that conveys the information the image provides.",
+      "userImpact": "Screen reader users lose the confirmation message carried only by the animated image.",
+      "affectedCapabilities": [
+        "screen-reader"
+      ]
+    },
+    "end-animation-control": {
+      "component": "Confirmation celebration animation",
+      "locators": [
+        {
+          "type": "css",
+          "value": "img[src*=\"goose-celebration.gif\"]"
+        }
+      ],
+      "relatedElements": [
+        {
+          "purpose": "absent-pause-control",
+          "note": "No button or control exists to pause, stop or hide the animation."
+        }
+      ],
+      "expectedBehaviour": "Moving content that starts automatically can be paused, stopped or hidden, or runs for no more than five seconds.",
+      "userImpact": "Continuous movement distracts and can make the rest of the page difficult to use, particularly for people with attention-related conditions.",
+      "affectedCapabilities": [
+        "cognitive",
+        "reduced-motion"
+      ]
+    },
+    "start-image-filename-alt": {
+      "component": "Start page illustration",
+      "locators": [
+        {
+          "type": "css",
+          "value": "img[src*=\"goose-illustration.svg\"]"
+        }
+      ],
+      "expectedBehaviour": "The illustration's text alternative describes the scene rather than naming the file.",
+      "userImpact": "Screen reader users hear a file name instead of a description of the goose beside the pond.",
+      "affectedCapabilities": [
+        "screen-reader"
+      ]
+    }
+  },
+  "lab": {
+    "html-button-unnamed": {
+      "controlFixtureId": "html-button-named"
+    },
+    "react-button-initial": {
+      "controlFixtureId": "react-button-updated"
+    },
+    "vue-button-initial": {
+      "controlFixtureId": "vue-button-updated"
+    },
+    "paca-invalid-open": {
+      "controlFixtureId": "paca-valid-open"
+    },
+    "correlation-two-images-a": {
+      "controlFixtureId": "correlation-two-images-control"
+    },
+    "correlation-two-images-b": {
+      "controlFixtureId": "correlation-two-images-control"
+    },
+    "correlation-single-image": {
+      "controlFixtureId": "correlation-two-images-control"
+    },
+    "correlation-repeated-unnamed-a": {
+      "controlFixtureId": "correlation-repeated-named-a"
+    },
+    "correlation-repeated-unnamed-b": {
+      "controlFixtureId": "correlation-repeated-named-a"
+    },
+    "correlation-repeated-unnamed-c": {
+      "controlFixtureId": "correlation-repeated-named-a"
+    },
+    "paca-invalid-closed": {
+      "notApplicable": [
+        "controlFixtureId"
+      ]
+    }
+  }
+}

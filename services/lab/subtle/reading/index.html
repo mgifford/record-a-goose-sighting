@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en" data-test-ready="true">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Report a sighting: reference code</title>
+  <link rel="stylesheet" href="/lab/lab-styles.css">
+  <style>
+    .heading-3 { font-size: 1.125rem; font-weight: 700; margin: 1.5rem 0 0.5rem; }
+  </style>
+</head>
+<body>
+  <header><nav aria-label="Site"><a href="../../../">Record a goose sighting</a><a href="../../">Laboratory</a></nav></header>
+  <main>
+    <h1>Report a sighting: reference code</h1>
+    <p class="meta">Two versions of the same reference-code step. The hint and the section title are visible in both.</p>
+    <p>Compare what assistive technology reads for the field and for the section title in each version.</p>
+
+    <section aria-labelledby="variant-a">
+      <h2 id="variant-a">Variant A</h2>
+      <div class="fixture">
+        <form>
+          <div class="form-row">
+            <label for="reference-a">Reference code</label>
+            <p class="meta" id="hint-a" aria-hidden="true">Your reference code is on the confirmation email we sent you.</p>
+            <input id="reference-a" name="reference" type="text" autocomplete="off">
+          </div>
+        </form>
+        <p class="heading-3">What happens next</p>
+        <p>We will match your code to the original sighting and email you within five working days.</p>
+      </div>
+    </section>
+
+    <section aria-labelledby="variant-b">
+      <h2 id="variant-b">Variant B</h2>
+      <div class="fixture">
+        <form>
+          <div class="form-row">
+            <label for="reference-b">Reference code</label>
+            <p class="meta" id="hint-b">Your reference code is on the confirmation email we sent you.</p>
+            <input id="reference-b" name="reference" type="text" aria-describedby="hint-b" autocomplete="off">
+          </div>
+        </form>
+        <h3>What happens next</h3>
+        <p>We will match your code to the original sighting and email you within five working days.</p>
+      </div>
+    </section>
+  </main>
+  <footer><p>Part of the animal-reporting laboratory. MIT licensed.</p></footer>
+</body>
+</html>

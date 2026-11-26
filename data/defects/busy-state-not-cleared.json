@@ -1,0 +1,112 @@
+{
+  "service": "lab",
+  "fixtureId": null,
+  "aliases": [],
+  "preconditions": [],
+  "interactionSteps": [
+    {
+      "action": "click",
+      "selector": "#check-a"
+    },
+    {
+      "action": "waitFor",
+      "selector": "#results-a",
+      "note": "Text becomes 4 sessions available in the next seven days."
+    },
+    {
+      "action": "assert",
+      "selector": "#results-a",
+      "note": "aria-busy remains true."
+    }
+  ],
+  "environment": null,
+  "actRules": [],
+  "controlFixtureId": null,
+  "introducedIn": null,
+  "lastVerified": null,
+  "notApplicable": [
+    "fixtureId",
+    "actRules"
+  ],
+  "id": "busy-state-not-cleared",
+  "title": "Busy state is set and never cleared",
+  "description": "The availability check marks its status region aria-busy=true before the update and never removes the attribute. The visible results are correct, but assistive technology may keep treating the region as still updating and withhold the new content.",
+  "component": "Availability result region (variant A)",
+  "category": "dynamic-content",
+  "classification": "candidate-wcag-failure",
+  "url": "lab/subtle/status/",
+  "locators": [
+    {
+      "type": "css",
+      "value": "#results-a"
+    }
+  ],
+  "relatedElements": [
+    {
+      "purpose": "comparison-control",
+      "css": "#results-b",
+      "note": "Clears aria-busy after rendering the results."
+    }
+  ],
+  "expectedBehaviour": "A busy state is cleared once the update is complete, so the new content can be announced.",
+  "actualBehaviour": "aria-busy=true remains on the status region after the results have rendered.",
+  "userImpact": "Screen-reader users may never hear the result count even though it is visible on screen.",
+  "affectedCapabilities": [
+    "screen-reader"
+  ],
+  "wcag": [
+    {
+      "criterion": "4.1.3",
+      "status": "candidate",
+      "note": "A status update may be withheld because the region is marked busy indefinitely."
+    }
+  ],
+  "detection": {
+    "expectedMethods": [
+      "dom-inspection",
+      "mutation-observation"
+    ],
+    "observed": [],
+    "note": "The attribute is only observable after the asynchronous update."
+  },
+  "manualTests": [
+    "Activate Check availability with a screen reader running and listen for the result count."
+  ],
+  "assistiveTechnologyTests": [
+    {
+      "platform": "macOS",
+      "browser": "Safari",
+      "assistiveTechnology": "VoiceOver",
+      "procedure": "Navigate to the target with the VoiceOver rotor and confirm what is announced.",
+      "status": "not-run"
+    }
+  ],
+  "evidence": {
+    "assertions": [
+      "aria-busy remains true after the results text is rendered."
+    ],
+    "tests": [
+      "tests/subtle-defects.spec.js: keeps the busy state set in variant A"
+    ],
+    "artifacts": [],
+    "commands": [
+      "npx playwright test tests/subtle-defects.spec.js"
+    ]
+  },
+  "sources": [
+    {
+      "title": "WAI-ARIA 1.2: aria-busy",
+      "url": "https://www.w3.org/TR/wai-aria-1.2/#aria-busy"
+    }
+  ],
+  "reviewStatus": {
+    "lifecycle": "reproduced-automatically",
+    "dimensions": {
+      "automatedReproduction": "verified",
+      "manualReproduction": "not-run",
+      "assistiveTechnology": "not-run",
+      "independentReview": "not-run"
+    },
+    "note": "A Playwright regression test preserves the defective behaviour and its control. That is automated reproduction, not a manual or assistive-technology observation."
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "service": "lab",
+  "fixtureId": null,
+  "aliases": [],
+  "preconditions": [],
+  "interactionSteps": [],
+  "environment": null,
+  "actRules": [],
+  "controlFixtureId": null,
+  "introducedIn": null,
+  "lastVerified": null,
+  "notApplicable": [
+    "fixtureId",
+    "actRules"
+  ],
+  "id": "visual-heading-not-semantic",
+  "title": "Visually styled heading is absent from the heading list",
+  "description": "The What happens next title is a paragraph styled to look like a heading. It looks correct but does not appear in the heading list or the accessibility tree's heading navigation.",
+  "component": "What happens next section title (variant A)",
+  "category": "structure",
+  "classification": "candidate-wcag-failure",
+  "url": "lab/subtle/reading/",
+  "locators": [
+    {
+      "type": "css",
+      "value": ".heading-3"
+    }
+  ],
+  "relatedElements": [
+    {
+      "purpose": "comparison-control",
+      "css": "#variant-b h3",
+      "note": "A real h3 in the control."
+    }
+  ],
+  "expectedBehaviour": "Text that acts as a heading uses a heading element so it appears in the heading list.",
+  "actualBehaviour": "The title is a p element with heading-like styling and no heading semantics.",
+  "userImpact": "Screen-reader users who navigate by heading miss the section entirely.",
+  "affectedCapabilities": [
+    "screen-reader",
+    "cognitive"
+  ],
+  "wcag": [
+    {
+      "criterion": "1.3.1",
+      "status": "candidate"
+    }
+  ],
+  "detection": {
+    "expectedMethods": [
+      "accessibility-tree-inspection",
+      "assisted-visual-review"
+    ],
+    "observed": [],
+    "note": "Visual review alone accepts the styled paragraph; the accessibility tree exposes the missing heading."
+  },
+  "manualTests": [
+    "Open the headings list for the page and look for What happens next."
+  ],
+  "assistiveTechnologyTests": [
+    {
+      "platform": "macOS",
+      "browser": "Safari",
+      "assistiveTechnology": "VoiceOver",
+      "procedure": "Navigate to the target with the VoiceOver rotor and confirm what is announced.",
+      "status": "not-run"
+    }
+  ],
+  "evidence": {
+    "assertions": [
+      "No heading named What happens next exists in variant A, while variant B exposes an h3."
+    ],
+    "tests": [
+      "tests/subtle-defects.spec.js: keeps the visual-only heading out of the heading list in variant A"
+    ],
+    "artifacts": [],
+    "commands": [
+      "npx playwright test tests/subtle-defects.spec.js"
+    ]
+  },
+  "sources": [
+    {
+      "title": "WCAG 2.2 Understanding 1.3.1: Info and Relationships",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships"
+    }
+  ],
+  "reviewStatus": {
+    "lifecycle": "reproduced-automatically",
+    "dimensions": {
+      "automatedReproduction": "verified",
+      "manualReproduction": "not-run",
+      "assistiveTechnology": "not-run",
+      "independentReview": "not-run"
+    },
+    "note": "A Playwright regression test preserves the defective behaviour and its control. That is automated reproduction, not a manual or assistive-technology observation."
+  }
+}

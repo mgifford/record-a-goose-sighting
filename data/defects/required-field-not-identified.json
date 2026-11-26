@@ -1,0 +1,101 @@
+{
+  "service": "lab",
+  "fixtureId": null,
+  "aliases": [],
+  "preconditions": [],
+  "interactionSteps": [],
+  "environment": null,
+  "actRules": [],
+  "controlFixtureId": null,
+  "introducedIn": null,
+  "lastVerified": null,
+  "notApplicable": [
+    "fixtureId",
+    "actRules"
+  ],
+  "id": "required-field-not-identified",
+  "title": "Required field is not identified programmatically",
+  "description": "The date field is required to continue, but the input has neither a required attribute nor aria-required, and the label does not say so.",
+  "component": "Observation date field (variant A)",
+  "category": "forms",
+  "classification": "candidate-wcag-failure",
+  "url": "lab/subtle/errors/",
+  "locators": [
+    {
+      "type": "css",
+      "value": "#date-a"
+    }
+  ],
+  "relatedElements": [
+    {
+      "purpose": "comparison-control",
+      "css": "#date-b",
+      "note": "Uses the native required attribute."
+    },
+    {
+      "purpose": "label",
+      "css": "label[for=\"date-a\"]"
+    }
+  ],
+  "expectedBehaviour": "A field that must be completed is identified as required programmatically.",
+  "actualBehaviour": "The input has no required or aria-required attribute and no visible required indicator.",
+  "userImpact": "Screen-reader users are not told that the field is required until submission fails.",
+  "affectedCapabilities": [
+    "screen-reader",
+    "cognitive"
+  ],
+  "wcag": [
+    {
+      "criterion": "3.3.2",
+      "status": "candidate"
+    }
+  ],
+  "detection": {
+    "expectedMethods": [
+      "dom-inspection",
+      "accessibility-tree-inspection"
+    ],
+    "observed": [],
+    "note": "Static and accessibility-tree inspection both expose the missing state."
+  },
+  "manualTests": [
+    "Move to the date field in forms mode and listen for whether it is announced as required."
+  ],
+  "assistiveTechnologyTests": [
+    {
+      "platform": "macOS",
+      "browser": "Safari",
+      "assistiveTechnology": "VoiceOver",
+      "procedure": "Navigate to the target with the VoiceOver rotor and confirm what is announced.",
+      "status": "not-run"
+    }
+  ],
+  "evidence": {
+    "assertions": [
+      "#date-a has no required attribute; #date-b has required."
+    ],
+    "tests": [
+      "tests/subtle-defects.spec.js: keeps variant A errors unassociated, unfocused and linked to nothing"
+    ],
+    "artifacts": [],
+    "commands": [
+      "npx playwright test tests/subtle-defects.spec.js"
+    ]
+  },
+  "sources": [
+    {
+      "title": "WCAG 2.2 Understanding 3.3.2: Labels or Instructions",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/labels-or-instructions"
+    }
+  ],
+  "reviewStatus": {
+    "lifecycle": "reproduced-automatically",
+    "dimensions": {
+      "automatedReproduction": "verified",
+      "manualReproduction": "not-run",
+      "assistiveTechnology": "not-run",
+      "independentReview": "not-run"
+    },
+    "note": "A Playwright regression test preserves the defective behaviour and its control. That is automated reproduction, not a manual or assistive-technology observation."
+  }
+}

@@ -39,6 +39,13 @@ const entries = [
   'lab/preferences/reduced-motion/index.html',
   'lab/preferences/forced-colors/index.html',
   'lab/preferences/text-spacing/index.html',
+  'lab/subtle/names/index.html',
+  'lab/subtle/focus-removal/index.html',
+  'lab/subtle/status/index.html',
+  'lab/subtle/errors/index.html',
+  'lab/subtle/aria-state/index.html',
+  'lab/subtle/keyboard-toggle/index.html',
+  'lab/subtle/reading/index.html',
   'hedgehog/index.html',
   'wombat/index.html',
   'paca/index.html'
