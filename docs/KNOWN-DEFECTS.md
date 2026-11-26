@@ -40,18 +40,18 @@ The registry is generated from these files. Each digest is the SHA-256 of the co
 | `docs/original-goose-issues.json` | goose-inventory | `d161c9d46e2f74fa9cc469638eeee46a785cf5b73a83b5c696128d81af54f001` |
 | `services/lab/fixtures.json` | act-fixture-manifest | `0066f64fedf2b6bf4f57af7689436256d7388099d8c7fc85ac6835c667b386a0` |
 | `data/defect-annotations.json` | annotation | `7e4606251a6a74cc1fe50cba90068e8ca84abf8959ca1a864c40e6099203fb72` |
-| `data/defects/busy-state-not-cleared.json` | defect-record | `2b9c043e781dd08f95704a4e69aba1f5a6a65fe0c8c32c0ee320b8963e3cd2d6` |
-| `data/defects/disclosure-expanded-state-stale.json` | defect-record | `d56b2c2c0c3fc823e2af2870190d9300426a2295e3c63d1a3c51c1b5481f8fa2` |
-| `data/defects/error-focus-not-moved-to-summary.json` | defect-record | `36aabe4c5d21f2f1edffcdc156373bee2afbb888ff958629db537e3ab97f5797` |
-| `data/defects/error-not-associated-with-field.json` | defect-record | `b3ee1ba0fc4fc4aebefd815c03e6a74a6ffec7612686cb7fa195c9d20d0f16ce` |
-| `data/defects/error-summary-link-broken.json` | defect-record | `ae5c0050d33836c3781293148cd624e50ca164dcad0d6625f4d7f8766915e237` |
-| `data/defects/focus-lost-after-item-removal.json` | defect-record | `a212f5c41073ebc1903438cf8ac1d46856d48854a1b596776399a9d523649525` |
-| `data/defects/hint-hidden-from-accessibility-tree.json` | defect-record | `636185107d955cb922b6db1a400b721114d89c1e588708ce6271791d62616a6b` |
-| `data/defects/name-contradicts-visible-label.json` | defect-record | `92b80f30b41c53e76e1890d27320f5ed951dabbc33cbb8fbb882d7074ede9ab0` |
-| `data/defects/required-field-not-identified.json` | defect-record | `8486e3400b4df6a707435e5df3181830a1d73ec4f21816e862585942f55e6b19` |
-| `data/defects/status-message-not-announced.json` | defect-record | `5a5603387411fa0afa71cce7c6c2bd62aec86e0611ad49763ba83338a9cd7039` |
-| `data/defects/switch-pointer-only.json` | defect-record | `a8c0a6a248a0f4cef3773c4283d94cf030e1cdf2269eccbe30f203d0d023d962` |
-| `data/defects/visual-heading-not-semantic.json` | defect-record | `12bc5302a17088875324b472d58e23063a499100b2d4a66ccde627df12bf18f6` |
+| `data/defects/busy-state-not-cleared.json` | defect-record | `ef87796caf4003d743cb591a779a8fa1675dae4d071e54452c90812102980752` |
+| `data/defects/disclosure-expanded-state-stale.json` | defect-record | `5b804d2d11289b2cdc3417db78bbb3b3133ee083d82ae625479e3eceadbf43fb` |
+| `data/defects/error-focus-not-moved-to-summary.json` | defect-record | `efb0acb6a802abcb99ba801cafdeec6592e8c90afcdacba320c6be5dbd7906a3` |
+| `data/defects/error-not-associated-with-field.json` | defect-record | `226ad1880fb4a7f9a64e5a3b69a44d5a7a0971583dddc2a6e40803df27b4068c` |
+| `data/defects/error-summary-link-broken.json` | defect-record | `49f187f0861361c1d21f1d2d149e6d7793e4fbfe523a25f2329da21b31a350dd` |
+| `data/defects/focus-lost-after-item-removal.json` | defect-record | `d7847473b0287daad2bab8e90d1502713b470baf7da5cfcf58cfa3da0e017da2` |
+| `data/defects/hint-hidden-from-accessibility-tree.json` | defect-record | `573eec73047d294eff52b2a0fa84e8c79f60693c5f99db7702b4fa04e36836d1` |
+| `data/defects/name-contradicts-visible-label.json` | defect-record | `53d584b052da845e149dd00d9921df9827257cbb047b61371aac0d7e8f6a8422` |
+| `data/defects/required-field-not-identified.json` | defect-record | `e4a81abc0a8558d32e243fc0ef97465464110638964a496057bf651c6f5aec6f` |
+| `data/defects/status-message-not-announced.json` | defect-record | `9616b0506e54441902c834732290cd391aafab0ceb19c5752a80e4964053d496` |
+| `data/defects/switch-pointer-only.json` | defect-record | `c68e5b41528a7bd7fc8f5a1ed082c10160d7d172ea72050397579f1977929714` |
+| `data/defects/visual-heading-not-semantic.json` | defect-record | `77e14b011e0e106af81687f3353679713f1ed86d218812a2d1cb822db2a1ebfb` |
 | `data/schemas/known-defects.schema.json` | schema | `05c8d26531e253a87172e26451f2bcd930599715fe186e7a84c438a825818f7e` |
 
 ## Service: goose (19)
@@ -578,6 +578,7 @@ The registry is generated from these files. Each digest is the SHA-256 of the co
 - **Detection:** dom-inspection; mutation-observation. The attribute is only observable after the asynchronous update.
 - **Manual test:** Activate Check availability with a screen reader running and listen for the result count.
 - **Assistive technology:** macOS / Safari / VoiceOver: not-run
+- **Engine observations:** axe-core 4.14.1 not-detected on 2026-11-26
 - **Review:** reproduced-automatically (automatedReproduction: verified, manualReproduction: not-run, assistiveTechnology: not-run, independentReview: not-run)
 - **Review note:** A Playwright regression test preserves the defective behaviour and its control. That is automated reproduction, not a manual or assistive-technology observation.
 - **Comparison control:** `#results-b` (Clears aria-busy after rendering the results.)
@@ -804,6 +805,7 @@ The registry is generated from these files. Each digest is the SHA-256 of the co
 - **Detection:** accessibility-tree-inspection; dom-inspection; automated-pointer-interaction. The initial state is valid; only the post-interaction state is wrong.
 - **Manual test:** Open the panel with a screen reader running and listen to the button's expanded state.
 - **Assistive technology:** macOS / Safari / VoiceOver: not-run
+- **Engine observations:** axe-core 4.14.1 not-detected on 2026-11-26
 - **Review:** reproduced-automatically (automatedReproduction: verified, manualReproduction: not-run, assistiveTechnology: not-run, independentReview: not-run)
 - **Review note:** A Playwright regression test preserves the defective behaviour and its control. That is automated reproduction, not a manual or assistive-technology observation.
 - **Comparison control:** `#toggle-b` (Updates aria-expanded on each toggle.)
@@ -830,6 +832,7 @@ The registry is generated from these files. Each digest is the SHA-256 of the co
 - **Detection:** automated-keyboard-interaction; dom-inspection. Requires an interaction test that records document.activeElement after submit.
 - **Manual test:** Submit the empty form with the keyboard and check whether focus moves to the summary.
 - **Assistive technology:** macOS / Safari / VoiceOver: not-run
+- **Engine observations:** axe-core 4.14.1 not-detected on 2026-11-26
 - **Review:** reproduced-automatically (automatedReproduction: verified, manualReproduction: not-run, assistiveTechnology: not-run, independentReview: not-run)
 - **Review note:** A Playwright regression test preserves the defective behaviour and its control. That is automated reproduction, not a manual or assistive-technology observation.
 - **Comparison control:** `#summary-b-heading` (Receives focus when the summary is shown.)
@@ -856,6 +859,7 @@ The registry is generated from these files. Each digest is the SHA-256 of the co
 - **Detection:** dom-inspection; accessibility-tree-inspection. Automated scanners often detect this pattern, but the defect is defined by the missing association rather than by any specific tool rule.
 - **Manual test:** Submit the empty form, then move to the date field in forms mode and listen for the error.
 - **Assistive technology:** macOS / Safari / VoiceOver: not-run
+- **Engine observations:** axe-core 4.14.1 not-detected on 2026-11-26
 - **Review:** reproduced-automatically (automatedReproduction: verified, manualReproduction: not-run, assistiveTechnology: not-run, independentReview: not-run)
 - **Review note:** A Playwright regression test preserves the defective behaviour and its control. That is automated reproduction, not a manual or assistive-technology observation.
 - **Comparison control:** `#date-b` (Describes the field with the hint and the error and sets aria-invalid.)
@@ -881,6 +885,7 @@ The registry is generated from these files. Each digest is the SHA-256 of the co
 - **Affected capabilities:** screen-reader; keyboard-only; cognitive
 - **Detection:** dom-inspection; heuristic-analysis. No WCAG failure is claimed: the error is still identified in text. The defect is an inoperative recovery link.
 - **Manual test:** Submit the empty form and activate the error summary link. Check whether focus moves to the field.
+- **Engine observations:** axe-core 4.14.1 not-detected on 2026-11-26
 - **Review:** reproduced-automatically (automatedReproduction: verified, manualReproduction: not-run, assistiveTechnology: not-run, independentReview: not-run)
 - **Review note:** A Playwright regression test preserves the defective behaviour and its control. That is automated reproduction, not a manual or assistive-technology observation.
 - **Comparison control:** `#summary-b a` (Links to the real field id.)
@@ -932,6 +937,7 @@ The registry is generated from these files. Each digest is the SHA-256 of the co
 - **Detection:** automated-keyboard-interaction; dom-inspection. Only an interaction test that records document.activeElement after the update exposes this.
 - **Manual test:** Focus the second Remove button and activate it. Check where focus goes without touching the mouse.
 - **Assistive technology:** Windows / Firefox / NVDA: not-run
+- **Engine observations:** axe-core 4.14.1 not-detected on 2026-11-26
 - **Review:** reproduced-automatically (automatedReproduction: verified, manualReproduction: not-run, assistiveTechnology: not-run, independentReview: not-run)
 - **Review note:** A Playwright regression test preserves the defective behaviour and its control. That is automated reproduction, not a manual or assistive-technology observation.
 - **Comparison control:** `#remove-b-2` (Moves focus to the next remaining Remove button.)
@@ -1058,6 +1064,7 @@ The registry is generated from these files. Each digest is the SHA-256 of the co
 - **Detection:** accessibility-tree-inspection; dom-inspection. The text is visible, so an automated check that only looks for a description may treat the field as described.
 - **Manual test:** Move to the Reference code field in forms mode and listen for the hint.
 - **Assistive technology:** macOS / Safari / VoiceOver: not-run
+- **Engine observations:** axe-core 4.14.1 not-detected on 2026-11-26
 - **Review:** reproduced-automatically (automatedReproduction: verified, manualReproduction: not-run, assistiveTechnology: not-run, independentReview: not-run)
 - **Review note:** A Playwright regression test preserves the defective behaviour and its control. That is automated reproduction, not a manual or assistive-technology observation.
 - **Comparison control:** `#reference-b` (Associates a hint that remains in the accessibility tree.)
@@ -1184,6 +1191,7 @@ The registry is generated from these files. Each digest is the SHA-256 of the co
 - **Detection:** accessibility-tree-inspection; dom-inspection; manual-keyboard-evaluation. Automated name checks pass because the name is non-empty. Comparing the name with the visible label needs a human review or a heuristic check.
 - **Manual test:** Open the accessibility tree for both buttons and compare each accessible name with the text printed on the button.; Try to activate variant A by voice using its visible label.
 - **Assistive technology:** macOS / Safari / VoiceOver: not-run
+- **Engine observations:** axe-core 4.14.1 detected (label-content-name-mismatch) on 2026-11-26
 - **Review:** reproduced-automatically (automatedReproduction: verified, manualReproduction: not-run, assistiveTechnology: not-run, independentReview: not-run)
 - **Review note:** A Playwright regression test preserves the defective behaviour and its control. That is automated reproduction, not a manual or assistive-technology observation.
 - **Comparison control:** `#delete-b` (Identical button whose accessible name matches the visible label.)
@@ -1210,6 +1218,7 @@ The registry is generated from these files. Each digest is the SHA-256 of the co
 - **Detection:** dom-inspection; accessibility-tree-inspection. Static and accessibility-tree inspection both expose the missing state.
 - **Manual test:** Move to the date field in forms mode and listen for whether it is announced as required.
 - **Assistive technology:** macOS / Safari / VoiceOver: not-run
+- **Engine observations:** axe-core 4.14.1 not-detected on 2026-11-26
 - **Review:** reproduced-automatically (automatedReproduction: verified, manualReproduction: not-run, assistiveTechnology: not-run, independentReview: not-run)
 - **Review note:** A Playwright regression test preserves the defective behaviour and its control. That is automated reproduction, not a manual or assistive-technology observation.
 - **Comparison control:** `#date-b` (Uses the native required attribute.)
@@ -1236,6 +1245,7 @@ The registry is generated from these files. Each digest is the SHA-256 of the co
 - **Detection:** dom-inspection; accessibility-tree-inspection; manual-keyboard-evaluation. Static analysis cannot prove the absence of an announcement; a screen-reader check or a live-region heuristic is required.
 - **Manual test:** Turn on a screen reader, activate Save draft and listen for a confirmation.
 - **Assistive technology:** macOS / Safari / VoiceOver: not-run
+- **Engine observations:** axe-core 4.14.1 not-detected on 2026-11-26
 - **Review:** reproduced-automatically (automatedReproduction: verified, manualReproduction: not-run, assistiveTechnology: not-run, independentReview: not-run)
 - **Review note:** A Playwright regression test preserves the defective behaviour and its control. That is automated reproduction, not a manual or assistive-technology observation.
 - **Comparison control:** `#saved-b` (An always-present role=status region whose text is updated.)
@@ -1262,6 +1272,7 @@ The registry is generated from these files. Each digest is the SHA-256 of the co
 - **Detection:** automated-keyboard-interaction; dom-inspection. The role, name and focusability are all correct, so static checks pass.
 - **Manual test:** Focus the switch and press Space, then Enter. Confirm that the state does not change.
 - **Assistive technology:** Windows / Chrome / NVDA: not-run
+- **Engine observations:** axe-core 4.14.1 not-detected on 2026-11-26
 - **Review:** reproduced-automatically (automatedReproduction: verified, manualReproduction: not-run, assistiveTechnology: not-run, independentReview: not-run)
 - **Review note:** A Playwright regression test preserves the defective behaviour and its control. That is automated reproduction, not a manual or assistive-technology observation.
 - **Comparison control:** `#switch-b` (A native button with role=switch, which handles Space and Enter.)
@@ -1288,6 +1299,7 @@ The registry is generated from these files. Each digest is the SHA-256 of the co
 - **Detection:** accessibility-tree-inspection; assisted-visual-review. Visual review alone accepts the styled paragraph; the accessibility tree exposes the missing heading.
 - **Manual test:** Open the headings list for the page and look for What happens next.
 - **Assistive technology:** macOS / Safari / VoiceOver: not-run
+- **Engine observations:** axe-core 4.14.1 not-detected on 2026-11-26
 - **Review:** reproduced-automatically (automatedReproduction: verified, manualReproduction: not-run, assistiveTechnology: not-run, independentReview: not-run)
 - **Review note:** A Playwright regression test preserves the defective behaviour and its control. That is automated reproduction, not a manual or assistive-technology observation.
 - **Comparison control:** `#variant-b h3` (A real h3 in the control.)

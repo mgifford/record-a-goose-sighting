@@ -73,9 +73,9 @@ version, the site URL, source digests, counts and the full defect list.
   the release notes.
 - A new required field needs a new `schemaVersion`.
 - The manifest is deterministic; `sources[].sha256` lets a consumer detect fixture churn.
-- The registry never contains observed engine results. Those belong in Open Scans. The
-  `detection.observed` array exists for contributors who record an observation, but the
-  generated registry ships none.
+- Observations belong in Open Scans. The registry's `detection.observed` array is for
+  small, dated observations made while developing a fixture (for example an axe-core run);
+  it is not a scan archive and must not become one.
 
 ## Blind evaluation
 

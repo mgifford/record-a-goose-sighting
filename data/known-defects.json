@@ -25,73 +25,73 @@
       "path": "data/defects/busy-state-not-cleared.json",
       "kind": "defect-record",
       "description": "Hand-authored defect record for a defect that is not an ACT fixture case.",
-      "sha256": "2b9c043e781dd08f95704a4e69aba1f5a6a65fe0c8c32c0ee320b8963e3cd2d6"
+      "sha256": "ef87796caf4003d743cb591a779a8fa1675dae4d071e54452c90812102980752"
     },
     {
       "path": "data/defects/disclosure-expanded-state-stale.json",
       "kind": "defect-record",
       "description": "Hand-authored defect record for a defect that is not an ACT fixture case.",
-      "sha256": "d56b2c2c0c3fc823e2af2870190d9300426a2295e3c63d1a3c51c1b5481f8fa2"
+      "sha256": "5b804d2d11289b2cdc3417db78bbb3b3133ee083d82ae625479e3eceadbf43fb"
     },
     {
       "path": "data/defects/error-focus-not-moved-to-summary.json",
       "kind": "defect-record",
       "description": "Hand-authored defect record for a defect that is not an ACT fixture case.",
-      "sha256": "36aabe4c5d21f2f1edffcdc156373bee2afbb888ff958629db537e3ab97f5797"
+      "sha256": "efb0acb6a802abcb99ba801cafdeec6592e8c90afcdacba320c6be5dbd7906a3"
     },
     {
       "path": "data/defects/error-not-associated-with-field.json",
       "kind": "defect-record",
       "description": "Hand-authored defect record for a defect that is not an ACT fixture case.",
-      "sha256": "b3ee1ba0fc4fc4aebefd815c03e6a74a6ffec7612686cb7fa195c9d20d0f16ce"
+      "sha256": "226ad1880fb4a7f9a64e5a3b69a44d5a7a0971583dddc2a6e40803df27b4068c"
     },
     {
       "path": "data/defects/error-summary-link-broken.json",
       "kind": "defect-record",
       "description": "Hand-authored defect record for a defect that is not an ACT fixture case.",
-      "sha256": "ae5c0050d33836c3781293148cd624e50ca164dcad0d6625f4d7f8766915e237"
+      "sha256": "49f187f0861361c1d21f1d2d149e6d7793e4fbfe523a25f2329da21b31a350dd"
     },
     {
       "path": "data/defects/focus-lost-after-item-removal.json",
       "kind": "defect-record",
       "description": "Hand-authored defect record for a defect that is not an ACT fixture case.",
-      "sha256": "a212f5c41073ebc1903438cf8ac1d46856d48854a1b596776399a9d523649525"
+      "sha256": "d7847473b0287daad2bab8e90d1502713b470baf7da5cfcf58cfa3da0e017da2"
     },
     {
       "path": "data/defects/hint-hidden-from-accessibility-tree.json",
       "kind": "defect-record",
       "description": "Hand-authored defect record for a defect that is not an ACT fixture case.",
-      "sha256": "636185107d955cb922b6db1a400b721114d89c1e588708ce6271791d62616a6b"
+      "sha256": "573eec73047d294eff52b2a0fa84e8c79f60693c5f99db7702b4fa04e36836d1"
     },
     {
       "path": "data/defects/name-contradicts-visible-label.json",
       "kind": "defect-record",
       "description": "Hand-authored defect record for a defect that is not an ACT fixture case.",
-      "sha256": "92b80f30b41c53e76e1890d27320f5ed951dabbc33cbb8fbb882d7074ede9ab0"
+      "sha256": "53d584b052da845e149dd00d9921df9827257cbb047b61371aac0d7e8f6a8422"
     },
     {
       "path": "data/defects/required-field-not-identified.json",
       "kind": "defect-record",
       "description": "Hand-authored defect record for a defect that is not an ACT fixture case.",
-      "sha256": "8486e3400b4df6a707435e5df3181830a1d73ec4f21816e862585942f55e6b19"
+      "sha256": "e4a81abc0a8558d32e243fc0ef97465464110638964a496057bf651c6f5aec6f"
     },
     {
       "path": "data/defects/status-message-not-announced.json",
       "kind": "defect-record",
       "description": "Hand-authored defect record for a defect that is not an ACT fixture case.",
-      "sha256": "5a5603387411fa0afa71cce7c6c2bd62aec86e0611ad49763ba83338a9cd7039"
+      "sha256": "9616b0506e54441902c834732290cd391aafab0ceb19c5752a80e4964053d496"
     },
     {
       "path": "data/defects/switch-pointer-only.json",
       "kind": "defect-record",
       "description": "Hand-authored defect record for a defect that is not an ACT fixture case.",
-      "sha256": "a8c0a6a248a0f4cef3773c4283d94cf030e1cdf2269eccbe30f203d0d023d962"
+      "sha256": "c68e5b41528a7bd7fc8f5a1ed082c10160d7d172ea72050397579f1977929714"
     },
     {
       "path": "data/defects/visual-heading-not-semantic.json",
       "kind": "defect-record",
       "description": "Hand-authored defect record for a defect that is not an ACT fixture case.",
-      "sha256": "12bc5302a17088875324b472d58e23063a499100b2d4a66ccde627df12bf18f6"
+      "sha256": "77e14b011e0e106af81687f3353679713f1ed86d218812a2d1cb822db2a1ebfb"
     },
     {
       "path": "data/schemas/known-defects.schema.json",
@@ -2075,7 +2075,19 @@
           "dom-inspection",
           "mutation-observation"
         ],
-        "observed": [],
+        "observed": [
+          {
+            "date": "2026-11-26",
+            "engine": "axe-core",
+            "engineVersion": "4.14.1",
+            "browser": "Chromium via Playwright 1.65.1",
+            "interactionState": "default page state",
+            "ruleId": null,
+            "result": "not-detected",
+            "note": "Page-level axe run with tags wcag2a, wcag2aa, wcag21a, wcag21aa and best-practice. No violation was reported for this page in its default state; the control on the same page also passes.",
+            "evidence": "tests/detection-observations.spec.js"
+          }
+        ],
         "note": "The attribute is only observable after the asynchronous update."
       },
       "manualTests": [
@@ -2905,7 +2917,19 @@
           "dom-inspection",
           "automated-pointer-interaction"
         ],
-        "observed": [],
+        "observed": [
+          {
+            "date": "2026-11-26",
+            "engine": "axe-core",
+            "engineVersion": "4.14.1",
+            "browser": "Chromium via Playwright 1.65.1",
+            "interactionState": "default page state",
+            "ruleId": null,
+            "result": "not-detected",
+            "note": "Page-level axe run with tags wcag2a, wcag2aa, wcag21a, wcag21aa and best-practice. No violation was reported for this page in its default state; the control on the same page also passes.",
+            "evidence": "tests/detection-observations.spec.js"
+          }
+        ],
         "note": "The initial state is valid; only the post-interaction state is wrong."
       },
       "manualTests": [
@@ -3025,7 +3049,19 @@
           "automated-keyboard-interaction",
           "dom-inspection"
         ],
-        "observed": [],
+        "observed": [
+          {
+            "date": "2026-11-26",
+            "engine": "axe-core",
+            "engineVersion": "4.14.1",
+            "browser": "Chromium via Playwright 1.65.1",
+            "interactionState": "default page state",
+            "ruleId": null,
+            "result": "not-detected",
+            "note": "Page-level axe run with tags wcag2a, wcag2aa, wcag21a, wcag21aa and best-practice. No violation was reported for this page in its default state; the control on the same page also passes.",
+            "evidence": "tests/detection-observations.spec.js"
+          }
+        ],
         "note": "Requires an interaction test that records document.activeElement after submit."
       },
       "manualTests": [
@@ -3147,7 +3183,19 @@
           "dom-inspection",
           "accessibility-tree-inspection"
         ],
-        "observed": [],
+        "observed": [
+          {
+            "date": "2026-11-26",
+            "engine": "axe-core",
+            "engineVersion": "4.14.1",
+            "browser": "Chromium via Playwright 1.65.1",
+            "interactionState": "default page state",
+            "ruleId": null,
+            "result": "not-detected",
+            "note": "Page-level axe run with tags wcag2a, wcag2aa, wcag21a, wcag21aa and best-practice. No violation was reported for this page in its default state; the control on the same page also passes.",
+            "evidence": "tests/detection-observations.spec.js"
+          }
+        ],
         "note": "Automated scanners often detect this pattern, but the defect is defined by the missing association rather than by any specific tool rule."
       },
       "manualTests": [
@@ -3272,7 +3320,19 @@
           "dom-inspection",
           "heuristic-analysis"
         ],
-        "observed": [],
+        "observed": [
+          {
+            "date": "2026-11-26",
+            "engine": "axe-core",
+            "engineVersion": "4.14.1",
+            "browser": "Chromium via Playwright 1.65.1",
+            "interactionState": "default page state",
+            "ruleId": null,
+            "result": "not-detected",
+            "note": "Page-level axe run with tags wcag2a, wcag2aa, wcag21a, wcag21aa and best-practice. No violation was reported for this page in its default state; the control on the same page also passes.",
+            "evidence": "tests/detection-observations.spec.js"
+          }
+        ],
         "note": "No WCAG failure is claimed: the error is still identified in text. The defect is an inoperative recovery link."
       },
       "manualTests": [
@@ -3481,7 +3541,19 @@
           "automated-keyboard-interaction",
           "dom-inspection"
         ],
-        "observed": [],
+        "observed": [
+          {
+            "date": "2026-11-26",
+            "engine": "axe-core",
+            "engineVersion": "4.14.1",
+            "browser": "Chromium via Playwright 1.65.1",
+            "interactionState": "default page state",
+            "ruleId": null,
+            "result": "not-detected",
+            "note": "Page-level axe run with tags wcag2a, wcag2aa, wcag21a, wcag21aa and best-practice. No violation was reported for this page in its default state; the control on the same page also passes.",
+            "evidence": "tests/detection-observations.spec.js"
+          }
+        ],
         "note": "Only an interaction test that records document.activeElement after the update exposes this."
       },
       "manualTests": [
@@ -3959,7 +4031,19 @@
           "accessibility-tree-inspection",
           "dom-inspection"
         ],
-        "observed": [],
+        "observed": [
+          {
+            "date": "2026-11-26",
+            "engine": "axe-core",
+            "engineVersion": "4.14.1",
+            "browser": "Chromium via Playwright 1.65.1",
+            "interactionState": "default page state",
+            "ruleId": null,
+            "result": "not-detected",
+            "note": "Page-level axe run with tags wcag2a, wcag2aa, wcag21a, wcag21aa and best-practice. No violation was reported for this page in its default state; the control on the same page also passes.",
+            "evidence": "tests/detection-observations.spec.js"
+          }
+        ],
         "note": "The text is visible, so an automated check that only looks for a description may treat the field as described."
       },
       "manualTests": [
@@ -4442,7 +4526,19 @@
           "dom-inspection",
           "manual-keyboard-evaluation"
         ],
-        "observed": [],
+        "observed": [
+          {
+            "date": "2026-11-26",
+            "engine": "axe-core",
+            "engineVersion": "4.14.1",
+            "browser": "Chromium via Playwright 1.65.1",
+            "interactionState": "default page state",
+            "ruleId": "label-content-name-mismatch",
+            "result": "detected",
+            "note": "Page-level axe run with tags wcag2a, wcag2aa, wcag21a, wcag21aa and best-practice. The rule reports the visible Delete observation label against the Save observation accessible name.",
+            "evidence": "tests/detection-observations.spec.js"
+          }
+        ],
         "note": "Automated name checks pass because the name is non-empty. Comparing the name with the visible label needs a human review or a heuristic check."
       },
       "manualTests": [
@@ -4552,7 +4648,19 @@
           "dom-inspection",
           "accessibility-tree-inspection"
         ],
-        "observed": [],
+        "observed": [
+          {
+            "date": "2026-11-26",
+            "engine": "axe-core",
+            "engineVersion": "4.14.1",
+            "browser": "Chromium via Playwright 1.65.1",
+            "interactionState": "default page state",
+            "ruleId": null,
+            "result": "not-detected",
+            "note": "Page-level axe run with tags wcag2a, wcag2aa, wcag21a, wcag21aa and best-practice. No violation was reported for this page in its default state; the control on the same page also passes.",
+            "evidence": "tests/detection-observations.spec.js"
+          }
+        ],
         "note": "Static and accessibility-tree inspection both expose the missing state."
       },
       "manualTests": [
@@ -4673,7 +4781,19 @@
           "accessibility-tree-inspection",
           "manual-keyboard-evaluation"
         ],
-        "observed": [],
+        "observed": [
+          {
+            "date": "2026-11-26",
+            "engine": "axe-core",
+            "engineVersion": "4.14.1",
+            "browser": "Chromium via Playwright 1.65.1",
+            "interactionState": "default page state",
+            "ruleId": null,
+            "result": "not-detected",
+            "note": "Page-level axe run with tags wcag2a, wcag2aa, wcag21a, wcag21aa and best-practice. No violation was reported for this page in its default state; the control on the same page also passes.",
+            "evidence": "tests/detection-observations.spec.js"
+          }
+        ],
         "note": "Static analysis cannot prove the absence of an announcement; a screen-reader check or a live-region heuristic is required."
       },
       "manualTests": [
@@ -4789,7 +4909,19 @@
           "automated-keyboard-interaction",
           "dom-inspection"
         ],
-        "observed": [],
+        "observed": [
+          {
+            "date": "2026-11-26",
+            "engine": "axe-core",
+            "engineVersion": "4.14.1",
+            "browser": "Chromium via Playwright 1.65.1",
+            "interactionState": "default page state",
+            "ruleId": null,
+            "result": "not-detected",
+            "note": "Page-level axe run with tags wcag2a, wcag2aa, wcag21a, wcag21aa and best-practice. No violation was reported for this page in its default state; the control on the same page also passes.",
+            "evidence": "tests/detection-observations.spec.js"
+          }
+        ],
         "note": "The role, name and focusability are all correct, so static checks pass."
       },
       "manualTests": [
@@ -4894,7 +5026,19 @@
           "accessibility-tree-inspection",
           "assisted-visual-review"
         ],
-        "observed": [],
+        "observed": [
+          {
+            "date": "2026-11-26",
+            "engine": "axe-core",
+            "engineVersion": "4.14.1",
+            "browser": "Chromium via Playwright 1.65.1",
+            "interactionState": "default page state",
+            "ruleId": null,
+            "result": "not-detected",
+            "note": "Page-level axe run with tags wcag2a, wcag2aa, wcag21a, wcag21aa and best-practice. No violation was reported for this page in its default state; the control on the same page also passes.",
+            "evidence": "tests/detection-observations.spec.js"
+          }
+        ],
         "note": "Visual review alone accepts the styled paragraph; the accessibility tree exposes the missing heading."
       },
       "manualTests": [

@@ -67,7 +67,19 @@
       "accessibility-tree-inspection",
       "manual-keyboard-evaluation"
     ],
-    "observed": [],
+    "observed": [
+      {
+        "date": "2026-11-26",
+        "engine": "axe-core",
+        "engineVersion": "4.14.1",
+        "browser": "Chromium via Playwright 1.65.1",
+        "interactionState": "default page state",
+        "ruleId": null,
+        "result": "not-detected",
+        "note": "Page-level axe run with tags wcag2a, wcag2aa, wcag21a, wcag21aa and best-practice. No violation was reported for this page in its default state; the control on the same page also passes.",
+        "evidence": "tests/detection-observations.spec.js"
+      }
+    ],
     "note": "Static analysis cannot prove the absence of an announcement; a screen-reader check or a live-region heuristic is required."
   },
   "manualTests": [

@@ -70,8 +70,9 @@ byte differs. CI runs it before the build.
   manual reproduction, assistive technology, and independent review. A record cannot be
   `independently-reviewed` or `assistive-technology-verified` without the matching
   dimension.
-- `detection.observed` is only for real engine observations with a date, engine and result.
-  The generated registry contains none until someone runs a tool and records it.
+- `detection.observed` is only for real engine observations with a date, engine, version and
+  result. Curated records may carry a dated observation (for example an axe-core run on
+  2026-11-26); imported records carry none until someone records one.
 
 ### Schema and validation
 

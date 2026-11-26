@@ -170,6 +170,9 @@ export function renderMarkdown (registry, { siteUrl = normalizeSiteUrl() } = {})
       if (defect.assistiveTechnologyTests.length > 0) {
         lines.push(`- **Assistive technology:** ${joinOrNone(defect.assistiveTechnologyTests, (test) => `${escapeMarkdown(test.platform)} / ${escapeMarkdown(test.browser)} / ${escapeMarkdown(test.assistiveTechnology)}: ${test.status}`)}`)
       }
+      if (defect.detection.observed.length > 0) {
+        lines.push(`- **Engine observations:** ${joinOrNone(defect.detection.observed, (observation) => `${observation.engine}${observation.engineVersion ? ` ${observation.engineVersion}` : ''} ${observation.result}${observation.ruleId ? ` (${observation.ruleId})` : ''} on ${observation.date}`)}`)
+      }
       lines.push(`- **Review:** ${reviewLabel(defect.reviewStatus)}`)
       if (defect.reviewStatus.note) lines.push(`- **Review note:** ${escapeMarkdown(defect.reviewStatus.note)}`)
       lines.push(`- **Comparison control:** ${comparisonControlLabel(defect)}`)
@@ -331,7 +334,7 @@ function card (defect, base) {
     <dt>Actual</dt><dd>${escapeHtml(defect.actualBehaviour)}</dd>
     <dt>User impact</dt><dd>${escapeHtml(defect.userImpact)}</dd>
     <dt>Affects</dt><dd>${escapeHtml(defect.affectedCapabilities.join(', ') || 'Not recorded')}</dd>
-    <dt>Detection</dt><dd>${escapeHtml(defect.detection.expectedMethods.join(', ') || 'Not recorded')}</dd>
+    <dt>Detection</dt><dd>${escapeHtml(defect.detection.expectedMethods.join(', ') || 'Not recorded')}${defect.detection.observed.length > 0 ? `<br>Observed: ${escapeHtml(defect.detection.observed.map((observation) => `${observation.engine} ${observation.engineVersion || ''} ${observation.result}${observation.ruleId ? ` (${observation.ruleId})` : ''} on ${observation.date}`).join('; '))}` : ''}</dd>
     <dt>Manual test</dt><dd>${escapeHtml(defect.manualTests.join(' ') || 'Not recorded')}</dd>
     <dt>Review</dt><dd>${escapeHtml(reviewLabel(defect.reviewStatus))}</dd>
     <dt>Comparison control</dt><dd>${controls}</dd>

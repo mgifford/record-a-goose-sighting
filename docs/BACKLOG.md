@@ -19,6 +19,7 @@ Status values: **existing** (covered before this change), **added** (first tranc
 | Interaction-dependent defects | 9 |
 | Independently reviewed defects | 0 |
 | Recorded AT procedures (all unexecuted) | 11 |
+| Engine observations recorded on new defects | 12 (axe-core 4.14.1) |
 
 ## Families
 

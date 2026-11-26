@@ -68,7 +68,19 @@
       "dom-inspection",
       "manual-keyboard-evaluation"
     ],
-    "observed": [],
+    "observed": [
+      {
+        "date": "2026-11-26",
+        "engine": "axe-core",
+        "engineVersion": "4.14.1",
+        "browser": "Chromium via Playwright 1.65.1",
+        "interactionState": "default page state",
+        "ruleId": "label-content-name-mismatch",
+        "result": "detected",
+        "note": "Page-level axe run with tags wcag2a, wcag2aa, wcag21a, wcag21aa and best-practice. The rule reports the visible Delete observation label against the Save observation accessible name.",
+        "evidence": "tests/detection-observations.spec.js"
+      }
+    ],
     "note": "Automated name checks pass because the name is non-empty. Comparing the name with the visible label needs a human review or a heuristic check."
   },
   "manualTests": [
