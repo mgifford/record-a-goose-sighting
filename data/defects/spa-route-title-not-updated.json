@@ -1,0 +1,119 @@
+{
+  "service": "lab",
+  "fixtureId": null,
+  "aliases": [],
+  "preconditions": [],
+  "interactionSteps": [
+    {
+      "action": "click",
+      "selector": "#a-link-about"
+    },
+    {
+      "action": "assert",
+      "selector": "#a-title",
+      "state": "visible"
+    }
+  ],
+  "environment": null,
+  "actRules": [],
+  "controlFixtureId": null,
+  "introducedIn": null,
+  "lastVerified": null,
+  "notApplicable": [
+    "fixtureId",
+    "actRules"
+  ],
+  "assistiveTechnologyTests": [
+    {
+      "platform": "macOS",
+      "browser": "Safari",
+      "assistiveTechnology": "VoiceOver",
+      "procedure": "Follow the documented procedure and listen for the information under test.",
+      "status": "not-run"
+    }
+  ],
+  "id": "spa-route-title-not-updated",
+  "title": "Client-side route change leaves the page title unchanged",
+  "description": "Following a link inside the records browser swaps the view without changing document.title. The visible heading changes to About the records, but the tab, history entry and screen-reader page context still say Observation records: latest and about.",
+  "component": "Records view navigation (variant A)",
+  "category": "page-title",
+  "classification": "candidate-wcag-failure",
+  "url": "lab/subtle/spa/",
+  "locators": [
+    {
+      "type": "css",
+      "value": "#a-title",
+      "phase": "after"
+    }
+  ],
+  "relatedElements": [
+    {
+      "purpose": "route-trigger",
+      "css": "#a-link-about"
+    },
+    {
+      "purpose": "comparison-control",
+      "css": "#b-title",
+      "note": "The control updates the title on each route change."
+    }
+  ],
+  "expectedBehaviour": "A client-side route change updates the page title to describe the new view.",
+  "actualBehaviour": "document.title remains the initial page title after the view changes.",
+  "userImpact": "Screen-reader and tab users cannot tell which view is showing, and the history entry is misleading.",
+  "affectedCapabilities": [
+    "screen-reader",
+    "cognitive"
+  ],
+  "wcag": [
+    {
+      "criterion": "2.4.2",
+      "status": "candidate",
+      "note": "The page title does not describe the current view."
+    }
+  ],
+  "detection": {
+    "expectedMethods": [
+      "automated-pointer-interaction",
+      "dom-inspection"
+    ],
+    "note": "Requires a route change; a single-page scan sees a correct title.",
+    "observed": [
+      {
+        "date": "2026-11-26",
+        "engine": "axe-core",
+        "engineVersion": "4.14.1",
+        "browser": "Chromium via Playwright 1.65.1",
+        "interactionState": "default page state",
+        "ruleId": null,
+        "result": "not-detected",
+        "note": "Page-level axe run with tags wcag2a, wcag2aa, wcag21a, wcag21aa and best-practice. No violation was reported; the control on the same page also passes.",
+        "evidence": "tests/detection-observations.spec.js"
+      }
+    ]
+  },
+  "manualTests": [
+    "Follow a link in the records browser and listen for the page title or check the tab."
+  ],
+  "evidence": {
+    "assertions": [
+      "document.title is unchanged after the About view is rendered."
+    ],
+    "tests": [
+      "tests/responsive-and-state.spec.js: keeps the alpha page title and announcement stale"
+    ],
+    "artifacts": [],
+    "commands": [
+      "npx playwright test tests/responsive-and-state.spec.js"
+    ]
+  },
+  "reviewStatus": {
+    "lifecycle": "reproduced-automatically",
+    "dimensions": {
+      "automatedReproduction": "verified",
+      "manualReproduction": "not-run",
+      "assistiveTechnology": "not-run",
+      "independentReview": "not-run"
+    },
+    "note": "A Playwright regression test preserves the defective behaviour and its control. That is automated reproduction, not a manual or assistive-technology observation."
+  }
+}

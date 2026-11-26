@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en" data-test-ready="true">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Attendance at narrow widths</title>
+  <link rel="stylesheet" href="/lab/lab-styles.css">
+  <style>
+    .stacked { border-collapse: collapse; width: 100%; max-width: 34rem; margin: 1rem 0 2rem; }
+    .stacked th, .stacked td { text-align: left; padding: 0.5rem 0.75rem 0.5rem 0; border-bottom: 1px solid #b1b4b6; }
+    .stacked thead th { border-bottom: 2px solid #0b0c0c; }
+
+    @media (max-width: 40rem) {
+      .stacked, .stacked tbody, .stacked tr, .stacked td, .stacked th { display: block; }
+      .stacked tr { border: 2px solid #0b0c0c; margin: 0 0 0.75rem; padding: 0.5rem 0.75rem; }
+      .stacked th, .stacked td { border: 0; padding: 0.15rem 0; }
+      .alpha-table thead { display: none; }
+      .beta-table thead {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        padding: 0;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        white-space: nowrap;
+        border: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header><nav aria-label="Site"><a href="../../../">Record a goose sighting</a><a href="../../">Laboratory</a></nav></header>
+  <main>
+    <h1>Attendance at narrow widths</h1>
+    <p class="meta">Two versions of the same attendance table. Resize the viewport below 640 pixels: both versions become stacked cards and neither shows a visible header row.</p>
+    <p>Compare what table navigation reports for each card at a narrow width.</p>
+
+    <section aria-labelledby="variant-a">
+      <h2 id="variant-a">Variant A</h2>
+      <div class="fixture">
+        <table class="stacked alpha-table" id="attendance-a">
+          <caption class="visually-hidden">Attendance by session</caption>
+          <thead>
+            <tr>
+              <th scope="col">Session</th>
+              <th scope="col">Booked</th>
+              <th scope="col">Capacity</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">Morning hide walk</th><td>18</td><td>20</td></tr>
+            <tr><th scope="row">Afternoon wetland walk</th><td>12</td><td>20</td></tr>
+            <tr><th scope="row">Evening bat watch</th><td>9</td><td>12</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section aria-labelledby="variant-b">
+      <h2 id="variant-b">Variant B</h2>
+      <div class="fixture">
+        <table class="stacked beta-table" id="attendance-b">
+          <caption class="visually-hidden">Attendance by session</caption>
+          <thead>
+            <tr>
+              <th scope="col">Session</th>
+              <th scope="col">Booked</th>
+              <th scope="col">Capacity</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">Morning hide walk</th><td>18</td><td>20</td></tr>
+            <tr><th scope="row">Afternoon wetland walk</th><td>12</td><td>20</td></tr>
+            <tr><th scope="row">Evening bat watch</th><td>9</td><td>12</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+  <footer><p>Part of the animal-reporting laboratory. MIT licensed.</p></footer>
+</body>
+</html>

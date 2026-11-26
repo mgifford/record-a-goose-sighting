@@ -11,15 +11,15 @@ Status values: **existing** (covered before this change), **added** (first tranc
 
 | Measure | Value |
 | :--- | ---: |
-| Declared defects | 60 |
+| Declared defects | 65 |
 | Preserved original defects | 19 |
 | ACT fixture defects | 21 |
-| New comparison and journey defects | 20 |
-| Defects with a comparison control | 30 |
-| Interaction-dependent defects | 15 |
+| New comparison and journey defects | 25 |
+| Defects with a comparison control | 35 |
+| Interaction-dependent defects | 19 |
 | Independently reviewed defects | 0 |
-| Recorded AT procedures (all unexecuted) | 19 |
-| Engine observations recorded on new defects | 20 (axe-core 4.14.1) |
+| Recorded AT procedures (all unexecuted) | 24 |
+| Engine observations recorded on new defects | 25 (axe-core 4.14.1) |
 
 ## Families
 
@@ -33,16 +33,16 @@ Status values: **existing** (covered before this change), **added** (first tranc
 | F. Forms and error recovery | partial | Four new error defects; original field-level defects | No conditional question, multi-step data loss, autocomplete token, timeout, password-manager block | Multi-step form that loses data; conditional field not announced; paste-blocked confirmation |
 | G. Complex ARIA widgets | partial | Combobox with a stale active descendant; tabs with incorrect roving tabindex and no arrow keys; disclosure; switch; ACT role fixtures | No listbox, menu, tree, grid, date picker, slider or toggle button | Grid with a wrong row count; date picker; menu with broken focus return |
 | H. Images, graphics and alternative text | existing | Original missing alt, file-name alt; ACT image fixtures | No charts, maps, SVG names, icon-only controls, paired visual comparisons | Chart with a data-table alternative; SVG with misleading title; icon-only button |
-| I. Tables and structured data | partial | Unmarked column headers; stale `aria-sort` after sorting | No grouped headers, responsive table, virtualised table or layout-table case | Colspan/rowspan association; responsive table that loses headers; layout table exposed as data |
-| J. Responsive accessibility and reflow | existing (manual) | 320px text-spacing page; manual scripts | No defect that only appears at 320px, zoom or magnification | Clipped dialog at 320px; sticky footer overlap; content lost at 200% |
+| I. Tables and structured data | partial | Unmarked column headers; stale `aria-sort`; stale grid row count after expanding | No grouped headers, virtualised grid or layout-table case | Colspan/rowspan association; virtualised grid with recycled rows; layout table exposed as data |
+| J. Responsive accessibility and reflow | partial | Stacked table loses column headers at 320px; text-spacing page; manual scripts | No clipped dialog, sticky overlap or 200% zoom measurement | Clipped dialog at 320px; sticky footer overlap; content lost at 200% |
 | K. Text spacing and typography | existing | Fixed-height containers and text-spacing page; justified text | No clipping measured under 1.4.12 overrides | Clipped label at letter-spacing; truncated control; contrast under custom spacing |
 | L. Forced colours, themes and preferences | existing (manual) | Forced-colours focus comparison; reduced-motion page | No automated behavioural check; no dark-mode contrast pair | `forced-color-adjust: none` misuse; focus cue lost in dark mode |
 | M. Motion, animation and time | existing | Uncontrollable GIF; reduced-motion comparison | No auto-advancing carousel, timeout or disappearing notification | Carousel with pause; session timeout; toast removed too quickly |
 | N. Audio, video and multimedia | not started | - | No captions, audio description or media controls | Short local clip with mis-timed captions; audio-only with no transcript |
-| O. Language and internationalisation | not started | - | No wrong page language, mixed-language passage or bidi example | Wrong `lang`; untranslated accessible name; RTL reading order |
+| O. Language and internationalisation | partial | French passage without `lang` | No wrong page language, untranslated accessible name or bidi example | Wrong `lang`; untranslated accessible name; RTL reading order |
 | P. Cognitive accessibility and comprehension | partial | Original content defects; usability-concern classification | No jargon, inconsistent terminology, memory burden or confirmation ambiguity | Three-step process with inconsistent labels; help text in the wrong place |
 | Q. Voice control and alternative input | partial | Pointer-only switch; label-in-name mismatch | No overlay numbers, drag-only, small targets, gesture-only | Drag-and-drop without an alternative; 24×24 target; multipoint gesture |
-| R. JavaScript lifecycle and dynamic state | partial | React/Vue async name; node replacement | No hydration mismatch, duplicate ids, lost listeners, route-change title | Hydration that drops a name; duplicate ids from a repeated component; Back-state mismatch |
+| R. JavaScript lifecycle and dynamic state | partial | React/Vue async name; node replacement; client-side route change with a stale title and no announcement | No hydration mismatch, duplicate ids or lost listeners | Hydration that drops a name; duplicate ids from a repeated component; Back-state mismatch |
 | S. Web Components, shadow DOM and iframes | existing | Open, closed, nested shadow roots; single, nested and multiple frames | No cross-root `aria-labelledby`, focus delegation or slotted semantics | Named slot that loses its label; focus restore across frame boundaries |
 | T. Multi-page journeys | partial | Three-step Wildlife observation service: hidden step indicator, unannounced conditional question, lost state on Back | No journey that becomes inaccessible only after a specific choice; no correction loop; no progress indicator semantics beyond the step text | A conditional keyboard trap, a correction workflow that cannot be completed, and data loss across a multi-step form |
 

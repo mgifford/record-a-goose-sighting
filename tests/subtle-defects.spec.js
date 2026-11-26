@@ -25,6 +25,10 @@ const PAGES = [
   'lab/subtle/tables/',
   'lab/subtle/combobox/',
   'lab/subtle/tabs/',
+  'lab/subtle/grid/',
+  'lab/subtle/responsive-table/',
+  'lab/subtle/spa/',
+  'lab/subtle/language/',
   'kestrel/index.html',
   'kestrel/details.html',
   'kestrel/confirmation.html'

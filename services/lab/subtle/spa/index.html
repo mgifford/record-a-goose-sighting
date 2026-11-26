@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en" data-test-ready="true">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Observation records: latest and about</title>
+  <link rel="stylesheet" href="/lab/lab-styles.css">
+  <style>
+    .view-nav { display: flex; gap: 1rem; border-bottom: 2px solid #0b0c0c; padding-bottom: 0.5rem; margin: 1rem 0; }
+    .view-nav a[aria-current="page"] { font-weight: 700; text-decoration: none; }
+    .view, .view-title { max-width: 40rem; }
+  </style>
+</head>
+<body>
+  <header><nav aria-label="Site"><a href="../../../">Record a goose sighting</a><a href="../../">Laboratory</a></nav></header>
+  <main>
+    <h1>Observation records: latest and about</h1>
+    <p class="meta">Two versions of the same client-side record browser. Both switch views when you follow a link.</p>
+    <p>Follow each link and compare the page title and what assistive technology is told.</p>
+
+    <section aria-labelledby="variant-a">
+      <h2 id="variant-a">Variant A</h2>
+      <div class="fixture">
+        <nav class="view-nav" aria-label="Record views, first example">
+          <a href="#/records" id="a-link-records" aria-current="page">Latest records</a>
+          <a href="#/about" id="a-link-about">About the records</a>
+        </nav>
+        <p id="a-status" role="status"></p>
+        <h3 class="view-title" id="a-title" tabindex="-1">Latest records</h3>
+        <div class="view" id="a-view">
+          <ul><li>Mallard, north hide, 14:05</li><li>Grey heron, wetland boardwalk, 11:40</li></ul>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="variant-b">
+      <h2 id="variant-b">Variant B</h2>
+      <div class="fixture">
+        <nav class="view-nav" aria-label="Record views, second example">
+          <a href="#/records" id="b-link-records" aria-current="page">Latest records</a>
+          <a href="#/about" id="b-link-about">About the records</a>
+        </nav>
+        <p id="b-status" role="status"></p>
+        <h3 class="view-title" id="b-title" tabindex="-1">Latest records</h3>
+        <div class="view" id="b-view">
+          <ul><li>Mallard, north hide, 14:05</li><li>Grey heron, wetland boardwalk, 11:40</li></ul>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      const views = {
+        records: {
+          heading: 'Latest records',
+          title: 'Latest records - Observation records',
+          html: '<ul><li>Mallard, north hide, 14:05</li><li>Grey heron, wetland boardwalk, 11:40</li></ul>'
+        },
+        about: {
+          heading: 'About the records',
+          title: 'About the records - Observation records',
+          html: '<p>Records are verified by a site warden before they appear in this list. Corrections are welcome.</p>'
+        }
+      }
+
+      function setupViews (variant, updatesTitleAndStatus) {
+        const title = document.getElementById(`${variant}-title`)
+        const view = document.getElementById(`${variant}-view`)
+        const status = document.getElementById(`${variant}-status`)
+        const links = {
+          records: document.getElementById(`${variant}-link-records`),
+          about: document.getElementById(`${variant}-link-about`)
+        }
+
+        function render (key, silent = false) {
+          const selected = views[key] || views.records
+          title.textContent = selected.heading
+          view.innerHTML = selected.html
+
+          for (const [linkKey, link] of Object.entries(links)) {
+            if (linkKey === key) link.setAttribute('aria-current', 'page')
+            else link.removeAttribute('aria-current')
+          }
+
+          if (updatesTitleAndStatus && !silent) {
+            document.title = selected.title
+            status.textContent = `Showing ${selected.heading.toLowerCase()}.`
+          }
+        }
+
+        for (const [linkKey, link] of Object.entries(links)) {
+          link.addEventListener('click', (event) => {
+            event.preventDefault()
+            render(linkKey)
+          })
+        }
+
+        render('records', true)
+      }
+
+      setupViews('a', false)
+      setupViews('b', true)
+    </script>
+  </main>
+  <footer><p>Part of the animal-reporting laboratory. MIT licensed.</p></footer>
+</body>
+</html>

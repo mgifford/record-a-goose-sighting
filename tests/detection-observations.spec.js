@@ -80,4 +80,21 @@ test.describe(`axe-core ${AXE_VERSION} observations (recorded 2026-11-26)`, () =
   test('does not detect the tabs keyboard model', async ({ page }) => {
     expect(await scan(page, 'lab/subtle/tabs/')).toEqual([])
   })
+
+  test('does not detect the stale grid row count', async ({ page }) => {
+    expect(await scan(page, 'lab/subtle/grid/')).toEqual([])
+  })
+
+  test('does not detect the lost column headers at 320 pixels', async ({ page }) => {
+    await page.setViewportSize({ width: 320, height: 640 })
+    expect(await scan(page, 'lab/subtle/responsive-table/')).toEqual([])
+  })
+
+  test('does not detect the stale route title or announcement', async ({ page }) => {
+    expect(await scan(page, 'lab/subtle/spa/')).toEqual([])
+  })
+
+  test('does not detect the unidentified language', async ({ page }) => {
+    expect(await scan(page, 'lab/subtle/language/')).toEqual([])
+  })
 })

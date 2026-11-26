@@ -7,7 +7,7 @@ Canonical machine-readable registry: [`data/known-defects.json`](../data/known-d
 This is the answer key. It is not part of a blind evaluation, and an entry here is a declared
 defect with a stated expected outcome, not proof that a person has experienced the barrier.
 
-The registry describes **60 defects** across 6 services.
+The registry describes **65 defects** across 6 services.
 
 An expected outcome is a hypothesis until the review dimensions show an independent review.
 
@@ -15,16 +15,16 @@ An expected outcome is a hypothesis until the review dimensions show an independ
 
 | Dimension | Count |
 | :--- | ---: |
-| Defects | 60 |
+| Defects | 65 |
 | Service: goose | 19 |
 | Service: hedgehog | 1 |
 | Service: kestrel | 8 |
-| Service: lab | 29 |
+| Service: lab | 34 |
 | Service: paca | 2 |
 | Service: wombat | 1 |
 | Classification: act-rule-failure | 20 |
 | Classification: best-practice | 10 |
-| Classification: candidate-wcag-failure | 15 |
+| Classification: candidate-wcag-failure | 20 |
 | Classification: exploratory | 1 |
 | Classification: usability-concern | 3 |
 | Classification: wcag-failure | 11 |
@@ -48,12 +48,17 @@ The registry is generated from these files. Each digest is the SHA-256 of the co
 | `data/defects/error-not-associated-with-field.json` | defect-record | `226ad1880fb4a7f9a64e5a3b69a44d5a7a0971583dddc2a6e40803df27b4068c` |
 | `data/defects/error-summary-link-broken.json` | defect-record | `49f187f0861361c1d21f1d2d149e6d7793e4fbfe523a25f2329da21b31a350dd` |
 | `data/defects/focus-lost-after-item-removal.json` | defect-record | `d7847473b0287daad2bab8e90d1502713b470baf7da5cfcf58cfa3da0e017da2` |
+| `data/defects/grid-row-count-stale.json` | defect-record | `19916bfb1b7b4d9b304ddf9167c0222d135aefae7fd4b1f9e8f583efa2502197` |
 | `data/defects/hint-hidden-from-accessibility-tree.json` | defect-record | `573eec73047d294eff52b2a0fa84e8c79f60693c5f99db7702b4fa04e36836d1` |
 | `data/defects/journey-conditional-question-unannounced.json` | defect-record | `8f8f7aed2195e76729e94d5497f7fe44c6141c8ba916dc6b96ec35d7067ef65b` |
 | `data/defects/journey-progress-hidden-from-assistive-technology.json` | defect-record | `94b425792838f33bbecc109a894b3539c700d7b1352a70d4eb3b1c28853281df` |
 | `data/defects/journey-state-lost-on-back.json` | defect-record | `4024446b9f7f14061f5c8dad60d8ee11176f7d707dc7e8d45cc4acfb8f4797c2` |
 | `data/defects/name-contradicts-visible-label.json` | defect-record | `53d584b052da845e149dd00d9921df9827257cbb047b61371aac0d7e8f6a8422` |
+| `data/defects/passage-language-not-identified.json` | defect-record | `c41dbcf22113ab66fb11f5814fd8cf8561e03ab91406e684353ff25d7495e4cf` |
 | `data/defects/required-field-not-identified.json` | defect-record | `e4a81abc0a8558d32e243fc0ef97465464110638964a496057bf651c6f5aec6f` |
+| `data/defects/responsive-table-column-headers-hidden.json` | defect-record | `02b68bfbbc8113d4a81a307c9bd5d109f589d920906eed7b87ad9c7b9fc067ca` |
+| `data/defects/spa-route-change-not-announced.json` | defect-record | `39a6cd6cf3b5378d7a3cb709791ba188f327c64c553e518d837617b3a8380ab7` |
+| `data/defects/spa-route-title-not-updated.json` | defect-record | `48bbc99b3872fb4662cc4d409b8a41b43bdcf2a02aa2dd1ffcd6cdfbeb416aa3` |
 | `data/defects/status-message-not-announced.json` | defect-record | `9616b0506e54441902c834732290cd391aafab0ceb19c5752a80e4964053d496` |
 | `data/defects/switch-pointer-only.json` | defect-record | `c68e5b41528a7bd7fc8f5a1ed082c10160d7d172ea72050397579f1977929714` |
 | `data/defects/table-column-headers-not-marked-up.json` | defect-record | `3f3fa7893911b51cf89c57ce449132238e023eaf628b81628af685ff8e6b479b` |
@@ -785,7 +790,7 @@ The registry is generated from these files. Each digest is the SHA-256 of the co
 - **Provenance:** curated from `data/defects/tabs-arrow-navigation-missing.json`
 - **Not applicable:** `fixtureId`, `actRules`
 
-## Service: lab (29)
+## Service: lab (34)
 
 ### `busy-state-not-cleared` Busy state is set and never cleared
 
@@ -1273,6 +1278,33 @@ The registry is generated from these files. Each digest is the SHA-256 of the co
 - **Sources:** [Button has non-empty accessible name (ACT rule 97a4e1)](https://www.w3.org/WAI/standards-guidelines/act/rules/97a4e1/)
 - **Provenance:** derived from `services/lab/fixtures.json`, `data/defect-annotations.json`
 
+### `grid-row-count-stale` Grid row count is not updated when the full list opens
+
+- **Page:** [lab/subtle/grid/](https://mgifford.github.io/record-a-goose-sighting/lab/subtle/grid/)
+- **Component:** Verified observations grid (variant A)
+- **Category:** tables
+- **Classification:** candidate-wcag-failure
+- **WCAG:** 4.1.2 (candidate)
+- **ACT rules:** none
+- **Locators:** css `#grid-a`
+- **Preconditions:** none
+- **Interaction:** click `#show-a`; assert `#grid-a`
+- **Expected behaviour:** A grid reports the number of rows it contains, and the count stays correct when rows are added.
+- **Actual behaviour:** aria-rowcount remains 5 after the remaining nine rows are revealed.
+- **User impact:** Screen-reader users are told the list has five rows and may stop navigating before the extra records.
+- **Affected capabilities:** screen-reader; cognitive
+- **Detection:** automated-pointer-interaction; dom-inspection; accessibility-tree-inspection. The initial state is correct; only the post-expansion state is wrong.
+- **Manual test:** Expand the grid with a screen reader running and listen for the reported row count.
+- **Assistive technology:** macOS / Safari / VoiceOver: not-run
+- **Engine observations:** axe-core 4.14.1 not-detected on 2026-11-26
+- **Review:** reproduced-automatically (automatedReproduction: verified, manualReproduction: not-run, assistiveTechnology: not-run, independentReview: not-run)
+- **Review note:** A Playwright regression test preserves the defective behaviour and its control. That is automated reproduction, not a manual or assistive-technology observation.
+- **Comparison control:** `#grid-b` (The control updates aria-rowcount to 13.)
+- **Evidence:** aria-rowcount stays 5 while 13 rows are rendered.; tests/responsive-and-state.spec.js: keeps the alpha row count stale
+- **Sources:** none
+- **Provenance:** curated from `data/defects/grid-row-count-stale.json`
+- **Not applicable:** `fixtureId`, `actRules`
+
 ### `hint-hidden-from-accessibility-tree` Field hint is hidden from the accessibility tree
 
 - **Page:** [lab/subtle/reading/](https://mgifford.github.io/record-a-goose-sighting/lab/subtle/reading/)
@@ -1427,6 +1459,33 @@ The registry is generated from these files. Each digest is the SHA-256 of the co
 - **Provenance:** curated from `data/defects/name-contradicts-visible-label.json`
 - **Not applicable:** `fixtureId`, `actRules`
 
+### `passage-language-not-identified` French passage has no language identification
+
+- **Page:** [lab/subtle/language/](https://mgifford.github.io/record-a-goose-sighting/lab/subtle/language/)
+- **Component:** Bilingual field notice (variant A)
+- **Category:** language
+- **Classification:** candidate-wcag-failure
+- **WCAG:** 3.1.2 (candidate)
+- **ACT rules:** none
+- **Locators:** css `#notice-a`
+- **Preconditions:** none
+- **Interaction:** none
+- **Expected behaviour:** A passage in a different language is marked with the correct lang attribute.
+- **Actual behaviour:** The French paragraph inherits lang=en from the document.
+- **User impact:** Screen-reader users hear French pronounced as English and may not understand the closure notice.
+- **Affected capabilities:** screen-reader; cognitive
+- **Detection:** dom-inspection; screen-reader-evaluation. The rendering is identical; only the programmatic language differs.
+- **Manual test:** Read the notice with a screen reader and listen to the pronunciation of the French sentence.
+- **Assistive technology:** macOS / Safari / VoiceOver: not-run
+- **Engine observations:** axe-core 4.14.1 not-detected on 2026-11-26
+- **Review:** reproduced-automatically (automatedReproduction: verified, manualReproduction: not-run, assistiveTechnology: not-run, independentReview: not-run)
+- **Review note:** A Playwright regression test preserves the defective behaviour and its control. That is automated reproduction, not a manual or assistive-technology observation.
+- **Comparison control:** `#notice-b` (The control identifies the same paragraph as French.)
+- **Evidence:** The French paragraph has no lang attribute while html has lang=en.; tests/responsive-and-state.spec.js: keeps the alpha French passage without a language
+- **Sources:** none
+- **Provenance:** curated from `data/defects/passage-language-not-identified.json`
+- **Not applicable:** `fixtureId`, `actRules`
+
 ### `required-field-not-identified` Required field is not identified programmatically
 
 - **Page:** [lab/subtle/errors/](https://mgifford.github.io/record-a-goose-sighting/lab/subtle/errors/)
@@ -1452,6 +1511,87 @@ The registry is generated from these files. Each digest is the SHA-256 of the co
 - **Evidence:** #date-a has no required attribute; #date-b has required.; tests/subtle-defects.spec.js: keeps variant A errors unassociated, unfocused and linked to nothing
 - **Sources:** [WCAG 2.2 Understanding 3.3.2: Labels or Instructions](https://www.w3.org/WAI/WCAG22/Understanding/labels-or-instructions)
 - **Provenance:** curated from `data/defects/required-field-not-identified.json`
+- **Not applicable:** `fixtureId`, `actRules`
+
+### `responsive-table-column-headers-hidden` Stacked table loses its column headers at narrow widths
+
+- **Page:** [lab/subtle/responsive-table/](https://mgifford.github.io/record-a-goose-sighting/lab/subtle/responsive-table/)
+- **Component:** Attendance table (variant A)
+- **Category:** responsive
+- **Classification:** candidate-wcag-failure
+- **WCAG:** 1.3.1 (candidate); 1.4.10 (candidate)
+- **ACT rules:** none
+- **Locators:** css `#attendance-a`
+- **Preconditions:** The viewport is 320 CSS pixels wide.
+- **Interaction:** none
+- **Expected behaviour:** Responsive layouts keep the relationships between data cells and their headers available to assistive technology.
+- **Actual behaviour:** The header row is removed with display:none at narrow widths, leaving no column headers.
+- **User impact:** Screen-reader users hear values such as 18 and 20 without being told whether they are bookings or capacity.
+- **Affected capabilities:** screen-reader; low-vision; cognitive
+- **Detection:** environment-emulation; accessibility-tree-inspection; browser-geometry-inspection. The defect only exists below the breakpoint, so a default-viewport scan reports a correct table.
+- **Manual test:** Set the viewport to 320 pixels wide and move through the attendance table in table navigation mode.
+- **Assistive technology:** macOS / Safari / VoiceOver: not-run
+- **Engine observations:** axe-core 4.14.1 not-detected on 2026-11-26
+- **Review:** reproduced-automatically (automatedReproduction: verified, manualReproduction: not-run, assistiveTechnology: not-run, independentReview: not-run)
+- **Review note:** A Playwright regression test preserves the defective behaviour and its control. That is automated reproduction, not a manual or assistive-technology observation.
+- **Comparison control:** `#attendance-b` (The control keeps the header row in the accessibility tree at the same width.)
+- **Evidence:** No column header roles exist in the alpha table at 320 pixels, while the control exposes three.; tests/responsive-and-state.spec.js: keeps the alpha headers out of the accessibility tree at 320 pixels
+- **Sources:** none
+- **Provenance:** curated from `data/defects/responsive-table-column-headers-hidden.json`
+- **Not applicable:** `fixtureId`, `actRules`
+
+### `spa-route-change-not-announced` Client-side route change is not announced
+
+- **Page:** [lab/subtle/spa/](https://mgifford.github.io/record-a-goose-sighting/lab/subtle/spa/)
+- **Component:** Records view navigation (variant A)
+- **Category:** dynamic-content
+- **Classification:** candidate-wcag-failure
+- **WCAG:** 4.1.3 (candidate)
+- **ACT rules:** none
+- **Locators:** css `#a-title`
+- **Preconditions:** none
+- **Interaction:** click `#a-link-about`; assert `#a-title`
+- **Expected behaviour:** A change of view that does not reload the page is announced, or focus moves to the new content.
+- **Actual behaviour:** The view changes silently; the status region stays empty and focus stays on the link.
+- **User impact:** Screen-reader users may not realise that the page content has changed and continue reading the previous view's context.
+- **Affected capabilities:** screen-reader; cognitive
+- **Detection:** automated-pointer-interaction; accessibility-tree-inspection. Requires a route change; the markup is valid before and after.
+- **Manual test:** Follow a link with a screen reader running and listen for an announcement or focus change.
+- **Assistive technology:** macOS / Safari / VoiceOver: not-run
+- **Engine observations:** axe-core 4.14.1 not-detected on 2026-11-26
+- **Review:** reproduced-automatically (automatedReproduction: verified, manualReproduction: not-run, assistiveTechnology: not-run, independentReview: not-run)
+- **Review note:** A Playwright regression test preserves the defective behaviour and its control. That is automated reproduction, not a manual or assistive-technology observation.
+- **Comparison control:** `#b-status` (The control announces Showing about the records.)
+- **Evidence:** The alpha status region stays empty after the route change.; tests/responsive-and-state.spec.js: keeps the alpha page title and announcement stale
+- **Sources:** none
+- **Provenance:** curated from `data/defects/spa-route-change-not-announced.json`
+- **Not applicable:** `fixtureId`, `actRules`
+
+### `spa-route-title-not-updated` Client-side route change leaves the page title unchanged
+
+- **Page:** [lab/subtle/spa/](https://mgifford.github.io/record-a-goose-sighting/lab/subtle/spa/)
+- **Component:** Records view navigation (variant A)
+- **Category:** page-title
+- **Classification:** candidate-wcag-failure
+- **WCAG:** 2.4.2 (candidate)
+- **ACT rules:** none
+- **Locators:** css `#a-title`
+- **Preconditions:** none
+- **Interaction:** click `#a-link-about`; assert `#a-title`
+- **Expected behaviour:** A client-side route change updates the page title to describe the new view.
+- **Actual behaviour:** document.title remains the initial page title after the view changes.
+- **User impact:** Screen-reader and tab users cannot tell which view is showing, and the history entry is misleading.
+- **Affected capabilities:** screen-reader; cognitive
+- **Detection:** automated-pointer-interaction; dom-inspection. Requires a route change; a single-page scan sees a correct title.
+- **Manual test:** Follow a link in the records browser and listen for the page title or check the tab.
+- **Assistive technology:** macOS / Safari / VoiceOver: not-run
+- **Engine observations:** axe-core 4.14.1 not-detected on 2026-11-26
+- **Review:** reproduced-automatically (automatedReproduction: verified, manualReproduction: not-run, assistiveTechnology: not-run, independentReview: not-run)
+- **Review note:** A Playwright regression test preserves the defective behaviour and its control. That is automated reproduction, not a manual or assistive-technology observation.
+- **Comparison control:** `#b-title` (The control updates the title on each route change.)
+- **Evidence:** document.title is unchanged after the About view is rendered.; tests/responsive-and-state.spec.js: keeps the alpha page title and announcement stale
+- **Sources:** none
+- **Provenance:** curated from `data/defects/spa-route-title-not-updated.json`
 - **Not applicable:** `fixtureId`, `actRules`
 
 ### `status-message-not-announced` Saved confirmation appears without a status role
