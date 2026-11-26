@@ -1,0 +1,34 @@
+name: Accidental accessibility regression
+description: An accessibility problem outside the intentional fixtures
+labels: ["regression", "unintentional"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Intentional defects are preserved on purpose. This template is for problems in the
+        surrounding interface, catalogue or documentation.
+  - type: input
+    id: page
+    attributes:
+      label: Page or component
+    validations:
+      required: true
+  - type: textarea
+    id: barrier
+    attributes:
+      label: Barrier and task impact
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction steps and environment
+    validations:
+      required: true
+  - type: dropdown
+    id: intentional
+    attributes:
+      label: Is this declared as an intentional defect?
+      options: ["No", "Yes - it belongs to a fixture", "Unsure"]
+    validations:
+      required: true

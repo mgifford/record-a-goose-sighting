@@ -1,0 +1,61 @@
+name: New proposed defect
+description: Propose a defect or comparison fixture
+labels: ["defect-proposal"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Read `docs/CONTRIBUTING-DEFECTS.md` first. Search `docs/KNOWN-DEFECTS.md` before proposing a fixture.
+  - type: input
+    id: identifier
+    attributes:
+      label: Proposed identifier
+      description: Lowercase kebab-case behaviour slug, for example focus-lost-after-item-removal.
+    validations:
+      required: true
+  - type: dropdown
+    id: family
+    attributes:
+      label: Defect family
+      options:
+        - A. Accessible names and descriptions
+        - B. Keyboard interaction
+        - C. Focus management
+        - D. Screen reader reading and navigation
+        - E. Dynamic content and status messages
+        - F. Forms and error recovery
+        - G. Complex ARIA widgets
+        - H. Images, graphics and alternative text
+        - I. Tables and structured data
+        - J. Responsive accessibility and reflow
+        - K. Text spacing and typography
+        - L. Forced colours, themes and preferences
+        - M. Motion, animation and time
+        - N. Audio, video and multimedia
+        - O. Language and internationalisation
+        - P. Cognitive accessibility and comprehension
+        - Q. Voice control and alternative input
+        - R. JavaScript lifecycle and dynamic state
+        - S. Web Components, shadow DOM and iframes
+        - T. Multi-page journeys
+    validations:
+      required: true
+  - type: textarea
+    id: behaviour
+    attributes:
+      label: Expected versus actual behaviour
+      description: What should happen, what happens instead, and who is affected.
+    validations:
+      required: true
+  - type: textarea
+    id: control
+    attributes:
+      label: Comparison control
+      description: How will the correctly implemented counterpart differ only in the accessibility-relevant implementation?
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Detection and evidence
+      description: Static, interaction, manual or assistive-technology evidence. Do not claim results you have not observed.
+    validations:
+      required: true

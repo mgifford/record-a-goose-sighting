@@ -1,0 +1,28 @@
+name: Framework interoperability difference
+description: The same component behaves differently across frameworks
+labels: ["framework-parity"]
+body:
+  - type: input
+    id: journey
+    attributes:
+      label: Journey and step
+    validations:
+      required: true
+  - type: textarea
+    id: difference
+    attributes:
+      label: Observed difference
+      description: DOM, accessibility tree, focus, announcement or layout difference.
+    validations:
+      required: true
+  - type: dropdown
+    id: framework
+    attributes:
+      label: Framework affected
+      options: [React, Vue, Web Components, All, Unknown]
+    validations:
+      required: true
+  - type: textarea
+    id: impact
+    attributes:
+      label: User impact and whether parity is required
