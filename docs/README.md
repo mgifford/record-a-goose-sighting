@@ -10,6 +10,7 @@
 | [AT-TESTING.md](AT-TESTING.md) | Environment matrix, recording rules and unexecuted procedures |
 | [RESEARCH.md](RESEARCH.md) | Verified sources and the norms-versus-guidance boundary |
 | [BACKLOG.md](BACKLOG.md) | Persistent backlog of the defect families not yet implemented |
+| [LEARNINGS.md](LEARNINGS.md) | What the first three tranches taught us, measured blind spots and ordered next steps |
 | [OPEN-SCANS-INTEGRATION.md](OPEN-SCANS-INTEGRATION.md) | Published manifest contract, versioning, blind evaluation and the Open Scans boundary |
 | [templates/defect-record.json](templates/defect-record.json) | Registry record template |
 | [templates/fixture-page.html](templates/fixture-page.html) | Comparison fixture page template |
