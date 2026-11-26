@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en" data-test-ready="true">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Observation records: tables</title>
+  <link rel="stylesheet" href="/lab/lab-styles.css">
+  <style>
+    .column-heading { font-weight: 700; border-bottom: 2px solid #0b0c0c; }
+    .records { border-collapse: collapse; width: 100%; max-width: 34rem; margin: 1rem 0 2rem; }
+    .records th, .records td { text-align: left; padding: 0.5rem 0.75rem 0.5rem 0; border-bottom: 1px solid #b1b4b6; }
+    .records thead th, .records thead .column-heading { border-bottom: 2px solid #0b0c0c; }
+    .sort-button { font: inherit; padding: 0.25rem 0.5rem; border: 2px solid #0b0c0c; background: #fff; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <header><nav aria-label="Site"><a href="../../../">Record a goose sighting</a><a href="../../">Laboratory</a></nav></header>
+  <main>
+    <h1>Observation records: tables</h1>
+    <p class="meta">Two pairs of visually identical tables. The records and values are the same in each pair.</p>
+    <p>Compare how each table is read in table navigation mode, and what happens to the sort state after sorting.</p>
+
+    <section aria-labelledby="variant-a">
+      <h2 id="variant-a">Variant A</h2>
+      <div class="fixture">
+        <h3>Attendance by session</h3>
+        <table class="records" id="attendance-a">
+          <caption class="visually-hidden">Attendance by session</caption>
+          <thead>
+            <tr>
+              <td class="column-heading">Session</td>
+              <td class="column-heading">Booked</td>
+              <td class="column-heading">Capacity</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">Morning hide walk</th><td>18</td><td>20</td></tr>
+            <tr><th scope="row">Afternoon wetland walk</th><td>12</td><td>20</td></tr>
+            <tr><th scope="row">Evening bat watch</th><td>9</td><td>12</td></tr>
+          </tbody>
+        </table>
+
+        <h3>Recent sightings</h3>
+        <table class="records" id="sort-a">
+          <caption class="visually-hidden">Recent sightings</caption>
+          <thead>
+            <tr>
+              <th scope="col" aria-sort="none" id="sort-a-header"><button type="button" class="sort-button" id="sort-a-button">Date</button></th>
+              <th scope="col">Species</th>
+              <th scope="col">Site</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr data-date="2026-11-20"><td>20 November 2026</td><td>Mallard</td><td>North hide</td></tr>
+            <tr data-date="2026-11-18"><td>18 November 2026</td><td>Grey heron</td><td>Wetland boardwalk</td></tr>
+            <tr data-date="2026-11-15"><td>15 November 2026</td><td>Marsh harrier</td><td>Meadow gate</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section aria-labelledby="variant-b">
+      <h2 id="variant-b">Variant B</h2>
+      <div class="fixture">
+        <h3>Attendance by session</h3>
+        <table class="records" id="attendance-b">
+          <caption class="visually-hidden">Attendance by session</caption>
+          <thead>
+            <tr>
+              <th scope="col">Session</th>
+              <th scope="col">Booked</th>
+              <th scope="col">Capacity</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">Morning hide walk</th><td>18</td><td>20</td></tr>
+            <tr><th scope="row">Afternoon wetland walk</th><td>12</td><td>20</td></tr>
+            <tr><th scope="row">Evening bat watch</th><td>9</td><td>12</td></tr>
+          </tbody>
+        </table>
+
+        <h3>Recent sightings</h3>
+        <table class="records" id="sort-b">
+          <caption class="visually-hidden">Recent sightings</caption>
+          <thead>
+            <tr>
+              <th scope="col" aria-sort="none" id="sort-b-header"><button type="button" class="sort-button" id="sort-b-button">Date</button></th>
+              <th scope="col">Species</th>
+              <th scope="col">Site</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr data-date="2026-11-20"><td>20 November 2026</td><td>Mallard</td><td>North hide</td></tr>
+            <tr data-date="2026-11-18"><td>18 November 2026</td><td>Grey heron</td><td>Wetland boardwalk</td></tr>
+            <tr data-date="2026-11-15"><td>15 November 2026</td><td>Marsh harrier</td><td>Meadow gate</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <script>
+      function setupSort (variant, updatesSortState) {
+        const button = document.getElementById(`sort-${variant}-button`)
+        const table = document.getElementById(`sort-${variant}`)
+        const header = document.getElementById(`sort-${variant}-header`)
+        let ascending = true
+
+        button.addEventListener('click', () => {
+          const body = table.tBodies[0]
+          const rows = [...body.rows]
+          rows.sort((first, second) => {
+            const comparison = first.dataset.date < second.dataset.date ? -1 : 1
+            return ascending ? comparison : -comparison
+          })
+          for (const row of rows) body.appendChild(row)
+
+          if (updatesSortState) header.setAttribute('aria-sort', ascending ? 'ascending' : 'descending')
+          ascending = !ascending
+        })
+      }
+
+      setupSort('a', false)
+      setupSort('b', true)
+    </script>
+  </main>
+  <footer><p>Part of the animal-reporting laboratory. MIT licensed.</p></footer>
+</body>
+</html>

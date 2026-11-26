@@ -135,7 +135,8 @@ async function elementEvidence (locator) {
         width: Math.round(rect.width),
         height: Math.round(rect.height)
       },
-      connected: element.isConnected
+      connected: element.isConnected,
+      ariaHidden: Boolean(element.closest('[aria-hidden="true"]'))
     }
   })
 }

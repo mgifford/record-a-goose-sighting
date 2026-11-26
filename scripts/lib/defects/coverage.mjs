@@ -54,7 +54,9 @@ export function buildCoverage (registry, manifest) {
       byInteraction.none += 1
     }
 
-    increment(byControl, defect.controlFixtureId ? 'has-comparison-control' : 'no-comparison-control')
+    const hasComparison = Boolean(defect.controlFixtureId) ||
+      defect.relatedElements.some((element) => element.purpose === 'comparison-control')
+    increment(byControl, hasComparison ? 'has-comparison-control' : 'no-comparison-control')
 
     for (const [dimension, value] of Object.entries(defect.reviewStatus.dimensions)) {
       increment(reviewDimensions[dimension], value)
@@ -84,7 +86,10 @@ export function buildCoverage (registry, manifest) {
       actRules: Object.keys(byActRule).length,
       capabilities: Object.keys(byCapability).length,
       detectionMethods: Object.keys(byDetectionMethod).length,
-      withComparisonControl: registry.defects.filter((defect) => defect.controlFixtureId).length,
+      withComparisonControl: registry.defects.filter((defect) =>
+        defect.controlFixtureId ||
+        defect.relatedElements.some((element) => element.purpose === 'comparison-control')
+      ).length,
       interactionDependent: interactionDefects,
       independentlyReviewed: reviewed.length,
       unreviewed: registry.defects.length - reviewed.length,

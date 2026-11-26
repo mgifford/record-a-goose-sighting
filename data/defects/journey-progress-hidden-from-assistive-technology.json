@@ -1,0 +1,105 @@
+{
+  "service": "kestrel",
+  "fixtureId": null,
+  "aliases": [],
+  "preconditions": [
+    "The journey has three steps: session, details and confirmation."
+  ],
+  "interactionSteps": [],
+  "environment": null,
+  "actRules": [],
+  "controlFixtureId": null,
+  "introducedIn": null,
+  "lastVerified": null,
+  "notApplicable": [
+    "fixtureId",
+    "actRules"
+  ],
+  "assistiveTechnologyTests": [
+    {
+      "platform": "macOS",
+      "browser": "Safari",
+      "assistiveTechnology": "VoiceOver",
+      "procedure": "Complete the journey and listen for the announcement or information under test.",
+      "status": "not-run"
+    }
+  ],
+  "id": "journey-progress-hidden-from-assistive-technology",
+  "title": "Step indicator is hidden from assistive technology",
+  "description": "Every page shows a visible Step n of 3 indicator, but the alpha path marks it aria-hidden. Sighted users know where they are in the journey; screen-reader users are not told.",
+  "component": "Journey step indicator",
+  "category": "journey",
+  "classification": "candidate-wcag-failure",
+  "url": "kestrel/index.html?path=alpha",
+  "locators": [
+    {
+      "type": "css",
+      "value": "#step"
+    }
+  ],
+  "relatedElements": [
+    {
+      "purpose": "comparison-control",
+      "note": "The beta path exposes the same visible indicator without aria-hidden."
+    }
+  ],
+  "expectedBehaviour": "The current step is available to assistive technology on every page of a multi-step journey.",
+  "actualBehaviour": "The step text is visible but carries aria-hidden=true, so it is absent from the accessibility tree.",
+  "userImpact": "Screen-reader users cannot tell where they are or how much of the booking remains.",
+  "affectedCapabilities": [
+    "screen-reader",
+    "cognitive"
+  ],
+  "wcag": [
+    {
+      "criterion": "1.3.1",
+      "status": "candidate",
+      "note": "Information conveyed visually is removed from the programmatic structure."
+    }
+  ],
+  "detection": {
+    "expectedMethods": [
+      "dom-inspection",
+      "accessibility-tree-inspection"
+    ],
+    "note": "The rendered text looks correct; only the accessibility tree shows the omission.",
+    "observed": [
+      {
+        "date": "2026-11-26",
+        "engine": "axe-core",
+        "engineVersion": "4.14.1",
+        "browser": "Chromium via Playwright 1.65.1",
+        "interactionState": "default page state",
+        "ruleId": null,
+        "result": "not-detected",
+        "note": "Page-level axe run with tags wcag2a, wcag2aa, wcag21a, wcag21aa and best-practice. No violation was reported in the default state; the control on the same page or path also passes.",
+        "evidence": "tests/detection-observations.spec.js"
+      }
+    ]
+  },
+  "manualTests": [
+    "Open step 2 with a screen reader running and listen for the step position."
+  ],
+  "evidence": {
+    "assertions": [
+      "The step indicator has aria-hidden=true while remaining visible."
+    ],
+    "tests": [
+      "tests/journey-defects.spec.js: hides the step indicator from assistive technology on the alpha path"
+    ],
+    "artifacts": [],
+    "commands": [
+      "npx playwright test tests/journey-defects.spec.js"
+    ]
+  },
+  "reviewStatus": {
+    "lifecycle": "reproduced-automatically",
+    "dimensions": {
+      "automatedReproduction": "verified",
+      "manualReproduction": "not-run",
+      "assistiveTechnology": "not-run",
+      "independentReview": "not-run"
+    },
+    "note": "A Playwright regression test preserves the defective journey or widget behaviour and its control. That is automated reproduction, not a manual or assistive-technology observation."
+  }
+}

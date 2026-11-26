@@ -26,7 +26,7 @@ element locators, expected and actual behaviour, affected capabilities, detectio
 review status.
 
 - **[Known defect catalogue](https://mgifford.github.io/record-a-goose-sighting/defects/)**:
-  filter the 52 declared defects by service, category, WCAG criterion, ACT rule, capability
+  filter every declared defect by service, category, WCAG criterion, ACT rule, capability
   and review status.
 - [`data/known-defects.json`](data/known-defects.json): the canonical machine-readable registry.
 - [`docs/KNOWN-DEFECTS.md`](docs/KNOWN-DEFECTS.md) and

@@ -12,19 +12,19 @@ Generated from [`data/known-defects.json`](../data/known-defects.json). Machine-
 
 | Measure | Value |
 | :--- | ---: |
-| Declared defects | 52 |
-| Fictional services | 5 |
-| Defect categories | 18 |
+| Declared defects | 60 |
+| Fictional services | 6 |
+| Defect categories | 20 |
 | WCAG criteria represented | 16 |
 | ACT rules represented | 5 |
 | Affected capabilities | 8 |
 | Expected detection methods | 10 |
-| Defects with a comparison control | 10 |
-| Interaction-dependent defects | 9 |
+| Defects with a comparison control | 30 |
+| Interaction-dependent defects | 15 |
 | Independently reviewed | 0 |
-| Unreviewed | 52 |
-| Recorded AT procedures | 11 |
-| Defects with an AT procedure | 11 |
+| Unreviewed | 60 |
+| Recorded AT procedures | 19 |
+| Defects with an AT procedure | 19 |
 
 ## Defects by service
 
@@ -32,6 +32,7 @@ Generated from [`data/known-defects.json`](../data/known-defects.json). Machine-
 | :--- | ---: |
 | goose | 19 |
 | hedgehog | 1 |
+| kestrel | 8 |
 | lab | 29 |
 | paca | 2 |
 | wombat | 1 |
@@ -41,7 +42,7 @@ Generated from [`data/known-defects.json`](../data/known-defects.json). Machine-
 | Category | Defects |
 | :--- | ---: |
 | accessible-name | 15 |
-| aria-state | 1 |
+| aria-state | 2 |
 | aria-validity | 4 |
 | colour | 1 |
 | content | 3 |
@@ -52,11 +53,13 @@ Generated from [`data/known-defects.json`](../data/known-defects.json). Machine-
 | forms | 6 |
 | image-alternative | 3 |
 | images | 2 |
-| keyboard | 2 |
+| journey | 3 |
+| keyboard | 4 |
 | motion | 1 |
 | navigation | 1 |
 | page-title | 2 |
 | structure | 3 |
+| tables | 2 |
 | typography | 1 |
 
 ## Defects by classification
@@ -64,43 +67,43 @@ Generated from [`data/known-defects.json`](../data/known-defects.json). Machine-
 | Classification | Defects |
 | :--- | ---: |
 | act-rule-failure | 20 |
-| best-practice | 8 |
-| candidate-wcag-failure | 10 |
+| best-practice | 10 |
+| candidate-wcag-failure | 15 |
 | exploratory | 1 |
-| usability-concern | 2 |
+| usability-concern | 3 |
 | wcag-failure | 11 |
 
 ## Defects by review lifecycle
 
 | Lifecycle | Defects |
 | :--- | ---: |
-| reproduced-automatically | 52 |
+| reproduced-automatically | 60 |
 
 ## Defects by affected capability
 
 | Capability | Defects |
 | :--- | ---: |
-| cognitive | 21 |
-| keyboard-only | 9 |
+| cognitive | 26 |
+| keyboard-only | 12 |
 | low-vision | 3 |
 | reduced-motion | 1 |
 | screen-magnification | 3 |
-| screen-reader | 45 |
-| switch-control | 16 |
-| voice-control | 17 |
+| screen-reader | 51 |
+| switch-control | 17 |
+| voice-control | 18 |
 
 ## Defects by expected detection method
 
 | Detection method | Defects |
 | :--- | ---: |
-| accessibility-tree-inspection | 30 |
+| accessibility-tree-inspection | 34 |
 | assisted-visual-review | 7 |
-| automated-keyboard-interaction | 3 |
-| automated-pointer-interaction | 1 |
+| automated-keyboard-interaction | 6 |
+| automated-pointer-interaction | 3 |
 | computed-style-analysis | 2 |
-| dom-inspection | 32 |
+| dom-inspection | 39 |
 | heuristic-analysis | 6 |
-| manual-keyboard-evaluation | 7 |
+| manual-keyboard-evaluation | 9 |
 | mutation-observation | 1 |
 | screen-reader-evaluation | 7 |
 
@@ -109,29 +112,29 @@ Generated from [`data/known-defects.json`](../data/known-defects.json). Machine-
 | Criterion | Defects |
 | :--- | ---: |
 | 1.1.1 | 2 |
-| 1.3.1 | 4 |
+| 1.3.1 | 6 |
 | 1.4.3 | 1 |
 | 1.4.8 | 1 |
-| 2.1.1 | 2 |
+| 2.1.1 | 3 |
 | 2.2.2 | 1 |
 | 2.4.2 | 2 |
-| 2.4.3 | 2 |
+| 2.4.3 | 3 |
 | 2.4.4 | 2 |
 | 2.4.7 | 2 |
 | 2.5.3 | 1 |
 | 3.2.5 | 1 |
 | 3.3.1 | 2 |
 | 3.3.2 | 3 |
-| 4.1.2 | 3 |
-| 4.1.3 | 2 |
+| 4.1.2 | 5 |
+| 4.1.3 | 3 |
 
 ## WCAG mapping status
 
 | Status | Defects |
 | :--- | ---: |
-| candidate | 11 |
+| candidate | 16 |
 | claimed | 19 |
-| informational | 1 |
+| informational | 3 |
 
 ## Defects by ACT rule
 
@@ -147,7 +150,7 @@ Generated from [`data/known-defects.json`](../data/known-defects.json). Machine-
 
 | Framework | Defects |
 | :--- | ---: |
-| html | 29 |
+| html | 37 |
 | nunjucks | 19 |
 | react | 1 |
 | vue | 1 |
@@ -157,36 +160,36 @@ Generated from [`data/known-defects.json`](../data/known-defects.json). Machine-
 
 | Interaction | Defects |
 | :--- | ---: |
-| none | 43 |
-| required | 9 |
+| none | 45 |
+| required | 15 |
 
 ## Comparison controls
 
 | Control coverage | Defects |
 | :--- | ---: |
-| has-comparison-control | 10 |
-| no-comparison-control | 42 |
+| has-comparison-control | 30 |
+| no-comparison-control | 30 |
 
 ## Review dimensions
 
 | Dimension | Status | Defects |
 | :--- | :--- | ---: |
-| automatedReproduction | verified | 52 |
-| manualReproduction | not-run | 52 |
-| assistiveTechnology | not-run | 52 |
-| independentReview | not-run | 52 |
+| automatedReproduction | verified | 60 |
+| manualReproduction | not-run | 60 |
+| assistiveTechnology | not-run | 60 |
+| independentReview | not-run | 60 |
 
 ## Assistive-technology coverage
 
-Recorded procedures: **11** across **11** defects.
+Recorded procedures: **19** across **19** defects.
 
 | Status | Count |
 | :--- | ---: |
-| not-run | 11 |
+| not-run | 19 |
 
 | Environment | Procedures |
 | :--- | ---: |
-| macOS / Safari / VoiceOver | 9 |
+| macOS / Safari / VoiceOver | 17 |
 | Windows / Chrome / NVDA | 1 |
 | Windows / Firefox / NVDA | 1 |
 

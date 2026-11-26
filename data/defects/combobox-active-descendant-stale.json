@@ -1,0 +1,114 @@
+{
+  "service": "kestrel",
+  "fixtureId": null,
+  "aliases": [],
+  "preconditions": [],
+  "interactionSteps": [
+    {
+      "action": "type",
+      "selector": "#species-a",
+      "value": "mag"
+    },
+    {
+      "action": "assert",
+      "selector": "#species-a-list",
+      "state": "visible"
+    }
+  ],
+  "environment": null,
+  "actRules": [],
+  "controlFixtureId": null,
+  "introducedIn": null,
+  "lastVerified": null,
+  "notApplicable": [
+    "fixtureId",
+    "actRules"
+  ],
+  "assistiveTechnologyTests": [
+    {
+      "platform": "macOS",
+      "browser": "Safari",
+      "assistiveTechnology": "VoiceOver",
+      "procedure": "Complete the journey and listen for the announcement or information under test.",
+      "status": "not-run"
+    }
+  ],
+  "id": "combobox-active-descendant-stale",
+  "title": "Combobox active descendant points at a filtered-out option",
+  "description": "Typing filters the suggestion list. The alpha combobox keeps aria-activedescendant on Mallard after Mallard is hidden, so assistive technology reports a suggestion that is no longer available.",
+  "component": "Species combobox (variant A)",
+  "category": "aria-state",
+  "classification": "candidate-wcag-failure",
+  "url": "lab/subtle/combobox/",
+  "locators": [
+    {
+      "type": "css",
+      "value": "#species-a"
+    }
+  ],
+  "relatedElements": [
+    {
+      "purpose": "comparison-control",
+      "css": "#species-b",
+      "note": "The control moves the active descendant to the first visible option."
+    }
+  ],
+  "expectedBehaviour": "The active descendant always references an option that is present and visible in the list.",
+  "actualBehaviour": "The reference remains on the hidden Mallard option after filtering.",
+  "userImpact": "Screen-reader users hear the wrong suggestion and cannot tell which option they would select.",
+  "affectedCapabilities": [
+    "screen-reader",
+    "voice-control"
+  ],
+  "wcag": [
+    {
+      "criterion": "4.1.2",
+      "status": "candidate"
+    }
+  ],
+  "detection": {
+    "expectedMethods": [
+      "automated-keyboard-interaction",
+      "dom-inspection"
+    ],
+    "note": "The roles and names are valid; only the reference becomes stale after input.",
+    "observed": [
+      {
+        "date": "2026-11-26",
+        "engine": "axe-core",
+        "engineVersion": "4.14.1",
+        "browser": "Chromium via Playwright 1.65.1",
+        "interactionState": "default page state",
+        "ruleId": null,
+        "result": "not-detected",
+        "note": "Page-level axe run with tags wcag2a, wcag2aa, wcag21a, wcag21aa and best-practice. No violation was reported in the default state; the control on the same page or path also passes.",
+        "evidence": "tests/detection-observations.spec.js"
+      }
+    ]
+  },
+  "manualTests": [
+    "Type mag in the species field and listen to which suggestion is announced as active."
+  ],
+  "evidence": {
+    "assertions": [
+      "aria-activedescendant still references the hidden Mallard option after typing mag."
+    ],
+    "tests": [
+      "tests/subtle-widgets.spec.js: keeps the alpha active descendant on a filtered-out option"
+    ],
+    "artifacts": [],
+    "commands": [
+      "npx playwright test tests/journey-defects.spec.js"
+    ]
+  },
+  "reviewStatus": {
+    "lifecycle": "reproduced-automatically",
+    "dimensions": {
+      "automatedReproduction": "verified",
+      "manualReproduction": "not-run",
+      "assistiveTechnology": "not-run",
+      "independentReview": "not-run"
+    },
+    "note": "A Playwright regression test preserves the defective journey or widget behaviour and its control. That is automated reproduction, not a manual or assistive-technology observation."
+  }
+}

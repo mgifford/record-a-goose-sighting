@@ -29,6 +29,7 @@ function sourcePageExists (root, defect) {
     return fs.existsSync(path.join(root, 'app/views', relative))
   }
 
+  if (pathname.endsWith('.html')) return fs.existsSync(path.join(root, 'services', pathname))
   return fs.existsSync(path.join(root, 'services', pathname, 'index.html'))
 }
 

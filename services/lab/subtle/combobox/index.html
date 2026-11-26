@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en" data-test-ready="true">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Record a sighting: species suggestions</title>
+  <link rel="stylesheet" href="/lab/lab-styles.css">
+  <style>
+    .combo { position: relative; max-width: 24rem; }
+    .combo input { width: 100%; }
+    .combo ul { position: absolute; z-index: 2; left: 0; right: 0; margin: 0; padding: 0; list-style: none; background: #fff; border: 2px solid #0b0c0c; max-height: 12rem; overflow: auto; }
+    .combo li { padding: 0.5rem 0.75rem; cursor: pointer; }
+    .combo li[aria-selected="true"] { background: #ffdd00; color: #0b0c0c; }
+    .combo li[hidden] { display: none; }
+  </style>
+</head>
+<body>
+  <header><nav aria-label="Site"><a href="../../../">Record a goose sighting</a><a href="../../">Laboratory</a></nav></header>
+  <main>
+    <h1>Record a sighting: species suggestions</h1>
+    <p class="meta">Two versions of the same species search. Both filter the list as you type and both support the arrow keys.</p>
+    <p>Type a few letters into each field, then compare which suggestion assistive technology reports as active.</p>
+
+    <section aria-labelledby="variant-a">
+      <h2 id="variant-a">Variant A</h2>
+      <div class="fixture">
+        <div class="field">
+          <label for="species-a">Species</label>
+          <p class="meta" id="species-a-hint">Start typing to see suggestions.</p>
+          <div class="combo">
+            <input id="species-a" role="combobox" aria-expanded="false" aria-controls="species-a-list" aria-autocomplete="list" aria-describedby="species-a-hint" aria-activedescendant="species-a-option-mallard" autocomplete="off">
+            <ul id="species-a-list" role="listbox" aria-label="Species suggestions" hidden>
+              <li id="species-a-option-mallard" role="option" aria-selected="true">Mallard</li>
+              <li id="species-a-option-magpie" role="option" aria-selected="false">Magpie</li>
+              <li id="species-a-option-marsh-harrier" role="option" aria-selected="false">Marsh harrier</li>
+              <li id="species-a-option-mute-swan" role="option" aria-selected="false">Mute swan</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="variant-b">
+      <h2 id="variant-b">Variant B</h2>
+      <div class="fixture">
+        <div class="field">
+          <label for="species-b">Species</label>
+          <p class="meta" id="species-b-hint">Start typing to see suggestions.</p>
+          <div class="combo">
+            <input id="species-b" role="combobox" aria-expanded="false" aria-controls="species-b-list" aria-autocomplete="list" aria-describedby="species-b-hint" aria-activedescendant="species-b-option-mallard" autocomplete="off">
+            <ul id="species-b-list" role="listbox" aria-label="Species suggestions" hidden>
+              <li id="species-b-option-mallard" role="option" aria-selected="true">Mallard</li>
+              <li id="species-b-option-magpie" role="option" aria-selected="false">Magpie</li>
+              <li id="species-b-option-marsh-harrier" role="option" aria-selected="false">Marsh harrier</li>
+              <li id="species-b-option-mute-swan" role="option" aria-selected="false">Mute swan</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      function setupCombobox (variant, keepsActiveDescendantCurrent) {
+        const input = document.getElementById(`species-${variant}`)
+        const list = document.getElementById(`species-${variant}-list`)
+        const options = [...list.querySelectorAll('[role="option"]')]
+
+        function visibleOptions () {
+          return options.filter((option) => !option.hidden)
+        }
+
+        function setActive (option) {
+          if (!option) return
+          input.setAttribute('aria-activedescendant', option.id)
+          for (const candidate of options) {
+            candidate.setAttribute('aria-selected', String(candidate === option))
+          }
+        }
+
+        function filter () {
+          const value = input.value.trim().toLowerCase()
+          for (const option of options) {
+            option.hidden = value !== '' && !option.textContent.toLowerCase().includes(value)
+          }
+          const visible = visibleOptions()
+          list.hidden = value === '' || visible.length === 0
+          input.setAttribute('aria-expanded', String(!list.hidden))
+          if (keepsActiveDescendantCurrent) setActive(visible[0] || null)
+        }
+
+        input.addEventListener('input', filter)
+
+        input.addEventListener('keydown', (event) => {
+          const visible = visibleOptions()
+          if (event.key === 'ArrowDown' || event.key === 'ArrowUp') {
+            event.preventDefault()
+            const selected = visible.findIndex((option) => option.getAttribute('aria-selected') === 'true')
+            const offset = event.key === 'ArrowDown' ? 1 : -1
+            const next = selected === -1
+              ? 0
+              : Math.min(Math.max(selected + offset, 0), visible.length - 1)
+            setActive(visible[next])
+          }
+          if (event.key === 'Escape') {
+            list.hidden = true
+            input.setAttribute('aria-expanded', 'false')
+          }
+        })
+
+        input.addEventListener('blur', () => {
+          list.hidden = true
+          input.setAttribute('aria-expanded', 'false')
+        })
+
+        setActive(options[0])
+      }
+
+      setupCombobox('a', false)
+      setupCombobox('b', true)
+    </script>
+  </main>
+  <footer><p>Part of the animal-reporting laboratory. MIT licensed.</p></footer>
+</body>
+</html>

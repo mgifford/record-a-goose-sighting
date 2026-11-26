@@ -14,7 +14,7 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const DIST = path.join(ROOT, 'dist')
 const LAB = path.join(ROOT, 'dist-lab')
 
-const MERGED_DIRECTORIES = ['lab', 'hedgehog', 'wombat', 'paca', 'lab-assets', 'defects']
+const MERGED_DIRECTORIES = ['lab', 'hedgehog', 'wombat', 'paca', 'kestrel', 'lab-assets', 'defects']
 
 const REQUIRED_OUTPUT = [
   'index.html',
@@ -29,6 +29,7 @@ const REQUIRED_OUTPUT = [
   'hedgehog/index.html',
   'wombat/index.html',
   'paca/index.html',
+  'kestrel/index.html',
   'defects/index.html',
   'defects/manifest.json'
 ]

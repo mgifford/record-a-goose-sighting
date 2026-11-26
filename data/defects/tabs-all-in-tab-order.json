@@ -1,0 +1,104 @@
+{
+  "service": "kestrel",
+  "fixtureId": null,
+  "aliases": [],
+  "preconditions": [],
+  "interactionSteps": [],
+  "environment": null,
+  "actRules": [],
+  "controlFixtureId": null,
+  "introducedIn": null,
+  "lastVerified": null,
+  "notApplicable": [
+    "fixtureId",
+    "actRules"
+  ],
+  "assistiveTechnologyTests": [
+    {
+      "platform": "macOS",
+      "browser": "Safari",
+      "assistiveTechnology": "VoiceOver",
+      "procedure": "Complete the journey and listen for the announcement or information under test.",
+      "status": "not-run"
+    }
+  ],
+  "id": "tabs-all-in-tab-order",
+  "title": "Every tab is in the tab order",
+  "description": "The alpha tab set gives each tab tabindex=0, so Tab moves through all three tabs before leaving the tab list. The recommended roving model keeps only the selected tab in the tab order.",
+  "component": "Observation record tabs (variant A)",
+  "category": "keyboard",
+  "classification": "best-practice",
+  "url": "lab/subtle/tabs/",
+  "locators": [
+    {
+      "type": "css",
+      "value": "#tab-a-pending"
+    }
+  ],
+  "relatedElements": [
+    {
+      "purpose": "comparison-control",
+      "css": "#tab-b-pending",
+      "note": "The control uses roving tabindex and is removed from the tab order."
+    }
+  ],
+  "expectedBehaviour": "A tab list uses roving tabindex so that Tab enters the tab list once and arrow keys move between tabs.",
+  "actualBehaviour": "All three tabs have tabindex=0.",
+  "userImpact": "Keyboard users need extra Tab presses and may not understand that the tabs form one composite widget.",
+  "affectedCapabilities": [
+    "keyboard-only",
+    "switch-control"
+  ],
+  "wcag": [
+    {
+      "criterion": "2.4.3",
+      "status": "informational",
+      "note": "The tabs are still operable with Tab and Enter. Roving tabindex is an authoring-practice pattern, not a separate WCAG failure."
+    }
+  ],
+  "detection": {
+    "expectedMethods": [
+      "dom-inspection",
+      "manual-keyboard-evaluation"
+    ],
+    "note": "The extra tab stops are only apparent when tabbing through the page.",
+    "observed": [
+      {
+        "date": "2026-11-26",
+        "engine": "axe-core",
+        "engineVersion": "4.14.1",
+        "browser": "Chromium via Playwright 1.65.1",
+        "interactionState": "default page state",
+        "ruleId": null,
+        "result": "not-detected",
+        "note": "Page-level axe run with tags wcag2a, wcag2aa, wcag21a, wcag21aa and best-practice. No violation was reported in the default state; the control on the same page or path also passes.",
+        "evidence": "tests/detection-observations.spec.js"
+      }
+    ]
+  },
+  "manualTests": [
+    "Tab through the page and count how many stops the tab list contains."
+  ],
+  "evidence": {
+    "assertions": [
+      "All three alpha tabs have tabindex=0."
+    ],
+    "tests": [
+      "tests/subtle-widgets.spec.js: keeps every alpha tab in the tab order"
+    ],
+    "artifacts": [],
+    "commands": [
+      "npx playwright test tests/journey-defects.spec.js"
+    ]
+  },
+  "reviewStatus": {
+    "lifecycle": "reproduced-automatically",
+    "dimensions": {
+      "automatedReproduction": "verified",
+      "manualReproduction": "not-run",
+      "assistiveTechnology": "not-run",
+      "independentReview": "not-run"
+    },
+    "note": "A Playwright regression test preserves the defective journey or widget behaviour and its control. That is automated reproduction, not a manual or assistive-technology observation."
+  }
+}

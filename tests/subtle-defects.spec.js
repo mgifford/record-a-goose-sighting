@@ -21,7 +21,13 @@ const PAGES = [
   'lab/subtle/errors/',
   'lab/subtle/aria-state/',
   'lab/subtle/keyboard-toggle/',
-  'lab/subtle/reading/'
+  'lab/subtle/reading/',
+  'lab/subtle/tables/',
+  'lab/subtle/combobox/',
+  'lab/subtle/tabs/',
+  'kestrel/index.html',
+  'kestrel/details.html',
+  'kestrel/confirmation.html'
 ]
 
 test.describe('subtle fixtures do not leak the answer key', () => {

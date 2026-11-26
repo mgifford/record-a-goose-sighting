@@ -1,0 +1,107 @@
+{
+  "service": "kestrel",
+  "fixtureId": null,
+  "aliases": [],
+  "preconditions": [],
+  "interactionSteps": [],
+  "environment": null,
+  "actRules": [],
+  "controlFixtureId": null,
+  "introducedIn": null,
+  "lastVerified": null,
+  "notApplicable": [
+    "fixtureId",
+    "actRules"
+  ],
+  "assistiveTechnologyTests": [
+    {
+      "platform": "macOS",
+      "browser": "Safari",
+      "assistiveTechnology": "VoiceOver",
+      "procedure": "Complete the journey and listen for the announcement or information under test.",
+      "status": "not-run"
+    }
+  ],
+  "id": "table-column-headers-not-marked-up",
+  "title": "Column headings are styled cells rather than header cells",
+  "description": "The attendance table's first row is bold with a border, so it looks like a header row. The cells are td elements, so table navigation reports no column headers for the data cells below.",
+  "component": "Attendance table (variant A)",
+  "category": "tables",
+  "classification": "candidate-wcag-failure",
+  "url": "lab/subtle/tables/",
+  "locators": [
+    {
+      "type": "css",
+      "value": "#attendance-a"
+    },
+    {
+      "type": "xpath",
+      "value": "(//table[@id='attendance-a']//thead//td)[1]"
+    }
+  ],
+  "relatedElements": [
+    {
+      "purpose": "comparison-control",
+      "css": "#attendance-b",
+      "note": "The control uses th scope=col for the same visible row."
+    }
+  ],
+  "expectedBehaviour": "Visual column headings are marked up as column headers so data cells can be associated with them.",
+  "actualBehaviour": "The heading row uses td elements with heading styling.",
+  "userImpact": "Screen-reader users navigating by table cannot tell which column a value belongs to.",
+  "affectedCapabilities": [
+    "screen-reader",
+    "cognitive"
+  ],
+  "wcag": [
+    {
+      "criterion": "1.3.1",
+      "status": "candidate"
+    }
+  ],
+  "detection": {
+    "expectedMethods": [
+      "dom-inspection",
+      "accessibility-tree-inspection"
+    ],
+    "note": "The accessible roles differ (cell versus columnheader) even though the rendering is identical.",
+    "observed": [
+      {
+        "date": "2026-11-26",
+        "engine": "axe-core",
+        "engineVersion": "4.14.1",
+        "browser": "Chromium via Playwright 1.65.1",
+        "interactionState": "default page state",
+        "ruleId": null,
+        "result": "not-detected",
+        "note": "Page-level axe run with tags wcag2a, wcag2aa, wcag21a, wcag21aa and best-practice. No violation was reported in the default state; the control on the same page or path also passes.",
+        "evidence": "tests/detection-observations.spec.js"
+      }
+    ]
+  },
+  "manualTests": [
+    "Move through the attendance table in table navigation mode and listen for the column headings."
+  ],
+  "evidence": {
+    "assertions": [
+      "The alpha table has three td elements in thead and no th elements."
+    ],
+    "tests": [
+      "tests/subtle-widgets.spec.js: keeps the alpha column headings as plain cells"
+    ],
+    "artifacts": [],
+    "commands": [
+      "npx playwright test tests/journey-defects.spec.js"
+    ]
+  },
+  "reviewStatus": {
+    "lifecycle": "reproduced-automatically",
+    "dimensions": {
+      "automatedReproduction": "verified",
+      "manualReproduction": "not-run",
+      "assistiveTechnology": "not-run",
+      "independentReview": "not-run"
+    },
+    "note": "A Playwright regression test preserves the defective journey or widget behaviour and its control. That is automated reproduction, not a manual or assistive-technology observation."
+  }
+}

@@ -4,7 +4,7 @@
 | :--- | :--- |
 | [BASELINE-AUDIT.md](BASELINE-AUDIT.md) | What existed before the registry, and which capabilities were missing |
 | [ADR-0001-unified-defect-registry.md](ADR-0001-unified-defect-registry.md) | Why the registry is generated, which files are authoritative and how identifiers work |
-| [KNOWN-DEFECTS.md](KNOWN-DEFECTS.md) | Generated answer key for all 52 declared defects |
+| [KNOWN-DEFECTS.md](KNOWN-DEFECTS.md) | Generated answer key for every declared defect |
 | [DEFECT-COVERAGE.md](DEFECT-COVERAGE.md) | Generated WCAG, ACT, capability, detection and AT coverage matrices |
 | [CONTRIBUTING-DEFECTS.md](CONTRIBUTING-DEFECTS.md) | How to add a defect or comparison fixture, and the review checklist |
 | [AT-TESTING.md](AT-TESTING.md) | Environment matrix, recording rules and unexecuted procedures |

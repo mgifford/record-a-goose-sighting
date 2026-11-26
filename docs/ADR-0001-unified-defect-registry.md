@@ -33,7 +33,7 @@ records:
 | `docs/original-goose-issues.json` | The 19 preserved original defects | imported |
 | `services/lab/fixtures.json` | Failed and unsupported ACT cases (21 records) | derived |
 | `data/defect-annotations.json` | Curated locators, expected behaviour and impact for imported records; comparison-control links | curated |
-| `data/defects/*.json` | Defects that are not ACT cases (12 records at the time of writing) | curated |
+| `data/defects/*.json` | Defects that are not ACT cases (journey, table, widget and comparison fixtures) | curated |
 
 Everything else is generated and never hand-edited:
 

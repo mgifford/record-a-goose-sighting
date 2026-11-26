@@ -47,7 +47,14 @@ test.describe('registry locators resolve', () => {
       for (const locator of resolved) {
         if (locator.type === 'document-title') continue
         expect(locator.evidence?.absoluteXPath, `${defect.id}: missing XPath evidence`).toBeTruthy()
-        expect(locator.accessibility?.snapshot, `${defect.id}: missing ARIA snapshot`).toBeTruthy()
+
+        if (locator.evidence?.ariaHidden) {
+          // A target hidden from the accessibility tree is expected to expose an
+          // empty snapshot; that absence is the evidence, not a capture failure.
+          expect(locator.accessibility?.snapshot, `${defect.id}: hidden target should have no snapshot`).toBe('')
+        } else {
+          expect(locator.accessibility?.snapshot, `${defect.id}: missing ARIA snapshot`).toBeTruthy()
+        }
       }
     })
   }

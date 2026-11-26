@@ -11,15 +11,15 @@ Status values: **existing** (covered before this change), **added** (first tranc
 
 | Measure | Value |
 | :--- | ---: |
-| Declared defects | 52 |
+| Declared defects | 60 |
 | Preserved original defects | 19 |
 | ACT fixture defects | 21 |
-| New subtle defects | 12 |
-| Comparison controls linked to a defect | 10 |
-| Interaction-dependent defects | 9 |
+| New comparison and journey defects | 20 |
+| Defects with a comparison control | 30 |
+| Interaction-dependent defects | 15 |
 | Independently reviewed defects | 0 |
-| Recorded AT procedures (all unexecuted) | 11 |
-| Engine observations recorded on new defects | 12 (axe-core 4.14.1) |
+| Recorded AT procedures (all unexecuted) | 19 |
+| Engine observations recorded on new defects | 20 (axe-core 4.14.1) |
 
 ## Families
 
@@ -31,9 +31,9 @@ Status values: **existing** (covered before this change), **added** (first tranc
 | D. Screen reader reading and navigation | partial | Original heading and legend defects; visual-only heading; hidden hint | No incorrect landmark structure, `aria-owns`, virtualised list, conflicting reading order | Landmark noise, virtualised observations list, CSS-generated content |
 | E. Dynamic content and status messages | partial | Silent save; uncleared busy state; existing reveal fixture | No assertive overuse, competing regions, stale status, auto-updating content | Two competing live regions; status removed before review; stale count |
 | F. Forms and error recovery | partial | Four new error defects; original field-level defects | No conditional question, multi-step data loss, autocomplete token, timeout, password-manager block | Multi-step form that loses data; conditional field not announced; paste-blocked confirmation |
-| G. Complex ARIA widgets | partial | Disclosure with stale state; switch; ACT role fixtures | No combobox, listbox, menu, tabs, tree, grid, date picker, slider | Combobox with stale `aria-activedescendant`; tabs with wrong roving tabindex; grid with wrong row count |
+| G. Complex ARIA widgets | partial | Combobox with a stale active descendant; tabs with incorrect roving tabindex and no arrow keys; disclosure; switch; ACT role fixtures | No listbox, menu, tree, grid, date picker, slider or toggle button | Grid with a wrong row count; date picker; menu with broken focus return |
 | H. Images, graphics and alternative text | existing | Original missing alt, file-name alt; ACT image fixtures | No charts, maps, SVG names, icon-only controls, paired visual comparisons | Chart with a data-table alternative; SVG with misleading title; icon-only button |
-| I. Tables and structured data | not started | - | No header association, sorting, responsive or virtualised table cases | Mis-associated headers; stale `aria-sort`; layout table exposed as data |
+| I. Tables and structured data | partial | Unmarked column headers; stale `aria-sort` after sorting | No grouped headers, responsive table, virtualised table or layout-table case | Colspan/rowspan association; responsive table that loses headers; layout table exposed as data |
 | J. Responsive accessibility and reflow | existing (manual) | 320px text-spacing page; manual scripts | No defect that only appears at 320px, zoom or magnification | Clipped dialog at 320px; sticky footer overlap; content lost at 200% |
 | K. Text spacing and typography | existing | Fixed-height containers and text-spacing page; justified text | No clipping measured under 1.4.12 overrides | Clipped label at letter-spacing; truncated control; contrast under custom spacing |
 | L. Forced colours, themes and preferences | existing (manual) | Forced-colours focus comparison; reduced-motion page | No automated behavioural check; no dark-mode contrast pair | `forced-color-adjust: none` misuse; focus cue lost in dark mode |
@@ -44,7 +44,7 @@ Status values: **existing** (covered before this change), **added** (first tranc
 | Q. Voice control and alternative input | partial | Pointer-only switch; label-in-name mismatch | No overlay numbers, drag-only, small targets, gesture-only | Drag-and-drop without an alternative; 24×24 target; multipoint gesture |
 | R. JavaScript lifecycle and dynamic state | partial | React/Vue async name; node replacement | No hydration mismatch, duplicate ids, lost listeners, route-change title | Hydration that drops a name; duplicate ids from a repeated component; Back-state mismatch |
 | S. Web Components, shadow DOM and iframes | existing | Open, closed, nested shadow roots; single, nested and multiple frames | No cross-root `aria-labelledby`, focus delegation or slotted semantics | Named slot that loses its label; focus restore across frame boundaries |
-| T. Multi-page journeys | not started | Original six-step Goose journey (defects are page-level) | No journey-only failure, conditional trap, progress indicator or correction loop | New fictional service with a conditional keyboard trap and a correction workflow |
+| T. Multi-page journeys | partial | Three-step Wildlife observation service: hidden step indicator, unannounced conditional question, lost state on Back | No journey that becomes inaccessible only after a specific choice; no correction loop; no progress indicator semantics beyond the step text | A conditional keyboard trap, a correction workflow that cannot be completed, and data loss across a multi-step form |
 
 ## Deliberate non-goals for now
 
@@ -55,11 +55,13 @@ Status values: **existing** (covered before this change), **added** (first tranc
 
 ## Suggested order
 
-1. **Review the first tranche.** Twelve defects and ten controls are unreviewed. Independent
+1. **Review the first tranches.** Twenty new defects with paired controls are unreviewed. Independent
    review, then manual reproduction, is worth more than twenty more fixtures.
-2. **Journeys (T).** Extend one existing fictional service with a conditional, multi-page
-   failure. This is the largest gap for realistic evaluation.
-3. **Tables and widgets (I, G).** High real-world value and often missed by automation.
+2. **Journeys (T).** The three-step booking service covers progress, a conditional
+   question and lost state. Add a conditional keyboard trap and a correction loop, which
+   remain the largest gap for realistic evaluation.
+3. **Tables and widgets (I, G).** Header association, sort state, combobox and tabs are
+   now covered; grids, menus, trees and date pickers are not.
 4. **Responsive and preference defects (J, L).** Add behavioural checks that record
    measured results separately from confirmed failures.
 5. **Media and language (N, O).** Small, original assets; keep resource use low.

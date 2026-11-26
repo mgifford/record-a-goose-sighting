@@ -7,7 +7,7 @@ Canonical machine-readable registry: [`data/known-defects.json`](../data/known-d
 This is the answer key. It is not part of a blind evaluation, and an entry here is a declared
 defect with a stated expected outcome, not proof that a person has experienced the barrier.
 
-The registry describes **52 defects** across 5 services.
+The registry describes **60 defects** across 6 services.
 
 An expected outcome is a hypothesis until the review dimensions show an independent review.
 
@@ -15,17 +15,18 @@ An expected outcome is a hypothesis until the review dimensions show an independ
 
 | Dimension | Count |
 | :--- | ---: |
-| Defects | 52 |
+| Defects | 60 |
 | Service: goose | 19 |
 | Service: hedgehog | 1 |
+| Service: kestrel | 8 |
 | Service: lab | 29 |
 | Service: paca | 2 |
 | Service: wombat | 1 |
 | Classification: act-rule-failure | 20 |
-| Classification: best-practice | 8 |
-| Classification: candidate-wcag-failure | 10 |
+| Classification: best-practice | 10 |
+| Classification: candidate-wcag-failure | 15 |
 | Classification: exploratory | 1 |
-| Classification: usability-concern | 2 |
+| Classification: usability-concern | 3 |
 | Classification: wcag-failure | 11 |
 
 See [DEFECT-COVERAGE.md](DEFECT-COVERAGE.md) for WCAG, ACT, capability, detection and
@@ -41,16 +42,24 @@ The registry is generated from these files. Each digest is the SHA-256 of the co
 | `services/lab/fixtures.json` | act-fixture-manifest | `0066f64fedf2b6bf4f57af7689436256d7388099d8c7fc85ac6835c667b386a0` |
 | `data/defect-annotations.json` | annotation | `7e4606251a6a74cc1fe50cba90068e8ca84abf8959ca1a864c40e6099203fb72` |
 | `data/defects/busy-state-not-cleared.json` | defect-record | `ef87796caf4003d743cb591a779a8fa1675dae4d071e54452c90812102980752` |
+| `data/defects/combobox-active-descendant-stale.json` | defect-record | `c3dc231b7f0882558e6deb7d944cfc7609077d3120bd3117cd9c171846ab3159` |
 | `data/defects/disclosure-expanded-state-stale.json` | defect-record | `5b804d2d11289b2cdc3417db78bbb3b3133ee083d82ae625479e3eceadbf43fb` |
 | `data/defects/error-focus-not-moved-to-summary.json` | defect-record | `efb0acb6a802abcb99ba801cafdeec6592e8c90afcdacba320c6be5dbd7906a3` |
 | `data/defects/error-not-associated-with-field.json` | defect-record | `226ad1880fb4a7f9a64e5a3b69a44d5a7a0971583dddc2a6e40803df27b4068c` |
 | `data/defects/error-summary-link-broken.json` | defect-record | `49f187f0861361c1d21f1d2d149e6d7793e4fbfe523a25f2329da21b31a350dd` |
 | `data/defects/focus-lost-after-item-removal.json` | defect-record | `d7847473b0287daad2bab8e90d1502713b470baf7da5cfcf58cfa3da0e017da2` |
 | `data/defects/hint-hidden-from-accessibility-tree.json` | defect-record | `573eec73047d294eff52b2a0fa84e8c79f60693c5f99db7702b4fa04e36836d1` |
+| `data/defects/journey-conditional-question-unannounced.json` | defect-record | `8f8f7aed2195e76729e94d5497f7fe44c6141c8ba916dc6b96ec35d7067ef65b` |
+| `data/defects/journey-progress-hidden-from-assistive-technology.json` | defect-record | `94b425792838f33bbecc109a894b3539c700d7b1352a70d4eb3b1c28853281df` |
+| `data/defects/journey-state-lost-on-back.json` | defect-record | `4024446b9f7f14061f5c8dad60d8ee11176f7d707dc7e8d45cc4acfb8f4797c2` |
 | `data/defects/name-contradicts-visible-label.json` | defect-record | `53d584b052da845e149dd00d9921df9827257cbb047b61371aac0d7e8f6a8422` |
 | `data/defects/required-field-not-identified.json` | defect-record | `e4a81abc0a8558d32e243fc0ef97465464110638964a496057bf651c6f5aec6f` |
 | `data/defects/status-message-not-announced.json` | defect-record | `9616b0506e54441902c834732290cd391aafab0ceb19c5752a80e4964053d496` |
 | `data/defects/switch-pointer-only.json` | defect-record | `c68e5b41528a7bd7fc8f5a1ed082c10160d7d172ea72050397579f1977929714` |
+| `data/defects/table-column-headers-not-marked-up.json` | defect-record | `3f3fa7893911b51cf89c57ce449132238e023eaf628b81628af685ff8e6b479b` |
+| `data/defects/table-sort-state-stale.json` | defect-record | `b18269fff304ac74839a2fbae9469b086c5bfb7ccddf15223d84e02202cadda5` |
+| `data/defects/tabs-all-in-tab-order.json` | defect-record | `e42b7e874612b7d2c361cb400d2ed668105497efcccd2b5230105f97e50c7e9e` |
+| `data/defects/tabs-arrow-navigation-missing.json` | defect-record | `b505307d44aa779f148699e62f52c4732c1441bab944063cf0331141abdb5f7c` |
 | `data/defects/visual-heading-not-semantic.json` | defect-record | `77e14b011e0e106af81687f3353679713f1ed86d218812a2d1cb822db2a1ebfb` |
 | `data/schemas/known-defects.schema.json` | schema | `05c8d26531e253a87172e26451f2bcd930599715fe186e7a84c438a825818f7e` |
 
@@ -557,6 +566,224 @@ The registry is generated from these files. Each digest is the SHA-256 of the co
 - **Evidence:** lab/reviews/records/react-button-initial.json
 - **Sources:** [Button has non-empty accessible name (ACT rule 97a4e1)](https://www.w3.org/WAI/standards-guidelines/act/rules/97a4e1/)
 - **Provenance:** derived from `services/lab/fixtures.json`, `data/defect-annotations.json`
+
+## Service: kestrel (8)
+
+### `combobox-active-descendant-stale` Combobox active descendant points at a filtered-out option
+
+- **Page:** [lab/subtle/combobox/](https://mgifford.github.io/record-a-goose-sighting/lab/subtle/combobox/)
+- **Component:** Species combobox (variant A)
+- **Category:** aria-state
+- **Classification:** candidate-wcag-failure
+- **WCAG:** 4.1.2 (candidate)
+- **ACT rules:** none
+- **Locators:** css `#species-a`
+- **Preconditions:** none
+- **Interaction:** type `#species-a`; assert `#species-a-list`
+- **Expected behaviour:** The active descendant always references an option that is present and visible in the list.
+- **Actual behaviour:** The reference remains on the hidden Mallard option after filtering.
+- **User impact:** Screen-reader users hear the wrong suggestion and cannot tell which option they would select.
+- **Affected capabilities:** screen-reader; voice-control
+- **Detection:** automated-keyboard-interaction; dom-inspection. The roles and names are valid; only the reference becomes stale after input.
+- **Manual test:** Type mag in the species field and listen to which suggestion is announced as active.
+- **Assistive technology:** macOS / Safari / VoiceOver: not-run
+- **Engine observations:** axe-core 4.14.1 not-detected on 2026-11-26
+- **Review:** reproduced-automatically (automatedReproduction: verified, manualReproduction: not-run, assistiveTechnology: not-run, independentReview: not-run)
+- **Review note:** A Playwright regression test preserves the defective journey or widget behaviour and its control. That is automated reproduction, not a manual or assistive-technology observation.
+- **Comparison control:** `#species-b` (The control moves the active descendant to the first visible option.)
+- **Evidence:** aria-activedescendant still references the hidden Mallard option after typing mag.; tests/subtle-widgets.spec.js: keeps the alpha active descendant on a filtered-out option
+- **Sources:** none
+- **Provenance:** curated from `data/defects/combobox-active-descendant-stale.json`
+- **Not applicable:** `fixtureId`, `actRules`
+
+### `journey-conditional-question-unannounced` Conditional question appears without an announcement
+
+- **Page:** [kestrel/details.html?path=alpha](https://mgifford.github.io/record-a-goose-sighting/kestrel/details.html?path=alpha)
+- **Component:** Access requirements conditional question
+- **Category:** journey
+- **Classification:** candidate-wcag-failure
+- **WCAG:** 4.1.3 (candidate)
+- **ACT rules:** none
+- **Locators:** css `#access-details-wrapper`
+- **Preconditions:** The access requirements question is visible and No is selected.
+- **Interaction:** click `#access-yes`; assert `#access-details-wrapper`
+- **Expected behaviour:** New content that appears in response to input is announced, and focus does not leave the user without a cue that something changed.
+- **Actual behaviour:** The field appears with no live region, status message or focus change.
+- **User impact:** Screen-reader users may answer No and continue without realising that an extra question appeared.
+- **Affected capabilities:** screen-reader; cognitive
+- **Detection:** dom-inspection; automated-keyboard-interaction; accessibility-tree-inspection. Requires an interaction; the default page is identical in both paths.
+- **Manual test:** With a screen reader running, select Yes and listen for the new question.
+- **Assistive technology:** macOS / Safari / VoiceOver: not-run
+- **Engine observations:** axe-core 4.14.1 not-detected on 2026-11-26
+- **Review:** reproduced-automatically (automatedReproduction: verified, manualReproduction: not-run, assistiveTechnology: not-run, independentReview: not-run)
+- **Review note:** A Playwright regression test preserves the defective journey or widget behaviour and its control. That is automated reproduction, not a manual or assistive-technology observation.
+- **Comparison control:** `The beta path adds a role=status message and moves focus to the new field.` (The beta path adds a role=status message and moves focus to the new field.)
+- **Evidence:** No status region exists on the alpha path after the field is revealed.; tests/journey-defects.spec.js: reveals the conditional question silently on the alpha path
+- **Sources:** none
+- **Provenance:** curated from `data/defects/journey-conditional-question-unannounced.json`
+- **Not applicable:** `fixtureId`, `actRules`
+
+### `journey-progress-hidden-from-assistive-technology` Step indicator is hidden from assistive technology
+
+- **Page:** [kestrel/index.html?path=alpha](https://mgifford.github.io/record-a-goose-sighting/kestrel/index.html?path=alpha)
+- **Component:** Journey step indicator
+- **Category:** journey
+- **Classification:** candidate-wcag-failure
+- **WCAG:** 1.3.1 (candidate)
+- **ACT rules:** none
+- **Locators:** css `#step`
+- **Preconditions:** The journey has three steps: session, details and confirmation.
+- **Interaction:** none
+- **Expected behaviour:** The current step is available to assistive technology on every page of a multi-step journey.
+- **Actual behaviour:** The step text is visible but carries aria-hidden=true, so it is absent from the accessibility tree.
+- **User impact:** Screen-reader users cannot tell where they are or how much of the booking remains.
+- **Affected capabilities:** screen-reader; cognitive
+- **Detection:** dom-inspection; accessibility-tree-inspection. The rendered text looks correct; only the accessibility tree shows the omission.
+- **Manual test:** Open step 2 with a screen reader running and listen for the step position.
+- **Assistive technology:** macOS / Safari / VoiceOver: not-run
+- **Engine observations:** axe-core 4.14.1 not-detected on 2026-11-26
+- **Review:** reproduced-automatically (automatedReproduction: verified, manualReproduction: not-run, assistiveTechnology: not-run, independentReview: not-run)
+- **Review note:** A Playwright regression test preserves the defective journey or widget behaviour and its control. That is automated reproduction, not a manual or assistive-technology observation.
+- **Comparison control:** `The beta path exposes the same visible indicator without aria-hidden.` (The beta path exposes the same visible indicator without aria-hidden.)
+- **Evidence:** The step indicator has aria-hidden=true while remaining visible.; tests/journey-defects.spec.js: hides the step indicator from assistive technology on the alpha path
+- **Sources:** none
+- **Provenance:** curated from `data/defects/journey-progress-hidden-from-assistive-technology.json`
+- **Not applicable:** `fixtureId`, `actRules`
+
+### `journey-state-lost-on-back` Selected session is lost when the journey is revisited
+
+- **Page:** [kestrel/index.html?path=alpha](https://mgifford.github.io/record-a-goose-sighting/kestrel/index.html?path=alpha)
+- **Component:** Session selection and journey state
+- **Category:** journey
+- **Classification:** usability-concern
+- **WCAG:** none
+- **ACT rules:** none
+- **Locators:** css `#session-morning`
+- **Preconditions:** A session has been chosen and the details step is open.
+- **Interaction:** click `#session-morning`; click `#continue-session`; click `#back`; assert `#session-morning`
+- **Expected behaviour:** Returning to an earlier step preserves the choices already made.
+- **Actual behaviour:** The stored journey state is removed on load and the selection is lost.
+- **User impact:** People who go back to check their choice must start again and may believe the booking was lost.
+- **Affected capabilities:** cognitive; screen-reader; keyboard-only
+- **Detection:** automated-pointer-interaction; dom-inspection. No WCAG failure is claimed: the barrier is avoidable re-entry and lost state. A journey test is required.
+- **Manual test:** Choose a session, continue, press Back and check whether the choice is still selected.
+- **Assistive technology:** macOS / Safari / VoiceOver: not-run
+- **Engine observations:** axe-core 4.14.1 not-detected on 2026-11-26
+- **Review:** reproduced-automatically (automatedReproduction: verified, manualReproduction: not-run, assistiveTechnology: not-run, independentReview: not-run)
+- **Review note:** A Playwright regression test preserves the defective journey or widget behaviour and its control. That is automated reproduction, not a manual or assistive-technology observation.
+- **Comparison control:** `The beta path restores the selected session after Back.` (The beta path restores the selected session after Back.)
+- **Evidence:** The session radio is unchecked and sessionStorage is empty after Back on the alpha path.; tests/journey-defects.spec.js: loses the selected session when the first step is revisited on the alpha path
+- **Sources:** none
+- **Provenance:** curated from `data/defects/journey-state-lost-on-back.json`
+- **Not applicable:** `fixtureId`, `actRules`
+
+### `table-column-headers-not-marked-up` Column headings are styled cells rather than header cells
+
+- **Page:** [lab/subtle/tables/](https://mgifford.github.io/record-a-goose-sighting/lab/subtle/tables/)
+- **Component:** Attendance table (variant A)
+- **Category:** tables
+- **Classification:** candidate-wcag-failure
+- **WCAG:** 1.3.1 (candidate)
+- **ACT rules:** none
+- **Locators:** css `#attendance-a`; xpath `(//table[@id='attendance-a']//thead//td)[1]`
+- **Preconditions:** none
+- **Interaction:** none
+- **Expected behaviour:** Visual column headings are marked up as column headers so data cells can be associated with them.
+- **Actual behaviour:** The heading row uses td elements with heading styling.
+- **User impact:** Screen-reader users navigating by table cannot tell which column a value belongs to.
+- **Affected capabilities:** screen-reader; cognitive
+- **Detection:** dom-inspection; accessibility-tree-inspection. The accessible roles differ (cell versus columnheader) even though the rendering is identical.
+- **Manual test:** Move through the attendance table in table navigation mode and listen for the column headings.
+- **Assistive technology:** macOS / Safari / VoiceOver: not-run
+- **Engine observations:** axe-core 4.14.1 not-detected on 2026-11-26
+- **Review:** reproduced-automatically (automatedReproduction: verified, manualReproduction: not-run, assistiveTechnology: not-run, independentReview: not-run)
+- **Review note:** A Playwright regression test preserves the defective journey or widget behaviour and its control. That is automated reproduction, not a manual or assistive-technology observation.
+- **Comparison control:** `#attendance-b` (The control uses th scope=col for the same visible row.)
+- **Evidence:** The alpha table has three td elements in thead and no th elements.; tests/subtle-widgets.spec.js: keeps the alpha column headings as plain cells
+- **Sources:** none
+- **Provenance:** curated from `data/defects/table-column-headers-not-marked-up.json`
+- **Not applicable:** `fixtureId`, `actRules`
+
+### `table-sort-state-stale` Sort control changes row order but never updates aria-sort
+
+- **Page:** [lab/subtle/tables/](https://mgifford.github.io/record-a-goose-sighting/lab/subtle/tables/)
+- **Component:** Recent sightings sort header (variant A)
+- **Category:** tables
+- **Classification:** candidate-wcag-failure
+- **WCAG:** 4.1.2 (candidate)
+- **ACT rules:** none
+- **Locators:** css `#sort-a-header`
+- **Preconditions:** none
+- **Interaction:** click `#sort-a-button`; assert `#sort-a tbody`
+- **Expected behaviour:** A sortable column reports its current sort direction.
+- **Actual behaviour:** aria-sort remains none after each sort.
+- **User impact:** Screen-reader users cannot tell how the table is ordered, and may misread the changed row order.
+- **Affected capabilities:** screen-reader; cognitive
+- **Detection:** automated-pointer-interaction; dom-inspection; accessibility-tree-inspection. Only observable after the interaction; the default state is correct.
+- **Manual test:** Sort the sightings table and listen for the column's sort state.
+- **Assistive technology:** macOS / Safari / VoiceOver: not-run
+- **Engine observations:** axe-core 4.14.1 not-detected on 2026-11-26
+- **Review:** reproduced-automatically (automatedReproduction: verified, manualReproduction: not-run, assistiveTechnology: not-run, independentReview: not-run)
+- **Review note:** A Playwright regression test preserves the defective journey or widget behaviour and its control. That is automated reproduction, not a manual or assistive-technology observation.
+- **Comparison control:** `#sort-b-header` (The control updates aria-sort to ascending then descending.)
+- **Evidence:** aria-sort is still none after two sorts.; tests/subtle-widgets.spec.js: keeps the alpha sort state stale
+- **Sources:** none
+- **Provenance:** curated from `data/defects/table-sort-state-stale.json`
+- **Not applicable:** `fixtureId`, `actRules`
+
+### `tabs-all-in-tab-order` Every tab is in the tab order
+
+- **Page:** [lab/subtle/tabs/](https://mgifford.github.io/record-a-goose-sighting/lab/subtle/tabs/)
+- **Component:** Observation record tabs (variant A)
+- **Category:** keyboard
+- **Classification:** best-practice
+- **WCAG:** 2.4.3 (informational)
+- **ACT rules:** none
+- **Locators:** css `#tab-a-pending`
+- **Preconditions:** none
+- **Interaction:** none
+- **Expected behaviour:** A tab list uses roving tabindex so that Tab enters the tab list once and arrow keys move between tabs.
+- **Actual behaviour:** All three tabs have tabindex=0.
+- **User impact:** Keyboard users need extra Tab presses and may not understand that the tabs form one composite widget.
+- **Affected capabilities:** keyboard-only; switch-control
+- **Detection:** dom-inspection; manual-keyboard-evaluation. The extra tab stops are only apparent when tabbing through the page.
+- **Manual test:** Tab through the page and count how many stops the tab list contains.
+- **Assistive technology:** macOS / Safari / VoiceOver: not-run
+- **Engine observations:** axe-core 4.14.1 not-detected on 2026-11-26
+- **Review:** reproduced-automatically (automatedReproduction: verified, manualReproduction: not-run, assistiveTechnology: not-run, independentReview: not-run)
+- **Review note:** A Playwright regression test preserves the defective journey or widget behaviour and its control. That is automated reproduction, not a manual or assistive-technology observation.
+- **Comparison control:** `#tab-b-pending` (The control uses roving tabindex and is removed from the tab order.)
+- **Evidence:** All three alpha tabs have tabindex=0.; tests/subtle-widgets.spec.js: keeps every alpha tab in the tab order
+- **Sources:** none
+- **Provenance:** curated from `data/defects/tabs-all-in-tab-order.json`
+- **Not applicable:** `fixtureId`, `actRules`
+
+### `tabs-arrow-navigation-missing` Tab set ignores the arrow keys
+
+- **Page:** [lab/subtle/tabs/](https://mgifford.github.io/record-a-goose-sighting/lab/subtle/tabs/)
+- **Component:** Observation record tabs (variant A)
+- **Category:** keyboard
+- **Classification:** best-practice
+- **WCAG:** 2.1.1 (informational)
+- **ACT rules:** none
+- **Locators:** css `#tab-a-latest`; css `#tab-a-pending`
+- **Preconditions:** none
+- **Interaction:** focus `#tab-a-latest`; press `ArrowRight`; assert `#tab-a-latest`
+- **Expected behaviour:** Arrow keys move focus and selection between tabs in a tab list.
+- **Actual behaviour:** Arrow keys are ignored; only clicking or tabbing changes the selected tab.
+- **User impact:** Keyboard users must Tab through the tab list and press Enter rather than using the expected arrow keys.
+- **Affected capabilities:** keyboard-only
+- **Detection:** automated-keyboard-interaction; manual-keyboard-evaluation. Requires focus and key presses; static markup looks valid.
+- **Manual test:** Focus the first tab, press ArrowRight and check whether focus and selection move.
+- **Assistive technology:** macOS / Safari / VoiceOver: not-run
+- **Engine observations:** axe-core 4.14.1 not-detected on 2026-11-26
+- **Review:** reproduced-automatically (automatedReproduction: verified, manualReproduction: not-run, assistiveTechnology: not-run, independentReview: not-run)
+- **Review note:** A Playwright regression test preserves the defective journey or widget behaviour and its control. That is automated reproduction, not a manual or assistive-technology observation.
+- **Comparison control:** `#tab-b-latest` (The control implements ArrowLeft, ArrowRight, Home and End.)
+- **Evidence:** ArrowRight leaves focus on the first alpha tab and its panel unchanged.; tests/subtle-widgets.spec.js: keeps alpha arrow navigation missing
+- **Sources:** none
+- **Provenance:** curated from `data/defects/tabs-arrow-navigation-missing.json`
+- **Not applicable:** `fixtureId`, `actRules`
 
 ## Service: lab (29)
 

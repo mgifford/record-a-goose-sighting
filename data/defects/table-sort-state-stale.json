@@ -1,0 +1,118 @@
+{
+  "service": "kestrel",
+  "fixtureId": null,
+  "aliases": [],
+  "preconditions": [],
+  "interactionSteps": [
+    {
+      "action": "click",
+      "selector": "#sort-a-button"
+    },
+    {
+      "action": "assert",
+      "selector": "#sort-a tbody",
+      "note": "Rows are reordered but aria-sort stays none."
+    }
+  ],
+  "environment": null,
+  "actRules": [],
+  "controlFixtureId": null,
+  "introducedIn": null,
+  "lastVerified": null,
+  "notApplicable": [
+    "fixtureId",
+    "actRules"
+  ],
+  "assistiveTechnologyTests": [
+    {
+      "platform": "macOS",
+      "browser": "Safari",
+      "assistiveTechnology": "VoiceOver",
+      "procedure": "Complete the journey and listen for the announcement or information under test.",
+      "status": "not-run"
+    }
+  ],
+  "id": "table-sort-state-stale",
+  "title": "Sort control changes row order but never updates aria-sort",
+  "description": "Activating the Date sort button reorders the rows in both variants. The alpha header keeps aria-sort=none, so assistive technology reports an unsorted column while the visible order has changed.",
+  "component": "Recent sightings sort header (variant A)",
+  "category": "tables",
+  "classification": "candidate-wcag-failure",
+  "url": "lab/subtle/tables/",
+  "locators": [
+    {
+      "type": "css",
+      "value": "#sort-a-header"
+    }
+  ],
+  "relatedElements": [
+    {
+      "purpose": "sort-trigger",
+      "css": "#sort-a-button"
+    },
+    {
+      "purpose": "comparison-control",
+      "css": "#sort-b-header",
+      "note": "The control updates aria-sort to ascending then descending."
+    }
+  ],
+  "expectedBehaviour": "A sortable column reports its current sort direction.",
+  "actualBehaviour": "aria-sort remains none after each sort.",
+  "userImpact": "Screen-reader users cannot tell how the table is ordered, and may misread the changed row order.",
+  "affectedCapabilities": [
+    "screen-reader",
+    "cognitive"
+  ],
+  "wcag": [
+    {
+      "criterion": "4.1.2",
+      "status": "candidate"
+    }
+  ],
+  "detection": {
+    "expectedMethods": [
+      "automated-pointer-interaction",
+      "dom-inspection",
+      "accessibility-tree-inspection"
+    ],
+    "note": "Only observable after the interaction; the default state is correct.",
+    "observed": [
+      {
+        "date": "2026-11-26",
+        "engine": "axe-core",
+        "engineVersion": "4.14.1",
+        "browser": "Chromium via Playwright 1.65.1",
+        "interactionState": "default page state",
+        "ruleId": null,
+        "result": "not-detected",
+        "note": "Page-level axe run with tags wcag2a, wcag2aa, wcag21a, wcag21aa and best-practice. No violation was reported in the default state; the control on the same page or path also passes.",
+        "evidence": "tests/detection-observations.spec.js"
+      }
+    ]
+  },
+  "manualTests": [
+    "Sort the sightings table and listen for the column's sort state."
+  ],
+  "evidence": {
+    "assertions": [
+      "aria-sort is still none after two sorts."
+    ],
+    "tests": [
+      "tests/subtle-widgets.spec.js: keeps the alpha sort state stale"
+    ],
+    "artifacts": [],
+    "commands": [
+      "npx playwright test tests/journey-defects.spec.js"
+    ]
+  },
+  "reviewStatus": {
+    "lifecycle": "reproduced-automatically",
+    "dimensions": {
+      "automatedReproduction": "verified",
+      "manualReproduction": "not-run",
+      "assistiveTechnology": "not-run",
+      "independentReview": "not-run"
+    },
+    "note": "A Playwright regression test preserves the defective journey or widget behaviour and its control. That is automated reproduction, not a manual or assistive-technology observation."
+  }
+}

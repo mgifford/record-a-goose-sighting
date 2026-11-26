@@ -63,4 +63,21 @@ test.describe(`axe-core ${AXE_VERSION} observations (recorded 2026-11-26)`, () =
     const violations = await scan(page, 'lab/subtle/aria-state/')
     expect(violations).toEqual([])
   })
+
+  test('does not detect the journey defects', async ({ page }) => {
+    expect(await scan(page, 'kestrel/index.html?path=alpha')).toEqual([])
+    expect(await scan(page, 'kestrel/details.html?path=alpha')).toEqual([])
+  })
+
+  test('does not detect the unmarked column headings', async ({ page }) => {
+    expect(await scan(page, 'lab/subtle/tables/')).toEqual([])
+  })
+
+  test('does not detect the stale combobox active descendant', async ({ page }) => {
+    expect(await scan(page, 'lab/subtle/combobox/')).toEqual([])
+  })
+
+  test('does not detect the tabs keyboard model', async ({ page }) => {
+    expect(await scan(page, 'lab/subtle/tabs/')).toEqual([])
+  })
 })

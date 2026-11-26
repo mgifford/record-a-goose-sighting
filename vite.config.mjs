@@ -46,6 +46,12 @@ const entries = [
   'lab/subtle/aria-state/index.html',
   'lab/subtle/keyboard-toggle/index.html',
   'lab/subtle/reading/index.html',
+  'lab/subtle/tables/index.html',
+  'lab/subtle/combobox/index.html',
+  'lab/subtle/tabs/index.html',
+  'kestrel/index.html',
+  'kestrel/details.html',
+  'kestrel/confirmation.html',
   'hedgehog/index.html',
   'wombat/index.html',
   'paca/index.html'

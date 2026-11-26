@@ -37,7 +37,7 @@ version, the site URL, source digests, counts and the full defect list.
   "registryVersion": "known-defects/1",
   "siteUrl": "https://mgifford.github.io/record-a-goose-sighting/",
   "sources": [{ "path": "...", "kind": "...", "sha256": "..." }],
-  "counts": { "defects": 52, "byService": { "...": 1 } },
+  "counts": { "defects": 60, "byService": { "...": 1 } },
   "defects": [
     {
       "id": "focus-lost-after-item-removal",

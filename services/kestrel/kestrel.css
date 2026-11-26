@@ -1,0 +1,184 @@
+:root {
+  color-scheme: light;
+  --ink: #0b0c0c;
+  --muted: #505a5f;
+  --line: #b1b4b6;
+  --paper: #ffffff;
+  --wash: #f3f2f1;
+  --link: #1d70b8;
+  --focus: #ffdd00;
+  --brand: #00703c;
+  --error: #d4351c;
+}
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 1.0625rem/1.5 system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  padding: 0.75rem 1rem;
+  background: var(--focus);
+  color: var(--ink);
+  z-index: 10;
+}
+
+.skip-link:focus { left: 0; }
+
+.service-header {
+  border-bottom: 10px solid var(--brand);
+  padding: 0.75rem 1rem;
+}
+
+.service-header .inner,
+main,
+.phase-banner,
+footer .inner {
+  max-width: 42rem;
+  margin: 0 auto;
+}
+
+.service-name {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.service-name a { color: var(--ink); text-decoration: none; }
+
+.phase-banner {
+  display: flex;
+  gap: 0.75rem;
+  align-items: baseline;
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.9375rem;
+}
+
+.tag {
+  background: var(--brand);
+  color: #fff;
+  padding: 0.15rem 0.5rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-size: 0.8125rem;
+}
+
+main { padding: 1.5rem 1rem 2.5rem; }
+
+h1 { font-size: 2rem; line-height: 1.15; margin: 0 0 1rem; }
+h2 { font-size: 1.375rem; margin: 2rem 0 0.75rem; }
+h3 { font-size: 1.125rem; margin: 1.5rem 0 0.5rem; }
+
+p, li { max-width: 40rem; }
+
+a { color: var(--link); text-underline-offset: 0.15em; }
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+[tabindex]:focus-visible {
+  outline: 3px solid var(--ink);
+  outline-offset: 2px;
+  background-color: var(--focus);
+  color: var(--ink);
+}
+
+.back-link { display: inline-block; margin-bottom: 1rem; }
+
+.step { color: var(--muted); font-size: 0.9375rem; margin: 0 0 1rem; }
+
+.lede { font-size: 1.1875rem; }
+
+.radios { border: 0; padding: 0; margin: 1rem 0 1.5rem; }
+.radios legend { font-weight: 700; font-size: 1.1875rem; padding: 0; }
+
+.radio-item {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  border: 2px solid var(--ink);
+  padding: 0.75rem 1rem;
+  margin: 0 0 0.75rem;
+  background: var(--paper);
+  cursor: pointer;
+}
+
+.radio-item input { margin-top: 0.3rem; }
+.radio-item .hint { display: block; color: var(--muted); font-size: 0.9375rem; }
+
+.field { margin: 0 0 1.5rem; }
+.field label { display: block; font-weight: 700; margin-bottom: 0.25rem; }
+.field .hint { display: block; color: var(--muted); font-size: 0.9375rem; margin: 0 0 0.5rem; }
+.field input { font: inherit; width: 100%; max-width: 24rem; padding: 0.5rem; border: 2px solid var(--ink); }
+
+.button {
+  font: inherit;
+  padding: 0.6rem 1.1rem;
+  border: 2px solid var(--ink);
+  background: var(--brand);
+  color: #fff;
+  cursor: pointer;
+}
+
+.button:hover { background: #005a30; }
+.button.secondary { background: var(--paper); color: var(--ink); }
+
+.actions { display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: center; }
+
+.notice {
+  background: #fff7d6;
+  border-left: 6px solid #f47738;
+  padding: 0.75rem 1rem;
+  margin: 0 0 1.5rem;
+}
+
+.panel {
+  border: 5px solid var(--brand);
+  padding: 1.5rem;
+  margin: 1rem 0 2rem;
+  text-align: center;
+}
+
+.panel h1 { font-size: 2.25rem; }
+.reference { font-size: 1.5rem; font-weight: 700; letter-spacing: 0.08em; }
+
+.summary { border-collapse: collapse; width: 100%; max-width: 36rem; margin: 1rem 0 2rem; }
+.summary th, .summary td { text-align: left; padding: 0.65rem 0.5rem 0.65rem 0; border-bottom: 1px solid var(--line); vertical-align: top; }
+.summary th { width: 45%; font-weight: 700; }
+
+.status { color: var(--brand); font-weight: 700; margin: 1rem 0; }
+
+.error-summary { border: 3px solid var(--error); padding: 1rem; margin: 1rem 0 2rem; }
+.error-summary h2 { margin-top: 0; }
+.error-message { color: var(--error); font-weight: 700; }
+
+footer { border-top: 1px solid var(--line); padding: 1rem; color: var(--muted); font-size: 0.9375rem; }
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+}

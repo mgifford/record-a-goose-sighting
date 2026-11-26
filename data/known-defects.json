@@ -28,6 +28,12 @@
       "sha256": "ef87796caf4003d743cb591a779a8fa1675dae4d071e54452c90812102980752"
     },
     {
+      "path": "data/defects/combobox-active-descendant-stale.json",
+      "kind": "defect-record",
+      "description": "Hand-authored defect record for a defect that is not an ACT fixture case.",
+      "sha256": "c3dc231b7f0882558e6deb7d944cfc7609077d3120bd3117cd9c171846ab3159"
+    },
+    {
       "path": "data/defects/disclosure-expanded-state-stale.json",
       "kind": "defect-record",
       "description": "Hand-authored defect record for a defect that is not an ACT fixture case.",
@@ -64,6 +70,24 @@
       "sha256": "573eec73047d294eff52b2a0fa84e8c79f60693c5f99db7702b4fa04e36836d1"
     },
     {
+      "path": "data/defects/journey-conditional-question-unannounced.json",
+      "kind": "defect-record",
+      "description": "Hand-authored defect record for a defect that is not an ACT fixture case.",
+      "sha256": "8f8f7aed2195e76729e94d5497f7fe44c6141c8ba916dc6b96ec35d7067ef65b"
+    },
+    {
+      "path": "data/defects/journey-progress-hidden-from-assistive-technology.json",
+      "kind": "defect-record",
+      "description": "Hand-authored defect record for a defect that is not an ACT fixture case.",
+      "sha256": "94b425792838f33bbecc109a894b3539c700d7b1352a70d4eb3b1c28853281df"
+    },
+    {
+      "path": "data/defects/journey-state-lost-on-back.json",
+      "kind": "defect-record",
+      "description": "Hand-authored defect record for a defect that is not an ACT fixture case.",
+      "sha256": "4024446b9f7f14061f5c8dad60d8ee11176f7d707dc7e8d45cc4acfb8f4797c2"
+    },
+    {
       "path": "data/defects/name-contradicts-visible-label.json",
       "kind": "defect-record",
       "description": "Hand-authored defect record for a defect that is not an ACT fixture case.",
@@ -88,6 +112,30 @@
       "sha256": "c68e5b41528a7bd7fc8f5a1ed082c10160d7d172ea72050397579f1977929714"
     },
     {
+      "path": "data/defects/table-column-headers-not-marked-up.json",
+      "kind": "defect-record",
+      "description": "Hand-authored defect record for a defect that is not an ACT fixture case.",
+      "sha256": "3f3fa7893911b51cf89c57ce449132238e023eaf628b81628af685ff8e6b479b"
+    },
+    {
+      "path": "data/defects/table-sort-state-stale.json",
+      "kind": "defect-record",
+      "description": "Hand-authored defect record for a defect that is not an ACT fixture case.",
+      "sha256": "b18269fff304ac74839a2fbae9469b086c5bfb7ccddf15223d84e02202cadda5"
+    },
+    {
+      "path": "data/defects/tabs-all-in-tab-order.json",
+      "kind": "defect-record",
+      "description": "Hand-authored defect record for a defect that is not an ACT fixture case.",
+      "sha256": "e42b7e874612b7d2c361cb400d2ed668105497efcccd2b5230105f97e50c7e9e"
+    },
+    {
+      "path": "data/defects/tabs-arrow-navigation-missing.json",
+      "kind": "defect-record",
+      "description": "Hand-authored defect record for a defect that is not an ACT fixture case.",
+      "sha256": "b505307d44aa779f148699e62f52c4732c1441bab944063cf0331141abdb5f7c"
+    },
+    {
       "path": "data/defects/visual-heading-not-semantic.json",
       "kind": "defect-record",
       "description": "Hand-authored defect record for a defect that is not an ACT fixture case.",
@@ -101,17 +149,18 @@
     }
   ],
   "counts": {
-    "defects": 52,
+    "defects": 60,
     "byService": {
       "goose": 19,
       "hedgehog": 1,
+      "kestrel": 8,
       "lab": 29,
       "paca": 2,
       "wombat": 1
     },
     "byCategory": {
       "accessible-name": 15,
-      "aria-state": 1,
+      "aria-state": 2,
       "aria-validity": 4,
       "colour": 1,
       "content": 3,
@@ -122,41 +171,43 @@
       "forms": 6,
       "image-alternative": 3,
       "images": 2,
-      "keyboard": 2,
+      "journey": 3,
+      "keyboard": 4,
       "motion": 1,
       "navigation": 1,
       "page-title": 2,
       "structure": 3,
+      "tables": 2,
       "typography": 1
     },
     "byClassification": {
       "act-rule-failure": 20,
-      "best-practice": 8,
-      "candidate-wcag-failure": 10,
+      "best-practice": 10,
+      "candidate-wcag-failure": 15,
       "exploratory": 1,
-      "usability-concern": 2,
+      "usability-concern": 3,
       "wcag-failure": 11
     },
     "byReviewLifecycle": {
-      "reproduced-automatically": 52
+      "reproduced-automatically": 60
     },
     "wcagCriteria": {
       "1.1.1": 2,
-      "1.3.1": 4,
+      "1.3.1": 6,
       "1.4.3": 1,
       "1.4.8": 1,
-      "2.1.1": 2,
+      "2.1.1": 3,
       "2.2.2": 1,
       "2.4.2": 2,
-      "2.4.3": 2,
+      "2.4.3": 3,
       "2.4.4": 2,
       "2.4.7": 2,
       "2.5.3": 1,
       "3.2.5": 1,
       "3.3.1": 2,
       "3.3.2": 3,
-      "4.1.2": 3,
-      "4.1.3": 2
+      "4.1.2": 5,
+      "4.1.3": 3
     },
     "actRules": {
       "23a2a8": 3,
@@ -2006,6 +2057,987 @@
         ]
       },
       "notApplicable": []
+    },
+    {
+      "service": "kestrel",
+      "fixtureId": null,
+      "aliases": [],
+      "preconditions": [],
+      "interactionSteps": [
+        {
+          "action": "type",
+          "selector": "#species-a",
+          "value": "mag"
+        },
+        {
+          "action": "assert",
+          "selector": "#species-a-list",
+          "state": "visible"
+        }
+      ],
+      "environment": null,
+      "actRules": [],
+      "controlFixtureId": null,
+      "introducedIn": null,
+      "lastVerified": null,
+      "notApplicable": [
+        "fixtureId",
+        "actRules"
+      ],
+      "assistiveTechnologyTests": [
+        {
+          "platform": "macOS",
+          "browser": "Safari",
+          "assistiveTechnology": "VoiceOver",
+          "procedure": "Complete the journey and listen for the announcement or information under test.",
+          "status": "not-run"
+        }
+      ],
+      "id": "combobox-active-descendant-stale",
+      "title": "Combobox active descendant points at a filtered-out option",
+      "description": "Typing filters the suggestion list. The alpha combobox keeps aria-activedescendant on Mallard after Mallard is hidden, so assistive technology reports a suggestion that is no longer available.",
+      "component": "Species combobox (variant A)",
+      "category": "aria-state",
+      "classification": "candidate-wcag-failure",
+      "url": "lab/subtle/combobox/",
+      "locators": [
+        {
+          "type": "css",
+          "value": "#species-a"
+        }
+      ],
+      "relatedElements": [
+        {
+          "purpose": "comparison-control",
+          "css": "#species-b",
+          "note": "The control moves the active descendant to the first visible option."
+        }
+      ],
+      "expectedBehaviour": "The active descendant always references an option that is present and visible in the list.",
+      "actualBehaviour": "The reference remains on the hidden Mallard option after filtering.",
+      "userImpact": "Screen-reader users hear the wrong suggestion and cannot tell which option they would select.",
+      "affectedCapabilities": [
+        "screen-reader",
+        "voice-control"
+      ],
+      "wcag": [
+        {
+          "criterion": "4.1.2",
+          "status": "candidate"
+        }
+      ],
+      "detection": {
+        "expectedMethods": [
+          "automated-keyboard-interaction",
+          "dom-inspection"
+        ],
+        "note": "The roles and names are valid; only the reference becomes stale after input.",
+        "observed": [
+          {
+            "date": "2026-11-26",
+            "engine": "axe-core",
+            "engineVersion": "4.14.1",
+            "browser": "Chromium via Playwright 1.65.1",
+            "interactionState": "default page state",
+            "ruleId": null,
+            "result": "not-detected",
+            "note": "Page-level axe run with tags wcag2a, wcag2aa, wcag21a, wcag21aa and best-practice. No violation was reported in the default state; the control on the same page or path also passes.",
+            "evidence": "tests/detection-observations.spec.js"
+          }
+        ]
+      },
+      "manualTests": [
+        "Type mag in the species field and listen to which suggestion is announced as active."
+      ],
+      "evidence": {
+        "assertions": [
+          "aria-activedescendant still references the hidden Mallard option after typing mag."
+        ],
+        "tests": [
+          "tests/subtle-widgets.spec.js: keeps the alpha active descendant on a filtered-out option"
+        ],
+        "artifacts": [],
+        "commands": [
+          "npx playwright test tests/journey-defects.spec.js"
+        ]
+      },
+      "reviewStatus": {
+        "lifecycle": "reproduced-automatically",
+        "dimensions": {
+          "automatedReproduction": "verified",
+          "manualReproduction": "not-run",
+          "assistiveTechnology": "not-run",
+          "independentReview": "not-run"
+        },
+        "note": "A Playwright regression test preserves the defective journey or widget behaviour and its control. That is automated reproduction, not a manual or assistive-technology observation."
+      },
+      "fragment": null,
+      "sources": [],
+      "provenance": {
+        "origin": "curated",
+        "derivedFrom": [
+          "data/defects/combobox-active-descendant-stale.json"
+        ],
+        "note": "Hand-authored record. Its expected behaviour is a hypothesis until an independent review records evidence."
+      }
+    },
+    {
+      "service": "kestrel",
+      "fixtureId": null,
+      "aliases": [],
+      "preconditions": [
+        "The access requirements question is visible and No is selected."
+      ],
+      "interactionSteps": [
+        {
+          "action": "click",
+          "selector": "#access-yes"
+        },
+        {
+          "action": "assert",
+          "selector": "#access-details-wrapper",
+          "state": "visible"
+        }
+      ],
+      "environment": null,
+      "actRules": [],
+      "controlFixtureId": null,
+      "introducedIn": null,
+      "lastVerified": null,
+      "notApplicable": [
+        "fixtureId",
+        "actRules"
+      ],
+      "assistiveTechnologyTests": [
+        {
+          "platform": "macOS",
+          "browser": "Safari",
+          "assistiveTechnology": "VoiceOver",
+          "procedure": "Complete the journey and listen for the announcement or information under test.",
+          "status": "not-run"
+        }
+      ],
+      "id": "journey-conditional-question-unannounced",
+      "title": "Conditional question appears without an announcement",
+      "description": "Selecting Yes to the access-requirements question reveals a follow-up field. The alpha path inserts it silently and leaves focus on the radio; nothing tells assistive-technology users that the page changed.",
+      "component": "Access requirements conditional question",
+      "category": "journey",
+      "classification": "candidate-wcag-failure",
+      "url": "kestrel/details.html?path=alpha",
+      "locators": [
+        {
+          "type": "css",
+          "value": "#access-details-wrapper",
+          "phase": "after"
+        }
+      ],
+      "relatedElements": [
+        {
+          "purpose": "trigger",
+          "css": "#access-yes"
+        },
+        {
+          "purpose": "comparison-control",
+          "note": "The beta path adds a role=status message and moves focus to the new field."
+        }
+      ],
+      "expectedBehaviour": "New content that appears in response to input is announced, and focus does not leave the user without a cue that something changed.",
+      "actualBehaviour": "The field appears with no live region, status message or focus change.",
+      "userImpact": "Screen-reader users may answer No and continue without realising that an extra question appeared.",
+      "affectedCapabilities": [
+        "screen-reader",
+        "cognitive"
+      ],
+      "wcag": [
+        {
+          "criterion": "4.1.3",
+          "status": "candidate",
+          "note": "A change resulting from user input is not announced."
+        }
+      ],
+      "detection": {
+        "expectedMethods": [
+          "dom-inspection",
+          "automated-keyboard-interaction",
+          "accessibility-tree-inspection"
+        ],
+        "note": "Requires an interaction; the default page is identical in both paths.",
+        "observed": [
+          {
+            "date": "2026-11-26",
+            "engine": "axe-core",
+            "engineVersion": "4.14.1",
+            "browser": "Chromium via Playwright 1.65.1",
+            "interactionState": "default page state",
+            "ruleId": null,
+            "result": "not-detected",
+            "note": "Page-level axe run with tags wcag2a, wcag2aa, wcag21a, wcag21aa and best-practice. No violation was reported in the default state; the control on the same page or path also passes.",
+            "evidence": "tests/detection-observations.spec.js"
+          }
+        ]
+      },
+      "manualTests": [
+        "With a screen reader running, select Yes and listen for the new question."
+      ],
+      "evidence": {
+        "assertions": [
+          "No status region exists on the alpha path after the field is revealed."
+        ],
+        "tests": [
+          "tests/journey-defects.spec.js: reveals the conditional question silently on the alpha path"
+        ],
+        "artifacts": [],
+        "commands": [
+          "npx playwright test tests/journey-defects.spec.js"
+        ]
+      },
+      "reviewStatus": {
+        "lifecycle": "reproduced-automatically",
+        "dimensions": {
+          "automatedReproduction": "verified",
+          "manualReproduction": "not-run",
+          "assistiveTechnology": "not-run",
+          "independentReview": "not-run"
+        },
+        "note": "A Playwright regression test preserves the defective journey or widget behaviour and its control. That is automated reproduction, not a manual or assistive-technology observation."
+      },
+      "fragment": null,
+      "sources": [],
+      "provenance": {
+        "origin": "curated",
+        "derivedFrom": [
+          "data/defects/journey-conditional-question-unannounced.json"
+        ],
+        "note": "Hand-authored record. Its expected behaviour is a hypothesis until an independent review records evidence."
+      }
+    },
+    {
+      "service": "kestrel",
+      "fixtureId": null,
+      "aliases": [],
+      "preconditions": [
+        "The journey has three steps: session, details and confirmation."
+      ],
+      "interactionSteps": [],
+      "environment": null,
+      "actRules": [],
+      "controlFixtureId": null,
+      "introducedIn": null,
+      "lastVerified": null,
+      "notApplicable": [
+        "fixtureId",
+        "actRules"
+      ],
+      "assistiveTechnologyTests": [
+        {
+          "platform": "macOS",
+          "browser": "Safari",
+          "assistiveTechnology": "VoiceOver",
+          "procedure": "Complete the journey and listen for the announcement or information under test.",
+          "status": "not-run"
+        }
+      ],
+      "id": "journey-progress-hidden-from-assistive-technology",
+      "title": "Step indicator is hidden from assistive technology",
+      "description": "Every page shows a visible Step n of 3 indicator, but the alpha path marks it aria-hidden. Sighted users know where they are in the journey; screen-reader users are not told.",
+      "component": "Journey step indicator",
+      "category": "journey",
+      "classification": "candidate-wcag-failure",
+      "url": "kestrel/index.html?path=alpha",
+      "locators": [
+        {
+          "type": "css",
+          "value": "#step"
+        }
+      ],
+      "relatedElements": [
+        {
+          "purpose": "comparison-control",
+          "note": "The beta path exposes the same visible indicator without aria-hidden."
+        }
+      ],
+      "expectedBehaviour": "The current step is available to assistive technology on every page of a multi-step journey.",
+      "actualBehaviour": "The step text is visible but carries aria-hidden=true, so it is absent from the accessibility tree.",
+      "userImpact": "Screen-reader users cannot tell where they are or how much of the booking remains.",
+      "affectedCapabilities": [
+        "screen-reader",
+        "cognitive"
+      ],
+      "wcag": [
+        {
+          "criterion": "1.3.1",
+          "status": "candidate",
+          "note": "Information conveyed visually is removed from the programmatic structure."
+        }
+      ],
+      "detection": {
+        "expectedMethods": [
+          "dom-inspection",
+          "accessibility-tree-inspection"
+        ],
+        "note": "The rendered text looks correct; only the accessibility tree shows the omission.",
+        "observed": [
+          {
+            "date": "2026-11-26",
+            "engine": "axe-core",
+            "engineVersion": "4.14.1",
+            "browser": "Chromium via Playwright 1.65.1",
+            "interactionState": "default page state",
+            "ruleId": null,
+            "result": "not-detected",
+            "note": "Page-level axe run with tags wcag2a, wcag2aa, wcag21a, wcag21aa and best-practice. No violation was reported in the default state; the control on the same page or path also passes.",
+            "evidence": "tests/detection-observations.spec.js"
+          }
+        ]
+      },
+      "manualTests": [
+        "Open step 2 with a screen reader running and listen for the step position."
+      ],
+      "evidence": {
+        "assertions": [
+          "The step indicator has aria-hidden=true while remaining visible."
+        ],
+        "tests": [
+          "tests/journey-defects.spec.js: hides the step indicator from assistive technology on the alpha path"
+        ],
+        "artifacts": [],
+        "commands": [
+          "npx playwright test tests/journey-defects.spec.js"
+        ]
+      },
+      "reviewStatus": {
+        "lifecycle": "reproduced-automatically",
+        "dimensions": {
+          "automatedReproduction": "verified",
+          "manualReproduction": "not-run",
+          "assistiveTechnology": "not-run",
+          "independentReview": "not-run"
+        },
+        "note": "A Playwright regression test preserves the defective journey or widget behaviour and its control. That is automated reproduction, not a manual or assistive-technology observation."
+      },
+      "fragment": null,
+      "sources": [],
+      "provenance": {
+        "origin": "curated",
+        "derivedFrom": [
+          "data/defects/journey-progress-hidden-from-assistive-technology.json"
+        ],
+        "note": "Hand-authored record. Its expected behaviour is a hypothesis until an independent review records evidence."
+      }
+    },
+    {
+      "service": "kestrel",
+      "fixtureId": null,
+      "aliases": [],
+      "preconditions": [
+        "A session has been chosen and the details step is open."
+      ],
+      "interactionSteps": [
+        {
+          "action": "click",
+          "selector": "#session-morning",
+          "note": "Choose a session."
+        },
+        {
+          "action": "click",
+          "selector": "#continue-session"
+        },
+        {
+          "action": "click",
+          "selector": "#back"
+        },
+        {
+          "action": "assert",
+          "selector": "#session-morning",
+          "note": "The radio is unchecked in the alpha path."
+        }
+      ],
+      "environment": null,
+      "actRules": [],
+      "controlFixtureId": null,
+      "introducedIn": null,
+      "lastVerified": null,
+      "notApplicable": [
+        "fixtureId",
+        "actRules"
+      ],
+      "assistiveTechnologyTests": [
+        {
+          "platform": "macOS",
+          "browser": "Safari",
+          "assistiveTechnology": "VoiceOver",
+          "procedure": "Complete the journey and listen for the announcement or information under test.",
+          "status": "not-run"
+        }
+      ],
+      "id": "journey-state-lost-on-back",
+      "title": "Selected session is lost when the journey is revisited",
+      "description": "The alpha first step clears the stored booking every time it loads. Going Back from the details step therefore discards the chosen session, while the beta path restores it.",
+      "component": "Session selection and journey state",
+      "category": "journey",
+      "classification": "usability-concern",
+      "url": "kestrel/index.html?path=alpha",
+      "locators": [
+        {
+          "type": "css",
+          "value": "#session-morning"
+        }
+      ],
+      "relatedElements": [
+        {
+          "purpose": "comparison-control",
+          "note": "The beta path restores the selected session after Back."
+        }
+      ],
+      "expectedBehaviour": "Returning to an earlier step preserves the choices already made.",
+      "actualBehaviour": "The stored journey state is removed on load and the selection is lost.",
+      "userImpact": "People who go back to check their choice must start again and may believe the booking was lost.",
+      "affectedCapabilities": [
+        "cognitive",
+        "screen-reader",
+        "keyboard-only"
+      ],
+      "wcag": [],
+      "detection": {
+        "expectedMethods": [
+          "automated-pointer-interaction",
+          "dom-inspection"
+        ],
+        "note": "No WCAG failure is claimed: the barrier is avoidable re-entry and lost state. A journey test is required.",
+        "observed": [
+          {
+            "date": "2026-11-26",
+            "engine": "axe-core",
+            "engineVersion": "4.14.1",
+            "browser": "Chromium via Playwright 1.65.1",
+            "interactionState": "default page state",
+            "ruleId": null,
+            "result": "not-detected",
+            "note": "Page-level axe run with tags wcag2a, wcag2aa, wcag21a, wcag21aa and best-practice. No violation was reported in the default state; the control on the same page or path also passes.",
+            "evidence": "tests/detection-observations.spec.js"
+          }
+        ]
+      },
+      "manualTests": [
+        "Choose a session, continue, press Back and check whether the choice is still selected."
+      ],
+      "evidence": {
+        "assertions": [
+          "The session radio is unchecked and sessionStorage is empty after Back on the alpha path."
+        ],
+        "tests": [
+          "tests/journey-defects.spec.js: loses the selected session when the first step is revisited on the alpha path"
+        ],
+        "artifacts": [],
+        "commands": [
+          "npx playwright test tests/journey-defects.spec.js"
+        ]
+      },
+      "reviewStatus": {
+        "lifecycle": "reproduced-automatically",
+        "dimensions": {
+          "automatedReproduction": "verified",
+          "manualReproduction": "not-run",
+          "assistiveTechnology": "not-run",
+          "independentReview": "not-run"
+        },
+        "note": "A Playwright regression test preserves the defective journey or widget behaviour and its control. That is automated reproduction, not a manual or assistive-technology observation."
+      },
+      "fragment": null,
+      "sources": [],
+      "provenance": {
+        "origin": "curated",
+        "derivedFrom": [
+          "data/defects/journey-state-lost-on-back.json"
+        ],
+        "note": "Hand-authored record. Its expected behaviour is a hypothesis until an independent review records evidence."
+      }
+    },
+    {
+      "service": "kestrel",
+      "fixtureId": null,
+      "aliases": [],
+      "preconditions": [],
+      "interactionSteps": [],
+      "environment": null,
+      "actRules": [],
+      "controlFixtureId": null,
+      "introducedIn": null,
+      "lastVerified": null,
+      "notApplicable": [
+        "fixtureId",
+        "actRules"
+      ],
+      "assistiveTechnologyTests": [
+        {
+          "platform": "macOS",
+          "browser": "Safari",
+          "assistiveTechnology": "VoiceOver",
+          "procedure": "Complete the journey and listen for the announcement or information under test.",
+          "status": "not-run"
+        }
+      ],
+      "id": "table-column-headers-not-marked-up",
+      "title": "Column headings are styled cells rather than header cells",
+      "description": "The attendance table's first row is bold with a border, so it looks like a header row. The cells are td elements, so table navigation reports no column headers for the data cells below.",
+      "component": "Attendance table (variant A)",
+      "category": "tables",
+      "classification": "candidate-wcag-failure",
+      "url": "lab/subtle/tables/",
+      "locators": [
+        {
+          "type": "css",
+          "value": "#attendance-a"
+        },
+        {
+          "type": "xpath",
+          "value": "(//table[@id='attendance-a']//thead//td)[1]"
+        }
+      ],
+      "relatedElements": [
+        {
+          "purpose": "comparison-control",
+          "css": "#attendance-b",
+          "note": "The control uses th scope=col for the same visible row."
+        }
+      ],
+      "expectedBehaviour": "Visual column headings are marked up as column headers so data cells can be associated with them.",
+      "actualBehaviour": "The heading row uses td elements with heading styling.",
+      "userImpact": "Screen-reader users navigating by table cannot tell which column a value belongs to.",
+      "affectedCapabilities": [
+        "screen-reader",
+        "cognitive"
+      ],
+      "wcag": [
+        {
+          "criterion": "1.3.1",
+          "status": "candidate"
+        }
+      ],
+      "detection": {
+        "expectedMethods": [
+          "dom-inspection",
+          "accessibility-tree-inspection"
+        ],
+        "note": "The accessible roles differ (cell versus columnheader) even though the rendering is identical.",
+        "observed": [
+          {
+            "date": "2026-11-26",
+            "engine": "axe-core",
+            "engineVersion": "4.14.1",
+            "browser": "Chromium via Playwright 1.65.1",
+            "interactionState": "default page state",
+            "ruleId": null,
+            "result": "not-detected",
+            "note": "Page-level axe run with tags wcag2a, wcag2aa, wcag21a, wcag21aa and best-practice. No violation was reported in the default state; the control on the same page or path also passes.",
+            "evidence": "tests/detection-observations.spec.js"
+          }
+        ]
+      },
+      "manualTests": [
+        "Move through the attendance table in table navigation mode and listen for the column headings."
+      ],
+      "evidence": {
+        "assertions": [
+          "The alpha table has three td elements in thead and no th elements."
+        ],
+        "tests": [
+          "tests/subtle-widgets.spec.js: keeps the alpha column headings as plain cells"
+        ],
+        "artifacts": [],
+        "commands": [
+          "npx playwright test tests/journey-defects.spec.js"
+        ]
+      },
+      "reviewStatus": {
+        "lifecycle": "reproduced-automatically",
+        "dimensions": {
+          "automatedReproduction": "verified",
+          "manualReproduction": "not-run",
+          "assistiveTechnology": "not-run",
+          "independentReview": "not-run"
+        },
+        "note": "A Playwright regression test preserves the defective journey or widget behaviour and its control. That is automated reproduction, not a manual or assistive-technology observation."
+      },
+      "fragment": null,
+      "sources": [],
+      "provenance": {
+        "origin": "curated",
+        "derivedFrom": [
+          "data/defects/table-column-headers-not-marked-up.json"
+        ],
+        "note": "Hand-authored record. Its expected behaviour is a hypothesis until an independent review records evidence."
+      }
+    },
+    {
+      "service": "kestrel",
+      "fixtureId": null,
+      "aliases": [],
+      "preconditions": [],
+      "interactionSteps": [
+        {
+          "action": "click",
+          "selector": "#sort-a-button"
+        },
+        {
+          "action": "assert",
+          "selector": "#sort-a tbody",
+          "note": "Rows are reordered but aria-sort stays none."
+        }
+      ],
+      "environment": null,
+      "actRules": [],
+      "controlFixtureId": null,
+      "introducedIn": null,
+      "lastVerified": null,
+      "notApplicable": [
+        "fixtureId",
+        "actRules"
+      ],
+      "assistiveTechnologyTests": [
+        {
+          "platform": "macOS",
+          "browser": "Safari",
+          "assistiveTechnology": "VoiceOver",
+          "procedure": "Complete the journey and listen for the announcement or information under test.",
+          "status": "not-run"
+        }
+      ],
+      "id": "table-sort-state-stale",
+      "title": "Sort control changes row order but never updates aria-sort",
+      "description": "Activating the Date sort button reorders the rows in both variants. The alpha header keeps aria-sort=none, so assistive technology reports an unsorted column while the visible order has changed.",
+      "component": "Recent sightings sort header (variant A)",
+      "category": "tables",
+      "classification": "candidate-wcag-failure",
+      "url": "lab/subtle/tables/",
+      "locators": [
+        {
+          "type": "css",
+          "value": "#sort-a-header"
+        }
+      ],
+      "relatedElements": [
+        {
+          "purpose": "sort-trigger",
+          "css": "#sort-a-button"
+        },
+        {
+          "purpose": "comparison-control",
+          "css": "#sort-b-header",
+          "note": "The control updates aria-sort to ascending then descending."
+        }
+      ],
+      "expectedBehaviour": "A sortable column reports its current sort direction.",
+      "actualBehaviour": "aria-sort remains none after each sort.",
+      "userImpact": "Screen-reader users cannot tell how the table is ordered, and may misread the changed row order.",
+      "affectedCapabilities": [
+        "screen-reader",
+        "cognitive"
+      ],
+      "wcag": [
+        {
+          "criterion": "4.1.2",
+          "status": "candidate"
+        }
+      ],
+      "detection": {
+        "expectedMethods": [
+          "automated-pointer-interaction",
+          "dom-inspection",
+          "accessibility-tree-inspection"
+        ],
+        "note": "Only observable after the interaction; the default state is correct.",
+        "observed": [
+          {
+            "date": "2026-11-26",
+            "engine": "axe-core",
+            "engineVersion": "4.14.1",
+            "browser": "Chromium via Playwright 1.65.1",
+            "interactionState": "default page state",
+            "ruleId": null,
+            "result": "not-detected",
+            "note": "Page-level axe run with tags wcag2a, wcag2aa, wcag21a, wcag21aa and best-practice. No violation was reported in the default state; the control on the same page or path also passes.",
+            "evidence": "tests/detection-observations.spec.js"
+          }
+        ]
+      },
+      "manualTests": [
+        "Sort the sightings table and listen for the column's sort state."
+      ],
+      "evidence": {
+        "assertions": [
+          "aria-sort is still none after two sorts."
+        ],
+        "tests": [
+          "tests/subtle-widgets.spec.js: keeps the alpha sort state stale"
+        ],
+        "artifacts": [],
+        "commands": [
+          "npx playwright test tests/journey-defects.spec.js"
+        ]
+      },
+      "reviewStatus": {
+        "lifecycle": "reproduced-automatically",
+        "dimensions": {
+          "automatedReproduction": "verified",
+          "manualReproduction": "not-run",
+          "assistiveTechnology": "not-run",
+          "independentReview": "not-run"
+        },
+        "note": "A Playwright regression test preserves the defective journey or widget behaviour and its control. That is automated reproduction, not a manual or assistive-technology observation."
+      },
+      "fragment": null,
+      "sources": [],
+      "provenance": {
+        "origin": "curated",
+        "derivedFrom": [
+          "data/defects/table-sort-state-stale.json"
+        ],
+        "note": "Hand-authored record. Its expected behaviour is a hypothesis until an independent review records evidence."
+      }
+    },
+    {
+      "service": "kestrel",
+      "fixtureId": null,
+      "aliases": [],
+      "preconditions": [],
+      "interactionSteps": [],
+      "environment": null,
+      "actRules": [],
+      "controlFixtureId": null,
+      "introducedIn": null,
+      "lastVerified": null,
+      "notApplicable": [
+        "fixtureId",
+        "actRules"
+      ],
+      "assistiveTechnologyTests": [
+        {
+          "platform": "macOS",
+          "browser": "Safari",
+          "assistiveTechnology": "VoiceOver",
+          "procedure": "Complete the journey and listen for the announcement or information under test.",
+          "status": "not-run"
+        }
+      ],
+      "id": "tabs-all-in-tab-order",
+      "title": "Every tab is in the tab order",
+      "description": "The alpha tab set gives each tab tabindex=0, so Tab moves through all three tabs before leaving the tab list. The recommended roving model keeps only the selected tab in the tab order.",
+      "component": "Observation record tabs (variant A)",
+      "category": "keyboard",
+      "classification": "best-practice",
+      "url": "lab/subtle/tabs/",
+      "locators": [
+        {
+          "type": "css",
+          "value": "#tab-a-pending"
+        }
+      ],
+      "relatedElements": [
+        {
+          "purpose": "comparison-control",
+          "css": "#tab-b-pending",
+          "note": "The control uses roving tabindex and is removed from the tab order."
+        }
+      ],
+      "expectedBehaviour": "A tab list uses roving tabindex so that Tab enters the tab list once and arrow keys move between tabs.",
+      "actualBehaviour": "All three tabs have tabindex=0.",
+      "userImpact": "Keyboard users need extra Tab presses and may not understand that the tabs form one composite widget.",
+      "affectedCapabilities": [
+        "keyboard-only",
+        "switch-control"
+      ],
+      "wcag": [
+        {
+          "criterion": "2.4.3",
+          "status": "informational",
+          "note": "The tabs are still operable with Tab and Enter. Roving tabindex is an authoring-practice pattern, not a separate WCAG failure."
+        }
+      ],
+      "detection": {
+        "expectedMethods": [
+          "dom-inspection",
+          "manual-keyboard-evaluation"
+        ],
+        "note": "The extra tab stops are only apparent when tabbing through the page.",
+        "observed": [
+          {
+            "date": "2026-11-26",
+            "engine": "axe-core",
+            "engineVersion": "4.14.1",
+            "browser": "Chromium via Playwright 1.65.1",
+            "interactionState": "default page state",
+            "ruleId": null,
+            "result": "not-detected",
+            "note": "Page-level axe run with tags wcag2a, wcag2aa, wcag21a, wcag21aa and best-practice. No violation was reported in the default state; the control on the same page or path also passes.",
+            "evidence": "tests/detection-observations.spec.js"
+          }
+        ]
+      },
+      "manualTests": [
+        "Tab through the page and count how many stops the tab list contains."
+      ],
+      "evidence": {
+        "assertions": [
+          "All three alpha tabs have tabindex=0."
+        ],
+        "tests": [
+          "tests/subtle-widgets.spec.js: keeps every alpha tab in the tab order"
+        ],
+        "artifacts": [],
+        "commands": [
+          "npx playwright test tests/journey-defects.spec.js"
+        ]
+      },
+      "reviewStatus": {
+        "lifecycle": "reproduced-automatically",
+        "dimensions": {
+          "automatedReproduction": "verified",
+          "manualReproduction": "not-run",
+          "assistiveTechnology": "not-run",
+          "independentReview": "not-run"
+        },
+        "note": "A Playwright regression test preserves the defective journey or widget behaviour and its control. That is automated reproduction, not a manual or assistive-technology observation."
+      },
+      "fragment": null,
+      "sources": [],
+      "provenance": {
+        "origin": "curated",
+        "derivedFrom": [
+          "data/defects/tabs-all-in-tab-order.json"
+        ],
+        "note": "Hand-authored record. Its expected behaviour is a hypothesis until an independent review records evidence."
+      }
+    },
+    {
+      "service": "kestrel",
+      "fixtureId": null,
+      "aliases": [],
+      "preconditions": [],
+      "interactionSteps": [
+        {
+          "action": "focus",
+          "selector": "#tab-a-latest"
+        },
+        {
+          "action": "press",
+          "key": "ArrowRight"
+        },
+        {
+          "action": "assert",
+          "selector": "#tab-a-latest",
+          "note": "Focus stays on the first tab."
+        }
+      ],
+      "environment": null,
+      "actRules": [],
+      "controlFixtureId": null,
+      "introducedIn": null,
+      "lastVerified": null,
+      "notApplicable": [
+        "fixtureId",
+        "actRules"
+      ],
+      "assistiveTechnologyTests": [
+        {
+          "platform": "macOS",
+          "browser": "Safari",
+          "assistiveTechnology": "VoiceOver",
+          "procedure": "Complete the journey and listen for the announcement or information under test.",
+          "status": "not-run"
+        }
+      ],
+      "id": "tabs-arrow-navigation-missing",
+      "title": "Tab set ignores the arrow keys",
+      "description": "Clicking a tab works, but pressing ArrowRight or ArrowLeft on a focused tab does nothing. The beta path moves focus and selection between tabs.",
+      "component": "Observation record tabs (variant A)",
+      "category": "keyboard",
+      "classification": "best-practice",
+      "url": "lab/subtle/tabs/",
+      "locators": [
+        {
+          "type": "css",
+          "value": "#tab-a-latest"
+        },
+        {
+          "type": "css",
+          "value": "#tab-a-pending"
+        }
+      ],
+      "relatedElements": [
+        {
+          "purpose": "comparison-control",
+          "css": "#tab-b-latest",
+          "note": "The control implements ArrowLeft, ArrowRight, Home and End."
+        }
+      ],
+      "expectedBehaviour": "Arrow keys move focus and selection between tabs in a tab list.",
+      "actualBehaviour": "Arrow keys are ignored; only clicking or tabbing changes the selected tab.",
+      "userImpact": "Keyboard users must Tab through the tab list and press Enter rather than using the expected arrow keys.",
+      "affectedCapabilities": [
+        "keyboard-only"
+      ],
+      "wcag": [
+        {
+          "criterion": "2.1.1",
+          "status": "informational",
+          "note": "The tabs are still keyboard operable with Tab and Enter. The missing arrow-key model is a best-practice gap, not a keyboard failure."
+        }
+      ],
+      "detection": {
+        "expectedMethods": [
+          "automated-keyboard-interaction",
+          "manual-keyboard-evaluation"
+        ],
+        "note": "Requires focus and key presses; static markup looks valid.",
+        "observed": [
+          {
+            "date": "2026-11-26",
+            "engine": "axe-core",
+            "engineVersion": "4.14.1",
+            "browser": "Chromium via Playwright 1.65.1",
+            "interactionState": "default page state",
+            "ruleId": null,
+            "result": "not-detected",
+            "note": "Page-level axe run with tags wcag2a, wcag2aa, wcag21a, wcag21aa and best-practice. No violation was reported in the default state; the control on the same page or path also passes.",
+            "evidence": "tests/detection-observations.spec.js"
+          }
+        ]
+      },
+      "manualTests": [
+        "Focus the first tab, press ArrowRight and check whether focus and selection move."
+      ],
+      "evidence": {
+        "assertions": [
+          "ArrowRight leaves focus on the first alpha tab and its panel unchanged."
+        ],
+        "tests": [
+          "tests/subtle-widgets.spec.js: keeps alpha arrow navigation missing"
+        ],
+        "artifacts": [],
+        "commands": [
+          "npx playwright test tests/journey-defects.spec.js"
+        ]
+      },
+      "reviewStatus": {
+        "lifecycle": "reproduced-automatically",
+        "dimensions": {
+          "automatedReproduction": "verified",
+          "manualReproduction": "not-run",
+          "assistiveTechnology": "not-run",
+          "independentReview": "not-run"
+        },
+        "note": "A Playwright regression test preserves the defective journey or widget behaviour and its control. That is automated reproduction, not a manual or assistive-technology observation."
+      },
+      "fragment": null,
+      "sources": [],
+      "provenance": {
+        "origin": "curated",
+        "derivedFrom": [
+          "data/defects/tabs-arrow-navigation-missing.json"
+        ],
+        "note": "Hand-authored record. Its expected behaviour is a hypothesis until an independent review records evidence."
+      }
     },
     {
       "service": "lab",
