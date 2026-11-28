@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Defect registry guide
+    url: https://github.com/mgifford/record-a-goose-sighting/blob/master/docs/CONTRIBUTING-DEFECTS.md
+    about: Read this before proposing a defect or comparison fixture.
+  - name: Known defects answer key
+    url: https://mgifford.github.io/record-a-goose-sighting/defects/
+    about: Check whether the defect is already declared.

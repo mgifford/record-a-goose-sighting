@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Booking confirmed - Wildlife observation service</title>
+  <link rel="stylesheet" href="./kestrel.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header class="service-header">
+    <div class="inner">
+      <p class="service-name"><a href="./index.html">Wildlife observation service</a></p>
+    </div>
+    <div class="phase-banner"><span class="tag">Beta</span><span>This is a new service. Your feedback will help us improve it.</span></div>
+  </header>
+
+  <main id="main-content">
+    <p class="step" id="step">Step 3 of 3</p>
+
+    <div class="panel">
+      <h1>Booking confirmed</h1>
+      <p>Your reference is <span class="reference" id="reference">KST-4821</span></p>
+    </div>
+
+    <p>We have sent a confirmation to <span id="confirmation-email">your email address</span>.</p>
+
+    <h2>Your session</h2>
+    <table class="summary">
+      <caption class="visually-hidden">Your booking details</caption>
+      <tbody>
+        <tr><th scope="row">Session</th><td id="confirmed-session">Morning hide walk</td></tr>
+        <tr><th scope="row">Name</th><td id="confirmed-name">Not provided</td></tr>
+        <tr><th scope="row">Access requirements</th><td id="confirmed-access">None</td></tr>
+      </tbody>
+    </table>
+
+    <h2>What happens next</h2>
+    <p>Arrive ten minutes before the session starts and show your reference at the visitor centre. You can change your booking up to 24 hours before the session.</p>
+
+    <p><a href="./index.html" id="book-again">Book another session</a></p>
+  </main>
+
+  <footer><div class="inner"><p>Wildlife observation service. A fictional service for accessibility testing.</p></div></footer>
+
+  <script type="module">
+    const params = new URLSearchParams(window.location.search)
+    const path = params.get('path') === 'beta' ? 'beta' : 'alpha'
+    const step = document.getElementById('step')
+    const state = JSON.parse(window.sessionStorage.getItem('kestrel-booking') || '{}')
+
+    if (path === 'alpha') step.setAttribute('aria-hidden', 'true')
+    document.getElementById('book-again').href = `./index.html?path=${path}`
+
+    const sessions = {
+      morning: 'Morning hide walk, 7am to 9am',
+      afternoon: 'Afternoon wetland walk, 2pm to 4pm',
+      evening: 'Evening bat watch, 8pm to 9.30pm'
+    }
+
+    if (state.session) {
+      document.getElementById('confirmed-session').textContent = sessions[state.session] || state.session
+    }
+    if (state.name) document.getElementById('confirmed-name').textContent = state.name
+    if (state.email) document.getElementById('confirmation-email').textContent = state.email
+    if (state.access === 'yes') {
+      document.getElementById('confirmed-access').textContent = state.accessDetails || 'Yes'
+    }
+  </script>
+</body>
+</html>

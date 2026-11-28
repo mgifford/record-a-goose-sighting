@@ -1,0 +1,160 @@
+{
+  "schemaVersion": "defect-coverage/1",
+  "source": "data/known-defects.json",
+  "note": "Coverage counts declared defects, not WCAG success criteria achieved. ACT rule coverage is not WCAG coverage, and a clean scan is not a conformance claim.",
+  "totals": {
+    "defects": 65,
+    "services": 6,
+    "categories": 22,
+    "wcagCriteria": 18,
+    "actRules": 5,
+    "capabilities": 8,
+    "detectionMethods": 12,
+    "withComparisonControl": 35,
+    "interactionDependent": 19,
+    "independentlyReviewed": 0,
+    "unreviewed": 65,
+    "assistiveTechnologyTests": 24,
+    "defectsWithAssistiveTechnologyTests": 24
+  },
+  "byService": {
+    "goose": 19,
+    "hedgehog": 1,
+    "kestrel": 8,
+    "lab": 34,
+    "paca": 2,
+    "wombat": 1
+  },
+  "byCategory": {
+    "accessible-name": 15,
+    "aria-state": 2,
+    "aria-validity": 4,
+    "colour": 1,
+    "content": 3,
+    "dynamic-content": 3,
+    "focus-management": 2,
+    "focus-order": 1,
+    "focus-visible": 2,
+    "forms": 6,
+    "image-alternative": 3,
+    "images": 2,
+    "journey": 3,
+    "keyboard": 4,
+    "language": 1,
+    "motion": 1,
+    "navigation": 1,
+    "page-title": 3,
+    "responsive": 1,
+    "structure": 3,
+    "tables": 3,
+    "typography": 1
+  },
+  "byClassification": {
+    "act-rule-failure": 20,
+    "best-practice": 10,
+    "candidate-wcag-failure": 20,
+    "exploratory": 1,
+    "usability-concern": 3,
+    "wcag-failure": 11
+  },
+  "byReviewLifecycle": {
+    "reproduced-automatically": 65
+  },
+  "byCapability": {
+    "cognitive": 31,
+    "keyboard-only": 12,
+    "low-vision": 4,
+    "reduced-motion": 1,
+    "screen-magnification": 3,
+    "screen-reader": 56,
+    "switch-control": 17,
+    "voice-control": 18
+  },
+  "byDetectionMethod": {
+    "accessibility-tree-inspection": 37,
+    "assisted-visual-review": 7,
+    "automated-keyboard-interaction": 6,
+    "automated-pointer-interaction": 6,
+    "browser-geometry-inspection": 1,
+    "computed-style-analysis": 2,
+    "dom-inspection": 42,
+    "environment-emulation": 1,
+    "heuristic-analysis": 6,
+    "manual-keyboard-evaluation": 9,
+    "mutation-observation": 1,
+    "screen-reader-evaluation": 8
+  },
+  "byWcagCriterion": {
+    "1.1.1": 2,
+    "1.3.1": 7,
+    "1.4.10": 1,
+    "1.4.3": 1,
+    "1.4.8": 1,
+    "2.1.1": 3,
+    "2.2.2": 1,
+    "2.4.2": 3,
+    "2.4.3": 3,
+    "2.4.4": 2,
+    "2.4.7": 2,
+    "2.5.3": 1,
+    "3.1.2": 1,
+    "3.2.5": 1,
+    "3.3.1": 2,
+    "3.3.2": 3,
+    "4.1.2": 6,
+    "4.1.3": 4
+  },
+  "byWcagStatus": {
+    "candidate": 22,
+    "claimed": 19,
+    "informational": 3
+  },
+  "byActRule": {
+    "23a2a8": 3,
+    "674b10": 4,
+    "97a4e1": 12,
+    "c487ae": 1,
+    "e086e5": 1
+  },
+  "byFramework": {
+    "html": 42,
+    "nunjucks": 19,
+    "react": 1,
+    "vue": 1,
+    "web-components": 2
+  },
+  "byInteraction": {
+    "none": 46,
+    "required": 19
+  },
+  "byControl": {
+    "has-comparison-control": 35,
+    "no-comparison-control": 30
+  },
+  "reviewDimensions": {
+    "automatedReproduction": {
+      "verified": 65
+    },
+    "manualReproduction": {
+      "not-run": 65
+    },
+    "assistiveTechnology": {
+      "not-run": 65
+    },
+    "independentReview": {
+      "not-run": 65
+    }
+  },
+  "assistiveTechnology": {
+    "tests": 24,
+    "defects": 24,
+    "byStatus": {
+      "not-run": 24
+    },
+    "byEnvironment": {
+      "macOS / Safari / VoiceOver": 22,
+      "Windows / Chrome / NVDA": 1,
+      "Windows / Firefox / NVDA": 1
+    }
+  }
+}

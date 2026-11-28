@@ -1,0 +1,124 @@
+{
+  "service": "lab",
+  "fixtureId": null,
+  "aliases": [],
+  "preconditions": [],
+  "interactionSteps": [
+    {
+      "action": "click",
+      "selector": "#submit-a"
+    },
+    {
+      "action": "assert",
+      "selector": "#summary-a",
+      "state": "visible"
+    }
+  ],
+  "environment": null,
+  "actRules": [],
+  "controlFixtureId": null,
+  "introducedIn": null,
+  "lastVerified": null,
+  "notApplicable": [
+    "fixtureId",
+    "actRules"
+  ],
+  "id": "error-focus-not-moved-to-summary",
+  "title": "Focus stays on the submit button after validation fails",
+  "description": "When validation fails, the error summary appears above the form without receiving focus. The user is left on the Continue button, below the new content.",
+  "component": "Error summary focus (variant A)",
+  "category": "focus-management",
+  "classification": "best-practice",
+  "url": "lab/subtle/errors/",
+  "locators": [
+    {
+      "type": "css",
+      "value": "#submit-a"
+    }
+  ],
+  "relatedElements": [
+    {
+      "purpose": "error-summary",
+      "css": "#summary-a"
+    },
+    {
+      "purpose": "comparison-control",
+      "css": "#summary-b-heading",
+      "note": "Receives focus when the summary is shown."
+    }
+  ],
+  "expectedBehaviour": "After failed validation, focus moves to the error summary or the first invalid field so the failure is announced.",
+  "actualBehaviour": "Focus remains on the Continue button and the summary is not announced.",
+  "userImpact": "Keyboard and screen-reader users may not realise validation failed and can remain at the bottom of the form.",
+  "affectedCapabilities": [
+    "keyboard-only",
+    "screen-reader"
+  ],
+  "wcag": [
+    {
+      "criterion": "3.3.1",
+      "status": "informational",
+      "note": "The error is identified in text. Moving focus is a recommended pattern, not a separate WCAG requirement."
+    }
+  ],
+  "detection": {
+    "expectedMethods": [
+      "automated-keyboard-interaction",
+      "dom-inspection"
+    ],
+    "observed": [
+      {
+        "date": "2026-11-26",
+        "engine": "axe-core",
+        "engineVersion": "4.14.1",
+        "browser": "Chromium via Playwright 1.65.1",
+        "interactionState": "default page state",
+        "ruleId": null,
+        "result": "not-detected",
+        "note": "Page-level axe run with tags wcag2a, wcag2aa, wcag21a, wcag21aa and best-practice. No violation was reported for this page in its default state; the control on the same page also passes.",
+        "evidence": "tests/detection-observations.spec.js"
+      }
+    ],
+    "note": "Requires an interaction test that records document.activeElement after submit."
+  },
+  "manualTests": [
+    "Submit the empty form with the keyboard and check whether focus moves to the summary."
+  ],
+  "assistiveTechnologyTests": [
+    {
+      "platform": "macOS",
+      "browser": "Safari",
+      "assistiveTechnology": "VoiceOver",
+      "procedure": "Navigate to the target with the VoiceOver rotor and confirm what is announced.",
+      "status": "not-run"
+    }
+  ],
+  "evidence": {
+    "assertions": [
+      "document.activeElement is #submit-a after the error summary is shown."
+    ],
+    "tests": [
+      "tests/subtle-defects.spec.js: keeps variant A errors unassociated, unfocused and linked to nothing"
+    ],
+    "artifacts": [],
+    "commands": [
+      "npx playwright test tests/subtle-defects.spec.js"
+    ]
+  },
+  "sources": [
+    {
+      "title": "WCAG 2.2 Understanding 3.3.1: Error Identification",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/error-identification"
+    }
+  ],
+  "reviewStatus": {
+    "lifecycle": "reproduced-automatically",
+    "dimensions": {
+      "automatedReproduction": "verified",
+      "manualReproduction": "not-run",
+      "assistiveTechnology": "not-run",
+      "independentReview": "not-run"
+    },
+    "note": "A Playwright regression test preserves the defective behaviour and its control. That is automated reproduction, not a manual or assistive-technology observation."
+  }
+}

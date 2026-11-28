@@ -1,0 +1,37 @@
+name: Assistive technology verification
+description: Record an assistive-technology observation
+labels: ["assistive-technology"]
+body:
+  - type: input
+    id: defect
+    attributes:
+      label: Defect identifier
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Platform, browser and AT version
+      description: For example Windows 11, Firefox 13x, NVDA 2026.1.
+    validations:
+      required: true
+  - type: textarea
+    id: procedure
+    attributes:
+      label: Procedure performed
+    validations:
+      required: true
+  - type: textarea
+    id: observed
+    attributes:
+      label: Observed output
+      description: Transcribe speech, focus movement and task completion. Do not paraphrase what you did not hear.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence reference
+      description: Audio, transcript, log or observation file. Attach only small, licensed files.
+    validations:
+      required: true

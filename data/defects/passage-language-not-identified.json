@@ -1,0 +1,103 @@
+{
+  "service": "lab",
+  "fixtureId": null,
+  "aliases": [],
+  "preconditions": [],
+  "interactionSteps": [],
+  "environment": null,
+  "actRules": [],
+  "controlFixtureId": null,
+  "introducedIn": null,
+  "lastVerified": null,
+  "notApplicable": [
+    "fixtureId",
+    "actRules"
+  ],
+  "assistiveTechnologyTests": [
+    {
+      "platform": "macOS",
+      "browser": "Safari",
+      "assistiveTechnology": "VoiceOver",
+      "procedure": "Follow the documented procedure and listen for the information under test.",
+      "status": "not-run"
+    }
+  ],
+  "id": "passage-language-not-identified",
+  "title": "French passage has no language identification",
+  "description": "The field notice contains a French sentence inside an English page. The alpha variant does not mark the passage with lang, so a screen reader will pronounce it with the document language. The visible text is identical in both variants.",
+  "component": "Bilingual field notice (variant A)",
+  "category": "language",
+  "classification": "candidate-wcag-failure",
+  "url": "lab/subtle/language/",
+  "locators": [
+    {
+      "type": "css",
+      "value": "#notice-a"
+    }
+  ],
+  "relatedElements": [
+    {
+      "purpose": "comparison-control",
+      "css": "#notice-b",
+      "note": "The control identifies the same paragraph as French."
+    }
+  ],
+  "expectedBehaviour": "A passage in a different language is marked with the correct lang attribute.",
+  "actualBehaviour": "The French paragraph inherits lang=en from the document.",
+  "userImpact": "Screen-reader users hear French pronounced as English and may not understand the closure notice.",
+  "affectedCapabilities": [
+    "screen-reader",
+    "cognitive"
+  ],
+  "wcag": [
+    {
+      "criterion": "3.1.2",
+      "status": "candidate"
+    }
+  ],
+  "detection": {
+    "expectedMethods": [
+      "dom-inspection",
+      "screen-reader-evaluation"
+    ],
+    "note": "The rendering is identical; only the programmatic language differs.",
+    "observed": [
+      {
+        "date": "2026-11-26",
+        "engine": "axe-core",
+        "engineVersion": "4.14.1",
+        "browser": "Chromium via Playwright 1.65.1",
+        "interactionState": "default page state",
+        "ruleId": null,
+        "result": "not-detected",
+        "note": "Page-level axe run with tags wcag2a, wcag2aa, wcag21a, wcag21aa and best-practice. No violation was reported; the control on the same page also passes.",
+        "evidence": "tests/detection-observations.spec.js"
+      }
+    ]
+  },
+  "manualTests": [
+    "Read the notice with a screen reader and listen to the pronunciation of the French sentence."
+  ],
+  "evidence": {
+    "assertions": [
+      "The French paragraph has no lang attribute while html has lang=en."
+    ],
+    "tests": [
+      "tests/responsive-and-state.spec.js: keeps the alpha French passage without a language"
+    ],
+    "artifacts": [],
+    "commands": [
+      "npx playwright test tests/responsive-and-state.spec.js"
+    ]
+  },
+  "reviewStatus": {
+    "lifecycle": "reproduced-automatically",
+    "dimensions": {
+      "automatedReproduction": "verified",
+      "manualReproduction": "not-run",
+      "assistiveTechnology": "not-run",
+      "independentReview": "not-run"
+    },
+    "note": "A Playwright regression test preserves the defective behaviour and its control. That is automated reproduction, not a manual or assistive-technology observation."
+  }
+}

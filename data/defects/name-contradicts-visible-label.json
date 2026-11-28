@@ -1,0 +1,127 @@
+{
+  "service": "lab",
+  "fixtureId": null,
+  "aliases": [],
+  "preconditions": [],
+  "interactionSteps": [],
+  "environment": null,
+  "actRules": [],
+  "controlFixtureId": null,
+  "introducedIn": null,
+  "lastVerified": null,
+  "notApplicable": [
+    "fixtureId",
+    "actRules"
+  ],
+  "id": "name-contradicts-visible-label",
+  "title": "Accessible name contradicts the visible button label",
+  "description": "The Delete observation button carries aria-label=\"Save observation\". A mouse user reads Delete; an assistive-technology user hears Save. A non-empty accessible name therefore passes the automated name checks while describing the wrong action.",
+  "component": "Observation delete button (variant A)",
+  "category": "accessible-name",
+  "classification": "candidate-wcag-failure",
+  "url": "lab/subtle/names/",
+  "locators": [
+    {
+      "type": "css",
+      "value": "#delete-a"
+    },
+    {
+      "type": "role",
+      "role": "button",
+      "name": "Save observation"
+    }
+  ],
+  "relatedElements": [
+    {
+      "purpose": "comparison-control",
+      "css": "#delete-b",
+      "note": "Identical button whose accessible name matches the visible label."
+    },
+    {
+      "purpose": "confirmation",
+      "css": "#result-a"
+    }
+  ],
+  "expectedBehaviour": "The accessible name of a control contains the visible label text, so that the name and the visible action agree.",
+  "actualBehaviour": "The visible label is Delete observation, but aria-label replaces the accessible name with Save observation.",
+  "userImpact": "Voice-control users cannot activate the button by speaking its visible label, and screen-reader users are told the button does something other than what it does.",
+  "affectedCapabilities": [
+    "screen-reader",
+    "voice-control",
+    "cognitive"
+  ],
+  "wcag": [
+    {
+      "criterion": "2.5.3",
+      "status": "candidate",
+      "note": "The accessible name does not contain the visible label text."
+    },
+    {
+      "criterion": "4.1.2",
+      "status": "candidate",
+      "note": "The name is available to assistive technology but describes a different action."
+    }
+  ],
+  "detection": {
+    "expectedMethods": [
+      "accessibility-tree-inspection",
+      "dom-inspection",
+      "manual-keyboard-evaluation"
+    ],
+    "observed": [
+      {
+        "date": "2026-11-26",
+        "engine": "axe-core",
+        "engineVersion": "4.14.1",
+        "browser": "Chromium via Playwright 1.65.1",
+        "interactionState": "default page state",
+        "ruleId": "label-content-name-mismatch",
+        "result": "detected",
+        "note": "Page-level axe run with tags wcag2a, wcag2aa, wcag21a, wcag21aa and best-practice. The rule reports the visible Delete observation label against the Save observation accessible name.",
+        "evidence": "tests/detection-observations.spec.js"
+      }
+    ],
+    "note": "Automated name checks pass because the name is non-empty. Comparing the name with the visible label needs a human review or a heuristic check."
+  },
+  "manualTests": [
+    "Open the accessibility tree for both buttons and compare each accessible name with the text printed on the button.",
+    "Try to activate variant A by voice using its visible label."
+  ],
+  "assistiveTechnologyTests": [
+    {
+      "platform": "macOS",
+      "browser": "Safari",
+      "assistiveTechnology": "VoiceOver",
+      "procedure": "Navigate to the target with the VoiceOver rotor and confirm what is announced.",
+      "status": "not-run"
+    }
+  ],
+  "evidence": {
+    "assertions": [
+      "Variant A exposes the accessible name Save observation while displaying Delete observation."
+    ],
+    "tests": [
+      "tests/subtle-defects.spec.js: keeps the misleading accessible name on variant A"
+    ],
+    "artifacts": [],
+    "commands": [
+      "npx playwright test tests/subtle-defects.spec.js"
+    ]
+  },
+  "sources": [
+    {
+      "title": "WCAG 2.2 Understanding 2.5.3: Label in Name",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/label-in-name"
+    }
+  ],
+  "reviewStatus": {
+    "lifecycle": "reproduced-automatically",
+    "dimensions": {
+      "automatedReproduction": "verified",
+      "manualReproduction": "not-run",
+      "assistiveTechnology": "not-run",
+      "independentReview": "not-run"
+    },
+    "note": "A Playwright regression test preserves the defective behaviour and its control. That is automated reproduction, not a manual or assistive-technology observation."
+  }
+}

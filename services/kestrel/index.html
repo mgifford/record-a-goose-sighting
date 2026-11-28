@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Choose a session - Wildlife observation service</title>
+  <link rel="stylesheet" href="./kestrel.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header class="service-header">
+    <div class="inner">
+      <p class="service-name"><a href="./index.html">Wildlife observation service</a></p>
+    </div>
+    <div class="phase-banner"><span class="tag">Beta</span><span>This is a new service. Your feedback will help us improve it.</span></div>
+  </header>
+
+  <main id="main-content">
+    <p class="step" id="step">Step 1 of 3</p>
+    <h1>Book a wildlife observation session</h1>
+    <p class="lede">Choose one of the sessions below. You can change your mind before you confirm.</p>
+
+    <form id="session-form" novalidate>
+      <fieldset class="radios" id="session-group">
+        <legend>Which session would you like to book?</legend>
+
+        <label class="radio-item" for="session-morning">
+          <input type="radio" id="session-morning" name="session" value="morning">
+          <span>
+            <strong>Morning hide walk</strong>
+            <span class="hint">7am to 9am, north hide. Led by a site warden.</span>
+          </span>
+        </label>
+
+        <label class="radio-item" for="session-afternoon">
+          <input type="radio" id="session-afternoon" name="session" value="afternoon">
+          <span>
+            <strong>Afternoon wetland walk</strong>
+            <span class="hint">2pm to 4pm, wetland boardwalk. Step-free route.</span>
+          </span>
+        </label>
+
+        <label class="radio-item" for="session-evening">
+          <input type="radio" id="session-evening" name="session" value="evening">
+          <span>
+            <strong>Evening bat watch</strong>
+            <span class="hint">8pm to 9.30pm, meadow gate. Bring a torch.</span>
+          </span>
+        </label>
+      </fieldset>
+
+      <div class="actions">
+        <button type="submit" class="button" id="continue-session">Continue</button>
+      </div>
+    </form>
+  </main>
+
+  <footer><div class="inner"><p>Wildlife observation service. A fictional service for accessibility testing.</p></div></footer>
+
+  <script type="module">
+    const params = new URLSearchParams(window.location.search)
+    const path = params.get('path') === 'beta' ? 'beta' : 'alpha'
+    const step = document.getElementById('step')
+    const storageKey = 'kestrel-booking'
+
+    if (path === 'alpha') {
+      // This path discards any journey state when the first step is revisited.
+      window.sessionStorage.removeItem(storageKey)
+      step.setAttribute('aria-hidden', 'true')
+    }
+
+    const stored = path === 'beta' ? JSON.parse(window.sessionStorage.getItem(storageKey) || 'null') : null
+    if (stored?.session) {
+      const input = document.querySelector(`input[name="session"][value="${stored.session}"]`)
+      if (input) input.checked = true
+    }
+
+    document.getElementById('session-form').addEventListener('submit', (event) => {
+      event.preventDefault()
+      const chosen = document.querySelector('input[name="session"]:checked')
+      if (!chosen) {
+        const group = document.getElementById('session-group')
+        group.setAttribute('tabindex', '-1')
+        group.focus()
+        return
+      }
+
+      const state = JSON.parse(window.sessionStorage.getItem(storageKey) || '{}')
+      window.sessionStorage.setItem(storageKey, JSON.stringify({ ...state, session: chosen.value, path }))
+      window.location.href = `./details.html?path=${path}`
+    })
+  </script>
+</body>
+</html>

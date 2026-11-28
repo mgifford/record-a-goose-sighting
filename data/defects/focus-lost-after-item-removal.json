@@ -1,0 +1,132 @@
+{
+  "service": "lab",
+  "fixtureId": null,
+  "aliases": [],
+  "preconditions": [
+    "Three attendees are selected."
+  ],
+  "interactionSteps": [
+    {
+      "action": "focus",
+      "selector": "#remove-a-2"
+    },
+    {
+      "action": "click",
+      "selector": "#remove-a-2"
+    },
+    {
+      "action": "assert",
+      "selector": "#list-a",
+      "note": "Two items remain and focus is on the document body."
+    }
+  ],
+  "environment": null,
+  "actRules": [],
+  "controlFixtureId": null,
+  "introducedIn": null,
+  "lastVerified": null,
+  "notApplicable": [
+    "fixtureId",
+    "actRules"
+  ],
+  "id": "focus-lost-after-item-removal",
+  "title": "Focus returns to the document after removing the focused item",
+  "description": "Removing an attendee deletes the list item that contains the focused Remove button. Nothing else receives focus, so the browser moves focus to the document body and the user's position in the page is lost.",
+  "component": "Selected attendees list (variant A)",
+  "category": "focus-management",
+  "classification": "candidate-wcag-failure",
+  "url": "lab/subtle/focus-removal/",
+  "locators": [
+    {
+      "type": "css",
+      "value": "#remove-a-2",
+      "phase": "before"
+    }
+  ],
+  "relatedElements": [
+    {
+      "purpose": "comparison-control",
+      "css": "#remove-b-2",
+      "note": "Moves focus to the next remaining Remove button."
+    },
+    {
+      "purpose": "updated-count",
+      "css": "#count-a"
+    }
+  ],
+  "expectedBehaviour": "After removing an item, focus moves to the next logical target so that keyboard and screen-reader users keep their place.",
+  "actualBehaviour": "The focused element is removed and document.activeElement becomes the body.",
+  "userImpact": "Keyboard users restart from the top of the page, and screen-reader users may not hear that the removal happened or where they are.",
+  "affectedCapabilities": [
+    "keyboard-only",
+    "switch-control",
+    "screen-reader"
+  ],
+  "wcag": [
+    {
+      "criterion": "2.4.3",
+      "status": "candidate",
+      "note": "Focus order is disrupted by the update."
+    }
+  ],
+  "detection": {
+    "expectedMethods": [
+      "automated-keyboard-interaction",
+      "dom-inspection"
+    ],
+    "observed": [
+      {
+        "date": "2026-11-26",
+        "engine": "axe-core",
+        "engineVersion": "4.14.1",
+        "browser": "Chromium via Playwright 1.65.1",
+        "interactionState": "default page state",
+        "ruleId": null,
+        "result": "not-detected",
+        "note": "Page-level axe run with tags wcag2a, wcag2aa, wcag21a, wcag21aa and best-practice. No violation was reported for this page in its default state; the control on the same page also passes.",
+        "evidence": "tests/detection-observations.spec.js"
+      }
+    ],
+    "note": "Only an interaction test that records document.activeElement after the update exposes this."
+  },
+  "manualTests": [
+    "Focus the second Remove button and activate it. Check where focus goes without touching the mouse."
+  ],
+  "assistiveTechnologyTests": [
+    {
+      "platform": "Windows",
+      "browser": "Firefox",
+      "assistiveTechnology": "NVDA",
+      "procedure": "Focus the second Remove button, activate it and listen for confirmation and the next focus position.",
+      "status": "not-run"
+    }
+  ],
+  "evidence": {
+    "assertions": [
+      "After removing the second attendee, document.activeElement is the body element."
+    ],
+    "tests": [
+      "tests/subtle-defects.spec.js: keeps losing focus in variant A"
+    ],
+    "artifacts": [],
+    "commands": [
+      "npx playwright test tests/subtle-defects.spec.js"
+    ]
+  },
+  "sources": [
+    {
+      "title": "WCAG 2.2 Understanding 2.4.3: Focus Order",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/focus-order"
+    }
+  ],
+  "reviewStatus": {
+    "lifecycle": "reproduced-automatically",
+    "dimensions": {
+      "automatedReproduction": "verified",
+      "manualReproduction": "not-run",
+      "assistiveTechnology": "not-run",
+      "independentReview": "not-run"
+    },
+    "note": "A Playwright regression test preserves the defective behaviour and its control. That is automated reproduction, not a manual or assistive-technology observation."
+  }
+}

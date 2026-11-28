@@ -10,15 +10,20 @@
   "scripts": {
     "build": "npm run build:goose && npm run build:lab",
     "build:goose": "node scripts/build.mjs",
-    "build:lab": "vite build --config vite.config.mjs && node scripts/lab-manifest.mjs && node scripts/lab-catalogue.mjs && node scripts/act-upstream.mjs && node scripts/merge-lab.mjs",
+    "build:lab": "vite build --config vite.config.mjs && node scripts/lab-manifest.mjs && node scripts/lab-catalogue.mjs && node scripts/act-upstream.mjs && node scripts/defects.mjs generate && node scripts/merge-lab.mjs",
     "build:root": "SITE_BASE=/ npm run build",
     "preview": "node scripts/serve.mjs",
     "test": "npm run build && playwright test",
     "test:all": "npm run build && BROWSERS=all playwright test",
     "test:ci": "playwright test",
-    "check": "npm run build && npm run test",
+    "check": "npm run defects:check-sync && npm run build && npm run test",
     "act:import": "node scripts/act-upstream.mjs --import",
-    "act:check": "node scripts/act-upstream.mjs --check"
+    "act:check": "node scripts/act-upstream.mjs --check",
+    "defects:generate": "node scripts/defects.mjs generate",
+    "defects:validate": "node scripts/defects.mjs validate",
+    "defects:check-sync": "node scripts/defects.mjs check-sync",
+    "defects:coverage": "node scripts/defects.mjs coverage",
+    "defects:verify": "node scripts/defects.mjs verify"
   },
   "dependencies": {
     "govuk-frontend": "3.15.0",

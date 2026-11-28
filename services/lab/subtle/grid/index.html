@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en" data-test-ready="true">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Observation records: grid</title>
+  <link rel="stylesheet" href="/lab/lab-styles.css">
+  <style>
+    .grid { display: table; width: 100%; max-width: 40rem; border-collapse: collapse; margin: 1rem 0; }
+    .grid [role="row"] { display: table-row; }
+    .grid [role="row"] > * { display: table-cell; padding: 0.5rem 0.75rem 0.5rem 0; border-bottom: 1px solid #b1b4b6; text-align: left; }
+    .grid [role="row"]:first-child > * { font-weight: 700; border-bottom: 2px solid #0b0c0c; }
+    .grid [role="row"][hidden] { display: none; }
+  </style>
+</head>
+<body>
+  <header><nav aria-label="Site"><a href="../../../">Record a goose sighting</a><a href="../../">Laboratory</a></nav></header>
+  <main>
+    <h1>Observation records: grid</h1>
+    <p class="meta">Two versions of the same virtualised record list. Both show four records until you ask for all twelve.</p>
+    <p>Open the full list and compare the row count that assistive technology reports with the rows on screen.</p>
+
+    <section aria-labelledby="variant-a">
+      <h2 id="variant-a">Variant A</h2>
+      <div class="fixture">
+        <h3 id="grid-a-heading">Verified observations</h3>
+        <div class="grid" role="grid" id="grid-a" aria-labelledby="grid-a-heading" aria-rowcount="5" aria-colcount="3">
+          <div role="row" aria-rowindex="1">
+            <span role="columnheader" aria-colindex="1">Date</span>
+            <span role="columnheader" aria-colindex="2">Species</span>
+            <span role="columnheader" aria-colindex="3">Site</span>
+          </div>
+          <div role="row" aria-rowindex="2"><span role="gridcell" aria-colindex="1">20 November 2026</span><span role="gridcell" aria-colindex="2">Mallard</span><span role="gridcell" aria-colindex="3">North hide</span></div>
+          <div role="row" aria-rowindex="3"><span role="gridcell" aria-colindex="1">18 November 2026</span><span role="gridcell" aria-colindex="2">Grey heron</span><span role="gridcell" aria-colindex="3">Wetland boardwalk</span></div>
+          <div role="row" aria-rowindex="4"><span role="gridcell" aria-colindex="1">15 November 2026</span><span role="gridcell" aria-colindex="2">Marsh harrier</span><span role="gridcell" aria-colindex="3">Meadow gate</span></div>
+          <div role="row" aria-rowindex="5"><span role="gridcell" aria-colindex="1">12 November 2026</span><span role="gridcell" aria-colindex="2">Mute swan</span><span role="gridcell" aria-colindex="3">Duck pond</span></div>
+          <div role="row" aria-rowindex="6" hidden><span role="gridcell" aria-colindex="1">9 November 2026</span><span role="gridcell" aria-colindex="2">Kingfisher</span><span role="gridcell" aria-colindex="3">River bank</span></div>
+          <div role="row" aria-rowindex="7" hidden><span role="gridcell" aria-colindex="1">7 November 2026</span><span role="gridcell" aria-colindex="2">Little egret</span><span role="gridcell" aria-colindex="3">Wetland boardwalk</span></div>
+          <div role="row" aria-rowindex="8" hidden><span role="gridcell" aria-colindex="1">4 November 2026</span><span role="gridcell" aria-colindex="2">Snipe</span><span role="gridcell" aria-colindex="3">Meadow gate</span></div>
+          <div role="row" aria-rowindex="9" hidden><span role="gridcell" aria-colindex="1">2 November 2026</span><span role="gridcell" aria-colindex="2">Teal</span><span role="gridcell" aria-colindex="3">Duck pond</span></div>
+          <div role="row" aria-rowindex="10" hidden><span role="gridcell" aria-colindex="1">30 October 2026</span><span role="gridcell" aria-colindex="2">Osprey</span><span role="gridcell" aria-colindex="3">River bank</span></div>
+          <div role="row" aria-rowindex="11" hidden><span role="gridcell" aria-colindex="1">28 October 2026</span><span role="gridcell" aria-colindex="2">Bittern</span><span role="gridcell" aria-colindex="3">North hide</span></div>
+          <div role="row" aria-rowindex="12" hidden><span role="gridcell" aria-colindex="1">25 October 2026</span><span role="gridcell" aria-colindex="2">Water rail</span><span role="gridcell" aria-colindex="3">Wetland boardwalk</span></div>
+          <div role="row" aria-rowindex="13" hidden><span role="gridcell" aria-colindex="1">22 October 2026</span><span role="gridcell" aria-colindex="2">Shoveler</span><span role="gridcell" aria-colindex="3">Duck pond</span></div>
+        </div>
+        <button type="button" id="show-a">Show all 12 records</button>
+      </div>
+    </section>
+
+    <section aria-labelledby="variant-b">
+      <h2 id="variant-b">Variant B</h2>
+      <div class="fixture">
+        <h3 id="grid-b-heading">Verified observations</h3>
+        <div class="grid" role="grid" id="grid-b" aria-labelledby="grid-b-heading" aria-rowcount="5" aria-colcount="3">
+          <div role="row" aria-rowindex="1">
+            <span role="columnheader" aria-colindex="1">Date</span>
+            <span role="columnheader" aria-colindex="2">Species</span>
+            <span role="columnheader" aria-colindex="3">Site</span>
+          </div>
+          <div role="row" aria-rowindex="2"><span role="gridcell" aria-colindex="1">20 November 2026</span><span role="gridcell" aria-colindex="2">Mallard</span><span role="gridcell" aria-colindex="3">North hide</span></div>
+          <div role="row" aria-rowindex="3"><span role="gridcell" aria-colindex="1">18 November 2026</span><span role="gridcell" aria-colindex="2">Grey heron</span><span role="gridcell" aria-colindex="3">Wetland boardwalk</span></div>
+          <div role="row" aria-rowindex="4"><span role="gridcell" aria-colindex="1">15 November 2026</span><span role="gridcell" aria-colindex="2">Marsh harrier</span><span role="gridcell" aria-colindex="3">Meadow gate</span></div>
+          <div role="row" aria-rowindex="5"><span role="gridcell" aria-colindex="1">12 November 2026</span><span role="gridcell" aria-colindex="2">Mute swan</span><span role="gridcell" aria-colindex="3">Duck pond</span></div>
+          <div role="row" aria-rowindex="6" hidden><span role="gridcell" aria-colindex="1">9 November 2026</span><span role="gridcell" aria-colindex="2">Kingfisher</span><span role="gridcell" aria-colindex="3">River bank</span></div>
+          <div role="row" aria-rowindex="7" hidden><span role="gridcell" aria-colindex="1">7 November 2026</span><span role="gridcell" aria-colindex="2">Little egret</span><span role="gridcell" aria-colindex="3">Wetland boardwalk</span></div>
+          <div role="row" aria-rowindex="8" hidden><span role="gridcell" aria-colindex="1">4 November 2026</span><span role="gridcell" aria-colindex="2">Snipe</span><span role="gridcell" aria-colindex="3">Meadow gate</span></div>
+          <div role="row" aria-rowindex="9" hidden><span role="gridcell" aria-colindex="1">2 November 2026</span><span role="gridcell" aria-colindex="2">Teal</span><span role="gridcell" aria-colindex="3">Duck pond</span></div>
+          <div role="row" aria-rowindex="10" hidden><span role="gridcell" aria-colindex="1">30 October 2026</span><span role="gridcell" aria-colindex="2">Osprey</span><span role="gridcell" aria-colindex="3">River bank</span></div>
+          <div role="row" aria-rowindex="11" hidden><span role="gridcell" aria-colindex="1">28 October 2026</span><span role="gridcell" aria-colindex="2">Bittern</span><span role="gridcell" aria-colindex="3">North hide</span></div>
+          <div role="row" aria-rowindex="12" hidden><span role="gridcell" aria-colindex="1">25 October 2026</span><span role="gridcell" aria-colindex="2">Water rail</span><span role="gridcell" aria-colindex="3">Wetland boardwalk</span></div>
+          <div role="row" aria-rowindex="13" hidden><span role="gridcell" aria-colindex="1">22 October 2026</span><span role="gridcell" aria-colindex="2">Shoveler</span><span role="gridcell" aria-colindex="3">Duck pond</span></div>
+        </div>
+        <button type="button" id="show-b">Show all 12 records</button>
+      </div>
+    </section>
+
+    <script>
+      function setupGrid (variant, updatesRowCount) {
+        const grid = document.getElementById(`grid-${variant}`)
+        const button = document.getElementById(`show-${variant}`)
+
+        button.addEventListener('click', () => {
+          for (const row of grid.querySelectorAll('[role="row"][hidden]')) row.hidden = false
+          if (updatesRowCount) grid.setAttribute('aria-rowcount', '13')
+          button.hidden = true
+        })
+      }
+
+      setupGrid('a', false)
+      setupGrid('b', true)
+    </script>
+  </main>
+  <footer><p>Part of the animal-reporting laboratory. MIT licensed.</p></footer>
+</body>
+</html>

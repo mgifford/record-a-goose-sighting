@@ -1,0 +1,126 @@
+{
+  "service": "lab",
+  "fixtureId": null,
+  "aliases": [],
+  "preconditions": [
+    "The form is submitted with an empty date."
+  ],
+  "interactionSteps": [
+    {
+      "action": "click",
+      "selector": "#submit-a"
+    },
+    {
+      "action": "assert",
+      "selector": "#error-a",
+      "state": "visible"
+    }
+  ],
+  "environment": null,
+  "actRules": [],
+  "controlFixtureId": null,
+  "introducedIn": null,
+  "lastVerified": null,
+  "notApplicable": [
+    "fixtureId",
+    "actRules"
+  ],
+  "id": "error-not-associated-with-field",
+  "title": "Visible error is not associated with the field",
+  "description": "The inline error is visible under the date field but the input has no aria-describedby and no aria-invalid state, so the message exists only visually.",
+  "component": "Observation date field (variant A)",
+  "category": "forms",
+  "classification": "candidate-wcag-failure",
+  "url": "lab/subtle/errors/",
+  "locators": [
+    {
+      "type": "css",
+      "value": "#date-a"
+    }
+  ],
+  "relatedElements": [
+    {
+      "purpose": "inline-error",
+      "css": "#error-a"
+    },
+    {
+      "purpose": "comparison-control",
+      "css": "#date-b",
+      "note": "Describes the field with the hint and the error and sets aria-invalid."
+    }
+  ],
+  "expectedBehaviour": "The field is programmatically identified as invalid and its error message is part of the field's accessible description.",
+  "actualBehaviour": "The input exposes neither aria-invalid nor a description that includes the error.",
+  "userImpact": "Screen-reader users reach the field without hearing the error and cannot tell what needs correcting.",
+  "affectedCapabilities": [
+    "screen-reader",
+    "cognitive"
+  ],
+  "wcag": [
+    {
+      "criterion": "3.3.1",
+      "status": "candidate",
+      "note": "The error is identified in text but is not associated with the field programmatically."
+    }
+  ],
+  "detection": {
+    "expectedMethods": [
+      "dom-inspection",
+      "accessibility-tree-inspection"
+    ],
+    "observed": [
+      {
+        "date": "2026-11-26",
+        "engine": "axe-core",
+        "engineVersion": "4.14.1",
+        "browser": "Chromium via Playwright 1.65.1",
+        "interactionState": "default page state",
+        "ruleId": null,
+        "result": "not-detected",
+        "note": "Page-level axe run with tags wcag2a, wcag2aa, wcag21a, wcag21aa and best-practice. No violation was reported for this page in its default state; the control on the same page also passes.",
+        "evidence": "tests/detection-observations.spec.js"
+      }
+    ],
+    "note": "Automated scanners often detect this pattern, but the defect is defined by the missing association rather than by any specific tool rule."
+  },
+  "manualTests": [
+    "Submit the empty form, then move to the date field in forms mode and listen for the error."
+  ],
+  "assistiveTechnologyTests": [
+    {
+      "platform": "macOS",
+      "browser": "Safari",
+      "assistiveTechnology": "VoiceOver",
+      "procedure": "Navigate to the target with the VoiceOver rotor and confirm what is announced.",
+      "status": "not-run"
+    }
+  ],
+  "evidence": {
+    "assertions": [
+      "The input has no aria-describedby and no aria-invalid after the error is shown."
+    ],
+    "tests": [
+      "tests/subtle-defects.spec.js: keeps variant A errors unassociated, unfocused and linked to nothing"
+    ],
+    "artifacts": [],
+    "commands": [
+      "npx playwright test tests/subtle-defects.spec.js"
+    ]
+  },
+  "sources": [
+    {
+      "title": "WCAG 2.2 Understanding 3.3.1: Error Identification",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/error-identification"
+    }
+  ],
+  "reviewStatus": {
+    "lifecycle": "reproduced-automatically",
+    "dimensions": {
+      "automatedReproduction": "verified",
+      "manualReproduction": "not-run",
+      "assistiveTechnology": "not-run",
+      "independentReview": "not-run"
+    },
+    "note": "A Playwright regression test preserves the defective behaviour and its control. That is automated reproduction, not a manual or assistive-technology observation."
+  }
+}

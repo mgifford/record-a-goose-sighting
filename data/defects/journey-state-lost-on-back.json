@@ -1,0 +1,119 @@
+{
+  "service": "kestrel",
+  "fixtureId": null,
+  "aliases": [],
+  "preconditions": [
+    "A session has been chosen and the details step is open."
+  ],
+  "interactionSteps": [
+    {
+      "action": "click",
+      "selector": "#session-morning",
+      "note": "Choose a session."
+    },
+    {
+      "action": "click",
+      "selector": "#continue-session"
+    },
+    {
+      "action": "click",
+      "selector": "#back"
+    },
+    {
+      "action": "assert",
+      "selector": "#session-morning",
+      "note": "The radio is unchecked in the alpha path."
+    }
+  ],
+  "environment": null,
+  "actRules": [],
+  "controlFixtureId": null,
+  "introducedIn": null,
+  "lastVerified": null,
+  "notApplicable": [
+    "fixtureId",
+    "actRules"
+  ],
+  "assistiveTechnologyTests": [
+    {
+      "platform": "macOS",
+      "browser": "Safari",
+      "assistiveTechnology": "VoiceOver",
+      "procedure": "Complete the journey and listen for the announcement or information under test.",
+      "status": "not-run"
+    }
+  ],
+  "id": "journey-state-lost-on-back",
+  "title": "Selected session is lost when the journey is revisited",
+  "description": "The alpha first step clears the stored booking every time it loads. Going Back from the details step therefore discards the chosen session, while the beta path restores it.",
+  "component": "Session selection and journey state",
+  "category": "journey",
+  "classification": "usability-concern",
+  "url": "kestrel/index.html?path=alpha",
+  "locators": [
+    {
+      "type": "css",
+      "value": "#session-morning"
+    }
+  ],
+  "relatedElements": [
+    {
+      "purpose": "comparison-control",
+      "note": "The beta path restores the selected session after Back."
+    }
+  ],
+  "expectedBehaviour": "Returning to an earlier step preserves the choices already made.",
+  "actualBehaviour": "The stored journey state is removed on load and the selection is lost.",
+  "userImpact": "People who go back to check their choice must start again and may believe the booking was lost.",
+  "affectedCapabilities": [
+    "cognitive",
+    "screen-reader",
+    "keyboard-only"
+  ],
+  "wcag": [],
+  "detection": {
+    "expectedMethods": [
+      "automated-pointer-interaction",
+      "dom-inspection"
+    ],
+    "note": "No WCAG failure is claimed: the barrier is avoidable re-entry and lost state. A journey test is required.",
+    "observed": [
+      {
+        "date": "2026-11-26",
+        "engine": "axe-core",
+        "engineVersion": "4.14.1",
+        "browser": "Chromium via Playwright 1.65.1",
+        "interactionState": "default page state",
+        "ruleId": null,
+        "result": "not-detected",
+        "note": "Page-level axe run with tags wcag2a, wcag2aa, wcag21a, wcag21aa and best-practice. No violation was reported in the default state; the control on the same page or path also passes.",
+        "evidence": "tests/detection-observations.spec.js"
+      }
+    ]
+  },
+  "manualTests": [
+    "Choose a session, continue, press Back and check whether the choice is still selected."
+  ],
+  "evidence": {
+    "assertions": [
+      "The session radio is unchecked and sessionStorage is empty after Back on the alpha path."
+    ],
+    "tests": [
+      "tests/journey-defects.spec.js: loses the selected session when the first step is revisited on the alpha path"
+    ],
+    "artifacts": [],
+    "commands": [
+      "npx playwright test tests/journey-defects.spec.js"
+    ]
+  },
+  "reviewStatus": {
+    "lifecycle": "reproduced-automatically",
+    "dimensions": {
+      "automatedReproduction": "verified",
+      "manualReproduction": "not-run",
+      "assistiveTechnology": "not-run",
+      "independentReview": "not-run"
+    },
+    "note": "A Playwright regression test preserves the defective journey or widget behaviour and its control. That is automated reproduction, not a manual or assistive-technology observation."
+  }
+}

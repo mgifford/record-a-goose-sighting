@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en" data-test-ready="true">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Book a session: selected attendees</title>
+  <link rel="stylesheet" href="/lab/lab-styles.css">
+</head>
+<body>
+  <header><nav aria-label="Site"><a href="../../../">Record a goose sighting</a><a href="../../">Laboratory</a></nav></header>
+  <main>
+    <h1>Book a session: selected attendees</h1>
+    <p class="meta">Two versions of the same attendee list. Removing a person updates the count in both versions.</p>
+    <p>Remove an attendee with the keyboard and then continue with Tab. Compare where focus goes next.</p>
+
+    <section aria-labelledby="variant-a">
+      <h2 id="variant-a">Variant A</h2>
+      <div class="fixture">
+        <p id="count-a">3 attendees selected</p>
+        <ul id="list-a">
+          <li><span>Alex Morgan</span> <button type="button" id="remove-a-1" aria-label="Remove Alex Morgan">Remove</button></li>
+          <li><span>Priya Shah</span> <button type="button" id="remove-a-2" aria-label="Remove Priya Shah">Remove</button></li>
+          <li><span>Sam Okafor</span> <button type="button" id="remove-a-3" aria-label="Remove Sam Okafor">Remove</button></li>
+        </ul>
+      </div>
+    </section>
+
+    <section aria-labelledby="variant-b">
+      <h2 id="variant-b">Variant B</h2>
+      <div class="fixture">
+        <p id="count-b" tabindex="-1">3 attendees selected</p>
+        <ul id="list-b">
+          <li><span>Alex Morgan</span> <button type="button" id="remove-b-1" aria-label="Remove Alex Morgan">Remove</button></li>
+          <li><span>Priya Shah</span> <button type="button" id="remove-b-2" aria-label="Remove Priya Shah">Remove</button></li>
+          <li><span>Sam Okafor</span> <button type="button" id="remove-b-3" aria-label="Remove Sam Okafor">Remove</button></li>
+        </ul>
+      </div>
+    </section>
+
+    <script>
+      function setup (variant, moveFocusAfterRemoval) {
+        const list = document.getElementById(`list-${variant}`)
+        const count = document.getElementById(`count-${variant}`)
+
+        list.addEventListener('click', (event) => {
+          const button = event.target.closest('button')
+          if (!button) return
+
+          const item = button.closest('li')
+          const buttons = [...list.querySelectorAll('button')]
+          const index = buttons.indexOf(button)
+          item.remove()
+          count.textContent = `${list.children.length} attendees selected`
+
+          if (!moveFocusAfterRemoval) return
+
+          const remaining = [...list.querySelectorAll('button')]
+          const next = remaining[Math.min(index, remaining.length - 1)]
+          ;(next || count).focus()
+        })
+      }
+
+      setup('a', false)
+      setup('b', true)
+    </script>
+  </main>
+  <footer><p>Part of the animal-reporting laboratory. MIT licensed.</p></footer>
+</body>
+</html>

@@ -1,0 +1,24 @@
+name: Incorrect WCAG or ACT mapping
+description: Correct a mapping on a defect or fixture
+labels: ["mapping"]
+body:
+  - type: input
+    id: defect
+    attributes:
+      label: Defect or fixture identifier
+    validations:
+      required: true
+  - type: input
+    id: current
+    attributes:
+      label: Current mapping
+      description: Criterion or ACT rule and its current status.
+    validations:
+      required: true
+  - type: textarea
+    id: proposed
+    attributes:
+      label: Proposed mapping and rationale
+      description: Cite the success criterion, technique or ACT rule. Distinguish normative requirements from guidance.
+    validations:
+      required: true

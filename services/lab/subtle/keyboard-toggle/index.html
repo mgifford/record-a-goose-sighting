@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en" data-test-ready="true">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Wildlife alerts: alert preference</title>
+  <link rel="stylesheet" href="/lab/lab-styles.css">
+  <style>
+    .switch-row { display: flex; align-items: center; justify-content: space-between; gap: 1rem; max-width: 30rem; }
+    .switch { position: relative; display: inline-block; width: 3.25rem; height: 1.75rem; padding: 0; border: 2px solid #0b0c0c; border-radius: 1rem; background: #fff; }
+    .switch .thumb { position: absolute; top: 0.15rem; left: 0.15rem; width: 1.15rem; height: 1.15rem; border-radius: 50%; background: #0b0c0c; }
+    .switch[aria-checked="true"] { background: #00703c; }
+    .switch[aria-checked="true"] .thumb { left: auto; right: 0.15rem; background: #fff; }
+    .switch[aria-checked="true"] { border-color: #00703c; }
+  </style>
+</head>
+<body>
+  <header><nav aria-label="Site"><a href="../../../">Record a goose sighting</a><a href="../../">Laboratory</a></nav></header>
+  <main>
+    <h1>Wildlife alerts: alert preference</h1>
+    <p class="meta">Two versions of the same on/off preference. Both respond to a mouse click and show the same on and off states.</p>
+    <p>Focus each control and try to change it with the keyboard alone.</p>
+
+    <section aria-labelledby="variant-a">
+      <h2 id="variant-a">Variant A</h2>
+      <div class="fixture">
+        <div class="switch-row">
+          <span id="alerts-a-label">Morning alert emails</span>
+          <div id="switch-a" class="switch" role="switch" aria-checked="false" aria-labelledby="alerts-a-label" tabindex="0">
+            <span class="thumb"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="variant-b">
+      <h2 id="variant-b">Variant B</h2>
+      <div class="fixture">
+        <div class="switch-row">
+          <span id="alerts-b-label">Morning alert emails</span>
+          <button type="button" id="switch-b" class="switch" role="switch" aria-checked="false" aria-labelledby="alerts-b-label">
+            <span class="thumb"></span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      for (const variant of ['a', 'b']) {
+        const control = document.getElementById(`switch-${variant}`)
+        control.addEventListener('click', () => {
+          const checked = control.getAttribute('aria-checked') === 'true'
+          control.setAttribute('aria-checked', String(!checked))
+        })
+      }
+    </script>
+  </main>
+  <footer><p>Part of the animal-reporting laboratory. MIT licensed.</p></footer>
+</body>
+</html>

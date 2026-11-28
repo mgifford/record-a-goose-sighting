@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en" data-test-ready="true">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Wildlife alerts: save and check</title>
+  <link rel="stylesheet" href="/lab/lab-styles.css">
+  <style>
+    .done:empty { display: none; }
+    .fixture h3 { margin-top: 0; }
+  </style>
+</head>
+<body>
+  <header><nav aria-label="Site"><a href="../../../">Record a goose sighting</a><a href="../../">Laboratory</a></nav></header>
+  <main>
+    <h1>Wildlife alerts: save and check</h1>
+    <p class="meta">Two versions of the same draft form and the same availability check. The visible result is identical.</p>
+    <p>Save a draft and check availability in each version, then compare what a screen reader is told.</p>
+
+    <section aria-labelledby="variant-a">
+      <h2 id="variant-a">Variant A</h2>
+      <div class="fixture">
+        <h3>Draft preferences</h3>
+        <p>You will receive one alert each morning for the species you select.</p>
+        <div class="actions">
+          <button type="button" id="save-a" class="primary">Save draft</button>
+          <button type="button" id="check-a">Check availability</button>
+        </div>
+        <p id="saved-a" class="done" hidden>Draft saved. Last saved 14:32.</p>
+        <p id="results-a" role="status">No sessions checked yet.</p>
+      </div>
+    </section>
+
+    <section aria-labelledby="variant-b">
+      <h2 id="variant-b">Variant B</h2>
+      <div class="fixture">
+        <h3>Draft preferences</h3>
+        <p>You will receive one alert each morning for the species you select.</p>
+        <div class="actions">
+          <button type="button" id="save-b" class="primary">Save draft</button>
+          <button type="button" id="check-b">Check availability</button>
+        </div>
+        <p id="saved-b" class="done" role="status"></p>
+        <p id="results-b" role="status">No sessions checked yet.</p>
+      </div>
+    </section>
+
+    <script>
+      const savedMessage = 'Draft saved. Last saved 14:32.'
+
+      function setupSave (variant, usesLiveRegion) {
+        const button = document.getElementById(`save-${variant}`)
+        const output = document.getElementById(`saved-${variant}`)
+
+        button.addEventListener('click', () => {
+          output.textContent = savedMessage
+          if (!usesLiveRegion) output.hidden = false
+        })
+      }
+
+      function setupCheck (variant, clearsBusy) {
+        const button = document.getElementById(`check-${variant}`)
+        const output = document.getElementById(`results-${variant}`)
+
+        button.addEventListener('click', () => {
+          output.setAttribute('aria-busy', 'true')
+          window.setTimeout(() => {
+            output.textContent = '4 sessions available in the next seven days.'
+            if (clearsBusy) output.removeAttribute('aria-busy')
+          }, 50)
+        })
+      }
+
+      setupSave('a', false)
+      setupCheck('a', false)
+      setupSave('b', true)
+      setupCheck('b', true)
+    </script>
+  </main>
+  <footer><p>Part of the animal-reporting laboratory. MIT licensed.</p></footer>
+</body>
+</html>

@@ -19,6 +19,28 @@ Everything can be explored directly in your browser, without installing anything
 
 The original exercise takes approximately 20 minutes. The laboratory supports more detailed experimentation and research.
 
+## Defect registry and answer key
+
+Every intentional defect is declared in one generated registry, with a stable identifier,
+element locators, expected and actual behaviour, affected capabilities, detection limits and
+review status.
+
+- **[Known defect catalogue](https://mgifford.github.io/record-a-goose-sighting/defects/)**:
+  filter every declared defect by service, category, WCAG criterion, ACT rule, capability
+  and review status.
+- [`data/known-defects.json`](data/known-defects.json): the canonical machine-readable registry.
+- [`docs/KNOWN-DEFECTS.md`](docs/KNOWN-DEFECTS.md) and
+  [`docs/DEFECT-COVERAGE.md`](docs/DEFECT-COVERAGE.md): generated human-readable forms.
+
+The registry is generated from authoritative source records; Markdown, the catalogue and the
+manifest are never maintained by hand. `npm run defects:check-sync` fails when they drift, and
+`npm run defects:verify` resolves every declared locator in Chromium and reports unresolved,
+ambiguous or hidden targets. See
+[CONTRIBUTING-DEFECTS.md](docs/CONTRIBUTING-DEFECTS.md) before adding a defect.
+
+The catalogue is the answer key. Do not give it to an evaluator during a blind comparison;
+see [OPEN-SCANS-INTEGRATION.md](docs/OPEN-SCANS-INTEGRATION.md).
+
 ## What are we testing?
 
 Automated accessibility tools are valuable, but their findings require interpretation.

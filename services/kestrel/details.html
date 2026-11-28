@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Your details - Wildlife observation service</title>
+  <link rel="stylesheet" href="./kestrel.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header class="service-header">
+    <div class="inner">
+      <p class="service-name"><a href="./index.html">Wildlife observation service</a></p>
+    </div>
+    <div class="phase-banner"><span class="tag">Beta</span><span>This is a new service. Your feedback will help us improve it.</span></div>
+  </header>
+
+  <main id="main-content">
+    <a class="back-link" href="./index.html" id="back">Back</a>
+    <p class="step" id="step">Step 2 of 3</p>
+    <h1>Your details</h1>
+
+    <form id="details-form" novalidate>
+      <div class="field">
+        <label for="full-name">Full name</label>
+        <input id="full-name" name="full-name" type="text" autocomplete="name" required>
+      </div>
+
+      <div class="field">
+        <label for="email">Email address</label>
+        <span class="hint" id="email-hint">We will send the booking confirmation here.</span>
+        <input id="email" name="email" type="email" autocomplete="email" aria-describedby="email-hint" required>
+      </div>
+
+      <fieldset class="radios" id="access-group">
+        <legend>Do you have any access requirements?</legend>
+        <label class="radio-item" for="access-no">
+          <input type="radio" id="access-no" name="access" value="no" checked>
+          <span><strong>No</strong></span>
+        </label>
+        <label class="radio-item" for="access-yes">
+          <input type="radio" id="access-yes" name="access" value="yes">
+          <span><strong>Yes</strong><span class="hint">Tell us what would make the session easier for you.</span></span>
+        </label>
+      </fieldset>
+
+      <div class="field" id="access-details-wrapper" hidden>
+        <label for="access-details">What would make the session easier?</label>
+        <input id="access-details" name="access-details" type="text">
+      </div>
+
+      <div class="actions">
+        <button type="submit" class="button" id="continue-details">Continue</button>
+      </div>
+    </form>
+  </main>
+
+  <footer><div class="inner"><p>Wildlife observation service. A fictional service for accessibility testing.</p></div></footer>
+
+  <script type="module">
+    const params = new URLSearchParams(window.location.search)
+    const path = params.get('path') === 'beta' ? 'beta' : 'alpha'
+    const step = document.getElementById('step')
+    const storageKey = 'kestrel-booking'
+    const state = JSON.parse(window.sessionStorage.getItem(storageKey) || '{}')
+    const wrapper = document.getElementById('access-details-wrapper')
+    const nameInput = document.getElementById('full-name')
+    const emailInput = document.getElementById('email')
+    const accessGroup = document.getElementById('access-group')
+
+    if (path === 'alpha') step.setAttribute('aria-hidden', 'true')
+    document.getElementById('back').href = `./index.html?path=${path}`
+
+    if (state.name) nameInput.value = state.name
+    if (state.email) emailInput.value = state.email
+    if (state.access === 'yes') {
+      document.getElementById('access-yes').checked = true
+      document.getElementById('access-no').checked = false
+      wrapper.hidden = false
+      if (state.accessDetails) document.getElementById('access-details').value = state.accessDetails
+    }
+
+    accessGroup.addEventListener('change', (event) => {
+      if (event.target.name !== 'access') return
+      const yes = event.target.value === 'yes'
+      wrapper.hidden = !yes
+      if (!yes) return
+
+      if (path === 'beta') {
+        announce('An extra question was added below.')
+        document.getElementById('access-details').focus()
+      }
+    })
+
+    function announce (message) {
+      let region = document.getElementById('journey-status')
+      if (!region) {
+        region = document.createElement('p')
+        region.id = 'journey-status'
+        region.className = 'status'
+        region.setAttribute('role', 'status')
+        accessGroup.after(region)
+      }
+      region.textContent = message
+    }
+
+    document.getElementById('details-form').addEventListener('submit', (event) => {
+      event.preventDefault()
+      const access = document.querySelector('input[name="access"]:checked')?.value || 'no'
+      window.sessionStorage.setItem(storageKey, JSON.stringify({
+        ...state,
+        path,
+        name: nameInput.value,
+        email: emailInput.value,
+        access,
+        accessDetails: access === 'yes' ? document.getElementById('access-details').value : ''
+      }))
+      window.location.href = `./confirmation.html?path=${path}`
+    })
+  </script>
+</body>
+</html>

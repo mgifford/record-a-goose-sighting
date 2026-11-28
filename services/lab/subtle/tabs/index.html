@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en" data-test-ready="true">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Observation records: tabs</title>
+  <link rel="stylesheet" href="/lab/lab-styles.css">
+  <style>
+    .tabs { margin: 1rem 0 2rem; }
+    .tablist { display: flex; flex-wrap: wrap; gap: 0.25rem; border-bottom: 2px solid #0b0c0c; }
+    .tablist button { font: inherit; padding: 0.6rem 1rem; border: 2px solid #0b0c0c; border-bottom: 0; background: #f3f2f1; cursor: pointer; }
+    .tablist button[aria-selected="true"] { background: #fff; font-weight: 700; margin-bottom: -2px; border-bottom: 2px solid #fff; }
+    .tabpanel { border: 2px solid #0b0c0c; border-top: 0; padding: 1rem; }
+    .tabpanel[hidden] { display: none; }
+    .tabpanel ul { margin: 0; padding-left: 1.25rem; }
+  </style>
+</head>
+<body>
+  <header><nav aria-label="Site"><a href="../../../">Record a goose sighting</a><a href="../../">Laboratory</a></nav></header>
+  <main>
+    <h1>Observation records: tabs</h1>
+    <p class="meta">Two versions of the same three-tab panel. Clicking a tab works in both versions.</p>
+    <p>Focus the first tab and use the arrow keys. Compare which tab is reachable and which tab is selected.</p>
+
+    <section aria-labelledby="variant-a">
+      <h2 id="variant-a">Variant A</h2>
+      <div class="fixture">
+        <div class="tabs">
+          <div role="tablist" aria-label="Observation records" id="tablist-a">
+            <button role="tab" id="tab-a-latest" aria-selected="true" aria-controls="panel-a-latest" tabindex="0">Latest</button>
+            <button role="tab" id="tab-a-pending" aria-selected="false" aria-controls="panel-a-pending" tabindex="0">Pending</button>
+            <button role="tab" id="tab-a-archive" aria-selected="false" aria-controls="panel-a-archive" tabindex="0">Archive</button>
+          </div>
+          <div role="tabpanel" id="panel-a-latest" aria-labelledby="tab-a-latest" tabindex="0">
+            <ul><li>Mallard, north hide, 14:05</li><li>Grey heron, wetland boardwalk, 11:40</li></ul>
+          </div>
+          <div role="tabpanel" id="panel-a-pending" aria-labelledby="tab-a-pending" tabindex="0" hidden>
+            <ul><li>Marsh harrier, meadow gate, 09:15</li></ul>
+          </div>
+          <div role="tabpanel" id="panel-a-archive" aria-labelledby="tab-a-archive" tabindex="0" hidden>
+            <ul><li>Mute swan, duck pond, 16:20</li></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="variant-b">
+      <h2 id="variant-b">Variant B</h2>
+      <div class="fixture">
+        <div class="tabs">
+          <div role="tablist" aria-label="Observation records" id="tablist-b">
+            <button role="tab" id="tab-b-latest" aria-selected="true" aria-controls="panel-b-latest" tabindex="0">Latest</button>
+            <button role="tab" id="tab-b-pending" aria-selected="false" aria-controls="panel-b-pending" tabindex="-1">Pending</button>
+            <button role="tab" id="tab-b-archive" aria-selected="false" aria-controls="panel-b-archive" tabindex="-1">Archive</button>
+          </div>
+          <div role="tabpanel" id="panel-b-latest" aria-labelledby="tab-b-latest" tabindex="0">
+            <ul><li>Mallard, north hide, 14:05</li><li>Grey heron, wetland boardwalk, 11:40</li></ul>
+          </div>
+          <div role="tabpanel" id="panel-b-pending" aria-labelledby="tab-b-pending" tabindex="0" hidden>
+            <ul><li>Marsh harrier, meadow gate, 09:15</li></ul>
+          </div>
+          <div role="tabpanel" id="panel-b-archive" aria-labelledby="tab-b-archive" tabindex="0" hidden>
+            <ul><li>Mute swan, duck pond, 16:20</li></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      function setupTabs (variant, supportsArrowKeys) {
+        const tablist = document.getElementById(`tablist-${variant}`)
+        const tabs = [...tablist.querySelectorAll('[role="tab"]')]
+
+        function select (tab, moveFocus, managesTabIndex) {
+          for (const candidate of tabs) {
+            const selected = candidate === tab
+            candidate.setAttribute('aria-selected', String(selected))
+            document.getElementById(candidate.getAttribute('aria-controls')).hidden = !selected
+            if (managesTabIndex) candidate.tabIndex = selected ? 0 : -1
+          }
+          if (moveFocus) tab.focus()
+        }
+
+        for (const tab of tabs) {
+          tab.addEventListener('click', () => select(tab, false, supportsArrowKeys))
+        }
+
+        if (!supportsArrowKeys) return
+
+        tablist.addEventListener('keydown', (event) => {
+          const index = tabs.indexOf(document.activeElement)
+          if (index === -1) return
+
+          let next = null
+          if (event.key === 'ArrowRight') next = tabs[(index + 1) % tabs.length]
+          if (event.key === 'ArrowLeft') next = tabs[(index - 1 + tabs.length) % tabs.length]
+          if (event.key === 'Home') next = tabs[0]
+          if (event.key === 'End') next = tabs[tabs.length - 1]
+          if (!next) return
+
+          event.preventDefault()
+          select(next, true, true)
+        })
+      }
+
+      setupTabs('a', false)
+      setupTabs('b', true)
+    </script>
+  </main>
+  <footer><p>Part of the animal-reporting laboratory. MIT licensed.</p></footer>
+</body>
+</html>

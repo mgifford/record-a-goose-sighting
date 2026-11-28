@@ -1,0 +1,26 @@
+name: Unresolved or ambiguous locator
+description: A declared locator does not resolve to one element
+labels: ["locator"]
+body:
+  - type: input
+    id: defect
+    attributes:
+      label: Defect identifier
+    validations:
+      required: true
+  - type: textarea
+    id: command
+    attributes:
+      label: Verification command and output
+      description: Output of `npm run defects:verify -- --id <id>`, including the locator status.
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+      description: Frame path, shadow path, interaction state or environment, if relevant.
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed replacement locator

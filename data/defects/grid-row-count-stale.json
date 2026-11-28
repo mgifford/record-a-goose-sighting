@@ -1,0 +1,119 @@
+{
+  "service": "lab",
+  "fixtureId": null,
+  "aliases": [],
+  "preconditions": [],
+  "interactionSteps": [
+    {
+      "action": "click",
+      "selector": "#show-a"
+    },
+    {
+      "action": "assert",
+      "selector": "#grid-a",
+      "state": "visible"
+    }
+  ],
+  "environment": null,
+  "actRules": [],
+  "controlFixtureId": null,
+  "introducedIn": null,
+  "lastVerified": null,
+  "notApplicable": [
+    "fixtureId",
+    "actRules"
+  ],
+  "assistiveTechnologyTests": [
+    {
+      "platform": "macOS",
+      "browser": "Safari",
+      "assistiveTechnology": "VoiceOver",
+      "procedure": "Follow the documented procedure and listen for the information under test.",
+      "status": "not-run"
+    }
+  ],
+  "id": "grid-row-count-stale",
+  "title": "Grid row count is not updated when the full list opens",
+  "description": "The verified observations grid reports five rows while four records are collapsed. Expanding it renders thirteen rows in total, but the alpha variant leaves aria-rowcount at 5, so assistive technology reports a shorter list than the one on screen.",
+  "component": "Verified observations grid (variant A)",
+  "category": "tables",
+  "classification": "candidate-wcag-failure",
+  "url": "lab/subtle/grid/",
+  "locators": [
+    {
+      "type": "css",
+      "value": "#grid-a"
+    }
+  ],
+  "relatedElements": [
+    {
+      "purpose": "expand-trigger",
+      "css": "#show-a"
+    },
+    {
+      "purpose": "comparison-control",
+      "css": "#grid-b",
+      "note": "The control updates aria-rowcount to 13."
+    }
+  ],
+  "expectedBehaviour": "A grid reports the number of rows it contains, and the count stays correct when rows are added.",
+  "actualBehaviour": "aria-rowcount remains 5 after the remaining nine rows are revealed.",
+  "userImpact": "Screen-reader users are told the list has five rows and may stop navigating before the extra records.",
+  "affectedCapabilities": [
+    "screen-reader",
+    "cognitive"
+  ],
+  "wcag": [
+    {
+      "criterion": "4.1.2",
+      "status": "candidate",
+      "note": "The exposed row count no longer reflects the rendered grid."
+    }
+  ],
+  "detection": {
+    "expectedMethods": [
+      "automated-pointer-interaction",
+      "dom-inspection",
+      "accessibility-tree-inspection"
+    ],
+    "note": "The initial state is correct; only the post-expansion state is wrong.",
+    "observed": [
+      {
+        "date": "2026-11-26",
+        "engine": "axe-core",
+        "engineVersion": "4.14.1",
+        "browser": "Chromium via Playwright 1.65.1",
+        "interactionState": "default page state",
+        "ruleId": null,
+        "result": "not-detected",
+        "note": "Page-level axe run with tags wcag2a, wcag2aa, wcag21a, wcag21aa and best-practice. No violation was reported; the control on the same page also passes.",
+        "evidence": "tests/detection-observations.spec.js"
+      }
+    ]
+  },
+  "manualTests": [
+    "Expand the grid with a screen reader running and listen for the reported row count."
+  ],
+  "evidence": {
+    "assertions": [
+      "aria-rowcount stays 5 while 13 rows are rendered."
+    ],
+    "tests": [
+      "tests/responsive-and-state.spec.js: keeps the alpha row count stale"
+    ],
+    "artifacts": [],
+    "commands": [
+      "npx playwright test tests/responsive-and-state.spec.js"
+    ]
+  },
+  "reviewStatus": {
+    "lifecycle": "reproduced-automatically",
+    "dimensions": {
+      "automatedReproduction": "verified",
+      "manualReproduction": "not-run",
+      "assistiveTechnology": "not-run",
+      "independentReview": "not-run"
+    },
+    "note": "A Playwright regression test preserves the defective behaviour and its control. That is automated reproduction, not a manual or assistive-technology observation."
+  }
+}

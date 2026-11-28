@@ -1,0 +1,29 @@
+name: Unexpected scanner finding
+description: A tool reported something the registry does not describe
+labels: ["scanner-finding"]
+body:
+  - type: input
+    id: page
+    attributes:
+      label: Page URL
+    validations:
+      required: true
+  - type: input
+    id: engine
+    attributes:
+      label: Engine, version and rule
+    validations:
+      required: true
+  - type: textarea
+    id: finding
+    attributes:
+      label: Reported finding
+    validations:
+      required: true
+  - type: textarea
+    id: assessment
+    attributes:
+      label: Initial assessment
+      description: Is it a new defect, a duplicate, a false positive, or a rule that does not apply? Do not assume.
+    validations:
+      required: true

@@ -1,0 +1,125 @@
+{
+  "service": "lab",
+  "fixtureId": null,
+  "aliases": [],
+  "preconditions": [],
+  "interactionSteps": [
+    {
+      "action": "click",
+      "selector": "#save-a"
+    },
+    {
+      "action": "assert",
+      "selector": "#saved-a",
+      "state": "visible"
+    }
+  ],
+  "environment": null,
+  "actRules": [],
+  "controlFixtureId": null,
+  "introducedIn": null,
+  "lastVerified": null,
+  "notApplicable": [
+    "fixtureId",
+    "actRules"
+  ],
+  "id": "status-message-not-announced",
+  "title": "Saved confirmation appears without a status role",
+  "description": "Saving a draft reveals a confirmation paragraph that was hidden. There is no live region and no focus move, so the visible confirmation is silent for assistive technology.",
+  "component": "Draft save confirmation (variant A)",
+  "category": "dynamic-content",
+  "classification": "candidate-wcag-failure",
+  "url": "lab/subtle/status/",
+  "locators": [
+    {
+      "type": "css",
+      "value": "#saved-a",
+      "phase": "after"
+    }
+  ],
+  "relatedElements": [
+    {
+      "purpose": "comparison-control",
+      "css": "#saved-b",
+      "note": "An always-present role=status region whose text is updated."
+    },
+    {
+      "purpose": "trigger",
+      "css": "#save-a"
+    }
+  ],
+  "expectedBehaviour": "A status message that appears after an action is announced without moving focus.",
+  "actualBehaviour": "The message is inserted into a plain paragraph that was hidden; no live region or role=status exists.",
+  "userImpact": "Screen-reader users do not learn that the save succeeded and may repeat the action or assume it failed.",
+  "affectedCapabilities": [
+    "screen-reader",
+    "cognitive"
+  ],
+  "wcag": [
+    {
+      "criterion": "4.1.3",
+      "status": "candidate"
+    }
+  ],
+  "detection": {
+    "expectedMethods": [
+      "dom-inspection",
+      "accessibility-tree-inspection",
+      "manual-keyboard-evaluation"
+    ],
+    "observed": [
+      {
+        "date": "2026-11-26",
+        "engine": "axe-core",
+        "engineVersion": "4.14.1",
+        "browser": "Chromium via Playwright 1.65.1",
+        "interactionState": "default page state",
+        "ruleId": null,
+        "result": "not-detected",
+        "note": "Page-level axe run with tags wcag2a, wcag2aa, wcag21a, wcag21aa and best-practice. No violation was reported for this page in its default state; the control on the same page also passes.",
+        "evidence": "tests/detection-observations.spec.js"
+      }
+    ],
+    "note": "Static analysis cannot prove the absence of an announcement; a screen-reader check or a live-region heuristic is required."
+  },
+  "manualTests": [
+    "Turn on a screen reader, activate Save draft and listen for a confirmation."
+  ],
+  "assistiveTechnologyTests": [
+    {
+      "platform": "macOS",
+      "browser": "Safari",
+      "assistiveTechnology": "VoiceOver",
+      "procedure": "Navigate to the target with the VoiceOver rotor and confirm what is announced.",
+      "status": "not-run"
+    }
+  ],
+  "evidence": {
+    "assertions": [
+      "The confirmation paragraph has no role and is shown by removing the hidden attribute."
+    ],
+    "tests": [
+      "tests/subtle-defects.spec.js: keeps the silent confirmation in variant A"
+    ],
+    "artifacts": [],
+    "commands": [
+      "npx playwright test tests/subtle-defects.spec.js"
+    ]
+  },
+  "sources": [
+    {
+      "title": "WCAG 2.2 Understanding 4.1.3: Status Messages",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/status-messages"
+    }
+  ],
+  "reviewStatus": {
+    "lifecycle": "reproduced-automatically",
+    "dimensions": {
+      "automatedReproduction": "verified",
+      "manualReproduction": "not-run",
+      "assistiveTechnology": "not-run",
+      "independentReview": "not-run"
+    },
+    "note": "A Playwright regression test preserves the defective behaviour and its control. That is automated reproduction, not a manual or assistive-technology observation."
+  }
+}

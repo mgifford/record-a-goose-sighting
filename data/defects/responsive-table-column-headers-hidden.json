@@ -1,0 +1,118 @@
+{
+  "service": "lab",
+  "fixtureId": null,
+  "aliases": [],
+  "preconditions": [
+    "The viewport is 320 CSS pixels wide."
+  ],
+  "interactionSteps": [],
+  "environment": {
+    "viewport": {
+      "width": 320,
+      "height": 640
+    }
+  },
+  "actRules": [],
+  "controlFixtureId": null,
+  "introducedIn": null,
+  "lastVerified": null,
+  "notApplicable": [
+    "fixtureId",
+    "actRules"
+  ],
+  "assistiveTechnologyTests": [
+    {
+      "platform": "macOS",
+      "browser": "Safari",
+      "assistiveTechnology": "VoiceOver",
+      "procedure": "Follow the documented procedure and listen for the information under test.",
+      "status": "not-run"
+    }
+  ],
+  "id": "responsive-table-column-headers-hidden",
+  "title": "Stacked table loses its column headers at narrow widths",
+  "description": "Below 640 CSS pixels the attendance tables become stacked cards. The alpha variant hides the header row with display:none, so the data cells remain but their column headings are gone from the accessibility tree. The control keeps the header row available to assistive technology while hiding it visually.",
+  "component": "Attendance table (variant A)",
+  "category": "responsive",
+  "classification": "candidate-wcag-failure",
+  "url": "lab/subtle/responsive-table/",
+  "locators": [
+    {
+      "type": "css",
+      "value": "#attendance-a"
+    }
+  ],
+  "relatedElements": [
+    {
+      "purpose": "comparison-control",
+      "css": "#attendance-b",
+      "note": "The control keeps the header row in the accessibility tree at the same width."
+    }
+  ],
+  "expectedBehaviour": "Responsive layouts keep the relationships between data cells and their headers available to assistive technology.",
+  "actualBehaviour": "The header row is removed with display:none at narrow widths, leaving no column headers.",
+  "userImpact": "Screen-reader users hear values such as 18 and 20 without being told whether they are bookings or capacity.",
+  "affectedCapabilities": [
+    "screen-reader",
+    "low-vision",
+    "cognitive"
+  ],
+  "wcag": [
+    {
+      "criterion": "1.3.1",
+      "status": "candidate",
+      "note": "The visual and programmatic relationships between cells and headers diverge."
+    },
+    {
+      "criterion": "1.4.10",
+      "status": "candidate",
+      "note": "Information is lost when the content is presented at 320 CSS pixels."
+    }
+  ],
+  "detection": {
+    "expectedMethods": [
+      "environment-emulation",
+      "accessibility-tree-inspection",
+      "browser-geometry-inspection"
+    ],
+    "note": "The defect only exists below the breakpoint, so a default-viewport scan reports a correct table.",
+    "observed": [
+      {
+        "date": "2026-11-26",
+        "engine": "axe-core",
+        "engineVersion": "4.14.1",
+        "browser": "Chromium via Playwright 1.65.1",
+        "interactionState": "default page state",
+        "ruleId": null,
+        "result": "not-detected",
+        "note": "Page-level axe run with tags wcag2a, wcag2aa, wcag21a, wcag21aa and best-practice. No violation was reported; the control on the same page also passes.",
+        "evidence": "tests/detection-observations.spec.js"
+      }
+    ]
+  },
+  "manualTests": [
+    "Set the viewport to 320 pixels wide and move through the attendance table in table navigation mode."
+  ],
+  "evidence": {
+    "assertions": [
+      "No column header roles exist in the alpha table at 320 pixels, while the control exposes three."
+    ],
+    "tests": [
+      "tests/responsive-and-state.spec.js: keeps the alpha headers out of the accessibility tree at 320 pixels"
+    ],
+    "artifacts": [],
+    "commands": [
+      "npx playwright test tests/responsive-and-state.spec.js"
+    ]
+  },
+  "reviewStatus": {
+    "lifecycle": "reproduced-automatically",
+    "dimensions": {
+      "automatedReproduction": "verified",
+      "manualReproduction": "not-run",
+      "assistiveTechnology": "not-run",
+      "independentReview": "not-run"
+    },
+    "note": "A Playwright regression test preserves the defective behaviour and its control. That is automated reproduction, not a manual or assistive-technology observation."
+  }
+}

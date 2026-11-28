@@ -2,6 +2,18 @@
 
 | Document | Purpose |
 | :--- | :--- |
+| [BASELINE-AUDIT.md](BASELINE-AUDIT.md) | What existed before the registry, and which capabilities were missing |
+| [ADR-0001-unified-defect-registry.md](ADR-0001-unified-defect-registry.md) | Why the registry is generated, which files are authoritative and how identifiers work |
+| [KNOWN-DEFECTS.md](KNOWN-DEFECTS.md) | Generated answer key for every declared defect |
+| [DEFECT-COVERAGE.md](DEFECT-COVERAGE.md) | Generated WCAG, ACT, capability, detection and AT coverage matrices |
+| [CONTRIBUTING-DEFECTS.md](CONTRIBUTING-DEFECTS.md) | How to add a defect or comparison fixture, and the review checklist |
+| [AT-TESTING.md](AT-TESTING.md) | Environment matrix, recording rules and unexecuted procedures |
+| [RESEARCH.md](RESEARCH.md) | Verified sources and the norms-versus-guidance boundary |
+| [BACKLOG.md](BACKLOG.md) | Persistent backlog of the defect families not yet implemented |
+| [LEARNINGS.md](LEARNINGS.md) | What the first three tranches taught us, measured blind spots and ordered next steps |
+| [OPEN-SCANS-INTEGRATION.md](OPEN-SCANS-INTEGRATION.md) | Published manifest contract, versioning, blind evaluation and the Open Scans boundary |
+| [templates/defect-record.json](templates/defect-record.json) | Registry record template |
+| [templates/fixture-page.html](templates/fixture-page.html) | Comparison fixture page template |
 | [original-goose-baseline.md](original-goose-baseline.md) | Provenance, artifacts and method for the pre-migration baseline |
 | [original-goose-issues.json](original-goose-issues.json) | Machine-readable inventory of the 19 described issues, with detection methods |
 | [DETECTION-MATRIX.md](DETECTION-MATRIX.md) | How automation coverage is assessed and maintained |

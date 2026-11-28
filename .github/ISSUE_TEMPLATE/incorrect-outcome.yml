@@ -1,0 +1,34 @@
+name: Incorrect expected outcome
+description: Challenge a declared expected outcome
+labels: ["expected-outcome"]
+body:
+  - type: input
+    id: defect
+    attributes:
+      label: Defect identifier
+    validations:
+      required: true
+  - type: textarea
+    id: claim
+    attributes:
+      label: What the registry claims
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence that contradicts it
+      description: Browser, environment, steps, observation and any recording.
+    validations:
+      required: true
+  - type: dropdown
+    id: resolution
+    attributes:
+      label: Proposed resolution
+      options:
+        - Change expected outcome
+        - Add a disputed review record
+        - Deprecate the fixture
+        - Keep as is and add a limitation note
+    validations:
+      required: true

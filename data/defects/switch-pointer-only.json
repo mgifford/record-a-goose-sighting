@@ -1,0 +1,120 @@
+{
+  "service": "lab",
+  "fixtureId": null,
+  "aliases": [],
+  "preconditions": [],
+  "interactionSteps": [
+    {
+      "action": "focus",
+      "selector": "#switch-a"
+    },
+    {
+      "action": "press",
+      "key": "Space",
+      "note": "aria-checked stays false."
+    }
+  ],
+  "environment": null,
+  "actRules": [],
+  "controlFixtureId": null,
+  "introducedIn": null,
+  "lastVerified": null,
+  "notApplicable": [
+    "fixtureId",
+    "actRules"
+  ],
+  "id": "switch-pointer-only",
+  "title": "Custom switch responds only to pointer input",
+  "description": "The alert preference is a focusable div with role=switch. It has a click handler but no key handling, so Enter and Space do nothing even though the control is in the tab order.",
+  "component": "Morning alert switch (variant A)",
+  "category": "keyboard",
+  "classification": "candidate-wcag-failure",
+  "url": "lab/subtle/keyboard-toggle/",
+  "locators": [
+    {
+      "type": "css",
+      "value": "#switch-a"
+    }
+  ],
+  "relatedElements": [
+    {
+      "purpose": "comparison-control",
+      "css": "#switch-b",
+      "note": "A native button with role=switch, which handles Space and Enter."
+    }
+  ],
+  "expectedBehaviour": "A switch in the tab order can be operated with the keyboard, using the keys its role implies.",
+  "actualBehaviour": "Only a pointer click toggles aria-checked; keyboard activation is ignored.",
+  "userImpact": "Keyboard, switch and voice-control users can reach the setting but cannot change it.",
+  "affectedCapabilities": [
+    "keyboard-only",
+    "switch-control",
+    "voice-control"
+  ],
+  "wcag": [
+    {
+      "criterion": "2.1.1",
+      "status": "candidate"
+    }
+  ],
+  "detection": {
+    "expectedMethods": [
+      "automated-keyboard-interaction",
+      "dom-inspection"
+    ],
+    "observed": [
+      {
+        "date": "2026-11-26",
+        "engine": "axe-core",
+        "engineVersion": "4.14.1",
+        "browser": "Chromium via Playwright 1.65.1",
+        "interactionState": "default page state",
+        "ruleId": null,
+        "result": "not-detected",
+        "note": "Page-level axe run with tags wcag2a, wcag2aa, wcag21a, wcag21aa and best-practice. No violation was reported for this page in its default state; the control on the same page also passes.",
+        "evidence": "tests/detection-observations.spec.js"
+      }
+    ],
+    "note": "The role, name and focusability are all correct, so static checks pass."
+  },
+  "manualTests": [
+    "Focus the switch and press Space, then Enter. Confirm that the state does not change."
+  ],
+  "assistiveTechnologyTests": [
+    {
+      "platform": "Windows",
+      "browser": "Chrome",
+      "assistiveTechnology": "NVDA",
+      "procedure": "Focus the switch and press Space. Listen for the state change.",
+      "status": "not-run"
+    }
+  ],
+  "evidence": {
+    "assertions": [
+      "Space and Enter leave aria-checked as false; a click sets it to true."
+    ],
+    "tests": [
+      "tests/subtle-defects.spec.js: keeps the pointer-only switch inoperable from the keyboard"
+    ],
+    "artifacts": [],
+    "commands": [
+      "npx playwright test tests/subtle-defects.spec.js"
+    ]
+  },
+  "sources": [
+    {
+      "title": "WCAG 2.2 Understanding 2.1.1: Keyboard",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/keyboard"
+    }
+  ],
+  "reviewStatus": {
+    "lifecycle": "reproduced-automatically",
+    "dimensions": {
+      "automatedReproduction": "verified",
+      "manualReproduction": "not-run",
+      "assistiveTechnology": "not-run",
+      "independentReview": "not-run"
+    },
+    "note": "A Playwright regression test preserves the defective behaviour and its control. That is automated reproduction, not a manual or assistive-technology observation."
+  }
+}

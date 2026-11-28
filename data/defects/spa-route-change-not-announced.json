@@ -1,0 +1,123 @@
+{
+  "service": "lab",
+  "fixtureId": null,
+  "aliases": [],
+  "preconditions": [],
+  "interactionSteps": [
+    {
+      "action": "click",
+      "selector": "#a-link-about"
+    },
+    {
+      "action": "assert",
+      "selector": "#a-title",
+      "state": "visible"
+    }
+  ],
+  "environment": null,
+  "actRules": [],
+  "controlFixtureId": null,
+  "introducedIn": null,
+  "lastVerified": null,
+  "notApplicable": [
+    "fixtureId",
+    "actRules"
+  ],
+  "assistiveTechnologyTests": [
+    {
+      "platform": "macOS",
+      "browser": "Safari",
+      "assistiveTechnology": "VoiceOver",
+      "procedure": "Follow the documented procedure and listen for the information under test.",
+      "status": "not-run"
+    }
+  ],
+  "id": "spa-route-change-not-announced",
+  "title": "Client-side route change is not announced",
+  "description": "The records browser replaces the view content in place. The alpha variant has an empty status region and never fills it, so nothing tells assistive-technology users that the content changed.",
+  "component": "Records view navigation (variant A)",
+  "category": "dynamic-content",
+  "classification": "candidate-wcag-failure",
+  "url": "lab/subtle/spa/",
+  "locators": [
+    {
+      "type": "css",
+      "value": "#a-title",
+      "phase": "after"
+    }
+  ],
+  "relatedElements": [
+    {
+      "purpose": "route-trigger",
+      "css": "#a-link-about"
+    },
+    {
+      "purpose": "empty-status-region",
+      "css": "#a-status",
+      "note": "role=status with no text before or after the route change."
+    },
+    {
+      "purpose": "comparison-control",
+      "css": "#b-status",
+      "note": "The control announces Showing about the records."
+    }
+  ],
+  "expectedBehaviour": "A change of view that does not reload the page is announced, or focus moves to the new content.",
+  "actualBehaviour": "The view changes silently; the status region stays empty and focus stays on the link.",
+  "userImpact": "Screen-reader users may not realise that the page content has changed and continue reading the previous view's context.",
+  "affectedCapabilities": [
+    "screen-reader",
+    "cognitive"
+  ],
+  "wcag": [
+    {
+      "criterion": "4.1.3",
+      "status": "candidate"
+    }
+  ],
+  "detection": {
+    "expectedMethods": [
+      "automated-pointer-interaction",
+      "accessibility-tree-inspection"
+    ],
+    "note": "Requires a route change; the markup is valid before and after.",
+    "observed": [
+      {
+        "date": "2026-11-26",
+        "engine": "axe-core",
+        "engineVersion": "4.14.1",
+        "browser": "Chromium via Playwright 1.65.1",
+        "interactionState": "default page state",
+        "ruleId": null,
+        "result": "not-detected",
+        "note": "Page-level axe run with tags wcag2a, wcag2aa, wcag21a, wcag21aa and best-practice. No violation was reported; the control on the same page also passes.",
+        "evidence": "tests/detection-observations.spec.js"
+      }
+    ]
+  },
+  "manualTests": [
+    "Follow a link with a screen reader running and listen for an announcement or focus change."
+  ],
+  "evidence": {
+    "assertions": [
+      "The alpha status region stays empty after the route change."
+    ],
+    "tests": [
+      "tests/responsive-and-state.spec.js: keeps the alpha page title and announcement stale"
+    ],
+    "artifacts": [],
+    "commands": [
+      "npx playwright test tests/responsive-and-state.spec.js"
+    ]
+  },
+  "reviewStatus": {
+    "lifecycle": "reproduced-automatically",
+    "dimensions": {
+      "automatedReproduction": "verified",
+      "manualReproduction": "not-run",
+      "assistiveTechnology": "not-run",
+      "independentReview": "not-run"
+    },
+    "note": "A Playwright regression test preserves the defective behaviour and its control. That is automated reproduction, not a manual or assistive-technology observation."
+  }
+}

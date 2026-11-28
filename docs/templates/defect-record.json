@@ -1,0 +1,59 @@
+{
+  "id": "replace-with-kebab-case-behaviour",
+  "title": "One sentence that names the behaviour",
+  "description": "What the page does, why it is a barrier, and how it can pass an automated check while still being wrong.",
+  "service": "lab",
+  "fixtureId": null,
+  "aliases": [],
+  "component": "Component and variant",
+  "category": "focus-management",
+  "classification": "candidate-wcag-failure",
+  "url": "lab/subtle/example/",
+  "fragment": null,
+  "locators": [
+    { "type": "css", "value": "#example-target" },
+    { "type": "role", "role": "button", "name": "Visible label" }
+  ],
+  "relatedElements": [
+    { "purpose": "comparison-control", "css": "#example-control", "note": "Correctly implemented counterpart." }
+  ],
+  "preconditions": ["State that must exist before the interaction."],
+  "interactionSteps": [
+    { "action": "focus", "selector": "#example-target" },
+    { "action": "press", "key": "Enter" }
+  ],
+  "environment": null,
+  "expectedBehaviour": "What an accessible implementation does.",
+  "actualBehaviour": "What this fixture does instead.",
+  "userImpact": "Who is affected and what they cannot do.",
+  "affectedCapabilities": ["keyboard-only", "screen-reader"],
+  "wcag": [
+    { "criterion": "2.4.3", "status": "candidate", "note": "Why this criterion is a candidate, not a confirmed failure." }
+  ],
+  "actRules": [],
+  "detection": {
+    "expectedMethods": ["automated-keyboard-interaction", "dom-inspection"],
+    "observed": [],
+    "note": "What automation can and cannot see."
+  },
+  "manualTests": ["Exact procedure a person can follow."],
+  "assistiveTechnologyTests": [
+    {
+      "platform": "macOS",
+      "browser": "Safari",
+      "assistiveTechnology": "VoiceOver",
+      "procedure": "Exact procedure.",
+      "status": "not-run"
+    }
+  ],
+  "evidence": {
+    "assertions": ["The DOM or interaction condition the regression test asserts."],
+    "tests": ["tests/example.spec.js: test name"],
+    "artifacts": [],
+    "commands": ["npx playwright test tests/example.spec.js"]
+  },
+  "controlFixtureId": null,
+  "introducedIn": null,
+  "lastVerified": null,
+  "notApplicable": ["fixtureId", "actRules"]
+}

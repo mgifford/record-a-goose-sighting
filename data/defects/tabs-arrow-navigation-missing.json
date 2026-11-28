@@ -1,0 +1,121 @@
+{
+  "service": "kestrel",
+  "fixtureId": null,
+  "aliases": [],
+  "preconditions": [],
+  "interactionSteps": [
+    {
+      "action": "focus",
+      "selector": "#tab-a-latest"
+    },
+    {
+      "action": "press",
+      "key": "ArrowRight"
+    },
+    {
+      "action": "assert",
+      "selector": "#tab-a-latest",
+      "note": "Focus stays on the first tab."
+    }
+  ],
+  "environment": null,
+  "actRules": [],
+  "controlFixtureId": null,
+  "introducedIn": null,
+  "lastVerified": null,
+  "notApplicable": [
+    "fixtureId",
+    "actRules"
+  ],
+  "assistiveTechnologyTests": [
+    {
+      "platform": "macOS",
+      "browser": "Safari",
+      "assistiveTechnology": "VoiceOver",
+      "procedure": "Complete the journey and listen for the announcement or information under test.",
+      "status": "not-run"
+    }
+  ],
+  "id": "tabs-arrow-navigation-missing",
+  "title": "Tab set ignores the arrow keys",
+  "description": "Clicking a tab works, but pressing ArrowRight or ArrowLeft on a focused tab does nothing. The beta path moves focus and selection between tabs.",
+  "component": "Observation record tabs (variant A)",
+  "category": "keyboard",
+  "classification": "best-practice",
+  "url": "lab/subtle/tabs/",
+  "locators": [
+    {
+      "type": "css",
+      "value": "#tab-a-latest"
+    },
+    {
+      "type": "css",
+      "value": "#tab-a-pending"
+    }
+  ],
+  "relatedElements": [
+    {
+      "purpose": "comparison-control",
+      "css": "#tab-b-latest",
+      "note": "The control implements ArrowLeft, ArrowRight, Home and End."
+    }
+  ],
+  "expectedBehaviour": "Arrow keys move focus and selection between tabs in a tab list.",
+  "actualBehaviour": "Arrow keys are ignored; only clicking or tabbing changes the selected tab.",
+  "userImpact": "Keyboard users must Tab through the tab list and press Enter rather than using the expected arrow keys.",
+  "affectedCapabilities": [
+    "keyboard-only"
+  ],
+  "wcag": [
+    {
+      "criterion": "2.1.1",
+      "status": "informational",
+      "note": "The tabs are still keyboard operable with Tab and Enter. The missing arrow-key model is a best-practice gap, not a keyboard failure."
+    }
+  ],
+  "detection": {
+    "expectedMethods": [
+      "automated-keyboard-interaction",
+      "manual-keyboard-evaluation"
+    ],
+    "note": "Requires focus and key presses; static markup looks valid.",
+    "observed": [
+      {
+        "date": "2026-11-26",
+        "engine": "axe-core",
+        "engineVersion": "4.14.1",
+        "browser": "Chromium via Playwright 1.65.1",
+        "interactionState": "default page state",
+        "ruleId": null,
+        "result": "not-detected",
+        "note": "Page-level axe run with tags wcag2a, wcag2aa, wcag21a, wcag21aa and best-practice. No violation was reported in the default state; the control on the same page or path also passes.",
+        "evidence": "tests/detection-observations.spec.js"
+      }
+    ]
+  },
+  "manualTests": [
+    "Focus the first tab, press ArrowRight and check whether focus and selection move."
+  ],
+  "evidence": {
+    "assertions": [
+      "ArrowRight leaves focus on the first alpha tab and its panel unchanged."
+    ],
+    "tests": [
+      "tests/subtle-widgets.spec.js: keeps alpha arrow navigation missing"
+    ],
+    "artifacts": [],
+    "commands": [
+      "npx playwright test tests/journey-defects.spec.js"
+    ]
+  },
+  "reviewStatus": {
+    "lifecycle": "reproduced-automatically",
+    "dimensions": {
+      "automatedReproduction": "verified",
+      "manualReproduction": "not-run",
+      "assistiveTechnology": "not-run",
+      "independentReview": "not-run"
+    },
+    "note": "A Playwright regression test preserves the defective journey or widget behaviour and its control. That is automated reproduction, not a manual or assistive-technology observation."
+  }
+}

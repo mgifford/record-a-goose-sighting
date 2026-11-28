@@ -25,6 +25,9 @@
       <li><a href="../paca/">Report a paca</a> — Web Components six-step journey, with an ARIA role inside an open, closed or nested shadow root.</li>
     </ul>
 
+    <h2 id="kestrel">Realistic service journey</h2>
+    <p><a href="../kestrel/">Book a wildlife observation session</a> — a three-step service where the defects appear across the journey rather than on a single page. The page contains no answer key.</p>
+
     <h2>Isolated ACT fixtures</h2>
     <p>Each fixture isolates one target for one <abbr title="Accessibility Conformance Testing">ACT</abbr> rule. Expected outcomes are unreviewed hypotheses, not verified results.</p>
     <ul>
@@ -72,6 +75,25 @@
       <li><a href="correlation/single-image/">One image, one failure</a> — the simplest shared-target case, linked to the original confirmation page example.</li>
       <li><a href="correlation/multiple-rules-one-target/">Two rules on one target</a> — one button, two independent ACT rule failures.</li>
       <li><a href="correlation/repeated-controls/">Repeated controls</a> — three equivalent failures and two passing controls, each a separate target.</li>
+    </ul>
+
+    <h2 id="subtle">Subtle comparison fixtures</h2>
+    <p>Each page contains two visually similar versions of one component, so that a difference in behaviour is the only signal. The pages do not state which version is defective; that answer lives in the <a href="../defects/">known defect catalogue</a>.</p>
+    <ul>
+      <li><a href="subtle/names/">Delete action names</a> — visible text and accessible name.</li>
+      <li><a href="subtle/focus-removal/">Selected attendees</a> — where focus goes after removing an item.</li>
+      <li><a href="subtle/status/">Draft save and availability</a> — silent confirmation and a busy state that never clears.</li>
+      <li><a href="subtle/errors/">Observation date errors</a> — association, summary links, focus and required state.</li>
+      <li><a href="subtle/aria-state/">Filter disclosure</a> — a stale expanded state.</li>
+      <li><a href="subtle/keyboard-toggle/">Alert preference</a> — a switch that ignores the keyboard.</li>
+      <li><a href="subtle/reading/">Reference code</a> — a hint hidden from assistive technology and a visual-only heading.</li>
+      <li><a href="subtle/tables/">Observation tables</a> — column headers that are not marked up, and a sort state that never updates.</li>
+      <li><a href="subtle/combobox/">Species suggestions</a> — an active descendant that points at a filtered-out option.</li>
+      <li><a href="subtle/tabs/">Observation record tabs</a> — every tab in the tab order, and no arrow-key navigation.</li>
+      <li><a href="subtle/grid/">Observation records grid</a> — a row count that is not updated when the full list opens.</li>
+      <li><a href="subtle/responsive-table/">Attendance at narrow widths</a> — a stacked table that loses its column headers.</li>
+      <li><a href="subtle/spa/">Latest and about views</a> — a client-side route change that leaves the title and announcement stale.</li>
+      <li><a href="subtle/language/">Bilingual field notice</a> — a French passage with no language identification.</li>
     </ul>
 
     <h2>Interpreting results</h2>

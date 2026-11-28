@@ -1,0 +1,121 @@
+{
+  "service": "kestrel",
+  "fixtureId": null,
+  "aliases": [],
+  "preconditions": [
+    "The access requirements question is visible and No is selected."
+  ],
+  "interactionSteps": [
+    {
+      "action": "click",
+      "selector": "#access-yes"
+    },
+    {
+      "action": "assert",
+      "selector": "#access-details-wrapper",
+      "state": "visible"
+    }
+  ],
+  "environment": null,
+  "actRules": [],
+  "controlFixtureId": null,
+  "introducedIn": null,
+  "lastVerified": null,
+  "notApplicable": [
+    "fixtureId",
+    "actRules"
+  ],
+  "assistiveTechnologyTests": [
+    {
+      "platform": "macOS",
+      "browser": "Safari",
+      "assistiveTechnology": "VoiceOver",
+      "procedure": "Complete the journey and listen for the announcement or information under test.",
+      "status": "not-run"
+    }
+  ],
+  "id": "journey-conditional-question-unannounced",
+  "title": "Conditional question appears without an announcement",
+  "description": "Selecting Yes to the access-requirements question reveals a follow-up field. The alpha path inserts it silently and leaves focus on the radio; nothing tells assistive-technology users that the page changed.",
+  "component": "Access requirements conditional question",
+  "category": "journey",
+  "classification": "candidate-wcag-failure",
+  "url": "kestrel/details.html?path=alpha",
+  "locators": [
+    {
+      "type": "css",
+      "value": "#access-details-wrapper",
+      "phase": "after"
+    }
+  ],
+  "relatedElements": [
+    {
+      "purpose": "trigger",
+      "css": "#access-yes"
+    },
+    {
+      "purpose": "comparison-control",
+      "note": "The beta path adds a role=status message and moves focus to the new field."
+    }
+  ],
+  "expectedBehaviour": "New content that appears in response to input is announced, and focus does not leave the user without a cue that something changed.",
+  "actualBehaviour": "The field appears with no live region, status message or focus change.",
+  "userImpact": "Screen-reader users may answer No and continue without realising that an extra question appeared.",
+  "affectedCapabilities": [
+    "screen-reader",
+    "cognitive"
+  ],
+  "wcag": [
+    {
+      "criterion": "4.1.3",
+      "status": "candidate",
+      "note": "A change resulting from user input is not announced."
+    }
+  ],
+  "detection": {
+    "expectedMethods": [
+      "dom-inspection",
+      "automated-keyboard-interaction",
+      "accessibility-tree-inspection"
+    ],
+    "note": "Requires an interaction; the default page is identical in both paths.",
+    "observed": [
+      {
+        "date": "2026-11-26",
+        "engine": "axe-core",
+        "engineVersion": "4.14.1",
+        "browser": "Chromium via Playwright 1.65.1",
+        "interactionState": "default page state",
+        "ruleId": null,
+        "result": "not-detected",
+        "note": "Page-level axe run with tags wcag2a, wcag2aa, wcag21a, wcag21aa and best-practice. No violation was reported in the default state; the control on the same page or path also passes.",
+        "evidence": "tests/detection-observations.spec.js"
+      }
+    ]
+  },
+  "manualTests": [
+    "With a screen reader running, select Yes and listen for the new question."
+  ],
+  "evidence": {
+    "assertions": [
+      "No status region exists on the alpha path after the field is revealed."
+    ],
+    "tests": [
+      "tests/journey-defects.spec.js: reveals the conditional question silently on the alpha path"
+    ],
+    "artifacts": [],
+    "commands": [
+      "npx playwright test tests/journey-defects.spec.js"
+    ]
+  },
+  "reviewStatus": {
+    "lifecycle": "reproduced-automatically",
+    "dimensions": {
+      "automatedReproduction": "verified",
+      "manualReproduction": "not-run",
+      "assistiveTechnology": "not-run",
+      "independentReview": "not-run"
+    },
+    "note": "A Playwright regression test preserves the defective journey or widget behaviour and its control. That is automated reproduction, not a manual or assistive-technology observation."
+  }
+}

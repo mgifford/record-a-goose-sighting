@@ -1,0 +1,121 @@
+{
+  "service": "lab",
+  "fixtureId": null,
+  "aliases": [],
+  "preconditions": [],
+  "interactionSteps": [
+    {
+      "action": "click",
+      "selector": "#submit-a"
+    },
+    {
+      "action": "click",
+      "selector": "#summary-a a"
+    },
+    {
+      "action": "assert",
+      "selector": "#date-a",
+      "note": "Focus does not move to the field."
+    }
+  ],
+  "environment": null,
+  "actRules": [],
+  "controlFixtureId": null,
+  "introducedIn": null,
+  "lastVerified": null,
+  "notApplicable": [
+    "fixtureId",
+    "actRules"
+  ],
+  "id": "error-summary-link-broken",
+  "title": "Error summary links to an element that does not exist",
+  "description": "The error summary link points at #date-a-field, but the input's id is date-a. Activating the link does nothing, so the summary cannot be used to reach the field.",
+  "component": "Error summary link (variant A)",
+  "category": "forms",
+  "classification": "usability-concern",
+  "url": "lab/subtle/errors/",
+  "locators": [
+    {
+      "type": "css",
+      "value": "#summary-a a",
+      "phase": "after"
+    }
+  ],
+  "relatedElements": [
+    {
+      "purpose": "missing-target",
+      "css": "#date-a-field",
+      "note": "Does not exist in the document."
+    },
+    {
+      "purpose": "actual-field",
+      "css": "#date-a"
+    },
+    {
+      "purpose": "comparison-control",
+      "css": "#summary-b a",
+      "note": "Links to the real field id."
+    }
+  ],
+  "expectedBehaviour": "Each error summary link moves focus to the field that needs correcting.",
+  "actualBehaviour": "The link's fragment does not match any element id, so activating it has no effect.",
+  "userImpact": "People who rely on the summary to navigate errors cannot reach the field and must search the page.",
+  "affectedCapabilities": [
+    "screen-reader",
+    "keyboard-only",
+    "cognitive"
+  ],
+  "wcag": [],
+  "detection": {
+    "expectedMethods": [
+      "dom-inspection",
+      "heuristic-analysis"
+    ],
+    "observed": [
+      {
+        "date": "2026-11-26",
+        "engine": "axe-core",
+        "engineVersion": "4.14.1",
+        "browser": "Chromium via Playwright 1.65.1",
+        "interactionState": "default page state",
+        "ruleId": null,
+        "result": "not-detected",
+        "note": "Page-level axe run with tags wcag2a, wcag2aa, wcag21a, wcag21aa and best-practice. No violation was reported for this page in its default state; the control on the same page also passes.",
+        "evidence": "tests/detection-observations.spec.js"
+      }
+    ],
+    "note": "No WCAG failure is claimed: the error is still identified in text. The defect is an inoperative recovery link."
+  },
+  "manualTests": [
+    "Submit the empty form and activate the error summary link. Check whether focus moves to the field."
+  ],
+  "assistiveTechnologyTests": [],
+  "evidence": {
+    "assertions": [
+      "#date-a-field has no matching element; the input id is #date-a."
+    ],
+    "tests": [
+      "tests/subtle-defects.spec.js: keeps variant A errors unassociated, unfocused and linked to nothing"
+    ],
+    "artifacts": [],
+    "commands": [
+      "npx playwright test tests/subtle-defects.spec.js"
+    ]
+  },
+  "sources": [
+    {
+      "title": "GOV.UK Design System: Error summary",
+      "url": "https://design-system.service.gov.uk/components/error-summary/"
+    }
+  ],
+  "reviewStatus": {
+    "lifecycle": "reproduced-automatically",
+    "dimensions": {
+      "automatedReproduction": "verified",
+      "manualReproduction": "not-run",
+      "assistiveTechnology": "not-run",
+      "independentReview": "not-run"
+    },
+    "note": "A Playwright regression test preserves the defective behaviour and its control. That is automated reproduction, not a manual or assistive-technology observation."
+  }
+}
